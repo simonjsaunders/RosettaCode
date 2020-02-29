@@ -7,93 +7,115 @@
 #include <vector>
 #include <openssl/sha.h>
 
+struct sha256
+{
+    unsigned char digest[SHA256_DIGEST_LENGTH];
+    void compute(const char* str, int len)
+    {
+        SHA256((const unsigned char*)str, len, digest);
+    }
+    bool parse(const std::string& hash)
+    {
+        if (hash.length() != 2*SHA256_DIGEST_LENGTH)
+        {
+            std::cerr << "Invalid SHA-256 hash\n";
+            return false;
+        }
+        const char* p = hash.c_str();
+        for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i, p += 2)
+        {
+            unsigned int x;
+            if (sscanf(p, "%2x", &x) != 1)
+            {
+                std::cerr << "Cannot parse SHA-256 hash\n";
+                return false;
+            }
+            digest[i] = x;
+        }
+        return true;
+    }
+};
+
+bool operator==(const sha256& a, const sha256& b)
+{
+    return memcmp(a.digest, b.digest, SHA256_DIGEST_LENGTH) == 0;
+}
+
 class password_finder
 {
 public:
-    void find_password(const char*);
+    void find_passwords(const std::vector<std::string>&);
 private:
-    std::string find_password2(const unsigned char*, char);
-    std::atomic<bool> done;
+    void find_passwords(char);
+    std::vector<std::string> hashes;
+    std::vector<sha256> digests;
+    std::atomic<int> count;
 };
 
-std::string password_finder::find_password2(const unsigned char* digest, char ch)
+void password_finder::find_passwords(char ch)
 {
     const int n = 26;
     char passwd[6] = { 0 };
     passwd[0] = ch;
-    unsigned char digest2[SHA256_DIGEST_LENGTH];
-    std::string result;
-    for (int i = 0; i < n && !done; ++i)
+    sha256 digest;
+    for (int i = 0; i < n && count > 0; ++i)
     {
         passwd[1] = 'a' + i;
-        for (int j = 0; j < n && !done; ++j)
+        for (int j = 0; j < n && count > 0; ++j)
         {
             passwd[2] = 'a' + j;
-            for (int k = 0; k < n && !done; ++k)
+            for (int k = 0; k < n && count > 0; ++k)
             {
                 passwd[3] = 'a' + k;
-                for (int l = 0; l < n && !done; ++l)
+                for (int l = 0; l < n && count > 0; ++l)
                 {
                     passwd[4] = 'a' + l;
-                    SHA256((const unsigned char*)passwd, 5, digest2);
-                    if (memcmp(digest, digest2, SHA256_DIGEST_LENGTH) == 0)
+                    digest.compute(passwd, 5);
+                    for (int m = 0; m < hashes.size(); ++m)
                     {
-                        done = true;
-                        result = passwd;
-                        return result;
+                        if (digest == digests[m])
+                        {
+                            --count;
+                            std::cout << "password: " << passwd << ", hash: " << hashes[m] << '\n';
+                        }
                     }
                 }
             }
         }
     }
-    return result;
 }
 
-void password_finder::find_password(const char* hash)
+void password_finder::find_passwords(const std::vector<std::string>& h)
 {
-    done = false;
-    std::string result;
-    unsigned char digest[SHA256_DIGEST_LENGTH];
-    if (strlen(hash) != 2*SHA256_DIGEST_LENGTH)
+    hashes = h;
+    digests.resize(hashes.size());
+    for (int i = 0; i < hashes.size(); ++i)
     {
-        std::cerr << "Invalid SHA-256 hash\n";
-        return;
-    }
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i)
-    {
-        unsigned int x;
-        if (sscanf(hash + 2*i, "%2x", &x) != 1)
-        {
-            std::cerr << "Cannot parse SHA-256 hash\n";
+        if (!digests[i].parse(hashes[i]))
             return;
-        }
-        digest[i] = x;
     }
-    std::vector<std::future<std::string>> results;
+    count = hashes.size();
+    std::vector<std::future<void>> futures;
     const int n = 26;
     for (int i = 0; i < n; ++i)
     {
         char c = 'a' + i;
-        results.push_back(std::async(std::launch::async,
-                [&,c]() { return find_password2(digest, c); }));
+        futures.push_back(std::async(std::launch::async,
+                [&,c]() { return find_passwords(c); }));
     }
     for (int i = 0; i < n; ++i)
     {
-        std::string str = results[i].get();
-        if (!str.empty())
-        {
-            result = str;
-            break;
-        }
+        futures[i].get();
     }
-    std::cout << "password: " << result << ", hash: " << hash << '\n';
 }
 
 int main()
 {
+    std::vector<std::string> hashes{
+        "1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad",
+        "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b",
+        "74e1bb62f8dabb8125a58852b63bdf6eaef667cb56ac7f7cdba6d7305c50a22f"};
     password_finder pf;
-    pf.find_password("1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad");
-    pf.find_password("3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b");
-    pf.find_password("74e1bb62f8dabb8125a58852b63bdf6eaef667cb56ac7f7cdba6d7305c50a22f");
+    pf.find_passwords(hashes);
     return 0;
 }
