@@ -36,4 +36,4 @@ All code is released under the GNU Free Documentation License, version 1.2.
 |strongweak.cpp|2020-01-14|http://rosettacode.org/wiki/Strong_and_weak_primes|
 |trunc_primes.cpp|2020-01-17|http://rosettacode.org/wiki/Truncatable_primes|
 |unique_chars.cpp|2020-01-14|http://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
-|unprime.cpp|2020-01-23	http://rosettacode.org/wiki/Unprimeable_numbers|
+|unprime.cpp|2020-01-23|http://rosettacode.org/wiki/Unprimeable_numbers|
