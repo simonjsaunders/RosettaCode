@@ -5,6 +5,7 @@ This repository contains example code submitted to Rosetta Code by
 Simon J. Saunders (user name simonjsaunders).
 
 All code is released under the GNU Free Documentation License, version 1.2.
+See LICENSE for details.
 
 |File|Date Submitted|Rosetta Code URL|
 |----|--------------|----------------|
