@@ -77,6 +77,7 @@ void password_finder::find_passwords(char ch)
                         {
                             --count;
                             std::cout << "password: " << passwd << ", hash: " << hashes[m] << '\n';
+                            break;
                         }
                     }
                 }
