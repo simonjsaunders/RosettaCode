@@ -26,6 +26,7 @@ See LICENSE for details.
 |lychrel.cpp|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |palindromic_gapful.cpp|2020-01-25|http://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force.cpp|2020-02-29|http://rosettacode.org/wiki/Parallel_Brute_Force|
+|ParallelBruteForce.java|2020-03-01|http://rosettacode.org/wiki/Parallel_Brute_Force|
 |prime_desc.cpp|2020-01-18|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |PrimeDescendants.java|2020-02-29|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |primorial.cpp|2020-01-27|http://rosettacode.org/wiki/Primorial_numbers|
