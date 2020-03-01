@@ -21,8 +21,7 @@ public class ParallelBruteForce
         }
     }
 
-    private ParallelBruteForce(int length, String[] hashes)
-    {
+    private ParallelBruteForce(int length, String[] hashes) {
         this.length = length;
         this.hashes = hashes;
         digests = new byte[hashes.length][];
