@@ -115,11 +115,7 @@ void password_finder::find_passwords(const std::vector<std::string>& h)
     {
         char c = 'a' + i;
         futures.push_back(std::async(std::launch::async,
-                [&,c]() { return find_passwords(c); }));
-    }
-    for (int i = 0; i < n; ++i)
-    {
-        futures[i].get();
+                [&,c]() { find_passwords(c); }));
     }
 }
 
