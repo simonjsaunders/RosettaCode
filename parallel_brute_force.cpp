@@ -3,6 +3,7 @@
 #include <cstring>
 #include <future>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <openssl/sha.h>
@@ -41,48 +42,60 @@ bool operator==(const sha256& a, const sha256& b)
     return memcmp(a.digest, b.digest, SHA256_DIGEST_LENGTH) == 0;
 }
 
+bool next_password(std::string& passwd, int start)
+{
+    int len = passwd.length();
+    for (int i = len - 1; i >= start; --i)
+    {
+        char c = passwd[i];
+        if (c < 'z')
+        {
+            ++passwd[i];
+            return true;
+        }
+        passwd[i] = 'a';
+    }
+    return false;
+}
+
 class password_finder
 {
 public:
+    password_finder(int);
     void find_passwords(const std::vector<std::string>&);
 private:
+    int length;
     void find_passwords(char);
     std::vector<std::string> hashes;
     std::vector<sha256> digests;
     std::atomic<int> count;
 };
 
+password_finder::password_finder(int len) : length(len)
+{
+}
+
 void password_finder::find_passwords(char ch)
 {
-    const int n = 26;
-    char passwd[6] = { 0 };
+    std::string passwd(length, 'a');
     passwd[0] = ch;
     sha256 digest;
-    for (int i = 0; i < n && count > 0; ++i)
+    while (count > 0)
     {
-        passwd[1] = 'a' + i;
-        for (int j = 0; j < n && count > 0; ++j)
+        digest.compute(passwd.c_str(), length);
+        for (int m = 0; m < hashes.size(); ++m)
         {
-            passwd[2] = 'a' + j;
-            for (int k = 0; k < n && count > 0; ++k)
+            if (digest == digests[m])
             {
-                passwd[3] = 'a' + k;
-                for (int l = 0; l < n && count > 0; ++l)
-                {
-                    passwd[4] = 'a' + l;
-                    digest.compute(passwd, 5);
-                    for (int m = 0; m < hashes.size(); ++m)
-                    {
-                        if (digest == digests[m])
-                        {
-                            --count;
-                            std::cout << "password: " << passwd << ", hash: " << hashes[m] << '\n';
-                            break;
-                        }
-                    }
-                }
+                --count;
+                std::ostringstream out;
+                out << "password: " << passwd << ", hash: " << hashes[m] << '\n';
+                std::cout << out.str();
+                break;
             }
         }
+        if (!next_password(passwd, 1))
+            break;
     }
 }
 
@@ -116,7 +129,7 @@ int main()
         "1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad",
         "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b",
         "74e1bb62f8dabb8125a58852b63bdf6eaef667cb56ac7f7cdba6d7305c50a22f"};
-    password_finder pf;
+    password_finder pf(5);
     pf.find_passwords(hashes);
     return 0;
 }
