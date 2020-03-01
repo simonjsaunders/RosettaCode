@@ -30,6 +30,7 @@ See LICENSE for details.
 |ParallelBruteForce.java|2020-03-01|http://rosettacode.org/wiki/Parallel_Brute_Force|
 |prime_desc.cpp|2020-01-18|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |PrimeDescendants.java|2020-02-29|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
+|prime_gen.cpp|2020-03-01|http://rosettacode.org/wiki/Extensible_prime_generator|
 |primorial.cpp|2020-01-27|http://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes.cpp|2020-01-27|http://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |safe_primes.cpp|2020-01-13|http://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
