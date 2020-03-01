@@ -58,17 +58,18 @@ integer find_mersenne_factor(const sieve_of_eratosthenes& sieve, integer p)
 {
     integer k = 0;
     integer q = 1;
-    do
+    for (;;)
     {
         ++k;
         q = 2 * k * p + 1;
+        if (q >= limit)
+            break;
         if (q % 8 == 1 || q % 8 == 7)
         {
             if (mod_pow(p, q) == 1 && sieve.is_prime(q))
                 return q;
         }
     }
-    while (q < limit);
     return 0;
 }
 
