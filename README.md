@@ -4,6 +4,9 @@ Rosetta Code Contributions
 This repository contains example code submitted to Rosetta Code by
 Simon J. Saunders (user name simonjsaunders).
 
+The code presented here is not intended to be of production quality.
+It is meant for expository purposes only.
+
 All code is released under the GNU Free Documentation License, version 1.2.
 See LICENSE for details.
 
