@@ -23,7 +23,7 @@ See LICENSE for details.
 |four_is_magic.cpp|2020-01-17|http://rosettacode.org/wiki/Four_is_magic|
 |ip_address.cpp|2020-01-20|http://rosettacode.org/wiki/Parse_an_IP_Address|
 |kdtree.cpp|2019-12-07|http://rosettacode.org/wiki/K-d_tree|
-|lex_sort.cpp|2019-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
+|lex_sort.cpp|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |lychrel.cpp|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |mersenne_factors.cpp|2020-03-01|http://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |palindromic_gapful.cpp|2020-01-25|http://rosettacode.org/wiki/Palindromic_gapful_numbers|
