@@ -16,8 +16,8 @@ void lexicographical_sort(std::vector<int>& numbers)
 
 std::vector<int> lexicographically_sorted_vector(int n)
 {
-    std::vector<int> numbers(n);
-    std::iota(numbers.begin(), numbers.end(), 1);
+    std::vector<int> numbers(n >= 1 ? n : 2 - n);
+    std::iota(numbers.begin(), numbers.end(), std::min(1, n));
     lexicographical_sort(numbers);
     return numbers;
 }
@@ -33,12 +33,11 @@ void print_vector(std::ostream& out, const std::vector<T>& v)
         for (; i != v.end(); ++i)
             out << ',' << *i;
     }
-    out << ']';
+    out << "]\n";
 }
 
 int main(int argc, char** argv)
 {
     print_vector(std::cout, lexicographically_sorted_vector(13));
-    std::cout << '\n';
     return 0;
 }
