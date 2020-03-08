@@ -29,6 +29,7 @@ See LICENSE for details.
 |lex_sort.cpp|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |lychrel.cpp|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |mersenne_factors.cpp|2020-03-01|http://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
+|mod_exp.cpp|2020-03-08|http://rosettacode.org/wiki/Modular_exponentiation|
 |niven_gap.cpp|2020-03-08|http://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |palindromic_gapful.cpp|2020-01-25|http://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force.cpp|2020-02-29|http://rosettacode.org/wiki/Parallel_Brute_Force|
