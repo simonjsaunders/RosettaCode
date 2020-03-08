@@ -38,6 +38,10 @@ void print_vector(std::ostream& out, const std::vector<T>& v)
 
 int main(int argc, char** argv)
 {
-    print_vector(std::cout, lexicographically_sorted_vector(13));
+    for (int i : { 0, 5, 13, 21, -22 })
+    {
+        std::cout << i << ": ";
+        print_vector(std::cout, lexicographically_sorted_vector(i));
+    }
     return 0;
 }
