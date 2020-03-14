@@ -8,11 +8,17 @@
 #include <string>
 #include <vector>
 
+struct noncopyable {
+    noncopyable() {}
+    noncopyable(const noncopyable&) = delete;
+    noncopyable& operator=(const noncopyable&) = delete;
+};
+
 template <typename T>
 class tarjan;
 
 template <typename T>
-class vertex {
+class vertex : private noncopyable {
 public:
     explicit vertex(const T& t) : data_(t) {}
     void add_neighbour(vertex* v) {
@@ -34,7 +40,7 @@ private:
 };
 
 template <typename T>
-class graph {
+class graph : private noncopyable {
 public:
     vertex<T>* add_vertex(const T& t) {
         vertexes_.emplace_back(t);
@@ -46,7 +52,7 @@ private:
 };
 
 template <typename T>
-class tarjan {
+class tarjan  : private noncopyable {
 public:
     using component = std::vector<vertex<T>*>;
     std::list<component> run(graph<T>& graph) {
