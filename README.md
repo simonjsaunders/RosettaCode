@@ -27,6 +27,7 @@ See LICENSE for details.
 |honeycombs|2020-03-15|http://rosettacode.org/wiki/Honeycombs#C.2B.2B|
 |ip_address.cpp|2020-01-20|http://rosettacode.org/wiki/Parse_an_IP_Address|
 |kdtree.cpp|2019-12-07|http://rosettacode.org/wiki/K-d_tree|
+|law_of_cosines.cpp|2020-03-29|http://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lex_sort.cpp|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |lychrel.cpp|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |mersenne_factors.cpp|2020-03-01|http://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
