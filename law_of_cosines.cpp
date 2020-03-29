@@ -67,7 +67,7 @@ int main() {
         for (int b = a + 1; b <= max2; ++b) {
             int c2 = a * a + b * b - a * b;
             int c = isqrt(c2);
-            if ((c > a || c > b) && c <= max2 && c * c == c2)
+            if ((c != a || c != b) && c <= max2 && c * c == c2)
                 ++count;
         }
     }
