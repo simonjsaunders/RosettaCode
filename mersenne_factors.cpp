@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
+#include "sieve_of_eratosthenes.h"
 
 typedef uint64_t integer;
 
@@ -28,29 +29,6 @@ integer mod_pow(integer p, integer n)
     }
     return square;
 }
-
-class sieve_of_eratosthenes
-{
-public:
-    explicit sieve_of_eratosthenes(size_t max) : is_prime_(max, true)
-    {
-        is_prime_[0] = is_prime_[1] = false;
-        for (integer p = 2; p * p < max; ++p)
-        {
-            if (is_prime_[p])
-            {
-                for (integer q = p * p; q < max; q +=p)
-                    is_prime_[q] = false;
-            }
-        }
-    }
-    bool is_prime(integer n) const
-    {
-        return is_prime_[n];
-    }
-private:
-    std::vector<bool> is_prime_;
-};
 
 const integer limit = 100000U;
 

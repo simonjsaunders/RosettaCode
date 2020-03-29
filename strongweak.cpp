@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <locale>
 #include <sstream>
-#include <vector>
+#include "sieve_of_eratosthenes.h"
 
 int main()
 {
@@ -12,16 +12,7 @@ int main()
     const int array_size = limit2 + 100;
 
     // find the prime numbers up to array_size
-    std::vector<bool> isprime(array_size, true);
-    isprime[0] = isprime[1] = false;
-    for (int p = 2; p * p < array_size; ++p)
-    {
-        if (isprime[p])
-        {
-            for (int i = p * p; i < array_size; i += p)
-                isprime[i] = false;
-        }
-    }
+    sieve_of_eratosthenes sieve(array_size);
 
     // write numbers with groups of digits separated according to the system default locale
     std::cout.imbue(std::locale(""));
@@ -35,7 +26,7 @@ int main()
     int p1 = 2, p2 = 3;
     for (int p3 = 5; p2 < limit2; ++p3)
     {
-        if (!isprime[p3])
+        if (!sieve.is_prime(p3))
             continue;
         int diff = p1 + p3 - 2 * p2;
         int index = diff < 0 ? 0 : (diff > 0 ? 1 : -1);

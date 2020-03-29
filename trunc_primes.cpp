@@ -1,32 +1,24 @@
 #include <iostream>
-#include <vector>
+#include "sieve_of_eratosthenes.h"
 
 int main()
 {
     const int limit = 1000000;
 
     // find the prime numbers up to the limit
-    std::vector<bool> isprime(limit + 1, true);
-    isprime[0] = isprime[1] = false;
-    for (int p = 2; p * p <= limit; ++p)
-    {
-        if (isprime[p])
-        {
-            for (int i = p * p; i <= limit; i += p)
-                isprime[i] = false;
-        }
-    }
+    sieve_of_eratosthenes sieve(limit + 1);
+
     int largest_left = 0;
     int largest_right = 0;
     // find largest left truncatable prime
     for (int p = limit; p >= 2; --p)
     {
-        if (!isprime[p])
+        if (!sieve.is_prime(p))
             continue;
         bool left_truncatable = true;
         for (int n = 10, q = p; p > n; n *= 10)
         {
-            if (!isprime[p % n] || q == p % n)
+            if (!sieve.is_prime(p % n) || q == p % n)
             {
                 left_truncatable = false;
                 break;
@@ -42,12 +34,12 @@ int main()
     // find largest right truncatable prime
     for (int p = limit; p >= 2; --p)
     {
-        if (!isprime[p])
+        if (!sieve.is_prime(p))
             continue;
         bool right_truncatable = true;
         for (int q = p/10; q > 0; q /= 10)
         {
-            if (!isprime[q])
+            if (!sieve.is_prime(q))
             {
                 right_truncatable = false;
                 break;

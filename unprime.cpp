@@ -1,26 +1,8 @@
 #include <iostream>
-#include <vector>
 #include <cstdint>
+#include "sieve_of_eratosthenes.h"
 
 typedef uint32_t integer;
-
-// n is prime if isprime[n] == true
-std::vector<bool> isprime;
-
-// populate isprime up to limit
-void find_primes(integer limit)
-{
-    isprime.assign(limit, true);
-    isprime[0] = isprime[1] = false;
-    for (integer p = 2; p * p < limit; ++p)
-    {
-        if (isprime[p])
-        {
-            for (integer i = p * p; i < limit; i += p)
-                isprime[i] = false;
-        }
-    }
-}
 
 // return number of decimal digits
 int count_digits(integer n)
@@ -43,9 +25,9 @@ integer change_digit(integer n, int index, int new_digit)
 }
 
 // returns true if n unprimeable
-bool unprimeable(integer n)
+bool unprimeable(const sieve_of_eratosthenes& sieve, integer n)
 {
-    if (isprime[n])
+    if (sieve.is_prime(n))
         return false;
     int d = count_digits(n);
     for (int i = 0; i < d; ++i)
@@ -53,7 +35,7 @@ bool unprimeable(integer n)
         for (int j = 0; j <= 9; ++j)
         {
             integer m = change_digit(n, i, j);
-            if (m != n && isprime[m])
+            if (m != n && sieve.is_prime(m))
                 return false;
         }
     }
@@ -63,7 +45,7 @@ bool unprimeable(integer n)
 int main()
 {
     const integer limit = 10000000;
-    find_primes(limit);
+    sieve_of_eratosthenes sieve(limit);
 
     // print numbers with commas
     std::cout.imbue(std::locale(""));
@@ -74,7 +56,7 @@ int main()
     integer lowest[10] = { 0 };
     for (int count = 0, found = 0; n < limit && (found < 10 || count < 600); ++n)
     {
-        if (unprimeable(n))
+        if (unprimeable(sieve, n))
         {
             if (count < 35)
             {

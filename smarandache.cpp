@@ -1,29 +1,8 @@
 #include <iostream>
 #include <cstdint>
-#include <vector>
+#include "sieve_of_eratosthenes.h"
 
 using integer = uint32_t;
-
-class sieve_of_eratosthenes {
-public:
-    explicit sieve_of_eratosthenes(size_t);
-    bool is_prime(integer n) const {
-        return is_prime_[n];
-    }
-private:
-    std::vector<bool> is_prime_;
-};
-
-sieve_of_eratosthenes::sieve_of_eratosthenes(size_t max)
-    : is_prime_(max, true) {
-    is_prime_[0] = is_prime_[1] = false;
-    for (integer p = 2; p * p < max; ++p) {
-        if (is_prime_[p]) {
-            for (integer q = p * p; q < max; q +=p)
-                is_prime_[q] = false;
-        }
-    }
-}
 
 integer next_prime_digit_number(integer n) {
     if (n == 0)

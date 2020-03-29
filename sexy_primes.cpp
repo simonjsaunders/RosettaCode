@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include "sieve_of_eratosthenes.h"
 
 int main()
 {
@@ -14,15 +15,7 @@ int main()
     const int max_unsexy = 10;
 
     // Use Sieve of Eratosthenes to find prime numbers up to max
-    vector<bool> isprime(array_size, true);
-    for (int p = 2; p * p < array_size; ++p)
-    {
-        if (isprime[p])
-        {
-            for (int i = p * p; i < array_size; i += p)
-                isprime[i] = false;
-        }
-    }
+    sieve_of_eratosthenes sieve(array_size);
 
     vector<int> group_count(max_group_size);
     vector<vector<vector<int>>> groups(max_group_size);
@@ -31,7 +24,7 @@ int main()
 
     for (int p = 2; p < max; )
     {
-        if (!isprime[p + diff] && (p - diff < 2 || !isprime[p - diff]))
+        if (!sieve.is_prime(p + diff) && (p - diff < 2 || !sieve.is_prime(p - diff)))
         {
             // if p + diff and p - diff aren't prime then p can't be sexy
             ++unsexy_count;
@@ -48,7 +41,7 @@ int main()
             for (int i = 1; i < max_group_size; ++i)
             {
                 int next_p = p + i * diff;
-                if (next_p >= max || !isprime[next_p])
+                if (next_p >= max || !sieve.is_prime(next_p))
                     break;
                 ++group_size;
                 group.push_back(next_p);
@@ -62,7 +55,7 @@ int main()
         }
         // skip to next prime number
         ++p;
-        while (p < max && !isprime[p])
+        while (p < max && !sieve.is_prime(p))
             ++p;
     }
 
