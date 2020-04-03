@@ -47,6 +47,7 @@ See LICENSE for details.
 |smarandache.cpp|2020-03-14|http://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sort_oid.c|2020-01-26|http://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |sprimediff.cpp|2020-03-14|http://rosettacode.org/wiki/Successive_prime_differences|
+|square_free.cpp|2020-04-03|http://rosettacode.org/wiki/Square-free_integers|
 |squeeze.cpp|2020-01-09|http://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
 |strongweak.cpp|2020-01-14|http://rosettacode.org/wiki/Strong_and_weak_primes|
 |tarjan.cpp|2020-03-14|http://rosettacode.org/wiki/Tarjan|
