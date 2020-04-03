@@ -53,3 +53,4 @@ See LICENSE for details.
 |trunc_primes.cpp|2020-01-17|http://rosettacode.org/wiki/Truncatable_primes|
 |unique_chars.cpp|2020-01-14|http://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprime.cpp|2020-01-23|http://rosettacode.org/wiki/Unprimeable_numbers|
+|van_eck.cpp|2020-04-03|http://rosettacode.org/wiki/Van_Eck_sequence|
