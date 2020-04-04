@@ -16,10 +16,10 @@ private:
 
 integer stirling2::get(int n, int k)
 {
-    if (k == 0 || n == 0)
-        return 0;
     if (k == n)
         return 1;
+    if (k == 0 || k > n)
+        return 0;
     auto p = std::make_pair(n, k);
     auto i = cache_.find(p);
     if (i != cache_.end())
