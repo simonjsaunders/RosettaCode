@@ -34,6 +34,7 @@ See LICENSE for details.
 |mertens.cpp|2020-03-08|http://rosettacode.org/wiki/Mertens_function|
 |mod_exp.cpp|2020-03-08|http://rosettacode.org/wiki/Modular_exponentiation|
 |niven_gap.cpp|2020-03-08|http://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
+|ordinal.cpp|2020-04-04|http://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful.cpp|2020-01-25|http://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force.cpp|2020-02-29|http://rosettacode.org/wiki/Parallel_Brute_Force|
 |ParallelBruteForce.java|2020-03-01|http://rosettacode.org/wiki/Parallel_Brute_Force|
