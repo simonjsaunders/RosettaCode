@@ -7,14 +7,11 @@ using integer = uint64_t;
 
 bool square_free(const sieve_of_eratosthenes& sieve, integer n)
 {
-    for (integer p = 2; p * p <= n; ++p)
+    if (n % 4 == 0)
+        return false;
+    for (integer p = 3; p * p <= n; p += 2)
     {
-        if (!sieve.is_prime(p))
-            continue;
-        integer m = n, count = 0;
-        for (; m % p == 0; ++count)
-            m /= p;
-        if (count > 1)
+        if (sieve.is_prime(p) && n % (p * p) == 0)
             return false;
     }
     return true;
