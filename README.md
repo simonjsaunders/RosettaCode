@@ -50,6 +50,7 @@ See LICENSE for details.
 |square_free.cpp|2020-04-03|http://rosettacode.org/wiki/Square-free_integers|
 |squeeze.cpp|2020-01-09|http://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
 |stirling1.cpp|2020-04-04|http://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
+|stirling2.cpp|2020-04-04|http://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strongweak.cpp|2020-01-14|http://rosettacode.org/wiki/Strong_and_weak_primes|
 |tarjan.cpp|2020-03-14|http://rosettacode.org/wiki/Tarjan|
 |trunc_primes.cpp|2020-01-17|http://rosettacode.org/wiki/Truncatable_primes|
