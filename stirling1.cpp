@@ -2,16 +2,19 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <gmpxx.h>
+
+using integer = mpz_class;
 
 class unsigned_stirling1
 {
 public:
-    int get(int n, int k);
+    integer get(int n, int k);
 private:
-    std::map<std::pair<int, int>, int> cache_;
+    std::map<std::pair<int, int>, integer> cache_;
 };
 
-int unsigned_stirling1::get(int n, int k)
+integer unsigned_stirling1::get(int n, int k)
 {
     if (k == 0)
         return n == 0 ? 1 : 0;
@@ -21,7 +24,7 @@ int unsigned_stirling1::get(int n, int k)
     auto i = cache_.find(p);
     if (i != cache_.end())
         return i->second;
-    int s = get(n - 1, k - 1) + (n - 1) * get(n - 1, k);
+    integer s = get(n - 1, k - 1) + (n - 1) * get(n - 1, k);
     cache_.emplace(p, s);
     return s;
 }
@@ -41,5 +44,14 @@ int main()
     unsigned_stirling1 s1;
     std::cout << "Unsigned Stirling numbers of the first kind:\n";
     print_stirling_numbers(s1, 12);
+    std::cout << "Maximum value of S1(n,k) where n == 100:\n";
+    integer max = 0;
+    for (int k = 0; k <= 100; ++k)
+    {
+        integer s = s1.get(100, k);
+        if (s > max)
+            max = s;
+    }
+    std::cout << max << '\n';
     return 0;
 }
