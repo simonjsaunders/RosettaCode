@@ -26,7 +26,7 @@ See LICENSE for details.
 |fermat.cpp|C++|2020-01-17|http://rosettacode.org/wiki/Fermat_numbers|
 |gapful.cpp|C++|2020-01-25|http://rosettacode.org/wiki/Gapful_numbers|
 |four_is_magic.cpp|C++|2020-01-17|http://rosettacode.org/wiki/Four_is_magic|
-|honeycombs|2020-03-15|http://rosettacode.org/wiki/Honeycombs#C.2B.2B|
+|honeycombs|C++|2020-03-15|http://rosettacode.org/wiki/Honeycombs#C.2B.2B|
 |ip_address.cpp|C++|2020-01-20|http://rosettacode.org/wiki/Parse_an_IP_Address|
 |kdtree.cpp|C++|2019-12-07|http://rosettacode.org/wiki/K-d_tree|
 |lah_numbers.cpp|C++|2020-04-05|http://rosettacode.org/wiki/Lah_numbers|
