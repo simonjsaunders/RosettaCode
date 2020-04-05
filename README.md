@@ -28,6 +28,7 @@ See LICENSE for details.
 |ip_address.cpp|2020-01-20|http://rosettacode.org/wiki/Parse_an_IP_Address|
 |kdtree.cpp|2019-12-07|http://rosettacode.org/wiki/K-d_tree|
 |lah_numbers.cpp|2020-04-05|http://rosettacode.org/wiki/Lah_numbers|
+|lah_numbers.pl|2020-04-05|http://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines.cpp|2020-03-29|http://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lex_sort.cpp|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year.cpp|2020-04-05|http://rosettacode.org/wiki/Long_year%3F|
