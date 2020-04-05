@@ -14,9 +14,9 @@ bool is_long_year(int year) {
 void print_long_years(int from, int to) {
     for (int year = from, count = 0; year <= to; ++year) {
         if (is_long_year(year)) {
-            if (count > 0 && count % 10 == 0)
-                std::cout << '\n';
-            std::cout << year << ' ';
+            if (count > 0)
+                std::cout << ((count % 10 == 0) ? '\n' : ' ');
+            std::cout << year;
             ++count;
         }
     }
