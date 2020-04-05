@@ -29,6 +29,7 @@ See LICENSE for details.
 |kdtree.cpp|2019-12-07|http://rosettacode.org/wiki/K-d_tree|
 |law_of_cosines.cpp|2020-03-29|http://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lex_sort.cpp|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
+|long_year.cpp|2020-04-05|http://rosettacode.org/wiki/Long_year%3F|
 |lychrel.cpp|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |mersenne_factors.cpp|2020-03-01|http://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |mertens.cpp|2020-03-08|http://rosettacode.org/wiki/Mertens_function|
