@@ -67,3 +67,4 @@ See LICENSE for details.
 |unique_chars.cpp|C++|2020-01-14|http://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprime.cpp|C++|2020-01-23|http://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck.cpp|C++|2020-04-03|http://rosettacode.org/wiki/Van_Eck_sequence|
+|van_eck.pl|Prolog|2020-04-11|http://rosettacode.org/wiki/Van_Eck_sequence|
