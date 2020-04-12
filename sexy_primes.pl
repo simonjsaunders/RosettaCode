@@ -24,27 +24,11 @@ last_n([_|List], Max, Length, Last, Last_len):-
 last_n([E|List], Max, Length, [E|Last], Last_len):-
     last_n(List, Max, Length, Last, Last_len).
 
-unsexy_prime(P):-
-    is_prime(P),
+unsexy(P):-
     P1 is P + 6,
     \+is_prime(P1),
     P2 is P - 6,
     \+is_prime(P2).
-
-unsexy_primes(Limit, [2|P]):-
-    unsexy_primes(3, Limit, P).
-
-unsexy_primes(From, To, []):-
-    From > To,
-    !.
-unsexy_primes(From, To, [From|Rest]):-
-    unsexy_prime(From),
-    !,
-    Next is From + 2,
-    unsexy_primes(Next, To, Rest).
-unsexy_primes(From, To, Rest):-
-    Next is From + 2,
-    unsexy_primes(Next, To, Rest).
 
 main(Limit):-
     Max is Limit + 6,
@@ -53,7 +37,7 @@ main(Limit):-
     print_sexy_prime_groups(3, Limit),
     print_sexy_prime_groups(4, Limit),
     print_sexy_prime_groups(5, Limit),
-    unsexy_primes(Limit, Unsexy),
+    findall(P, (is_prime(P), P =< Limit, unsexy(P)), Unsexy),
     length(Unsexy, Count),
     writef('Number of unsexy primes is %t\n', [Count]),
     last_n(Unsexy, 10, Count, Last10, _),
