@@ -1,0 +1,75 @@
+sexy_prime_group(1, N, _, [N]):-
+    is_prime(N),
+    !.
+sexy_prime_group(Size, N, Limit, [N|Group]):-
+    is_prime(N),
+    N1 is N + 6,
+    N1 =< Limit,
+    S1 is Size - 1,
+    sexy_prime_group(S1, N1, Limit, Group).
+  
+sexy_prime_groups(_, P, Limit, []):-
+    P > Limit,
+    !.
+sexy_prime_groups(Size, P, Limit, [Group|Groups]):-
+    sexy_prime_group(Size, P, Limit, Group),
+    !,
+    P1 is P + 1,
+    sexy_prime_groups(Size, P1, Limit, Groups).
+sexy_prime_groups(Size, P, Limit, Groups):-
+    P1 is P + 1,
+    sexy_prime_groups(Size, P1, Limit, Groups).
+
+print_sexy_prime_groups(Size, Limit):-
+    sexy_prime_groups(Size, 2, Limit, Groups),
+    length(Groups, Len),
+    writef('Number of groups of size %t is %t\n', [Size, Len]),
+    last_n(Groups, 5, Len, Last, Last_len),
+    writef('Last %t groups of size %t: %t\n\n', [Last_len, Size, Last]).
+
+last_n([], _, L, [], L):-!.
+last_n([_|List], Max, Length, Last, Last_len):-
+    Max < Length,
+    !,
+    Len1 is Length - 1,
+    last_n(List, Max, Len1, Last, Last_len).
+last_n([E|List], Max, Length, [E|Last], Last_len):-
+    last_n(List, Max, Length, Last, Last_len).
+
+unsexy_prime(P):-
+    is_prime(P),
+    P1 is P + 6,
+    \+is_prime(P1),
+    P2 is P - 6,
+    \+is_prime(P2).
+
+unsexy_primes(Limit, [2|P]):-
+    unsexy_primes(3, Limit, P).
+
+unsexy_primes(From, To, []):-
+    From > To,
+    !.
+unsexy_primes(From, To, [From|Rest]):-
+    unsexy_prime(From),
+    !,
+    Next is From + 2,
+    unsexy_primes(Next, To, Rest).
+unsexy_primes(From, To, Rest):-
+    Next is From + 2,
+    unsexy_primes(Next, To, Rest).
+
+main(Limit):-
+    Max is Limit + 6,
+    find_prime_numbers(Max),
+    print_sexy_prime_groups(2, Limit),
+    print_sexy_prime_groups(3, Limit),
+    print_sexy_prime_groups(4, Limit),
+    print_sexy_prime_groups(5, Limit),
+    unsexy_primes(Limit, Unsexy),
+    length(Unsexy, Count),
+    writef('Number of unsexy primes is %t\n', [Count]),
+    last_n(Unsexy, 10, Count, Last10, _),
+    writef('Last 10 unsexy primes: %t', [Last10]).
+
+main:-
+    main(1000035).

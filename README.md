@@ -51,6 +51,7 @@ See LICENSE for details.
 |primorial_primes.cpp|C++|2020-01-27|http://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |safe_primes.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |sexy_primes.cpp|C++|2020-01-11|http://rosettacode.org/wiki/Sexy_primes|
+|sexy_primes.pl|Prolog|2020-04-12|http://rosettacode.org/wiki/Sexy_primes|
 |smarandache.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sort_oid.c|C|2020-01-26|http://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |sprimediff.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Successive_prime_differences|
