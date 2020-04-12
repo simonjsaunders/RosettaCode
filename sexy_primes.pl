@@ -7,18 +7,9 @@ sexy_prime_group(Size, N, Limit, [N|Group]):-
     N1 =< Limit,
     S1 is Size - 1,
     sexy_prime_group(S1, N1, Limit, Group).
-  
-sexy_prime_groups(_, [], _, []):-
-    !.
-sexy_prime_groups(Size, [P|Primes], Limit, [Group|Groups]):-
-    sexy_prime_group(Size, P, Limit, Group),
-    !,
-    sexy_prime_groups(Size, Primes, Limit, Groups).
-sexy_prime_groups(Size, [_|Primes], Limit, Groups):-
-    sexy_prime_groups(Size, Primes, Limit, Groups).
 
-print_sexy_prime_groups(Size, Primes, Limit):-
-    sexy_prime_groups(Size, Primes, Limit, Groups),
+print_sexy_prime_groups(Size, Limit):-
+    findall(G, (is_prime(P), P =< Limit, sexy_prime_group(Size, P, Limit, G)), Groups),
     length(Groups, Len),
     writef('Number of groups of size %t is %t\n', [Size, Len]),
     last_n(Groups, 5, Len, Last, Last_len),
@@ -58,11 +49,10 @@ unsexy_primes(From, To, Rest):-
 main(Limit):-
     Max is Limit + 6,
     find_prime_numbers(Max),
-    findall(P, (is_prime(P), P =< Limit), Primes),
-    print_sexy_prime_groups(2, Primes, Limit),
-    print_sexy_prime_groups(3, Primes, Limit),
-    print_sexy_prime_groups(4, Primes, Limit),
-    print_sexy_prime_groups(5, Primes, Limit),
+    print_sexy_prime_groups(2, Limit),
+    print_sexy_prime_groups(3, Limit),
+    print_sexy_prime_groups(4, Limit),
+    print_sexy_prime_groups(5, Limit),
     unsexy_primes(Limit, Unsexy),
     length(Unsexy, Count),
     writef('Number of unsexy primes is %t\n', [Count]),
