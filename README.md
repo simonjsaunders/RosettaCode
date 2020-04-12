@@ -64,6 +64,7 @@ See LICENSE for details.
 |tarjan.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Tarjan|
 |totient.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Totient_function|
 |trunc_primes.cpp|C++|2020-01-17|http://rosettacode.org/wiki/Truncatable_primes|
+|trunc_primes.pl|Prolog|2020-04-12|http://rosettacode.org/wiki/Truncatable_primes|
 |unique_chars.cpp|C++|2020-01-14|http://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprime.cpp|C++|2020-01-23|http://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck.cpp|C++|2020-04-03|http://rosettacode.org/wiki/Van_Eck_sequence|
