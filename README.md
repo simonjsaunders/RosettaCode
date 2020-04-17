@@ -18,6 +18,7 @@ See LICENSE for details.
 |Abbreviations.java|Java|2020-02-29|http://rosettacode.org/wiki/Abbreviations,_simple|
 |abbrev_easy.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Abbreviations,_easy|
 |all_same_char.cpp|C++|2020-01-14|http://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
+|animation|C++|2020-04-17|http://rosettacode.org/wiki/Animation|
 |assoc_merge.cpp|C++|2020-01-20|http://rosettacode.org/wiki/Associative_array/Merging|
 |bell.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Bell_numbers|
 |collapse.cpp|C++|2020-01-08|http://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
