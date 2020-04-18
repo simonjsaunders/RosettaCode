@@ -43,6 +43,7 @@ See LICENSE for details.
 |mod_exp.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Modular_exponentiation|
 |niven_gap.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |ordinal.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|ordinal.pl|Prolog|2020-04-18|http://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful.cpp|C++|2020-01-25|http://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force.cpp|C++|2020-02-29|http://rosettacode.org/wiki/Parallel_Brute_Force|
 |ParallelBruteForce.java|Java|2020-03-01|http://rosettacode.org/wiki/Parallel_Brute_Force|
