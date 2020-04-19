@@ -38,6 +38,7 @@ See LICENSE for details.
 |lex_sort.cpp|C++|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year.cpp|C++|2020-04-05|http://rosettacode.org/wiki/Long_year%3F|
 |lychrel.cpp|C++|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
+|mac_vendor_lookup.cpp|C++|2020-04-19|http://rosettacode.org/wiki/MAC_Vendor_Lookup|
 |mersenne_factors.cpp|C++|2020-03-01|http://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |mertens.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Mertens_function|
 |mertens.pl|Prolog|2020-04-13|http://rosettacode.org/wiki/Mertens_function|
