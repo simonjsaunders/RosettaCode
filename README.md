@@ -25,6 +25,7 @@ See LICENSE for details.
 |collapse.cpp|C++|2020-01-08|http://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |egyptian.cpp|C++|2020-01-11|http://rosettacode.org/wiki/Egyptian_fractions|
 |egyptian.pl|Prolog|2020-04-10|http://rosettacode.org/wiki/Egyptian_fractions|
+|element_wise.cpp|C++|2020-04-24|http://rosettacode.org/wiki/Element-wise_operations|
 |farey.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Farey_sequence|
 |fermat.cpp|C++|2020-01-17|http://rosettacode.org/wiki/Fermat_numbers|
 |gapful.cpp|C++|2020-01-25|http://rosettacode.org/wiki/Gapful_numbers|
