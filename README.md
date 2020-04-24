@@ -23,6 +23,7 @@ See LICENSE for details.
 |barnsley_fern.cpp|C++|2020-04-17|http://rosettacode.org/wiki/Barnsley_fern|
 |bell.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Bell_numbers|
 |collapse.cpp|C++|2020-01-08|http://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
+|conjugate_transpose.cpp|C++|2020-04-24|http://rosettacode.org/wiki/Conjugate_transpose|
 |egyptian.cpp|C++|2020-01-11|http://rosettacode.org/wiki/Egyptian_fractions|
 |egyptian.pl|Prolog|2020-04-10|http://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise.cpp|C++|2020-04-24|http://rosettacode.org/wiki/Element-wise_operations|
