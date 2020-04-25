@@ -44,12 +44,6 @@ public:
         assert(column < columns_);
         return row_data(row)[column];
     }
-
-    friend bool operator==(const matrix& a, const matrix& b) {
-        return a.rows_ == b.rows_ && a.columns_ == b.columns_ &&
-               a.elements_ == b.elements_;
-    }
-
 private:
     size_t rows_;
     size_t columns_;
