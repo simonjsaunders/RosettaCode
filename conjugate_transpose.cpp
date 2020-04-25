@@ -11,8 +11,10 @@ public:
 
     complex_matrix(size_t rows, size_t columns)
         : rows_(rows), columns_(columns), elements_(rows * columns) {}
+
     complex_matrix(size_t rows, size_t columns, element_type value)
         : rows_(rows), columns_(columns), elements_(rows * columns, value) {}
+
     complex_matrix(size_t rows, size_t columns,
         const std::initializer_list<std::initializer_list<element_type>>& values)
         : rows_(rows), columns_(columns), elements_(rows * columns) {
