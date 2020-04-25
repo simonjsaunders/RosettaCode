@@ -29,9 +29,6 @@ public:
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
 
-    element_type* data() { return &elements_[0]; }
-    const element_type* data() const { return &elements_[0]; }
-
     element_type* row_data(size_t row) {
         assert(row < rows_);
         return &elements_[row * columns_];
