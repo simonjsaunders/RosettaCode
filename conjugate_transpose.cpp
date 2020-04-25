@@ -10,11 +10,19 @@ public:
     using element_type = std::complex<scalar_type>;
 
     complex_matrix(size_t rows, size_t columns)
-        : rows_(rows), columns_(columns) {
-        elements_.resize(rows * columns);
-    }
+        : rows_(rows), columns_(columns), elements_(rows * columns) {}
     complex_matrix(size_t rows, size_t columns, element_type value)
         : rows_(rows), columns_(columns), elements_(rows * columns, value) {}
+    complex_matrix(size_t rows, size_t columns,
+        const std::initializer_list<std::initializer_list<element_type>>& values)
+        : rows_(rows), columns_(columns), elements_(rows * columns) {
+        assert(values.size() <= rows_);
+        size_t i = 0;
+        for (const auto& row : values) {
+            assert(row.size() <= columns_);
+            std::copy(begin(row), end(row), row_data(i++));
+        }
+    }
 
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
@@ -44,6 +52,7 @@ public:
         return a.rows_ == b.rows_ && a.columns_ == b.columns_ &&
                a.elements_ == b.elements_;
     }
+
 private:
     size_t rows_;
     size_t columns_;
@@ -158,40 +167,23 @@ void test(const complex_matrix<scalar_type>& matrix) {
 }
 
 int main() {
-    complex_matrix<double> matrix1(3, 3);
-    complex_matrix<double> matrix2(3, 3);
-    complex_matrix<double> matrix3(3, 3);
+    using matrix = complex_matrix<double>;
 
-    matrix1.at(0, 0) = {2, 0};
-    matrix1.at(0, 1) = {2, 1};
-    matrix1.at(0, 2) = {4, 0};
-    matrix1.at(1, 0) = {2, -1};
-    matrix1.at(1, 1) = {3, 0};
-    matrix1.at(1, 2) = {0, 1};
-    matrix1.at(2, 0) = {4, 0};
-    matrix1.at(2, 1) = {0, -1};
-    matrix1.at(2, 2) = {1, 0};
+    matrix matrix1(3, 3,
+                   {{{2, 0}, {2, 1}, {4, 0}},
+                    {{2, -1}, {3, 0}, {0, 1}},
+                    {{4, 0}, {0, -1}, {1, 0}}});
 
     double n = std::sqrt(0.5);
-    matrix2.at(0, 0) = {n, 0};
-    matrix2.at(0, 1) = {n, 0};
-    matrix2.at(0, 2) = {0, 0};
-    matrix2.at(1, 0) = {0, -n};
-    matrix2.at(1, 1) = {0, n};
-    matrix2.at(1, 2) = {0, 0};
-    matrix2.at(2, 0) = {0, 0};
-    matrix2.at(2, 1) = {0, 0};
-    matrix2.at(2, 2) = {0, 1};
+    matrix matrix2(3, 3,
+                   {{{n, 0}, {n, 0}, {0, 0}},
+                    {{0, -n}, {0, n}, {0, 0}},
+                    {{0, 0}, {0, 0}, {0, 1}}});
 
-    matrix3.at(0, 0) = {2, 2};
-    matrix3.at(0, 1) = {3, 1};
-    matrix3.at(0, 2) = {-3, 5};
-    matrix3.at(1, 0) = {2, -1};
-    matrix3.at(1, 1) = {4, 1};
-    matrix3.at(1, 2) = {0, 0};
-    matrix3.at(2, 0) = {7, -5};
-    matrix3.at(2, 1) = {1, -4};
-    matrix3.at(2, 2) = {1, 0};
+    matrix matrix3(3, 3,
+                   {{{2, 2}, {3, 1}, {-3, 5}},
+                    {{2, -1}, {4, 1}, {0, 0}},
+                    {{7, -5}, {1, -4}, {1, 0}}});
 
     test(matrix1);
     std::cout << '\n';
