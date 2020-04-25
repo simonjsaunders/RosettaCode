@@ -18,8 +18,10 @@ public:
 
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
+
     element_type* data() { return &elements_[0]; }
     const element_type* data() const { return &elements_[0]; }
+
     element_type* row_data(size_t row) {
         assert(row < rows_);
         return &elements_[row * columns_];
@@ -30,14 +32,12 @@ public:
     }
 
     const element_type& at(size_t row, size_t column) const {
-        assert(row < rows_);
         assert(column < columns_);
-        return elements_[index(row, column)];
+        return row_data(row)[column];
     }
     element_type& at(size_t row, size_t column) {
-        assert(row < rows_);
         assert(column < columns_);
-        return elements_[index(row, column)];
+        return row_data(row)[column];
     }
 
     friend bool operator==(const complex_matrix& a, const complex_matrix& b) {
@@ -45,9 +45,6 @@ public:
                a.elements_ == b.elements_;
     }
 private:
-    size_t index(size_t row, size_t column) const {
-        return row * columns_ + column;
-    }
     size_t rows_;
     size_t columns_;
     std::vector<element_type> elements_;
