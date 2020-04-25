@@ -22,6 +22,7 @@ See LICENSE for details.
 |assoc_merge.cpp|C++|2020-01-20|http://rosettacode.org/wiki/Associative_array/Merging|
 |barnsley_fern.cpp|C++|2020-04-17|http://rosettacode.org/wiki/Barnsley_fern|
 |bell.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Bell_numbers|
+|cholesky.cpp|C++|2020-04-25|http://rosettacode.org/wiki/Cholesky_decomposition|
 |collapse.cpp|C++|2020-01-08|http://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |conjugate_transpose.cpp|C++|2020-04-24|http://rosettacode.org/wiki/Conjugate_transpose|
 |egyptian.cpp|C++|2020-01-11|http://rosettacode.org/wiki/Egyptian_fractions|
