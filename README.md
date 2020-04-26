@@ -39,6 +39,7 @@ See LICENSE for details.
 |lah_numbers.cpp|C++|2020-04-05|http://rosettacode.org/wiki/Lah_numbers|
 |lah_numbers.pl|Prolog|2020-04-05|http://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines.cpp|C++|2020-03-29|http://rosettacode.org/wiki/Law_of_cosines_-_triples|
+|lcp.pl|Prolog|2020-04-26|http://rosettacode.org/wiki/Longest_common_prefix|
 |lex_sort.cpp|C++|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year.cpp|C++|2020-04-05|http://rosettacode.org/wiki/Long_year%3F|
 |lu_decompose.cpp|C++|2020-04-25|http://rosettacode.org/wiki/LU_decomposition|
