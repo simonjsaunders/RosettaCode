@@ -14,6 +14,7 @@ See LICENSE for details.
 
 |File|Language|Date Submitted|Rosetta Code URL|
 |----|--------|--------------|----------------|
+|abbrev_auto.pl|Prolog|2020-04-26|http://rosettacode.org/wiki/Abbreviations,_automatic|
 |abbrev_simple.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Abbreviations,_simple|
 |Abbreviations.java|Java|2020-02-29|http://rosettacode.org/wiki/Abbreviations,_simple|
 |abbrev_easy.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Abbreviations,_easy|
