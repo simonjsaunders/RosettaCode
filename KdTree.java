@@ -4,8 +4,8 @@ public class KdTree {
     private int dimensions_;
     private Node root_ = null;
     private Node best_ = null;
-    double bestDistance_ = 0;
-    int visited_ = 0;
+    private double bestDistance_ = 0;
+    private int visited_ = 0;
     
     public KdTree(int dimensions, List<Node> nodes) {
         dimensions_ = dimensions;
