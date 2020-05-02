@@ -36,7 +36,7 @@ is_gapful(N):-
 is_gapful(N, M):-
     M < 10,
     !,
-    0 is N mod (N mod 10 + 10 * (M mod 10)).
+    0 is N mod (N mod 10 + 10 * M).
 is_gapful(N, M):-
     M1 is M // 10,
     is_gapful(N, M1).
@@ -81,7 +81,7 @@ print_numbers(First, Last, Numbers):-
 print_numbers(_, _, 10, _):-
     !.
 print_numbers(First, Last, Digit, [N|Numbers]):-
-    writef("%w: ", [Digit]),
+    writef("%w:", [Digit]),
     print_numbers1(First, Last, 1, N),
     Next_digit is Digit + 1,
     print_numbers(First, Last, Next_digit, Numbers).

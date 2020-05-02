@@ -48,7 +48,7 @@ bool gapful(integer n)
     integer m = n;
     while (m >= 10)
         m /= 10;
-    return n % ((n % 10) + 10 * (m % 10)) == 0;
+    return n % (n % 10 + 10 * m) == 0;
 }
 
 template<size_t len>
