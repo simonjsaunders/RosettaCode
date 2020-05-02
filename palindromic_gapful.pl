@@ -100,11 +100,8 @@ print_numbers1(First, Last, I, [N|Numbers]):-
     J is I + 1,
     print_numbers1(First, Last, J, Numbers).
 
-print_palindromic_gapful_numbers(N):-
-    find_palindromic_gapful_numbers(N, Numbers),
+main:-
+    find_palindromic_gapful_numbers(1000, Numbers),
     print_numbers(1, 20, Numbers),
     print_numbers(86, 100, Numbers),
     print_numbers(991, 1000, Numbers).
-
-main:-
-    print_palindromic_gapful_numbers(1000).
