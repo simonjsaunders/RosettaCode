@@ -5,7 +5,7 @@ import java.util.*;
 // See https://en.wikipedia.org/wiki/Quickselect
 //
 public class QuickSelect {
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     public static <T> T select(List<T> list, int n, Comparator<? super T> cmp) {
         return select(list, 0, list.size() - 1, n, cmp);
