@@ -67,6 +67,7 @@ See LICENSE for details.
 |prime_desc.cpp|C++|2020-01-18|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |PrimeDescendants.java|Java|2020-02-29|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen.cpp|C++|2020-03-01|http://rosettacode.org/wiki/Extensible_prime_generator|
+|prime_partition.pl|Prolog|2020-05-03|http://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |primorial.cpp|C++|2020-01-27|http://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes.cpp|C++|2020-01-27|http://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |safe_primes.cpp|C++|2020-01-13|http://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
