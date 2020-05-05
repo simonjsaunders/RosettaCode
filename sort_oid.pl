@@ -5,10 +5,7 @@ main:-
     "1.3.6.1.4.1.11150.3.4.0.1",
     "1.3.6.1.4.1.11.2.17.19.3.4.0.1",
     "1.3.6.1.4.1.11150.3.4.0"], Sorted_list),
-    member(oid(_, Oid), Sorted_list),
-    writeln(Oid),
-    fail.
-main.
+    foreach(member(oid(_, Oid), Sorted_list), writeln(Oid)).
 
 sort_oid_list(Oid_list, Sorted_list):-
     parse_oid_list(Oid_list, Parsed),
