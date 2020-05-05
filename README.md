@@ -75,6 +75,7 @@ See LICENSE for details.
 |sexy_primes.pl|Prolog|2020-04-12|http://rosettacode.org/wiki/Sexy_primes|
 |smarandache.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sort_oid.c|C|2020-01-26|http://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
+|sort_oid.pl|Prolog|2020-05-05|http://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |sprimediff.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Successive_prime_differences|
 |square_free.cpp|C++|2020-04-03|http://rosettacode.org/wiki/Square-free_integers|
 |squeeze.cpp|C++|2020-01-09|http://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
