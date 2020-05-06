@@ -55,6 +55,7 @@ See LICENSE for details.
 |mertens.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Mertens_function|
 |mertens.pl|Prolog|2020-04-13|http://rosettacode.org/wiki/Mertens_function|
 |mod_exp.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Modular_exponentiation|
+|next_highest_int.cpp|C++|2020-05-06|http://rosettacode.org/wiki/Next_highest_int_from_digits|
 |niven_gap.cpp|C++|2020-03-08|http://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |ordinal.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |ordinal.pl|Prolog|2020-04-18|http://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
