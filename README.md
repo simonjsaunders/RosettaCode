@@ -4,7 +4,7 @@ Rosetta Code Contributions
 This repository contains example code submitted to Rosetta Code by
 Simon J. Saunders (user name simonjsaunders). Here you will find example programs
 written in C, C++, Java and Prolog. For the most part they are designed
-to solve a specific task and probably aren't reusable.
+to solve a specific task and aren't necessarily reusable.
 
 The code presented here is not intended to be of production quality.
 It is meant for expository purposes only.
