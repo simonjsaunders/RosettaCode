@@ -53,7 +53,7 @@ bool sieve_create(sieve* s, uint32_t limit) {
     bit_array_set(&s->not_prime, 1, true);
     for (uint32_t p = 2; p * p <= limit; ++p) {
         if (bit_array_get(&s->not_prime, p) == false) {
-            for (size_t q = p * p; q <= limit; q += p)
+            for (uint32_t q = p * p; q <= limit; q += p)
                 bit_array_set(&s->not_prime, q, true);
         }
     }
