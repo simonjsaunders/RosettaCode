@@ -124,5 +124,6 @@ int main() {
     print_prime_partition(&s, 22699, 3);
     print_prime_partition(&s, 22699, 4);
     print_prime_partition(&s, 40355, 3);
+    sieve_destroy(&s);
     return 0;
 }
