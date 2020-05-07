@@ -95,3 +95,4 @@ See LICENSE for details.
 |unprime.cpp|C++|2020-01-23|http://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck.cpp|C++|2020-04-03|http://rosettacode.org/wiki/Van_Eck_sequence|
 |van_eck.pl|Prolog|2020-04-11|http://rosettacode.org/wiki/Van_Eck_sequence|
+|word-freq.pl|Prolog|2020-05-07|http://rosettacode.org/wiki/Word_frequency|
