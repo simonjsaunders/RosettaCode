@@ -8,7 +8,6 @@ print_top_words(File, N):-
     writef("Top %w words:\nRank\tCount\tWord\n", [N]),
     print_top_words(Top_words, N, 1).
 
-lower_case([], []):-!.
 lower_case([_], []):-!.
 lower_case([_, Word|Words], [Lower - 1|Rest]):-
     string_lower(Word, Lower),
