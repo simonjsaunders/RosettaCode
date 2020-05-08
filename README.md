@@ -48,6 +48,7 @@ See LICENSE for details.
 |lex_sort.cpp|C++|2020-03-07|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |lex_sort.pl|Prolog|2020-04-26|http://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year.cpp|C++|2020-04-05|http://rosettacode.org/wiki/Long_year%3F|
+|long_year.pl|Prolog|2020-05-08|http://rosettacode.org/wiki/Long_year%3F|
 |lu_decompose.cpp|C++|2020-04-25|http://rosettacode.org/wiki/LU_decomposition|
 |lychrel.cpp|C++|2020-01-22|http://rosettacode.org/wiki/Lychrel_numbers|
 |mac_vendor_lookup.cpp|C++|2020-04-19|http://rosettacode.org/wiki/MAC_Vendor_Lookup|
