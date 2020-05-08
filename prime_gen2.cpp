@@ -24,7 +24,7 @@ private:
 // determined by the increment parameter.
 prime_generator::prime_generator(size_t initial_limit, size_t increment)
     : limit_(std::max(size_t(3), 1 + 2*(initial_limit/2))),
-    increment_(std::max(size_t(16), increment)) {
+    increment_(std::max(size_t(16), 2*((increment + 1)/2))) {
     find_primes(3);
 }
 
