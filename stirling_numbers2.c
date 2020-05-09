@@ -26,9 +26,9 @@ int* stirling_cache_get(stirling_cache* sc, int n, int k) {
 }
 
 int stirling_number2(stirling_cache* sc, int n, int k) {
-    if (k == 0)
-        return n == 0 ? 1 : 0;
-    if (k > n)
+    if (k == n)
+        return 1;
+    if (k == 0 || k > n)
         return 0;
     int* value = stirling_cache_get(sc, n, k);
     if (value == NULL) {
