@@ -86,10 +86,11 @@ See LICENSE for details.
 |square_free.cpp|C++|2020-04-03|http://rosettacode.org/wiki/Square-free_integers|
 |squeeze.cpp|C++|2020-01-09|http://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
 |stirling1.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
-|stirling_numbers1.c|C|2020-05-09|http://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling1.pl|Prolog|2020-04-05|http://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
+|stirling_numbers1.c|C|2020-05-09|http://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
-|stirling2.pl|Prolog|2020-04-05|http://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
+|stirling_numbers2.c|C|2020-05-09|http://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
+|stirling2.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strongweak.cpp|C++|2020-01-14|http://rosettacode.org/wiki/Strong_and_weak_primes|
 |tarjan.cpp|C++|2020-03-14|http://rosettacode.org/wiki/Tarjan|
 |totient.cpp|C++|2020-04-04|http://rosettacode.org/wiki/Totient_function|
