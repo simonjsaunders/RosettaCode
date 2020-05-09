@@ -70,6 +70,7 @@ See LICENSE for details.
 |PrimeDescendants.java|Java|2020-02-29|http://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen.cpp|C++|2020-03-01|http://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_gen2.cpp|C++|2020-05-08|http://rosettacode.org/wiki/Extensible_prime_generator|
+|PrimeGenerator.java|Java|2020-05-09|http://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_partition.c|C|2020-05-06|http://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_partition.pl|Prolog|2020-05-03|http://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |primorial.cpp|C++|2020-01-27|http://rosettacode.org/wiki/Primorial_numbers|
