@@ -1,6 +1,6 @@
 // Reference: https://en.wikipedia.org/wiki/Lah_number#Identities_and_relations
 
-#include <cstdint>
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
 #include <map>
@@ -30,7 +30,12 @@ integer unsigned_lah_numbers::get(int n, int k) {
 }
 
 void print_lah_numbers(unsigned_lah_numbers& uln, int n) {
+    std::cout << "Unsigned Lah numbers up to L(12,12):\nn/k";
+    for (int j = 1; j <= n; ++j)
+        std::cout << std::setw(11) << j;
+    std::cout << '\n';
     for (int i = 1; i <= n; ++i) {
+        std::cout << std::setw(2) << i << ' ';
         for (int j = 1; j <= i; ++j)
             std::cout << std::setw(11) << uln.get(i, j);
         std::cout << '\n';
@@ -39,15 +44,11 @@ void print_lah_numbers(unsigned_lah_numbers& uln, int n) {
 
 int main() {
     unsigned_lah_numbers uln;
-    std::cout << "Unsigned Lah numbers up to L(12,12):\n";
     print_lah_numbers(uln, 12);
     std::cout << "Maximum value of L(n,k) where n == 100:\n";
     integer max = 0;
-    for (int k = 0; k <= 100; ++k) {
-        integer s = uln.get(100, k);
-        if (s > max)
-            max = s;
-    }
+    for (int k = 0; k <= 100; ++k)
+        max = std::max(max, uln.get(100, k));
     std::cout << max << '\n';
     return 0;
 }
