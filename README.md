@@ -110,7 +110,7 @@ See LICENSE for details.
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-05-02|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
-|lcp.Prolog|2020-04-26|https://rosettacode.org/wiki/Longest_common_prefix|
+|lcp|2020-04-26|https://rosettacode.org/wiki/Longest_common_prefix|
 |lex_sort|2020-04-26|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-05-08|https://rosettacode.org/wiki/Long_year%3F|
 |mertens|2020-04-13|https://rosettacode.org/wiki/Mertens_function|
