@@ -22,7 +22,7 @@ inline bool sieve_of_eratosthenes::is_prime(size_t n) const {
 
 inline sieve_of_eratosthenes::sieve_of_eratosthenes(size_t limit) {
     limit = std::max(size_t(3), 1 + 2*(limit/2));
-    odd_prime_.resize((limit - 1)/2, true);
+    odd_prime_.resize(limit/2, true);
     for (size_t p = 3; p * p <= limit; p += 2) {
         if (odd_prime_[p/2 - 1]) {
             size_t inc = 2 * p;
