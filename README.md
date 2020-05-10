@@ -103,9 +103,9 @@ See LICENSE for details.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
-|abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Attractive_numbers|
+|abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Abbreviations,_automatic|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
-|attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Abbreviations,_automatic|
+|attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Attractive_numbers|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
