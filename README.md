@@ -99,6 +99,7 @@ See LICENSE for details.
 |trunc_primes.pl|Prolog|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |unique_chars.cpp|C++|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprime.cpp|C++|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
+|unprimeable.c|C|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck.cpp|C++|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
 |van_eck.pl|Prolog|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word-freq.pl|Prolog|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
