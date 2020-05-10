@@ -35,8 +35,8 @@ cross_out(S, N, _):-
 cross_out(S, N, P):-
     retract(is_prime(S)),
     !,
-    Q is S + P,
+    Q is S + 2 * P,
     cross_out(Q, N, P).
 cross_out(S, N, P):-
-    Q is S + P,
+    Q is S + 2 * P,
     cross_out(Q, N, P).
