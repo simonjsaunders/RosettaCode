@@ -103,7 +103,8 @@ See LICENSE for details.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
-|abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Abbreviations,_automatic|
+|abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Attractive_numbers|
+|attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Abbreviations,_automatic|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
