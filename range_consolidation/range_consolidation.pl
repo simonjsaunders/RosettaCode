@@ -11,17 +11,12 @@ normalize([r(X, Y)|Ranges], [r(Min, Max)|Normalized]):-
 merge([], []):-!.
 merge([Range], [Range]):-!.
 merge([r(Min1, Max1), r(Min2, Max2)|Rest], Merged):-
-    overlap(Min1, Max1, Min2, Max2),
+    Min2 =< Max1,
     !,
-    Min is min(Min1, Min2),
     Max is max(Max1, Max2),
-    merge([r(Min, Max)|Rest], Merged).
+    merge([r(Min1, Max)|Rest], Merged).
 merge([Range|Ranges], [Range|Merged]):-
     merge(Ranges, Merged).
-
-overlap(Min1, Max1, Min2, Max2):-
-    Min1 =< Max2,
-    Min2 =< Max1.
 
 write_range(r(Min, Max)):-
     writef('[%w, %w]', [Min, Max]).
@@ -29,8 +24,7 @@ write_range(r(Min, Max)):-
 write_ranges([]):-!.
 write_ranges([Range]):-
     !,
-    write_range(Range),
-    nl.
+    write_range(Range).
 write_ranges([Range|Ranges]):-
     write_range(Range),
     write(', '),
@@ -45,4 +39,5 @@ test_case([r(1, 3), r(-6, -1), r(-4, -5), r(8, 2), r(-6, -6)]).
 main:-
     forall(test_case(Ranges),
            (consolidate_ranges(Ranges, Consolidated),
-            write_ranges(Consolidated))).
+            write_ranges(Ranges), write(' -> '),
+            write_ranges(Consolidated), nl)).
