@@ -117,6 +117,7 @@ See LICENSE for details.
 |ordinal|2020-04-18|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful|2020-05-02|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |prime_partition|2020-05-03|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
+|range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |sexy_primes|2020-04-12|https://rosettacode.org/wiki/Sexy_primes|
 |sort_oid|2020-05-05|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
