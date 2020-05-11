@@ -86,7 +86,7 @@ bool kronecker_fractal(const char* fileName, const matrix<unsigned char>& m, int
 int main() {
     matrix<unsigned char> matrix1(3, 3, {{0,1,0}, {1,1,1}, {0,1,0}});
     matrix<unsigned char> matrix2(3, 3, {{1,1,1}, {1,0,1}, {1,1,1}});
-    matrix<unsigned char> matrix3(2, 2, {{1,1},{0,1}});
+    matrix<unsigned char> matrix3(2, 2, {{1,1}, {0,1}});
     kronecker_fractal("vicsek.png", matrix1, 5);
     kronecker_fractal("sierpinski_carpet.png", matrix2, 5);
     kronecker_fractal("sierpinski_triangle.png", matrix3, 8);
