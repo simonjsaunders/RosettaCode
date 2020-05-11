@@ -20,6 +20,7 @@ See LICENSE for details.
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|palindrome_dates|2020-05-11|http://rosettacode.org/wiki/Palindrome_dates|
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |sort_oid|2020-01-26|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
