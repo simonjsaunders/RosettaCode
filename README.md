@@ -54,6 +54,7 @@ See LICENSE for details.
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |kdtree|2019-12-07|https://rosettacode.org/wiki/K-d_tree|
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
+|kronecker_fractals|2020-05-11|https://rosettacode.org/wiki/Kronecker_product_based_fractals|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
