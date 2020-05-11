@@ -65,7 +65,6 @@ matrix<scalar_type> kronecker_product(const matrix<scalar_type>& a,
 template <typename scalar_type>
 void print(std::ostream& out, const matrix<scalar_type>& a) {
     size_t rows = a.rows(), columns = a.columns();
-    out << std::fixed << std::setprecision(5);
     for (size_t row = 0; row < rows; ++row) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
