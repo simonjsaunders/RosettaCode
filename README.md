@@ -85,6 +85,7 @@ See LICENSE for details.
 |stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
+|sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
