@@ -3,7 +3,7 @@
 #include <boost/date_time/gregorian/gregorian.hpp>
 
 bool is_palindrome(const std::string& str) {
-    for (size_t i = 0, j = str.size(); i < j; ++i, --j) {
+    for (size_t i = 0, j = str.size(); i + 1 < j; ++i, --j) {
         if (str[i] != str[j - 1])
             return false;
     }
