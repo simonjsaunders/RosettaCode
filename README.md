@@ -19,6 +19,7 @@ See LICENSE for details.
 |---------|--------------|----------------|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
+|range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |sort_oid|2020-01-26|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |smarandache|2020-05-06|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |stirling1|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
