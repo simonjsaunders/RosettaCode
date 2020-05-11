@@ -11,24 +11,22 @@ void normalize_ranges(iterator begin, iterator end) {
         if (i->second < i->first)
             std::swap(i->first, i->second);
     }
-}
-
-template <typename range_type>
-bool overlap(const range_type& range1, const range_type& range2) {
-    return range1.first <= range2.second && range2.first <= range1.second;
+    std::sort(begin, end);
 }
 
 template <typename iterator>
 iterator merge_ranges(iterator begin, iterator end) {
-    for (iterator i = begin; i != end; ) {
+    for (iterator i = begin; i != end; ++i) {
         iterator j = i;
-        if (++j != end && j->first <= i->second) {
+        int count = 0;
+        while (++j != end && j->first <= i->second) {
             i->second = std::max(i->second, j->second);
-            for (iterator k = j; ++k != end; )
-                *j++ = std::move(*k);
-            --end;
-        } else {
-            ++i;
+            ++count;
+        }
+        if (count > 0) {
+            iterator k = i;
+            std::move(j, end, ++k);
+            std::advance(end, -count);
         }
     }
     return end;
@@ -37,12 +35,11 @@ iterator merge_ranges(iterator begin, iterator end) {
 template <typename iterator>
 iterator consolidate_ranges(iterator begin, iterator end) {
     normalize_ranges(begin, end);
-    std::sort(begin, end);
     return merge_ranges(begin, end);
 }
 
-template <typename value_type>
-void print_range(std::ostream& out, const std::pair<value_type, value_type>& range) {
+template <typename pair>
+void print_range(std::ostream& out, const pair& range) {
     out << '[' << range.first << ", " << range.second << ']';
 }
 
@@ -58,8 +55,7 @@ void print_ranges(std::ostream& out, iterator begin, iterator end) {
 }
 
 int main() {
-    using range = std::pair<double, double>;
-    std::vector<range> test_cases[] = {
+    std::vector<std::pair<double, double>> test_cases[] = {
         { {1.1, 2.2} },
         { {6.1, 7.2}, {7.2, 8.3} },
         { {4, 3}, {2, 1} },
