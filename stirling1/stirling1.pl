@@ -31,9 +31,8 @@ print_stirling_numbers_up_to(M):-
 	fail.
 print_stirling_numbers_up_to(_).
 
-max_stirling1(N, M):-
-	findall(L, (between(1, N, K), stirling1(N, K, L)), List),
-	max_list(List, M).
+max_stirling1(N, Max):-
+    aggregate_all(max(L), (between(1, N, K), stirling1(N, K, L)), Max).
 
 main:-
 	writeln('Unsigned Stirling numbers of the first kind up to S1(12,12):'),

@@ -31,9 +31,8 @@ print_stirling_numbers_up_to(M):-
 	fail.
 print_stirling_numbers_up_to(_).
 
-max_stirling2(N, M):-
-	findall(L, (between(1, N, K), stirling2(N, K, L)), List),
-	max_list(List, M).
+max_stirling2(N, Max):-
+    aggregate_all(max(L), (between(1, N, K), stirling2(N, K, L)), Max).
 
 main:-
 	writeln('Stirling numbers of the second kind up to S2(12,12):'),

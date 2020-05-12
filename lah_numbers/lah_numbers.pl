@@ -33,9 +33,8 @@ print_unsigned_lah_numbers:-
 	fail.
 print_unsigned_lah_numbers.
 
-max_unsigned_lah_number(N, M):-
-	findall(L, (between(1, N, K), unsigned_lah_number(N, K, L)), List),
-	max_list(List, M).
+max_unsigned_lah_number(N, Max):-
+    aggregate_all(max(L), (between(1, N, K), unsigned_lah_number(N, K, L)), Max).
 
 main:-
 	writeln('Unsigned Lah numbers up to L(12,12):'),
