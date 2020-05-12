@@ -1,4 +1,5 @@
 #include <locale.h>
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 
@@ -13,6 +14,12 @@ uint64_t digit_sum(uint64_t n, int sum) {
     return sum;
 }
 
+inline bool divisible(uint64_t n, uint64_t d) {
+    if ((d & 1) == 0 && (n & 1) == 1)
+        return false;
+    return n % d == 0;
+}
+
 int main() {
     setlocale(LC_ALL, "");
 
@@ -22,7 +29,7 @@ int main() {
     printf("Gap index  Gap    Niven index    Niven number\n");
     for (uint64_t niven = 1; gap_index <= 32; ++niven) {
         sum = digit_sum(niven, sum);
-        if (niven % sum == 0) {
+        if (divisible(niven, sum)) {
             if (niven > previous + gap) {
                 gap = niven - previous;
                 printf("%'9d %'4llu %'14d %'15llu\n", gap_index++,
