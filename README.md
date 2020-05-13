@@ -116,6 +116,7 @@ See LICENSE for details.
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Attractive_numbers|
 |bell|2020-05-13|https://rosettacode.org/wiki/Bell_numbers|
+|digit_sum|2020-05-13|https://rosettacode.org/wiki/Sum_digits_of_an_integer|
 |digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
