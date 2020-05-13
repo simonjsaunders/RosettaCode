@@ -116,6 +116,7 @@ See LICENSE for details.
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Attractive_numbers|
 |bell|2020-05-13|https://rosettacode.org/wiki/Bell_numbers|
+|digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
