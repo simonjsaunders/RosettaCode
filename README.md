@@ -120,6 +120,7 @@ See LICENSE for details.
 |law_of_cosines|2020-05-02|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lcp|2020-04-26|https://rosettacode.org/wiki/Longest_common_prefix|
 |lex_sort|2020-04-26|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
+|long_primes|2020-05-13|https://rosettacode.org/wiki/Long_primes|
 |long_year|2020-05-08|https://rosettacode.org/wiki/Long_year%3F|
 |mertens|2020-04-13|https://rosettacode.org/wiki/Mertens_function|
 |ordinal|2020-04-18|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
