@@ -42,6 +42,7 @@ See LICENSE for details.
 |barnsley_fern|2020-04-17|https://rosettacode.org/wiki/Barnsley_fern|
 |bell|2020-01-13|https://rosettacode.org/wiki/Bell_numbers|
 |cholesky|2020-04-25|https://rosettacode.org/wiki/Cholesky_decomposition|
+|circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
@@ -134,4 +135,4 @@ See LICENSE for details.
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
-|word-freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
+|word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
