@@ -38,19 +38,17 @@ void normalize_ranges(range_t* ranges, size_t count) {
 // number of ranges after consolidation.
 size_t consolidate_ranges(range_t* ranges, size_t count) {
     normalize_ranges(ranges, count);
-    for (size_t i = 0; i < count; ++i) {
-        size_t n = 0, j = i;
-        for (; ++j < count && ranges[j].low <= ranges[i].high; ++n) {
+    size_t out_index = 0;
+    for (size_t i = 0; i < count; ) {
+        size_t j = i;
+        while (++j < count && ranges[j].low <= ranges[i].high) {
             if (ranges[i].high < ranges[j].high)
                 ranges[i].high = ranges[j].high;
         }
-        if (n > 0) {
-            count -= n;
-            for (size_t k = i + 1; k < count; ++k, ++j)
-                ranges[k] = ranges[j];
-        }
+        ranges[out_index++] = ranges[i];
+        i = j;
     }
-    return count;
+    return out_index;
 }
 
 void print_range(const range_t* range) {

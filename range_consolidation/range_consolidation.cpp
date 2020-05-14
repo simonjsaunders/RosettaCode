@@ -14,22 +14,19 @@ void normalize_ranges(iterator begin, iterator end) {
     std::sort(begin, end);
 }
 
+// Merges a range of ranges in-place. Returns an iterator to the
+// end of the resulting range, similarly to std::remove.
 template <typename iterator>
 iterator merge_ranges(iterator begin, iterator end) {
-    for (iterator i = begin; i != end; ++i) {
+    iterator out = begin;
+    for (iterator i = begin; i != end; ) {
         iterator j = i;
-        int count = 0;
-        while (++j != end && j->first <= i->second) {
+        while (++j != end && j->first <= i->second)
             i->second = std::max(i->second, j->second);
-            ++count;
-        }
-        if (count > 0) {
-            iterator k = i;
-            std::move(j, end, ++k);
-            std::advance(end, -count);
-        }
+        *out++ = *i;
+        i = j;
     }
-    return end;
+    return out;
 }
 
 template <typename iterator>
