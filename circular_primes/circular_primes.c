@@ -55,13 +55,13 @@ void test_repunit(uint32_t digits) {
     memset(str, '1', digits);
     str[digits] = 0;
     mpz_t bignum;
-    mpz_init(bignum);
-    mpz_set_str(bignum, str, 10);
+    mpz_init_set_str(bignum, str, 10);
+    free(str);
     if (mpz_probab_prime_p(bignum, 10))
         printf("R(%u) is probably prime.\n", digits);
     else
         printf("R(%u) is not prime.\n", digits);
-    free(str);
+    mpz_clear(bignum);
 }
 
 int main() {
@@ -81,8 +81,7 @@ int main() {
     for (; repunit < p; ++digits)
         repunit = 10 * repunit + 1;
     mpz_t bignum;
-    mpz_init(bignum);
-    mpz_set_ui(bignum, repunit);
+    mpz_init_set_ui(bignum, repunit);
     for (int count = 0; count < 4; ) {
         if (mpz_probab_prime_p(bignum, 15)) {
             if (count > 0)
@@ -94,6 +93,7 @@ int main() {
         mpz_mul_ui(bignum, bignum, 10);
         mpz_add_ui(bignum, bignum, 1);
     }
+    mpz_clear(bignum);
     printf("\n");
     test_repunit(5003);
     test_repunit(9887);
