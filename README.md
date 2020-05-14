@@ -17,6 +17,7 @@ See LICENSE for details.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
