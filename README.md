@@ -123,6 +123,7 @@ See LICENSE for details.
 |digit_sum|2020-05-13|https://rosettacode.org/wiki/Sum_digits_of_an_integer|
 |digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
+|egyptian_division|2020-05-15|https://rosettacode.org/wiki/Egyptian_division|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
