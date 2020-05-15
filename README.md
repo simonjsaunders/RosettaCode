@@ -8,7 +8,8 @@ containing the source code for each task. The library sub-directory contains
 code shared by two or more tasks.
 
 The code presented here is not intended to be of production quality.
-It is meant for expository purposes only.
+It is meant for expository purposes only. My goal is to present clear, concise,
+efficient code.
 
 All code is released under the GNU Free Documentation License, version 1.2.
 See LICENSE for details.
