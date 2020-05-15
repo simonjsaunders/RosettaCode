@@ -133,6 +133,7 @@ See LICENSE for details.
 |long_primes|2020-05-13|https://rosettacode.org/wiki/Long_primes|
 |long_year|2020-05-08|https://rosettacode.org/wiki/Long_year%3F|
 |mertens|2020-04-13|https://rosettacode.org/wiki/Mertens_function|
+|mod_exp|2020-05-15|https://rosettacode.org/wiki/Modular_exponentiation|
 |ordinal|2020-04-18|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful|2020-05-02|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |prime_partition|2020-05-03|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
