@@ -61,7 +61,7 @@ void free_numbers(mpz_t* numbers, size_t count) {
 }
 
 // Returns an array containing first count n-smooth numbers
-mpz_t* find_nsmooth_numbers(uint32_t n, int count) {
+mpz_t* find_nsmooth_numbers(uint32_t n, uint32_t count) {
     uint32_t* primes = NULL;
     uint32_t num_primes = find_primes(2, n, &primes);
     mpz_t* numbers = xmalloc(sizeof(mpz_t) * count);
@@ -93,7 +93,7 @@ mpz_t* find_nsmooth_numbers(uint32_t n, int count) {
 }
 
 void print_nsmooth_numbers(uint32_t n, uint32_t begin, uint32_t count) {
-    size_t num = begin + count;
+    uint32_t num = begin + count;
     mpz_t* numbers = find_nsmooth_numbers(n, num);
     printf("%u: ", n);
     mpz_out_str(stdout, 10, numbers[begin]);
