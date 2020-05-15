@@ -46,6 +46,7 @@ uint32_t find_primes(uint32_t from, uint32_t to, uint32_t** primes) {
                 if (new_length < count + 1)
                     new_length = count + 1;
                 buffer = xrealloc(buffer, sizeof(uint32_t) * new_length);
+                buffer_length = new_length;
             }
             buffer[count++] = p;
         }
