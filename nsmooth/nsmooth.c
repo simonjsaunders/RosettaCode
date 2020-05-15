@@ -74,7 +74,7 @@ mpz_t* find_nsmooth_numbers(uint32_t n, uint32_t count) {
     }
     for (uint32_t i = 0; i < count; ++i)
         mpz_init(numbers[i]);
-    mpz_init_set_ui(numbers[0], 1);
+    mpz_set_ui(numbers[0], 1);
     for (uint32_t i = 1; i < count; ++i) {
         for (uint32_t p = 0; p < num_primes; ++p) {
             if (mpz_cmp(queue[p], numbers[i - 1]) == 0)
