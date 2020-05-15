@@ -1,16 +1,17 @@
 egyptian_divide(Dividend, Divisor, Quotient, Remainder):-
-    powers2_multiples(Dividend, Divisor, 1, [1], Powers, [Divisor], Multiples),
+    powers2_multiples(Dividend, [1], Powers, [Divisor], Multiples),
     accumulate(Dividend, Powers, Multiples, 0, Quotient, 0, Acc),
     Remainder is Dividend - Acc.
 
-powers2_multiples(Dividend, Divisor, _, Powers, Powers, Multiples, Multiples):-
-    2 * Divisor > Dividend,
+powers2_multiples(Dividend, Powers, Powers, Multiples, Multiples):-
+    Multiples = [M|_],
+    2 * M > Dividend,
     !.
-powers2_multiples(Dividend, Divisor, Power, P, Powers, M, Multiples):-
+powers2_multiples(Dividend, [Power|P], Powers, [Multiple|M], Multiples):-
     Power2 is 2 * Power,
-    Divisor2 is 2 * Divisor,
-    powers2_multiples(Dividend, Divisor2, Power2, [Power2|P], Powers,
-                      [Divisor2|M], Multiples).
+    Multiple2 is 2 * Multiple,
+    powers2_multiples(Dividend, [Power2,Power|P], Powers,
+                      [Multiple2, Multiple|M], Multiples).
 
 accumulate(_, [], [], Ans, Ans, Acc, Acc):-!.
 accumulate(Dividend, [P|Powers], [M|Multiples], Ans1, Answer, Acc1, Acc):-
