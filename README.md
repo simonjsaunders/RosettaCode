@@ -83,6 +83,7 @@ See LICENSE for details.
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
+|s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
 |safe_primes|2020-01-13|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |sexy_primes|2020-01-11|https://rosettacode.org/wiki/Sexy_primes|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
