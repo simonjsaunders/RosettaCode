@@ -107,17 +107,17 @@ bool get_token(std::istream& in, token& tok) {
     return true;
 }
 
-void write_spaces(std::ostream& out, int spaces) {
-    for (int i = 0; i < spaces; ++i)
-        out << ' ';
+void indent(std::ostream& out, int level) {
+    for (int i = 0; i < level; ++i)
+        out << "   ";
 }
 
 class object {
 public:
     virtual ~object() {}
     virtual void write(std::ostream&) const = 0;
-    virtual void write_indented(std::ostream& out, int spaces) const {
-        write_spaces(out, spaces);
+    virtual void write_indented(std::ostream& out, int level) const {
+        indent(out, level);
         write(out);
     }
 };
@@ -176,16 +176,16 @@ void list::write(std::ostream& out) const {
     out << ")";
 }
 
-void list::write_indented(std::ostream& out, int spaces) const {
-    write_spaces(out, spaces);
+void list::write_indented(std::ostream& out, int level) const {
+    indent(out, level);
     out << "(\n";
     if (!list_.empty()) {
         for (auto i = list_.begin(); i != list_.end(); ++i) {
-            (*i)->write_indented(out, spaces + 3);
+            (*i)->write_indented(out, level + 1);
             out << '\n';
         }
     }
-    write_spaces(out, spaces);
+    indent(out, level);
     out << ")";
 }
 
