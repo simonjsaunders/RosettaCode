@@ -145,3 +145,4 @@ See LICENSE for details.
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
+|word_wrap|2020-05-17|http://rosettacode.org/wiki/Word_wrap|
