@@ -6,12 +6,13 @@ word_wrap(String, Length, Wrapped):-
 wrap([_], _, _, Result, Result):-!.
 wrap([Space, Word|Words], Line_length, Space_left, Result, String):-
     string_length(Word, Word_len),
-    (Space_left < Word_len + 1 ->
+    string_length(Space, Space_len),
+    (Space_left < Word_len + Space_len ->
         Space1 = '\n',
         Space_left1 is Line_length - Word_len
         ;
         Space1 = Space,
-        Space_left1 is Space_left - Word_len - 1
+        Space_left1 is Space_left - Word_len - Space_len
     ),
     atomic_list_concat([String, Space1, Word], String1),
     wrap(Words, Line_length, Space_left1, Result, String1).
