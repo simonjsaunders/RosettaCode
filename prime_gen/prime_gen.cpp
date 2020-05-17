@@ -5,81 +5,104 @@
 #include <vector>
 #include <limits>
 
+template <typename type, std::size_t size>
+constexpr size_t countof(type const (&)[size]) {
+    return size;
+}
+
 template<typename integer>
-class prime_generator
-{
+class prime_generator {
 public:
-    prime_generator() : next_(2), count_(0)
-    {
-    }
     integer next_prime();
-    integer count() const
-    {
+    integer count() const {
         return count_;
     }
 private:
-    typedef std::pair<integer, integer> pair;
-    struct cmp
-    {
-        bool operator()(const pair& p1, const pair& p2) const
-        {
-            return p1.first > p2.first;
+    struct queue_item {
+        queue_item(integer prime, integer multiple, unsigned int wheel_index) :
+            prime_(prime), multiple_(multiple), wheel_index_(wheel_index) {}
+        integer prime_;
+        integer multiple_;
+        unsigned int wheel_index_;
+    };
+    struct cmp {
+        bool operator()(const queue_item& a, const queue_item& b) const {
+            return a.multiple_ > b.multiple_;
         }
     };
-    typedef std::priority_queue<pair, std::vector<pair>, cmp> queue;
-    integer next_;
-    integer count_;
+    static integer wheel_next(unsigned int& index) {
+        integer offset = wheel_[index];
+        ++index;
+        if (index == countof(wheel_))
+            index = 0;
+        return offset;
+    }
+    typedef std::priority_queue<queue_item, std::vector<queue_item>, cmp> queue;
+    integer next_ = 11;
+    integer count_ = 0;
     queue queue_;
+    unsigned int wheel_index_ = 0;
+    static const unsigned int wheel_[];
+    static const integer primes_[];
 };
 
 template<typename integer>
-integer prime_generator<integer>::next_prime()
-{
+const unsigned int prime_generator<integer>::wheel_[] = {
+    2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6, 6, 2, 6, 4, 2,
+    6, 4, 6, 8, 4, 2, 4, 2, 4, 8, 6, 4, 6, 2, 4, 6,
+    2, 6, 6, 4, 2, 4, 6, 2, 6, 4, 2, 4, 2, 10, 2, 10
+};
+
+template<typename integer>
+const integer prime_generator<integer>::primes_[] = {
+    2, 3, 5, 7
+};
+
+template<typename integer>
+integer prime_generator<integer>::next_prime() {
+    if (count_ < countof(primes_))
+        return primes_[count_++];
     integer n = next_;
     integer prev = 0;
-    while (!queue_.empty())
-    {
-        pair p = queue_.top();
-        if (prev != 0 && prev != p.first)
-            ++n;
-        if (p.first > n)
+    while (!queue_.empty()) {
+        queue_item item = queue_.top();
+        if (prev != 0 && prev != item.multiple_)
+            n += wheel_next(wheel_index_);
+        if (item.multiple_ > n)
             break;
-        else if (p.first == n)
-        {
+        else if (item.multiple_ == n) {
             queue_.pop();
-            queue_.emplace(p.second + p.first, p.second);
+            queue_item new_item(item);
+            new_item.multiple_ += new_item.prime_ * wheel_next(new_item.wheel_index_);
+            queue_.push(new_item);
         }
         else
             throw std::overflow_error("prime_generator: overflow!");
-        prev = p.first;
+        prev = item.multiple_;
     }
     if (std::numeric_limits<integer>::max()/n > n)
-        queue_.emplace(n * n, n);
-    next_ = n + 1;
+        queue_.emplace(n, n * n, wheel_index_);
+    next_ = n + wheel_next(wheel_index_);
     ++count_;
     return n;
 }
 
-int main()
-{
+int main() {
     typedef uint32_t integer;
     prime_generator<integer> pgen;
     std::cout << "First 20 primes:\n";
-    for (int i = 0; i < 20; ++i)
-    {
+    for (int i = 0; i < 20; ++i) {
         integer p = pgen.next_prime();
         if (i != 0)
             std::cout << ", ";
         std::cout << p;
     }
     std::cout << "\nPrimes between 100 and 150:\n";
-    for (int n = 0; ; )
-    {
+    for (int n = 0; ; ) {
         integer p = pgen.next_prime();
         if (p > 150)
             break;
-        if (p >= 100)
-        {
+        if (p >= 100) {
             if (n != 0)
                 std::cout << ", ";
             std::cout << p;
@@ -87,8 +110,7 @@ int main()
         }
     }
     int count = 0;
-    for (;;)
-    {
+    for (;;) {
         integer p = pgen.next_prime();
         if (p > 8000)
             break;
@@ -97,9 +119,11 @@ int main()
     }
     std::cout << "\nNumber of primes between 7700 and 8000: " << count << '\n';
 
-    integer prime;
-    while (pgen.count() != 10000)
-        prime = pgen.next_prime();
-    std::cout << "10000th prime: " << prime << '\n';
+    for (integer n = 10000; n <= 10000000; n *= 10) {
+        integer prime;
+        while (pgen.count() != n)
+            prime = pgen.next_prime();
+        std::cout << n << "th prime: " << prime << '\n';
+    }
     return 0;
 }
