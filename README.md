@@ -2,7 +2,7 @@
 
 This repository contains example code submitted to Rosetta Code by
 Simon J. Saunders (user name simonjsaunders). Here you will find example programs
-written in C, C++, Java and Prolog. For the most part they are designed
+written in C, C++, Java, Prolog and Rust. For the most part they are designed
 to solve a specific task and aren't necessarily reusable. There is a sub-directory
 containing the source code for each task. The library sub-directory contains
 code shared by two or more tasks.
@@ -147,3 +147,10 @@ See LICENSE for details.
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
 |word_wrap|2020-05-17|https://rosettacode.org/wiki/Word_wrap|
+
+## Rust Code Examples
+
+|Directory|Date Submitted|Rosetta Code URL|
+|---------|--------------|----------------|
+|gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+
