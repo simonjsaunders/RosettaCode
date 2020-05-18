@@ -3,7 +3,7 @@ fn cocktail_sort<T: Ord>(a: &mut [T]) {
     loop {
         let mut swapped = false;
         let mut i = 0;
-        while i + 2 <= len {
+        while i + 1 < len {
             if a[i] > a[i + 1] {
                 a.swap(i, i + 1);
                 swapped = true;
@@ -12,10 +12,10 @@ fn cocktail_sort<T: Ord>(a: &mut [T]) {
         }
         if swapped {
             swapped = false;
-            i = len;
-            while i >= 2 {
-                if a[i - 2] > a[i - 1] {
-                    a.swap(i - 2, i - 1);
+            i = len - 1;
+            while i > 0 {
+                if a[i - 1] > a[i] {
+                    a.swap(i - 1, i);
                     swapped = true;
                 }
                 i -= 1;
