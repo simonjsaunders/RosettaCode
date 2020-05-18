@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "sieve_of_eratosthenes.h"
+#include "../library/sieve_of_eratosthenes.h"
 
 typedef unsigned long long integer;
 
@@ -9,7 +9,7 @@ typedef unsigned long long integer;
 std::vector<integer> get_ancestors(const std::vector<integer>& ancestor, integer n)
 {
     std::vector<integer> result;
-    for (int a = ancestor[n]; a != 0 && a != n; )
+    for (integer a = ancestor[n]; a != 0 && a != n; )
     {
         n = a;
         a = ancestor[n];

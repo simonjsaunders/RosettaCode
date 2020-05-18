@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <locale>
 #include <sstream>
-#include "sieve_of_eratosthenes.h"
+#include "../library/sieve_of_eratosthenes.h"
 
 int main()
 {

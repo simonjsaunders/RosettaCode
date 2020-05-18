@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <gmpxx.h>
-#include "sieve_of_eratosthenes.h"
+#include "../library/sieve_of_eratosthenes.h"
 
 typedef mpz_class integer;
 

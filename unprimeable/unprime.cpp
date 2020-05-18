@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdint>
-#include "sieve_of_eratosthenes.h"
+#include "../library/sieve_of_eratosthenes.h"
 
 typedef uint32_t integer;
 

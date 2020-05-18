@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <iostream>
 #include <string>
-#include "sieve_of_eratosthenes.h"
+#include "../library/sieve_of_eratosthenes.h"
 
 using integer = uint64_t;
 
