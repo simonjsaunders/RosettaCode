@@ -5,7 +5,7 @@
 
 // Returns the sum of the digits of n given the
 // sum of the digits of n - 1
-uint64_t digit_sum(uint64_t n, int sum) {
+uint64_t digit_sum(uint64_t n, uint64_t sum) {
     ++sum;
     while (n > 0 && n % 10 == 0) {
         sum -= 9;
@@ -23,8 +23,8 @@ inline bool divisible(uint64_t n, uint64_t d) {
 int main() {
     setlocale(LC_ALL, "");
 
-    uint64_t previous = 1, gap = 0;
-    int niven_index = 0, gap_index = 1, sum = 0;
+    uint64_t previous = 1, gap = 0, sum = 0;
+    int niven_index = 0, gap_index = 1;
 
     printf("Gap index  Gap    Niven index    Niven number\n");
     for (uint64_t niven = 1; gap_index <= 32; ++niven) {
