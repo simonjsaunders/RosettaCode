@@ -214,7 +214,7 @@ public:
      * It is not valid to call this function if the tree is empty.
      *
      * @param pt a point
-     * @param the nearest point in the tree to the given point
+     * @return the nearest point in the tree to the given point
      */
     const point_type& nearest(const point_type& pt)
     {
