@@ -42,10 +42,10 @@ bool operator==(const sha256& a, const sha256& b)
     return memcmp(a.digest, b.digest, SHA256_DIGEST_LENGTH) == 0;
 }
 
-bool next_password(std::string& passwd, int start)
+bool next_password(std::string& passwd, size_t start)
 {
-    int len = passwd.length();
-    for (int i = len - 1; i >= start; --i)
+    size_t len = passwd.length();
+    for (size_t i = len - 1; i >= start; --i)
     {
         char c = passwd[i];
         if (c < 'z')
@@ -68,7 +68,7 @@ private:
     void find_passwords(char);
     std::vector<std::string> hashes;
     std::vector<sha256> digests;
-    std::atomic<int> count;
+    std::atomic<size_t> count;
 };
 
 password_finder::password_finder(int len) : length(len)
