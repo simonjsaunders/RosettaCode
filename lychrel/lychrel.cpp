@@ -1,27 +1,20 @@
 #include <iostream>
 #include <map>
 #include <vector>
-#ifdef USE_GMP
-#include <boost/multiprecision/gmp.hpp>
-typedef boost::multiprecision::mpz_int integer;
-#else
-#include <boost/multiprecision/cpp_int.hpp>
-typedef boost::multiprecision::cpp_int integer;
-#endif
+#include <gmpxx.h>
 
-integer reverse(integer n)
-{
+using integer = mpz_class;
+
+integer reverse(integer n) {
     integer rev = 0;
-    while (n > 0)
-    {
+    while (n > 0) {
         rev = rev * 10 + (n % 10);
         n /= 10;
     }
     return rev;
 }
 
-void print_vector(const std::vector<integer>& vec)
-{
+void print_vector(const std::vector<integer>& vec) {
     if (vec.empty())
         return;
     auto i = vec.begin();
@@ -31,29 +24,24 @@ void print_vector(const std::vector<integer>& vec)
     std::cout << '\n';
 }
 
-int main()
-{
+int main() {
     std::map<integer, std::pair<bool, integer>> cache;
     std::vector<integer> seeds, related, palindromes;
-    for (integer n = 1; n <= 10000; ++n)
-    {
+    for (integer n = 1; n <= 10000; ++n) {
         std::pair<bool, integer> p(true, n);
         std::vector<integer> seen;
         integer rev = reverse(n);
         integer sum = n;
-        for (int i = 0; i < 500; ++i)
-        {
+        for (int i = 0; i < 500; ++i) {
             sum += rev;
             rev = reverse(sum);
-            if (rev == sum)
-            {
+            if (rev == sum) {
                 p.first = false;
                 p.second = 0;
                 break;
             }
             auto iter = cache.find(sum);
-            if (iter != cache.end())
-            {
+            if (iter != cache.end()) {
                 p = iter->second;
                 break;
             }
