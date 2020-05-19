@@ -1,5 +1,7 @@
+#include <array>
 #include <iostream>
 #include <vector>
+#include "../library/circular_buffer.h"
 #include "../library/sieve_of_eratosthenes.h"
 
 int main()
@@ -17,10 +19,13 @@ int main()
     // Use Sieve of Eratosthenes to find prime numbers up to max
     sieve_of_eratosthenes sieve(array_size);
 
-    vector<int> group_count(max_group_size);
-    vector<vector<vector<int>>> groups(max_group_size);
+    std::array<int, max_group_size> group_count{0};
+    vector<circular_buffer<vector<int>>> groups;
+    for (size_t i = 0; i < max_group_size; ++i)
+        groups.emplace_back(max_groups);
+
     int unsexy_count = 0;
-    vector<int> unsexy_primes;
+    circular_buffer<int> unsexy_primes(max_unsexy);
 
     for (int p = 2; p < max; )
     {
@@ -28,8 +33,6 @@ int main()
         {
             // if p + diff and p - diff aren't prime then p can't be sexy
             ++unsexy_count;
-            if (unsexy_primes.size() == max_unsexy)
-                unsexy_primes.erase(unsexy_primes.begin());
             unsexy_primes.push_back(p);
         }
         else
@@ -45,10 +48,7 @@ int main()
                     break;
                 ++group_size;
                 group.push_back(next_p);
-                vector<vector<int>>& v = groups[group_size - 1];
-                if (v.size() == max_groups)
-                    v.erase(v.begin());
-                v.push_back(group);
+                groups[group_size - 1].push_back(group);
             }
             for (int i = 1; i < group_size; ++i)
                 ++group_count[i];
