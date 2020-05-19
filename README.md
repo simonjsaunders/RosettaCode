@@ -153,6 +153,7 @@ See LICENSE for details.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |circle_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_Algorithms/Circle_Sort|
+|circular_primes|2020-05-19|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
