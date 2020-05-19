@@ -36,22 +36,22 @@ bool is_long_prime(const sieve_of_eratosthenes& sieve, uint64_t prime) {
     return modpow(10, n/m, prime) != 1;
 }
 
-void long_primes(uint64_t stage, uint64_t limit) {
-    sieve_of_eratosthenes sieve(limit);
+void long_primes(uint64_t limit1, uint64_t limit2) {
+    sieve_of_eratosthenes sieve(limit2);
     uint64_t count = 0;
-    uint64_t stage2 = stage;
-    for (uint64_t p = 3; p < limit; p += 2) {
+    uint64_t limit = limit1;
+    for (uint64_t p = 3; p < limit2; p += 2) {
         if (sieve.is_prime(p) && is_long_prime(sieve, p)) {
-            if (p < 500)
+            if (p < limit1)
                 std::cout << p << ' ';
-            if (p > stage2) {
-                std::cout << "\nNumber of long primes up to " << stage2 << ": " << count;
-                stage2 *= 2;
+            if (p > limit) {
+                std::cout << "\nNumber of long primes up to " << limit << ": " << count;
+                limit *= 2;
             }
             ++count;
         }
     }
-    std::cout << "\nNumber of long primes up to " << stage2 << ": " << count << '\n';
+    std::cout << "\nNumber of long primes up to " << limit << ": " << count << '\n';
 }
 
 int main() {
