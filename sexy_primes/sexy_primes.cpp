@@ -32,16 +32,15 @@ int main() {
             unsexy_primes.push_back(p);
         } else {
             // find the groups of sexy primes that begin with p
-            int group_size = 1;
             vector<int> group;
             group.push_back(p);
-            while (group_size < max_group_size) {
+            for (int group_size = 1; group_size < max_group_size; group_size++) {
                 int next_p = p + group_size * diff;
                 if (next_p >= max || !sieve.is_prime(next_p))
                     break;
                 group.push_back(next_p);
                 ++group_count[group_size];
-                groups[group_size++].push_back(group);
+                groups[group_size].push_back(group);
             }
         }
         // skip to next prime number
