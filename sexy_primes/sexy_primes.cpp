@@ -1,12 +1,14 @@
 #include <array>
 #include <iostream>
 #include <vector>
-#include "../library/circular_buffer.h"
+#include <boost/circular_buffer.hpp>
 #include "../library/sieve_of_eratosthenes.h"
 
 int main() {
     using std::cout;
     using std::vector;
+    using boost::circular_buffer;
+    using group_buffer = circular_buffer<vector<int>>;
 
     const int max = 1000035;
     const int max_group_size = 5;
@@ -19,9 +21,7 @@ int main() {
     sieve_of_eratosthenes sieve(array_size);
 
     std::array<int, max_group_size> group_count{0};
-    vector<circular_buffer<vector<int>>> groups;
-    for (size_t i = 0; i < max_group_size; ++i)
-        groups.emplace_back(max_groups);
+    vector<group_buffer> groups(max_group_size, group_buffer(max_groups));
     int unsexy_count = 0;
     circular_buffer<int> unsexy_primes(max_unsexy);
 
@@ -39,9 +39,8 @@ int main() {
                 int next_p = p + i * diff;
                 if (next_p >= max || !sieve.is_prime(next_p))
                     break;
-                ++group_size;
                 group.push_back(next_p);
-                groups[group_size - 1].push_back(group);
+                groups[group_size++].push_back(group);
             }
             for (int i = 1; i < group_size; ++i)
                 ++group_count[i];
