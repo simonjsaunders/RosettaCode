@@ -35,15 +35,14 @@ int main() {
             int group_size = 1;
             vector<int> group;
             group.push_back(p);
-            for (int i = 1; i < max_group_size; ++i) {
-                int next_p = p + i * diff;
+            while (group_size < max_group_size) {
+                int next_p = p + group_size * diff;
                 if (next_p >= max || !sieve.is_prime(next_p))
                     break;
                 group.push_back(next_p);
+                ++group_count[group_size];
                 groups[group_size++].push_back(group);
             }
-            for (int i = 1; i < group_size; ++i)
-                ++group_count[i];
         }
         // skip to next prime number
         ++p;
