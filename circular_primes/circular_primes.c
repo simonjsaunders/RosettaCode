@@ -39,13 +39,6 @@ bool is_circular_prime(uint32_t p) {
     return true;
 }
 
-uint32_t next_repunit(uint32_t n) {
-    uint32_t p = 1;
-    while (p < n)
-        p = 10 * p + 1;
-    return p;
-}
-
 void test_repunit(uint32_t digits) {
     char* str = malloc(digits + 1);
     if (str == 0) {
