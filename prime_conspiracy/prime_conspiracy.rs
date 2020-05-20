@@ -12,13 +12,11 @@ impl BitArray {
     }
     fn set(&mut self, index : usize, new_val : bool) {
         let bit = 1 << (index & 31);
-        let mut val = self.array[index >> 5];
         if new_val {
-            val |= bit;
+            self.array[index >> 5] |= bit;
         } else {
-            val &= !bit;
+            self.array[index >> 5] &= !bit;
         }
-        self.array[index >> 5] = val
     }
 }
 
