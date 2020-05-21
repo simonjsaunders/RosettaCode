@@ -6,12 +6,12 @@ public class PrimeGenerator2 {
     private int increment_;
     private int count_ = 0;
     private List<Integer> primes_ = new ArrayList<>();
-    private Sieve sieve_;
+    private BitSet sieve_ = new BitSet();
+    private int sieveLimit_ = 0;
 
     public PrimeGenerator2(int initialLimit, int increment) {
         limit_ = initialLimit;
         increment_ = increment;
-        sieve_ = new Sieve(sqrt(limit_));
         primes_.add(2);
         findPrimes(3);
     }
@@ -22,7 +22,6 @@ public class PrimeGenerator2 {
                 return 0;
             int start = nextOddNumber(limit_ + 1);
             limit_ += increment_;
-            sieve_.sieve(sqrt(limit_));
             primes_.clear();
             findPrimes(start);
         }
@@ -36,9 +35,18 @@ public class PrimeGenerator2 {
 
     private void findPrimes(int start) {
         index_ = 0;
+        int newLimit = sqrt(limit_);
+        for (int p = 3; p * p <= newLimit; p += 2) {
+            if (sieve_.get(p/2 - 1))
+                continue;
+            int q = p * Math.max(p, nextOddNumber((sieveLimit_ + p - 1)/p));
+            for (; q <= newLimit; q += 2*p)
+                sieve_.set(q/2 - 1, true);
+        }
+        sieveLimit_ = newLimit;
         BitSet composite = new BitSet();
-        for (int p = 3, n = sieve_.limit_; p <= n; p += 2) {
-            if (!sieve_.isPrime(p))
+        for (int p = 3; p <= newLimit; p += 2) {
+            if (sieve_.get(p/2 - 1))
                 continue;
             int q = p * Math.max(p, nextOddNumber((start + p - 1)/p));
             for (; q >= start && q <= limit_; q += 2*p)
@@ -56,33 +64,6 @@ public class PrimeGenerator2 {
 
     private static int nextOddNumber(int n) {
         return 1 + 2 * (n/2);
-    }
-
-    private static class Sieve {
-        private int limit_ = 0;
-        private BitSet composite_ = new BitSet();
-        private Sieve(int limit) {
-            sieve(limit);
-        }
-        private void sieve(int newLimit) {
-            newLimit = nextOddNumber(newLimit);
-            for (int p = 3; p * p <= newLimit; p += 2) {
-                if (!composite_.get(p/2 - 1)) {
-                    int q = p * Math.max(p, nextOddNumber((limit_ + p - 1)/p));
-                    for (; q <= newLimit; q += 2*p) {
-                        composite_.set(q/2 - 1, true);
-                    }
-                }
-            }
-            limit_ = newLimit;
-        }
-        private boolean isPrime(int n) {
-            if (n < 2)
-                return false;
-            if (n % 2 == 0)
-                return n == 2;
-            return !composite_.get(n/2 - 1);
-        }
     }
 
     public static void main(String[] args) {
