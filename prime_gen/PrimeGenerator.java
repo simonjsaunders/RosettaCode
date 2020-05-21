@@ -108,18 +108,15 @@ public class PrimeGenerator {
     public static void main(String[] args) {
         PrimeGenerator pgen = new PrimeGenerator(10, 250000);
         System.out.println("First 20 primes:");
-        for (int i = 1; i <= 20; ++i)
-        {
+        for (int i = 1; i <= 20; ++i) {
             if (i > 1)
                 System.out.print(", ");
             System.out.print(pgen.nthPrime(i));
         }
         System.out.println();
         System.out.println("Primes between 100 and 150:");
-        for (int n = 100, i = 0; n <= 150; ++n)
-        {
-            if (pgen.isPrime(n))
-            {
+        for (int n = 100, i = 0; n <= 150; ++n) {
+            if (pgen.isPrime(n)) {
                 if (i++ != 0)
                     System.out.print(", ");
                 System.out.print(n);
@@ -127,8 +124,7 @@ public class PrimeGenerator {
         }
         System.out.println();
         int count = 0;
-        for (int n = 7700; n <= 8000; ++n)
-        {
+        for (int n = 7700; n <= 8000; ++n) {
             if (pgen.isPrime(n))
                 ++count;
         }

@@ -92,23 +92,19 @@ integer prime_generator<integer>::nth_prime(integer n) {
     return odd_primes_[n - 2].first;
 }
     
-int main()
-{
+int main() {
     using integer = uint64_t;
     prime_generator<integer> pgen(3, 250000);
     std::cout << "First 20 primes:\n";
-    for (integer i = 1; i <= 20; ++i)
-    {
+    for (integer i = 1; i <= 20; ++i) {
         if (i > 1)
             std::cout << ", ";
         std::cout << pgen.nth_prime(i);
     }
     std::cout << '\n';
     std::cout << "Primes between 100 and 150:\n";
-    for (integer n = 100, i = 0; n <= 150; ++n)
-    {
-        if (pgen.is_prime(n))
-        {
+    for (integer n = 100, i = 0; n <= 150; ++n) {
+        if (pgen.is_prime(n)) {
             if (i++ != 0)
                 std::cout << ", ";
             std::cout << n;
@@ -116,8 +112,7 @@ int main()
     }
     std::cout << '\n';
     int count = 0;
-    for (integer n = 7700; n <= 8000; ++n)
-    {
+    for (integer n = 7700; n <= 8000; ++n) {
         if (pgen.is_prime(n))
             ++count;
     }
