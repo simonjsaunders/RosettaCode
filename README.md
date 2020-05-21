@@ -157,5 +157,6 @@ See LICENSE for details.
 |cocktail_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+|nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
