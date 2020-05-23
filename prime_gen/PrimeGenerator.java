@@ -44,13 +44,15 @@ public class PrimeGenerator {
                 sieve_.set(q/2 - 1, true);
         }
         sieveLimit_ = newLimit;
-        BitSet composite = new BitSet();
+        int count = (limit_ - start + 1)/2;
+        BitSet composite = new BitSet(count);
         for (int p = 3; p <= newLimit; p += 2) {
             if (sieve_.get(p/2 - 1))
                 continue;
-            int q = p * Math.max(p, nextOddNumber((start + p - 1)/p));
-            for (; q >= start && q <= limit_; q += 2*p)
-                composite.set((q - start)/2, true);
+            int q = p * Math.max(p, nextOddNumber((start + p - 1)/p)) - start;
+            q /= 2;
+            for (; q >= 0 && q < count; q += p)
+                composite.set(q, true);
         }
         for (int p = start; p <= limit_; p += 2) {
             if (!composite.get((p - start)/2))
