@@ -1,8 +1,24 @@
 #include <iostream>
 #include "../library/sieve_of_eratosthenes.h"
 
-int main()
-{
+bool is_left_truncatable(const sieve_of_eratosthenes& sieve, int p) {
+    for (int n = 10, q = p; p > n; n *= 10) {
+        if (!sieve.is_prime(p % n) || q == p % n)
+            return false;
+        q = p % n;
+    }
+    return true;
+}
+
+bool is_right_truncatable(const sieve_of_eratosthenes& sieve, int p) {
+    for (int q = p/10; q > 0; q /= 10) {
+        if (!sieve.is_prime(q))
+            return false;
+    }
+    return true;
+}
+
+int main() {
     const int limit = 1000000;
 
     // find the prime numbers up to the limit
@@ -11,42 +27,15 @@ int main()
     int largest_left = 0;
     int largest_right = 0;
     // find largest left truncatable prime
-    for (int p = limit; p >= 2; --p)
-    {
-        if (!sieve.is_prime(p))
-            continue;
-        bool left_truncatable = true;
-        for (int n = 10, q = p; p > n; n *= 10)
-        {
-            if (!sieve.is_prime(p % n) || q == p % n)
-            {
-                left_truncatable = false;
-                break;
-            }
-            q = p % n;
-        }
-        if (left_truncatable)
-        {
+    for (int p = limit; p >= 2; --p) {
+        if (sieve.is_prime(p) && is_left_truncatable(sieve, p)) {
             largest_left = p;
             break;
         }
     }
     // find largest right truncatable prime
-    for (int p = limit; p >= 2; --p)
-    {
-        if (!sieve.is_prime(p))
-            continue;
-        bool right_truncatable = true;
-        for (int q = p/10; q > 0; q /= 10)
-        {
-            if (!sieve.is_prime(q))
-            {
-                right_truncatable = false;
-                break;
-            }
-        }
-        if (right_truncatable)
-        {
+    for (int p = limit; p >= 2; --p) {
+        if (sieve.is_prime(p) && is_right_truncatable(sieve, p)) {
             largest_right = p;
             break;
         }
@@ -56,4 +45,3 @@ int main()
     std::cout << "Largest right truncatable prime is " << largest_right << '\n';
     return 0;
 }
-
