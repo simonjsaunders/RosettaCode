@@ -2,135 +2,111 @@ import java.util.*;
 
 public class PrimeGenerator {
     private int limit_;
+    private int index_ = 0;
     private int increment_;
-    private PrimeList oddPrimes_ = new PrimeList();
-    private BitSet isComposite_ = new BitSet();
+    private int count_ = 0;
+    private List<Integer> primes_ = new ArrayList<>();
+    private BitSet sieve_ = new BitSet();
+    private int sieveLimit_ = 0;
 
-    private static class PrimeList {
-        private PrimeList() {
-            size_ = 0;
-            capacity_ = 16;
-            primes_ = new int[2*capacity_];
-        }
-        private int getPrime(int n) {
-            return primes_[n*2];
-        }
-        private int getMultiple(int n) {
-            return primes_[n*2 + 1];
-        }
-        private void addPrime(int prime, int multiple) {
-            if (capacity_ < size_ + 1) {
-                int newCapacity = Math.max((3 * capacity_)/2, size_ + 1);
-                int[] newArray = new int[2 * newCapacity];
-                System.arraycopy(primes_, 0, newArray, 0, size_ * 2);
-                capacity_ = newCapacity;
-                primes_ = newArray;
-            }
-            int index = size_ * 2;
-            primes_[index] = prime;
-            primes_[index + 1] = multiple;
-            ++size_;
-        }
-        private void setMultiple(int n, int value) {
-            primes_[n*2 + 1] = value;
-        }
-        private int size() {
-            return size_;
-        }
-        private int size_;
-        private int capacity_;
-        private int[] primes_;
-    }
-    
-    // Constructs a prime generator with the given initial limit (which is rounded
-    // up to the next odd number).
-    // The maximum prime number found is increased as required, in steps
-    // determined by the increment parameter.
     public PrimeGenerator(int initialLimit, int increment) {
-        limit_ = Math.max(3, 1 + 2*(initialLimit/2));
-        increment_ = Math.max(16, 2*((increment+1)/2));
+        limit_ = initialLimit;
+        increment_ = increment;
+        primes_.add(2);
         findPrimes(3);
     }
-    
-    private void extend() {
-        int start = limit_ + 2;
-        limit_ += increment_;
-        findPrimes(start);
-    }
-    
-    private void findPrimes(int start) {
-        // Mark multiples of primes already found as not prime
-        for (int i = 0, n = oddPrimes_.size(); i < n; ++i) {
-            int prime = oddPrimes_.getPrime(i);
-            int multiple = oddPrimes_.getMultiple(i);
-            int inc = 2 * prime;
-            if (multiple > limit_ + inc)
-                break;
-            for (; multiple <= limit_; multiple += inc)
-                isComposite_.set(multiple/2 - 1, true);
-            oddPrimes_.setMultiple(i, multiple);
+
+    public int nextPrime() {
+        if (index_ == primes_.size()) {
+            if (Integer.MAX_VALUE - increment_ < limit_)
+                return 0;
+            int start = nextOddNumber(limit_ + 1);
+            limit_ += increment_;
+            primes_.clear();
+            findPrimes(start);
         }
-        // Look for new odd primes <= limit
-        int sqrt = (int)Math.sqrt(limit_);
-        for (int prime = start; prime <= sqrt; prime += 2) {
-            if (!isComposite_.get(prime/2 - 1)) {
-                int multiple = prime * prime;
-                int increment = 2 * prime;
-                for (; multiple <= limit_; multiple += increment)
-                    isComposite_.set(multiple/2 - 1, true);
-            }
-        }
-        // Add new odd primes to the list
-        for (int prime = start; prime <= limit_; prime += 2) {
-            if (!isComposite_.get(prime/2 - 1))
-                oddPrimes_.addPrime(prime, prime * prime);
-        }
-    }
-    
-    public boolean isPrime(int n) {
-        if (n == 2)
-            return true;
-        if (n < 2 || n % 2 == 0)
-            return false;
-        while (n > limit_)
-            extend();
-        return !isComposite_.get(n/2 - 1);
+        ++count_;
+        return primes_.get(index_++);
     }
 
-    public int nthPrime(int n) {
-        if (n == 1)
-            return 2;
-        while (n >= oddPrimes_.size() + 2)
-            extend();
-        return oddPrimes_.getPrime(n - 2);
+    public int count() {
+        return count_;
+    }
+
+    private void findPrimes(int start) {
+        index_ = 0;
+        int newLimit = sqrt(limit_);
+        for (int p = 3; p * p <= newLimit; p += 2) {
+            if (sieve_.get(p/2 - 1))
+                continue;
+            int q = p * Math.max(p, nextOddNumber((sieveLimit_ + p - 1)/p));
+            for (; q <= newLimit; q += 2*p)
+                sieve_.set(q/2 - 1, true);
+        }
+        sieveLimit_ = newLimit;
+        BitSet composite = new BitSet();
+        for (int p = 3; p <= newLimit; p += 2) {
+            if (sieve_.get(p/2 - 1))
+                continue;
+            int q = p * Math.max(p, nextOddNumber((start + p - 1)/p));
+            for (; q >= start && q <= limit_; q += 2*p)
+                composite.set((q - start)/2, true);
+        }
+        for (int p = start; p <= limit_; p += 2) {
+            if (!composite.get((p - start)/2))
+                primes_.add(p);
+        }
+    }
+
+    private static int sqrt(int n) {
+        return nextOddNumber((int)Math.sqrt(n));
+    }
+
+    private static int nextOddNumber(int n) {
+        return 1 + 2 * (n/2);
     }
 
     public static void main(String[] args) {
-        PrimeGenerator pgen = new PrimeGenerator(10, 250000);
+        PrimeGenerator pgen = new PrimeGenerator(20, 200000);
         System.out.println("First 20 primes:");
-        for (int i = 1; i <= 20; ++i) {
-            if (i > 1)
+        for (int i = 0; i < 20; ++i) {
+            if (i > 0)
                 System.out.print(", ");
-            System.out.print(pgen.nthPrime(i));
+            System.out.print(pgen.nextPrime());
         }
         System.out.println();
         System.out.println("Primes between 100 and 150:");
-        for (int n = 100, i = 0; n <= 150; ++n) {
-            if (pgen.isPrime(n)) {
+        for (int i = 0; ; ) {
+            int prime = pgen.nextPrime();
+            if (prime > 150)
+                break;
+            if (prime >= 100) {
                 if (i++ != 0)
                     System.out.print(", ");
-                System.out.print(n);
+                System.out.print(prime);
             }
         }
         System.out.println();
         int count = 0;
-        for (int n = 7700; n <= 8000; ++n) {
-            if (pgen.isPrime(n))
+        for (;;) {
+            int prime = pgen.nextPrime();
+            if (prime > 8000)
+                break;
+            if (prime >= 7700)
                 ++count;
         }
         System.out.println("Number of primes between 7700 and 8000: " + count);
-        for (int n = 10000; n <= 100000000; n *= 10)
-            System.out.println(n + "th prime: " + pgen.nthPrime(n));
-        System.out.println("Memory usage: " + Runtime.getRuntime().totalMemory()/(1024.0*1024.0) + "MB");
+        int n = 10000;
+        for (;;) {
+            int prime = pgen.nextPrime();
+            if (prime == 0) {
+                System.out.println("Can't generate any more primes.");
+                break;
+            }
+            if (pgen.count() == n) {
+                System.out.println(n + "th prime: " + prime);
+                n *= 10;
+            }
+        }
     }
 }

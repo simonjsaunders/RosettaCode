@@ -1,123 +1,126 @@
 #include <algorithm>
-#include <cassert>
-#include <cstdint>
 #include <iostream>
-#include <utility>
+#include <cmath>
+#include <cstdint>
 #include <vector>
+#include <limits>
 
-template <typename integer>
+template<typename integer>
 class prime_generator {
 public:
-    explicit prime_generator(integer initial_limit = 100, integer increment = 10000);
-    bool is_prime(integer n);
-    integer nth_prime(integer n);
+    explicit prime_generator(integer initial_limit = 100, integer increment = 100000);
+    integer next_prime();
+    integer count() const {
+        return count_;
+    }
 private:
     void find_primes(integer);
-    void extend();
+    integer count_ = 0;
     integer limit_;
+    integer index_ = 0;
     integer increment_;
-    std::vector<std::pair<integer, integer>> odd_primes_;
-    std::vector<bool> is_odd_prime_;
+    std::vector<integer> primes_;
+    std::vector<bool> sieve_;
+    integer sieve_limit_ = 0;
 };
 
-// Constructs a prime generator with the given initial limit (which is rounded
-// up to the next odd number).
-// The maximum prime number found is increased as required, in steps
-// determined by the increment parameter.
-template <typename integer>
+template<typename integer>
 prime_generator<integer>::prime_generator(integer initial_limit, integer increment)
-    : limit_(std::max(integer(3), 1 + 2*(initial_limit/2))),
-    increment_(std::max(integer(16), 2*((increment + 1)/2))) {
+    : limit_(initial_limit), increment_(increment) {
+    primes_.push_back(2);
     find_primes(3);
 }
 
-template <typename integer>
-void prime_generator<integer>::extend() {
-    integer start = limit_ + 2;
-    limit_ += increment_;
-    find_primes(start);
+template<typename integer>
+integer next_odd_number(integer n) {
+    return n % 2 == 0 ? n + 1 : n;
 }
 
-template <typename integer>
+template<typename integer>
+integer prime_generator<integer>::next_prime() {
+    if (index_ == primes_.size()) {
+        if (std::numeric_limits<integer>::max() - increment_ < limit_)
+            return 0;
+        int start = next_odd_number(limit_ + 1);
+        limit_ += increment_;
+        primes_.clear();
+        find_primes(start);
+    }
+    ++count_;
+    return primes_[index_++];
+}
+
+template<typename integer>
+integer isqrt(integer n) {
+    return next_odd_number(static_cast<integer>(std::sqrt(n)));
+}
+
+template<typename integer>
 void prime_generator<integer>::find_primes(integer start) {
-    is_odd_prime_.resize(limit_/2, true);
-    // Mark multiples of primes already found as not prime
-    for (auto& p : odd_primes_) {
-        integer prime = p.first;
-        integer multiple = p.second;
-        integer increment = 2 * prime; // skip even multiples
-        if (multiple > limit_ + increment)
-            break;
-        for (; multiple <= limit_; multiple += increment)
-            is_odd_prime_[multiple/2 - 1] = false;
-        p.second = multiple;
+    index_ = 0;
+    integer new_limit = isqrt(limit_);
+    sieve_.resize(new_limit/2);
+    for (integer p = 3; p * p <= new_limit; p += 2) {
+        if (sieve_[p/2 - 1])
+            continue;
+        integer q = p * std::max(p, next_odd_number((sieve_limit_ + p - 1)/p));
+        for (; q <= new_limit; q += 2*p)
+            sieve_[q/2 - 1] = true;
     }
-    // Look for new odd primes <= limit
-    for (integer prime = start; prime * prime <= limit_; prime += 2) {
-        if (is_odd_prime_[prime/2 - 1]) {
-            integer multiple = prime * prime;
-            integer increment = 2 * prime;
-            for (; multiple <= limit_; multiple += increment)
-                is_odd_prime_[multiple/2 - 1] = false;
-        }
+    sieve_limit_ = new_limit;
+    size_t count = (limit_ - start + 1)/2;
+    std::vector<bool> composite(count, false);
+    for (integer p = 3; p <= new_limit; p += 2) {
+        if (sieve_[p/2 - 1])
+            continue;
+        integer q = p * std::max(p, next_odd_number((start + p - 1)/p)) - start;
+        q /= 2;
+        for (; q < count; q += p)
+            composite[q] = true;
     }
-    // Add new odd primes to the list
-    for (integer prime = start; prime <= limit_; prime += 2) {
-        if (is_odd_prime_[prime/2 - 1]) {
-            odd_primes_.emplace_back(prime, prime * prime);
-        }
+    for (integer p = 0; p < count; ++p) {
+        if (!composite[p])
+            primes_.push_back(p * 2 + start);
     }
 }
 
-// Return true if n is prime
-template <typename integer>
-bool prime_generator<integer>::is_prime(integer n) {
-    if (n == 2)
-        return true;
-    if (n < 2 || n % 2 == 0)
-        return false;
-    while (n > limit_)
-        extend();
-    return is_odd_prime_[n/2 - 1];
-}
-
-// Return the nth prime number
-template <typename integer>
-integer prime_generator<integer>::nth_prime(integer n) {
-    assert(n > 0);
-    if (n == 1)
-        return 2;
-    while (n >= odd_primes_.size() + 2)
-        extend();
-    return odd_primes_[n - 2].first;
-}
-    
 int main() {
-    using integer = uint64_t;
-    prime_generator<integer> pgen(3, 250000);
+    typedef uint64_t integer;
+    prime_generator<integer> pgen(100, 500000);
     std::cout << "First 20 primes:\n";
-    for (integer i = 1; i <= 20; ++i) {
-        if (i > 1)
+    for (int i = 0; i < 20; ++i) {
+        integer p = pgen.next_prime();
+        if (i != 0)
             std::cout << ", ";
-        std::cout << pgen.nth_prime(i);
+        std::cout << p;
     }
-    std::cout << '\n';
-    std::cout << "Primes between 100 and 150:\n";
-    for (integer n = 100, i = 0; n <= 150; ++n) {
-        if (pgen.is_prime(n)) {
-            if (i++ != 0)
+    std::cout << "\nPrimes between 100 and 150:\n";
+    for (int n = 0; ; ) {
+        integer p = pgen.next_prime();
+        if (p > 150)
+            break;
+        if (p >= 100) {
+            if (n != 0)
                 std::cout << ", ";
-            std::cout << n;
+            std::cout << p;
+            ++n;
         }
     }
-    std::cout << '\n';
     int count = 0;
-    for (integer n = 7700; n <= 8000; ++n) {
-        if (pgen.is_prime(n))
+    for (;;) {
+        integer p = pgen.next_prime();
+        if (p > 8000)
+            break;
+        if (p >= 7700)
             ++count;
     }
-    std::cout << "Number of primes between 7700 and 8000: " << count << '\n';
-    for (integer n = 10000; n <= 100000000; n *= 10)
-        std::cout << n << "th prime: " << pgen.nth_prime(n) << std::endl;
+    std::cout << "\nNumber of primes between 7700 and 8000: " << count << '\n';
+
+    for (integer n = 10000; n <= 100000000; n *= 10) {
+        integer prime;
+        while (pgen.count() != n)
+            prime = pgen.next_prime();
+        std::cout << n << "th prime: " << prime << '\n';
+    }
     return 0;
 }
