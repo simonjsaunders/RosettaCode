@@ -10,7 +10,7 @@ public class PrimeGenerator {
     private int sieveLimit_ = 0;
 
     public PrimeGenerator(int initialLimit, int increment) {
-        limit_ = initialLimit;
+        limit_ = nextOddNumber(initialLimit);
         increment_ = increment;
         primes_.add(2);
         findPrimes(3);
@@ -20,8 +20,8 @@ public class PrimeGenerator {
         if (index_ == primes_.size()) {
             if (Integer.MAX_VALUE - increment_ < limit_)
                 return 0;
-            int start = nextOddNumber(limit_ + 1);
-            limit_ += increment_;
+            int start = limit_ + 2;
+            limit_ = nextOddNumber(limit_ + increment_);
             primes_.clear();
             findPrimes(start);
         }
@@ -44,7 +44,7 @@ public class PrimeGenerator {
                 sieve_.set(q/2 - 1, true);
         }
         sieveLimit_ = newLimit;
-        int count = (limit_ - start + 1)/2;
+        int count = (limit_ - start)/2 + 1;
         BitSet composite = new BitSet(count);
         for (int p = 3; p <= newLimit; p += 2) {
             if (sieve_.get(p/2 - 1))

@@ -25,15 +25,15 @@ private:
 };
 
 template<typename integer>
-prime_generator<integer>::prime_generator(integer initial_limit, integer increment)
-    : limit_(initial_limit), increment_(increment) {
-    primes_.push_back(2);
-    find_primes(3);
+integer next_odd_number(integer n) {
+    return n % 2 == 0 ? n + 1 : n;
 }
 
 template<typename integer>
-integer next_odd_number(integer n) {
-    return n % 2 == 0 ? n + 1 : n;
+prime_generator<integer>::prime_generator(integer initial_limit, integer increment)
+    : limit_(next_odd_number(initial_limit)), increment_(increment) {
+    primes_.push_back(2);
+    find_primes(3);
 }
 
 template<typename integer>
@@ -41,8 +41,8 @@ integer prime_generator<integer>::next_prime() {
     if (index_ == primes_.size()) {
         if (std::numeric_limits<integer>::max() - increment_ < limit_)
             return 0;
-        int start = next_odd_number(limit_ + 1);
-        limit_ += increment_;
+        int start = limit_ + 2;
+        limit_ = next_odd_number(limit_ + increment_);
         primes_.clear();
         find_primes(start);
     }
@@ -68,7 +68,7 @@ void prime_generator<integer>::find_primes(integer start) {
             sieve_[q/2 - 1] = true;
     }
     sieve_limit_ = new_limit;
-    size_t count = (limit_ - start + 1)/2;
+    size_t count = (limit_ - start)/2 + 1;
     std::vector<bool> composite(count, false);
     for (integer p = 3; p <= new_limit; p += 2) {
         if (sieve_[p/2 - 1])
