@@ -54,9 +54,9 @@ public class PrimeGenerator {
             for (; q >= 0 && q < count; q += p)
                 composite.set(q, true);
         }
-        for (int p = start; p <= limit_; p += 2) {
-            if (!composite.get((p - start)/2))
-                primes_.add(p);
+        for (int p = 0; p < count; ++p) {
+            if (!composite.get(p))
+                primes_.add(p * 2 + start);
         }
     }
 
