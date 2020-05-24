@@ -19,6 +19,7 @@ See LICENSE for details.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
+|douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |nsmooth|2020-05-15|https://rosettacode.org/wiki/N-smooth_numbers|
