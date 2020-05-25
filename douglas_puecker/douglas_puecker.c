@@ -18,7 +18,7 @@ double perpendicular_distance(point_t p, point_t p1, point_t p2) {
 // Simplify an array of points using the Ramer–Douglas–Peucker algorithm.
 // Returns the number of output points.
 size_t douglas_puecker(const point_t* points, size_t n, double epsilon,
-                       point_t* dest, size_t length) {
+                       point_t* dest, size_t destlen) {
     assert(n >= 2);
     assert(epsilon >= 0);
     double max_dist = 0;
@@ -31,17 +31,17 @@ size_t douglas_puecker(const point_t* points, size_t n, double epsilon,
         }
     }
     if (max_dist > epsilon) {
-        size_t n1 = douglas_puecker(points, index + 1, epsilon, dest, length);
-        if (length >= n1 - 1) {
-            length -= n1 - 1;
+        size_t n1 = douglas_puecker(points, index + 1, epsilon, dest, destlen);
+        if (destlen >= n1 - 1) {
+            destlen -= n1 - 1;
             dest += n1 - 1;
         } else {
-            length = 0;
+            destlen = 0;
         }
-        size_t n2 = douglas_puecker(points + index, n - index, epsilon, dest, length);
+        size_t n2 = douglas_puecker(points + index, n - index, epsilon, dest, destlen);
         return n1 + n2 - 1;
     }
-    if (length >= 2) {
+    if (destlen >= 2) {
         dest[0] = points[0];
         dest[1] = points[n - 1];
     }
