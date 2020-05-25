@@ -127,46 +127,72 @@ int hash_table_entry_cmp(const void* p1, const void* p2) {
     return strcmp(e1->key, e2->key);
 }
 
+typedef struct buffer_tag {
+    size_t size;
+    size_t capacity;
+    char* string;
+} buffer_t;
+
+void buffer_create(buffer_t* buffer, size_t capacity) {
+    buffer->size = 0;
+    buffer->capacity = capacity;
+    buffer->string = xmalloc(capacity);
+}
+
+void buffer_destroy(buffer_t* buffer) {
+    free(buffer->string);
+    buffer->string = NULL;
+}
+
+void buffer_clear(buffer_t* buffer) {
+    buffer->size = 0;
+    buffer->string[0] = 0;
+}
+
+void buffer_append(buffer_t* buffer, char ch) {
+    size_t min_capacity = buffer->size + 2;
+    if (buffer->capacity < min_capacity) {
+        size_t new_capacity = buffer->capacity * 2;
+        if (new_capacity < min_capacity)
+            new_capacity = min_capacity;
+        buffer->string = xrealloc(buffer->string, new_capacity);
+        buffer->capacity = new_capacity;
+    }
+    buffer->string[buffer->size++] = ch;
+    buffer->string[buffer->size] = 0;
+}
+
 // A word is defined to be any run of characters for which isalpha
 // returns true, i.e. upper or lower case letters. All words are
 // converted to lower case.
-char* get_word(FILE* in) {
-    size_t size = 16, count = 0;
-    char* word = NULL;
+bool get_word(FILE* in, buffer_t* buffer) {
     int c;
-    while ((c = fgetc(in)) != EOF) {
+    buffer_clear(buffer);
+    while ((c = getc(in)) != EOF) {
         if (isalpha(c)) {
-            word = xmalloc(size);
-            word[count++] = c;
+            buffer_append(buffer, tolower(c));
             break;
         }
     }
-    if (word == NULL)
-        return NULL;
-    while ((c = fgetc(in)) != EOF) {
+    if (buffer->size == 0)
+        return false;
+    while ((c = getc(in)) != EOF) {
         if (!isalpha(c))
             break;
-        if (count + 1 == size) {
-            size *= 2;
-            word = xrealloc(word, size);
-        }
-        word[count++] = c;
+        buffer_append(buffer, tolower(c));
     }
-    word[count] = 0;
-    for (size_t i = 0; i < count; ++i)
-        word[i] = tolower((unsigned char)word[i]);
-    return word;
+    return true;
 }
 
 void get_top_words(FILE* in, int count) {
     hash_table ht = { 0 };
     hash_table_create(&ht, 1024);
     // Store word counts in the hash table
-    char* str;
-    while ((str = get_word(in)) != NULL) {
-        hash_table_inc(&ht, str);
-        free(str);
-    }
+    buffer_t buffer;
+    buffer_create(&buffer, 64);
+    while (get_word(in, &buffer))
+        hash_table_inc(&ht, buffer.string);
+    buffer_destroy(&buffer);
     // Sort words in decreasing order of frequency
     hash_table_entry* words = xmalloc(sizeof(hash_table_entry) * ht.entries);
     for (size_t i = 0, j = 0; i < ht.size; ++i) {
