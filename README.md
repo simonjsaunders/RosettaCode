@@ -33,6 +33,7 @@ See LICENSE for details.
 |stirling1|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |unprimeable|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
+|word_freq|2020-05-25|https://rosettacode.org/wiki/Word_frequency|
 
 ## C++ Code Examples
 
