@@ -106,9 +106,10 @@ void hash_table_inc(hash_table* ht, const char* str) {
         ++e->value;
         return;
     }
-    if (ht->entries + 1 == ht->size)
+    if (ht->entries + 1 == ht->size) {
         hash_table_grow(ht);
-    e = hash_table_find_entry(ht, str);
+        e = hash_table_find_entry(ht, str);
+    }
     assert(e->key == NULL);
     e->key = xstrdup(str);
     e->value = 1;
