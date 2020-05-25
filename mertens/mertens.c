@@ -1,24 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int mertens_number(int n, int* cache, int max) {
-    if (n < 0 || n > max)
-        return 0;
-    int* c = &cache[2 * n];
-    if (c[0] == 1)
-        return c[1];
-    int m = 1;
-    for (int k = 2; k <= n; ++k)
-        m -= mertens_number(n/k, cache, max);
-    c[0] = 1;
-    c[1] = m;
+int* mertens_numbers(int max) {
+    int* m = malloc((max + 1) * sizeof(int));
+    if (m == NULL)
+        return m;
+    m[1] = 1;
+    for (int n = 2; n <= max; ++n) {
+        m[n] = 1;
+        for (int k = 2; k <= n; ++k)
+            m[n] -= m[n/k];
+    }
     return m;
 }
 
 int main() {
     const int max = 1000;
-    int* cache = calloc(2 * (max+1), sizeof(int));
-    if (cache == NULL) {
+    int* mertens = mertens_numbers(max);
+    if (mertens == NULL) {
         fprintf(stderr, "Out of memory\n");
         return 1;
     }
@@ -30,7 +29,7 @@ int main() {
         if (i == 0)
             printf("  ");
         else
-            printf("%2d", mertens_number(i, cache, max));
+            printf("%2d", mertens[i]);
         ++column;
         if (column == 20) {
             printf("\n");
@@ -39,7 +38,7 @@ int main() {
     }
     int zero = 0, cross = 0, previous = 0;
     for (int i = 1; i <= max; ++i) {
-        int m = mertens_number(i, cache, max);
+        int m = mertens[i];
         if (m == 0) {
             ++zero;
             if (previous != 0)
@@ -47,7 +46,7 @@ int main() {
         }
         previous = m;
     }
-    free(cache);
+    free(mertens);
     printf("M(n) is zero %d times for 1 <= n <= %d.\n", zero, max);
     printf("M(n) crosses zero %d times for 1 <= n <= %d.\n", cross, max);
     return 0;
