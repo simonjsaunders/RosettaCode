@@ -96,6 +96,7 @@ command_t* make_command_list(const char* table) {
             char* eptr = 0;
             unsigned long min_len = strtoul(words[i + 1], &eptr, 10);
             if (min_len > 0 && *eptr == 0) {
+                free(words[i + 1]);
                 new_cmd->min_len = min_len;
                 ++i;
             }
