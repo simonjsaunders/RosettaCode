@@ -18,6 +18,8 @@ See LICENSE for details.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|abbrev_easy|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_easy|
+|abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
@@ -40,8 +42,8 @@ See LICENSE for details.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
-|abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
 |abbrev_easy|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_easy|
+|abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
