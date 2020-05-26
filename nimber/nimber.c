@@ -39,7 +39,11 @@ void print_table(uint32_t n, char op, uint32_t(*func)(uint32_t, uint32_t)) {
     printf(" %c |", op);
     for (uint32_t a = 0; a <= n; ++a)
         printf("%3d", a);
-    printf("\n--- -------------------------------------------------\n");
+    printf("\n--- -");
+    for (uint32_t a = 0; a <= n; ++a) {
+        printf("---");
+    }
+    printf("\n");
     for (uint32_t b = 0; b <= n; ++b) {
         printf("%2d |", b);
         for (uint32_t a = 0; a <= n; ++a)
