@@ -40,9 +40,8 @@ void print_table(uint32_t n, char op, uint32_t(*func)(uint32_t, uint32_t)) {
     for (uint32_t a = 0; a <= n; ++a)
         printf("%3d", a);
     printf("\n--- -");
-    for (uint32_t a = 0; a <= n; ++a) {
+    for (uint32_t a = 0; a <= n; ++a)
         printf("---");
-    }
     printf("\n");
     for (uint32_t b = 0; b <= n; ++b) {
         printf("%2d |", b);
