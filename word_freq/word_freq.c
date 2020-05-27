@@ -88,7 +88,7 @@ void hash_table_grow(hash_table* ht) {
         if (e->key == NULL)
             continue;
         size_t j = e->hash % new_size;
-        while (new_table[j].value != 0)
+        while (new_table[j].key != NULL)
             j = (j + 1) % new_size;
         hash_table_entry* new_entry = &new_table[j];
         new_entry->key = e->key;
