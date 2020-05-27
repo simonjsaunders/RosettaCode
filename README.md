@@ -83,6 +83,7 @@ See LICENSE for details.
 |palindrome_dates|2020-05-10|http://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force|2020-02-29|https://rosettacode.org/wiki/Parallel_Brute_Force|
+|param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
