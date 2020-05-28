@@ -1,5 +1,4 @@
 // See https://en.wikipedia.org/wiki/Koch_snowflake
-#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <vector>
@@ -21,18 +20,16 @@ std::vector<point> koch_next(const std::vector<point>& points) {
         y0 = points[i].y;
         x1 = points[i + 1].x;
         y1 = points[i + 1].y;
-        double angle = std::atan2(y1 - y0, x1 - x0);
-        double d = std::hypot(x1 - x0, y1 - y0);
-        double cos = std::cos(angle);
-        double sin = std::sin(angle);
+        double dy = y1 - y0;
+        double dx = x1 - x0;
         output[j].x = x0;
         output[j].y = y0;
-        output[j + 1].x = x0 + d * cos/3;
-        output[j + 1].y = y0 + d * sin/3;
-        output[j + 2].x = x0 + d * cos/2 - d * r32 * sin/3;
-        output[j + 2].y = y0 + d * sin/2 + d * r32 * cos/3;
-        output[j + 3].x = x0 + 2 * d * cos/3;
-        output[j + 3].y = y0 + 2 * d * sin/3;
+        output[j + 1].x = x0 + dx/3;
+        output[j + 1].y = y0 + dy/3;
+        output[j + 2].x = x0 + dx/2 - dy * r32/3;
+        output[j + 2].y = y0 + dy/2 + dx * r32/3;
+        output[j + 3].x = x0 + 2 * dx/3;
+        output[j + 3].y = y0 + 2 * dy/3;
     }
     output[j].x = x1;
     output[j].y = y1;
