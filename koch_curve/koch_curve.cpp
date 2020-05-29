@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-constexpr double r32 = 0.86602540378444; // sqrt(3)/2
+constexpr double sqrt3_2 = 0.86602540378444; // sqrt(3)/2
 
 struct point {
     double x;
@@ -26,8 +26,8 @@ std::vector<point> koch_next(const std::vector<point>& points) {
         output[j].y = y0;
         output[j + 1].x = x0 + dx/3;
         output[j + 1].y = y0 + dy/3;
-        output[j + 2].x = x0 + dx/2 - dy * r32/3;
-        output[j + 2].y = y0 + dy/2 + dx * r32/3;
+        output[j + 2].x = x0 + dx/2 - dy * sqrt3_2/3;
+        output[j + 2].y = y0 + dy/2 + dx * sqrt3_2/3;
         output[j + 3].x = x0 + 2 * dx/3;
         output[j + 3].y = y0 + 2 * dy/3;
     }
@@ -37,12 +37,12 @@ std::vector<point> koch_next(const std::vector<point>& points) {
 }
 
 std::vector<point> koch_points(int size, int iterations) {
-    double length = size * r32 * 0.95;
+    double length = size * sqrt3_2 * 0.95;
     double x = (size - length)/2;
-    double y = size/2 - length * r32/3;
+    double y = size/2 - length * sqrt3_2/3;
     std::vector<point> points{
         {x, y},
-        {x + length/2, y + length * r32},
+        {x + length/2, y + length * sqrt3_2},
         {x + length, y},
         {x, y},
     };
