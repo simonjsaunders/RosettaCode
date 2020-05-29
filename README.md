@@ -142,6 +142,7 @@ See LICENSE for details.
 |lex_sort|2020-04-26|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_primes|2020-05-13|https://rosettacode.org/wiki/Long_primes|
 |long_year|2020-05-08|https://rosettacode.org/wiki/Long_year%3F|
+|lychrel|2020-05-29|https://rosettacode.org/wiki/Lychrel_numbers|
 |mertens|2020-04-13|https://rosettacode.org/wiki/Mertens_function|
 |mod_exp|2020-05-15|https://rosettacode.org/wiki/Modular_exponentiation|
 |nimber|2020-05-28|https://rosettacode.org/wiki/Nimber_arithmetic|
