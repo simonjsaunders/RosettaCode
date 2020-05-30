@@ -136,6 +136,7 @@ See LICENSE for details.
 |egyptian_division|2020-05-15|https://rosettacode.org/wiki/Egyptian_division|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
+|koch_curve|2020-05-30|https://rosettacode.org/wiki/Koch_curve|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-05-02|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lcp|2020-04-26|https://rosettacode.org/wiki/Longest_common_prefix|
