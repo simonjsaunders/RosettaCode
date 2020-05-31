@@ -1,21 +1,17 @@
 import java.util.*;
 
-public class Abbreviations
-{
-    public static void main(String[] args)
-    {
+public class Abbreviations {
+    public static void main(String[] args) {
         CommandList commands = new CommandList(commandTable);
         String input = "riG   rePEAT copies  put mo   rest    types   fup.    6       poweRin";
         System.out.println(" input: " + input);
         System.out.println("output: " + test(commands, input));
     }
 
-    private static String test(CommandList commands, String input)
-    {
+    private static String test(CommandList commands, String input) {
         StringBuilder output = new StringBuilder();
         Scanner scanner = new Scanner(input);
-        while (scanner.hasNext())
-        {
+        while (scanner.hasNext()) {
             String word = scanner.next();
             if (output.length() > 0)
                 output.append(' ');
@@ -38,15 +34,12 @@ public class Abbreviations
         "refresh renum 3 repeat 3 replace 1 Creplace 2 reset 3 restore 4 rgtLEFT right 2 left " +
         "2  save  set  shift 2  si  sort  sos  stack 3 status 4 top  transfer 3  type 1  up 1";
 
-    private static class Command
-    {
-        private Command(String cmd, int minLength)
-        {
+    private static class Command {
+        private Command(String cmd, int minLength) {
              this.cmd = cmd;
              this.minLength = minLength;
         }
-        private boolean match(String str)
-        {
+        private boolean match(String str) {
             int olen = str.length();
             return olen >= minLength && olen <= cmd.length()
                 && cmd.regionMatches(true, 0, str, 0, olen);
@@ -55,41 +48,31 @@ public class Abbreviations
         private int minLength;
     }
 
-    private static Integer parseInteger(String word)
-    {
-        try
-        {
+    private static Integer parseInteger(String word) {
+        try {
             return Integer.valueOf(word);
-        }
-        catch (NumberFormatException ex)
-        {
+        } catch (NumberFormatException ex) {
             return null;
         }
     }
 
-    private static class CommandList
-    {
-        private CommandList(String table)
-        {
+    private static class CommandList {
+        private CommandList(String table) {
             Scanner scanner = new Scanner(table);
             List<String> words = new ArrayList<>();
-            while (scanner.hasNext())
-            {
+            while (scanner.hasNext()) {
                 String word = scanner.next();
                 words.add(word.toUpperCase());
             }
-            for (int i = 0, n = words.size(); i < n; ++i)
-            {
+            for (int i = 0, n = words.size(); i < n; ++i) {
                 String word = words.get(i);
                 // if there's an integer following this word, it specifies the minimum
                 // length for the command, otherwise the minimum length is the length
                 // of the command string
                 int len = word.length();
-                if (i + 1 < n)
-                {
+                if (i + 1 < n) {
                     Integer number = parseInteger(words.get(i + 1));
-                    if (number != null)
-                    {
+                    if (number != null) {
                         len = number.intValue();
                         ++i;
                     }
@@ -97,10 +80,8 @@ public class Abbreviations
                 commands.add(new Command(word, len));
             }
         }
-        private Command findCommand(String word)
-        {
-            for (Command command : commands)
-            {
+        private Command findCommand(String word) {
+            for (Command command : commands) {
                 if (command.match(word))
                     return command;
             }

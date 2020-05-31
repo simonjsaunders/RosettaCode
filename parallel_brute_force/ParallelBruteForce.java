@@ -4,8 +4,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 
-public class ParallelBruteForce
-{
+public class ParallelBruteForce {
     public static void main(String[] args) {
         try {
             String[] hashes = {
@@ -33,7 +32,7 @@ public class ParallelBruteForce
         count.set(length);
         int processors = Runtime.getRuntime().availableProcessors();
         ExecutorService svc = Executors.newFixedThreadPool(processors);
-	List<Future<?>> tasks = new ArrayList<>();
+        List<Future<?>> tasks = new ArrayList<>();
         for (int i = 0; i < 26; ++i)
             tasks.add(svc.submit(new PasswordFinder((byte)(97 + i))));
         for (Future<?> task : tasks)
@@ -83,5 +82,3 @@ public class ParallelBruteForce
     private byte[][] digests;
     private AtomicInteger count = new AtomicInteger();
 }
-
-
