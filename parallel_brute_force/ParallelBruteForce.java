@@ -13,9 +13,7 @@ public class ParallelBruteForce {
                 "74e1bb62f8dabb8125a58852b63bdf6eaef667cb56ac7f7cdba6d7305c50a22f"};
             ParallelBruteForce pbf = new ParallelBruteForce(5, hashes);
             pbf.findPasswords();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
