@@ -55,7 +55,7 @@ nimprod(X, Y, Product):-
 print_row(N, B, Function):-
     writef('%3r |', [B]),
     Goal =.. [Function, A, B, C],
-    forall(between(0, N, A), (call(Goal), writef('%3r', [C]))),
+    forall(between(0, N, A), (Goal, writef('%3r', [C]))),
     nl.
 
 print_table(N, Operator, Function):-
