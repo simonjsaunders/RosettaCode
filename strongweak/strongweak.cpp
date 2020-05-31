@@ -4,8 +4,7 @@
 #include <sstream>
 #include "../library/sieve_of_eratosthenes.h"
 
-int main()
-{
+int main() {
     const int limit1 = 1000000;
     const int limit2 = 10000000;
     const int max_print[2] = { 36, 37 };
@@ -24,19 +23,16 @@ int main()
     std::ostringstream out[2];
     const char* strength[2] = { "strong", "weak" };
     int p1 = 2, p2 = 3;
-    for (int p3 = 5; p2 < limit2; ++p3)
-    {
+    for (int p3 = 5; p2 < limit2; ++p3) {
         if (!sieve.is_prime(p3))
             continue;
         int diff = p1 + p3 - 2 * p2;
         int index = diff < 0 ? 0 : (diff > 0 ? 1 : -1);
-        if (index != -1)
-        {
+        if (index != -1) {
             ++count2[index];
             if (p2 < limit1)
                 ++count1[index];
-            if (count2[index] <= max_print[index])
-            {
+            if (count2[index] <= max_print[index]) {
                 if (count2[index] > 1)
                     out[index] << ' ';
                 out[index] << p2;
@@ -45,8 +41,7 @@ int main()
         p1 = p2;
         p2 = p3;
     }
-    for (int i = 0; i < 2; ++i)
-    {
+    for (int i = 0; i < 2; ++i) {
         std::cout << "First " << max_print[i] << " " << strength[i] << " primes: " << out[i].str() << '\n';
         std::cout << "Number of " << strength[i] << " primes below " << limit1 << ": " << count1[i] << '\n';
         std::cout << "Number of " << strength[i] << " primes below " << limit2 << ": " << count2[i] << '\n';

@@ -2,8 +2,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <boost/multiprecision/integer.hpp>
 
-int main()
-{
+int main() {
     using boost::multiprecision::cpp_int;
     using boost::multiprecision::pow;
     using boost::multiprecision::powm;

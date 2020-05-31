@@ -5,8 +5,7 @@
 typedef uint32_t integer;
 
 // return number of decimal digits
-int count_digits(integer n)
-{
+int count_digits(integer n) {
     int digits = 0;
     for (; n > 0; ++digits)
         n /= 10;
@@ -14,8 +13,7 @@ int count_digits(integer n)
 }
 
 // return the number with one digit replaced
-integer change_digit(integer n, int index, int new_digit)
-{
+integer change_digit(integer n, int index, int new_digit) {
     integer p = 1;
     integer changed = 0;
     for (; index > 0; p *= 10, n /= 10, --index)
@@ -25,15 +23,12 @@ integer change_digit(integer n, int index, int new_digit)
 }
 
 // returns true if n unprimeable
-bool unprimeable(const sieve_of_eratosthenes& sieve, integer n)
-{
+bool unprimeable(const sieve_of_eratosthenes& sieve, integer n) {
     if (sieve.is_prime(n))
         return false;
     int d = count_digits(n);
-    for (int i = 0; i < d; ++i)
-    {
-        for (int j = 0; j <= 9; ++j)
-        {
+    for (int i = 0; i < d; ++i) {
+        for (int j = 0; j <= 9; ++j) {
             integer m = change_digit(n, i, j);
             if (m != n && sieve.is_prime(m))
                 return false;
@@ -42,8 +37,7 @@ bool unprimeable(const sieve_of_eratosthenes& sieve, integer n)
     return true;
 }
 
-int main()
-{
+int main() {
     const integer limit = 10000000;
     sieve_of_eratosthenes sieve(limit);
 
@@ -54,12 +48,9 @@ int main()
     std::cout << "First 35 unprimeable numbers:\n";
     integer n = 100;
     integer lowest[10] = { 0 };
-    for (int count = 0, found = 0; n < limit && (found < 10 || count < 600); ++n)
-    {
-        if (unprimeable(sieve, n))
-        {
-            if (count < 35)
-            {
+    for (int count = 0, found = 0; n < limit && (found < 10 || count < 600); ++n) {
+        if (unprimeable(sieve, n)) {
+            if (count < 35) {
                 if (count != 0)
                     std::cout << ", ";
                 std::cout << n;
@@ -68,8 +59,7 @@ int main()
             if (count == 600)
                 std::cout << "\n600th unprimeable number: " << n << '\n';
             int last_digit = n % 10;
-            if (lowest[last_digit] == 0)
-            {
+            if (lowest[last_digit] == 0) {
                 lowest[last_digit] = n;
                 ++found;
             }

@@ -1,11 +1,9 @@
 #include <iostream>
 #include <map>
 
-class van_eck_generator
-{
+class van_eck_generator {
 public:
-    int next()
-    {
+    int next() {
         int result = last_term;
         auto iter = last_pos.find(last_term);
         int next_term = (iter != last_pos.end()) ? index - iter->second : 0;
@@ -20,8 +18,7 @@ private:
     std::map<int, int> last_pos;
 };
 
-int main()
-{
+int main() {
     van_eck_generator gen;
     int i = 0;
     std::cout << "First 10 terms of the Van Eck sequence:\n";

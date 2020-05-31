@@ -14,8 +14,7 @@ const char* command_table =
   "READ  RECover REFRESH RENum REPeat  Replace CReplace  RESet  RESTore  RGTLEFT "
   "RIght LEft  SAVE  SET SHift SI  SORT  SOS  STAck STATus  TOP TRAnsfer Type Up";
 
-class command
-{
+class command {
 public:
     command(const std::string&, size_t);
     const std::string& cmd() const { return cmd_; }
@@ -28,35 +27,29 @@ private:
 
 // cmd is assumed to be all uppercase
 command::command(const std::string& cmd, size_t min_len)
-    : cmd_(cmd), min_len_(min_len)
-{
-}
+    : cmd_(cmd), min_len_(min_len) {}
 
 // str is assumed to be all uppercase
-bool command::match(const std::string& str) const
-{
+bool command::match(const std::string& str) const {
     size_t olen = str.length();
     return olen >= min_len_ && olen <= cmd_.length()
         && cmd_.compare(0, olen, str) == 0;
 }
 
 // convert string to uppercase
-void uppercase(std::string& str)
-{
+void uppercase(std::string& str) {
     std::transform(str.begin(), str.end(), str.begin(),
         [](unsigned char c) -> unsigned char { return std::toupper(c); });
 }
 
-size_t get_min_length(const std::string& str)
-{
+size_t get_min_length(const std::string& str) {
     size_t len = 0, n = str.length();
     while (len < n && std::isupper(static_cast<unsigned char>(str[len])))
         ++len;
     return len;
 }
 
-class command_list
-{
+class command_list {
 public:
     explicit command_list(const char*);
     const command* find_command(const std::string&) const;
@@ -64,13 +57,11 @@ private:
     std::vector<command> commands_;
 };
 
-command_list::command_list(const char* table)
-{
+command_list::command_list(const char* table) {
     std::vector<command> commands;
     std::istringstream is(table);
     std::string word;
-    while (is >> word)
-    {
+    while (is >> word) {
         // count leading uppercase characters
         size_t len = get_min_length(word);
         // then convert to uppercase
@@ -79,23 +70,19 @@ command_list::command_list(const char* table)
     }
 }
 
-const command* command_list::find_command(const std::string& word) const
-{
-    for (const command& command : commands_)
-    {
+const command* command_list::find_command(const std::string& word) const {
+    for (const command& command : commands_) {
         if (command.match(word))
             return &command;
     }
     return nullptr;
 }
 
-std::string test(const command_list& commands, const std::string& input)
-{
+std::string test(const command_list& commands, const std::string& input) {
     std::string output;
     std::istringstream is(input);
     std::string word;
-    while (is >> word)
-    {
+    while (is >> word) {
         if (!output.empty())
             output += ' ';
         uppercase(word);
@@ -108,8 +95,7 @@ std::string test(const command_list& commands, const std::string& input)
     return output;
 }
 
-int main()
-{
+int main() {
     command_list commands(command_table);
     std::string input("riG   rePEAT copies  put mo   rest    types   fup.    6       poweRin");
     std::string output(test(commands, input));

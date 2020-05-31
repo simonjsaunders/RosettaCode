@@ -15,8 +15,7 @@ const char* command_table =
   "refresh renum 3 repeat 3 replace 1 Creplace 2 reset 3 restore 4 rgtLEFT right 2 left "
   "2  save  set  shift 2  si  sort  sos  stack 3 status 4 top  transfer 3  type 1  up 1";
 
-class command
-{
+class command {
 public:
     command(const std::string&, size_t);
     const std::string& cmd() const { return cmd_; }
@@ -29,44 +28,35 @@ private:
 
 // cmd is assumed to be all uppercase
 command::command(const std::string& cmd, size_t min_len)
-    : cmd_(cmd), min_len_(min_len)
-{
-}
+    : cmd_(cmd), min_len_(min_len) {}
 
 // str is assumed to be all uppercase
-bool command::match(const std::string& str) const
-{
+bool command::match(const std::string& str) const {
     size_t olen = str.length();
     return olen >= min_len_ && olen <= cmd_.length()
         && cmd_.compare(0, olen, str) == 0;
 }
 
-bool parse_integer(const std::string& word, int& value)
-{
-    try
-    {
+bool parse_integer(const std::string& word, int& value) {
+    try {
         size_t pos;
         int i = std::stoi(word, &pos, 10);
         if (pos < word.length())
             return false;
         value = i;
         return true;
-    }
-    catch (const std::exception& ex)
-    {
+    } catch (const std::exception& ex) {
         return false;
     }
 }
 
 // convert string to uppercase
-void uppercase(std::string& str)
-{
+void uppercase(std::string& str) {
     std::transform(str.begin(), str.end(), str.begin(),
         [](unsigned char c) -> unsigned char { return std::toupper(c); });
 }
 
-class command_list
-{
+class command_list {
 public:
     explicit command_list(const char*);
     const command* find_command(const std::string&) const;
@@ -74,18 +64,15 @@ private:
     std::vector<command> commands_;
 };
 
-command_list::command_list(const char* table)
-{
+command_list::command_list(const char* table) {
     std::istringstream is(table);
     std::string word;
     std::vector<std::string> words;
-    while (is >> word)
-    {
+    while (is >> word) {
         uppercase(word);
         words.push_back(word);
     }
-    for (size_t i = 0, n = words.size(); i < n; ++i)
-    {
+    for (size_t i = 0, n = words.size(); i < n; ++i) {
         word = words[i];
         // if there's an integer following this word, it specifies the minimum
         // length for the command, otherwise the minimum length is the length
@@ -97,23 +84,19 @@ command_list::command_list(const char* table)
     }
 }
 
-const command* command_list::find_command(const std::string& word) const
-{
-    for (const command& command : commands_)
-    {
+const command* command_list::find_command(const std::string& word) const {
+    for (const command& command : commands_) {
         if (command.match(word))
             return &command;
     }
     return nullptr;
 }
 
-std::string test(const command_list& commands, const std::string& input)
-{
+std::string test(const command_list& commands, const std::string& input) {
     std::string output;
     std::istringstream is(input);
     std::string word;
-    while (is >> word)
-    {
+    while (is >> word) {
         if (!output.empty())
             output += ' ';
         uppercase(word);
@@ -126,8 +109,7 @@ std::string test(const command_list& commands, const std::string& input)
     return output;
 }
 
-int main()
-{
+int main() {
     command_list commands(command_table);
     std::string input("riG   rePEAT copies  put mo   rest    types   fup.    6       poweRin");
     std::string output(test(commands, input));

@@ -4,8 +4,7 @@
 #include <string>
 #include <vector>
 
-void lexicographical_sort(std::vector<int>& numbers)
-{
+void lexicographical_sort(std::vector<int>& numbers) {
     std::vector<std::string> strings(numbers.size());
     std::transform(numbers.begin(), numbers.end(), strings.begin(),
                    [](int i) { return std::to_string(i); });
@@ -14,8 +13,7 @@ void lexicographical_sort(std::vector<int>& numbers)
                    [](const std::string& s) { return std::stoi(s); });
 }
 
-std::vector<int> lexicographically_sorted_vector(int n)
-{
+std::vector<int> lexicographically_sorted_vector(int n) {
     std::vector<int> numbers(n >= 1 ? n : 2 - n);
     std::iota(numbers.begin(), numbers.end(), std::min(1, n));
     lexicographical_sort(numbers);
@@ -23,11 +21,9 @@ std::vector<int> lexicographically_sorted_vector(int n)
 }
 
 template <typename T>
-void print_vector(std::ostream& out, const std::vector<T>& v)
-{
+void print_vector(std::ostream& out, const std::vector<T>& v) {
     out << '[';
-    if (!v.empty())
-    {
+    if (!v.empty()) {
         auto i = v.begin();
         out << *i++;
         for (; i != v.end(); ++i)
@@ -36,10 +32,8 @@ void print_vector(std::ostream& out, const std::vector<T>& v)
     out << "]\n";
 }
 
-int main(int argc, char** argv)
-{
-    for (int i : { 0, 5, 13, 21, -22 })
-    {
+int main(int argc, char** argv) {
+    for (int i : { 0, 5, 13, 21, -22 }) {
         std::cout << i << ": ";
         print_vector(std::cout, lexicographically_sorted_vector(i));
     }

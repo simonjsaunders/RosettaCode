@@ -8,14 +8,12 @@ typedef boost::multiprecision::cpp_int integer;
 typedef unsigned int integer;
 #endif
 
-auto make_bell_triangle(int n)
-{
+auto make_bell_triangle(int n) {
     std::vector<std::vector<integer>> bell(n);
     for (int i = 0; i < n; ++i)
         bell[i].assign(i + 1, 0);
     bell[0][0] = 1;
-    for (int i = 1; i < n; ++i)
-    {
+    for (int i = 1; i < n; ++i) {
         std::vector<integer>& row = bell[i];
         std::vector<integer>& prev_row = bell[i - 1];
         row[0] = prev_row[i - 1];
@@ -25,8 +23,7 @@ auto make_bell_triangle(int n)
     return bell;
 }
 
-int main()
-{
+int main() {
 #ifdef HAVE_BOOST
     const int size = 50;
 #else
@@ -44,8 +41,7 @@ int main()
 #endif
 
     std::cout << "First 10 rows of the Bell triangle:\n";
-    for (int i = 0; i < 10; ++i)
-    {
+    for (int i = 0; i < 10; ++i) {
         std::cout << bell[i][0];
         for (int j = 1; j <= i; ++j)
             std::cout << ' ' << bell[i][j];

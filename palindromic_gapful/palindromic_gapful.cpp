@@ -3,11 +3,9 @@
 
 typedef uint64_t integer;
 
-integer reverse(integer n)
-{
+integer reverse(integer n) {
     integer rev = 0;
-    while (n > 0)
-    {
+    while (n > 0) {
         rev = rev * 10 + (n % 10);
         n /= 10;
     }
@@ -16,18 +14,13 @@ integer reverse(integer n)
 
 // generates base 10 palindromes greater than 100 starting
 // with the specified digit
-class palindrome_generator
-{
+class palindrome_generator {
 public:
     palindrome_generator(int digit) : power_(10), next_(digit * power_ - 1),
-        digit_(digit), even_(false)
-    {
-    }
-    integer next_palindrome()
-    {
+        digit_(digit), even_(false) {}
+    integer next_palindrome() {
         ++next_;
-        if (next_ == power_ * (digit_ + 1))
-        {
+        if (next_ == power_ * (digit_ + 1)) {
             if (even_)
                 power_ *= 10;
             next_ = digit_ * power_;
@@ -43,8 +36,7 @@ private:
     bool even_;
 };
 
-bool gapful(integer n)
-{
+bool gapful(integer n) {
     integer m = n;
     while (m >= 10)
         m /= 10;
@@ -52,10 +44,8 @@ bool gapful(integer n)
 }
 
 template<size_t len>
-void print(integer (&array)[9][len])
-{
-    for (int digit = 1; digit < 10; ++digit)
-    {
+void print(integer (&array)[9][len]) {
+    for (int digit = 1; digit < 10; ++digit) {
         std::cout << digit << ":";
         for (int i = 0; i < len; ++i)
             std::cout << ' ' << array[digit - 1][i];
@@ -63,8 +53,7 @@ void print(integer (&array)[9][len])
     }
 }
 
-int main()
-{
+int main() {
     const int n1 = 20, n2 = 15, n3 = 10;
     const int m1 = 100, m2 = 1000;
 
@@ -72,11 +61,9 @@ int main()
     integer pg2[9][n2];
     integer pg3[9][n3];
 
-    for (int digit = 1; digit < 10; ++digit)
-    {
+    for (int digit = 1; digit < 10; ++digit) {
         palindrome_generator pgen(digit);
-        for (int i = 0; i < m2; )
-        {
+        for (int i = 0; i < m2; ) {
             integer n = pgen.next_palindrome();
             if (!gapful(n))
                 continue;

@@ -3,15 +3,13 @@
 #include <map>
 
 template<typename map_type>
-map_type merge(const map_type& original, const map_type& update)
-{
+map_type merge(const map_type& original, const map_type& update) {
     map_type result(update);
     result.insert(original.begin(), original.end());
     return result;
 }
 
-int main()
-{
+int main() {
     typedef std::map<std::string, std::string> map;
     map original{
         {"name", "Rocket Skates"},

@@ -15,8 +15,7 @@ const char* tens[] = {
     "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
 };
 
-struct named_number
-{
+struct named_number {
     const char* name_;
     integer number_;
 };
@@ -32,32 +31,24 @@ named_number named_numbers[] = {
 };
 const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
 
-std::string cardinal(integer n)
-{
+std::string cardinal(integer n) {
     std::string result;
     if (n < 20)
         result = small[n];
-    else if (n < 100)
-    {
+    else if (n < 100) {
         result = tens[n/10 - 2];
-        if (n % 10 != 0)
-        {
+        if (n % 10 != 0) {
             result += " ";
             result += small[n % 10];
         }
-    }
-    else
-    {
-        for (size_t i = 1; i <= names_len; ++i)
-        {
-            if (i == names_len || n < named_numbers[i].number_)
-            {
+    } else {
+        for (size_t i = 1; i <= names_len; ++i) {
+            if (i == names_len || n < named_numbers[i].number_) {
                 integer p = named_numbers[i-1].number_;
                 result = cardinal(n/p);
                 result += " ";
                 result += named_numbers[i-1].name_;
-                if (n % p != 0)
-                {
+                if (n % p != 0) {
                     result += " ";
                     result += cardinal(n % p);
                 }
@@ -68,20 +59,16 @@ std::string cardinal(integer n)
     return result;
 }
 
-inline char uppercase(char ch)
-{
+inline char uppercase(char ch) {
     return static_cast<char>(std::toupper(static_cast<unsigned char>(ch)));
 }
 
-void magic(integer n)
-{
-    for (unsigned int i = 0; ; ++i)
-    {
+void magic(integer n) {
+    for (unsigned int i = 0; ; ++i) {
         std::string text(cardinal(n));
         if (i == 0)
             text[0] = uppercase(text[0]);
-        if (n == 4)
-        {
+        if (n == 4) {
             std::cout << text << " is magic.\n";
             break;
         }
@@ -91,8 +78,7 @@ void magic(integer n)
     }
 }
 
-int main()
-{
+int main() {
     magic(5);
     magic(13);
     magic(78);

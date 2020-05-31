@@ -3,16 +3,14 @@
 #include <iostream>
 
 template<typename char_type>
-std::basic_string<char_type> squeeze(std::basic_string<char_type> str, char_type ch)
-{
+std::basic_string<char_type> squeeze(std::basic_string<char_type> str, char_type ch) {
     auto i = std::unique(str.begin(), str.end(),
         [ch](char_type a, char_type b) { return a == ch && b == ch; });
     str.erase(i, str.end());
     return str;
 }
 
-void test(const std::string& str, char ch)
-{
+void test(const std::string& str, char ch) {
     std::cout << "character: '" << ch << "'\n";
     std::cout << "original: <<<" << str << ">>>, length: " << str.length() << '\n';
     std::string squeezed(squeeze(str, ch));
@@ -20,8 +18,7 @@ void test(const std::string& str, char ch)
     std::cout << '\n';
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
     test("", ' ');
     test("\"If I were two-faced, would I be wearing this one?\" --- Abraham Lincoln ", '-');
     test("..1111111111111111111111111111111111111111111111111111111111111117777888", '7');

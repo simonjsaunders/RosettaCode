@@ -2,38 +2,31 @@
 #include <vector>
 #include <boost/integer/common_factor.hpp>
 #include <boost/multiprecision/cpp_int.hpp>
-//#include <boost/multiprecision/gmp.hpp>
 #include <boost/multiprecision/miller_rabin.hpp>
 
 typedef boost::multiprecision::cpp_int integer;
-//typedef boost::multiprecision::mpz_int integer;
 
-integer fermat(unsigned int n)
-{
+integer fermat(unsigned int n) {
     unsigned int p = 1;
     for (unsigned int i = 0; i < n; ++i)
         p *= 2;
     return 1 + pow(integer(2), p);
 }
 
-inline integer g(integer x, integer n)
-{
+inline integer g(integer x, integer n) {
     return (x * x + 1) % n;
 }
 
-integer pollard_rho(integer n)
-{
+integer pollard_rho(integer n) {
     integer x = 2, y = 2, d = 1, z = 1;
     int count = 0;
-    for (;;)
-    {
+    for (;;) {
         x = g(x, n);
         y = g(g(y, n), n);
         d = abs(x - y);
         z = (z * d) % n;
         ++count;
-        if (count == 100)
-        {
+        if (count == 100) {
             d = gcd(z, n);
             if (d != 1)
                 break;
@@ -46,19 +39,15 @@ integer pollard_rho(integer n)
     return d;
 }
 
-std::vector<integer> get_prime_factors(integer n)
-{
+std::vector<integer> get_prime_factors(integer n) {
     std::vector<integer> factors;
-    for (;;)
-    {
-        if (miller_rabin_test(n, 25))
-        {
+    for (;;) {
+        if (miller_rabin_test(n, 25)) {
             factors.push_back(n);
             break;
         }
         integer f = pollard_rho(n);
-        if (f == 0)
-        {
+        if (f == 0) {
             factors.push_back(n);
             break;
         }
@@ -68,8 +57,7 @@ std::vector<integer> get_prime_factors(integer n)
     return factors;
 }
 
-void print_vector(const std::vector<integer>& factors)
-{
+void print_vector(const std::vector<integer>& factors) {
     if (factors.empty())
         return;
     auto i = factors.begin();
@@ -79,16 +67,12 @@ void print_vector(const std::vector<integer>& factors)
     std::cout << '\n';
 }
 
-int main()
-{
+int main() {
     std::cout << "First 10 Fermat numbers:\n";
     for (unsigned int i = 0; i < 10; ++i)
-    {
         std::cout << "F(" << i << ") = " << fermat(i) << '\n';
-    }
     std::cout << "\nPrime factors:\n";
-    for (unsigned int i = 0; i < 9; ++i)
-    {
+    for (unsigned int i = 0; i < 9; ++i) {
         std::cout << "F(" << i << "): ";
         print_vector(get_prime_factors(fermat(i)));
     }
