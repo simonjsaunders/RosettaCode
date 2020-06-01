@@ -30,7 +30,7 @@ double f(double r) {
 }
 
 double solve(std::function<double(double)> fn, double guess=0.5, double epsilon=0) {
-    for (double delta = guess, f0 = fn(guess), factor = 2;
+    for (double delta = guess ? guess : 1, f0 = fn(guess), factor = 2;
              delta > epsilon && guess != guess - delta;
              delta *= factor) {
         double nf = fn(guess - delta);
