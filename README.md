@@ -69,6 +69,7 @@ See LICENSE for details.
 |kronecker_fractals|2020-05-11|https://rosettacode.org/wiki/Kronecker_product_based_fractals|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
+|least_squares|2020-06-01|https://rosettacode.org/wiki/Logistic_Curve_Fitting_in_Epidemiology|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-04-05|https://rosettacode.org/wiki/Long_year%3F|
 |lu_decompose|2020-04-25|https://rosettacode.org/wiki/LU_decomposition|
