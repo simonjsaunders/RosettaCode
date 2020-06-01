@@ -94,6 +94,7 @@ See LICENSE for details.
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
 |safe_primes|2020-01-13|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
+|sequence_mutation|2020-06-01|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
 |sexy_primes|2020-01-11|https://rosettacode.org/wiki/Sexy_primes|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
