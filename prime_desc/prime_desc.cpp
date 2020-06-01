@@ -1,7 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include "../library/sieve_of_eratosthenes.h"
 
 typedef unsigned long long integer;
 
@@ -28,15 +27,26 @@ void print_vector(const std::vector<integer>& vec) {
     std::cout << '\n';
 }
 
+bool is_prime(integer n) {
+    if (n < 2)
+        return false;
+    if (n % 2 == 0)
+        return n == 2;
+    for (integer p = 3; p * p <= n; p += 2) {
+        if (n % p == 0)
+            return false;
+    }
+    return true;
+}
+
 int main(int argc, char** argv) {
     const size_t limit = 100;
-    sieve_of_eratosthenes sieve(limit);
 
     std::vector<integer> ancestor(limit, 0);
     std::vector<std::vector<integer>> descendants(limit);
 
     for (size_t prime = 0; prime < limit; ++prime) {
-        if (!sieve.is_prime(prime))
+        if (!is_prime(prime))
             continue;
         descendants[prime].push_back(prime);
         for (size_t i = 0; i + prime < limit; ++i) {
