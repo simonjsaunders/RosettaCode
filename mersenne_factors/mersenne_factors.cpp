@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
-#include "../library/sieve_of_eratosthenes.h"
 
 typedef uint64_t integer;
 
@@ -26,18 +25,26 @@ integer mod_pow(integer p, integer n) {
     return square;
 }
 
-const integer limit = 100000U;
+bool is_prime(integer n) {
+    if (n < 2)
+        return false;
+    if (n % 2 == 0)
+        return n == 2;
+    for (integer p = 3; p * p <= n; p += 2) {
+        if (n % p == 0)
+            return false;
+    }
+    return true;
+}
 
-integer find_mersenne_factor(const sieve_of_eratosthenes& sieve, integer p) {
+integer find_mersenne_factor(integer p) {
     integer k = 0;
     integer q = 1;
     for (;;) {
         ++k;
         q = 2 * k * p + 1;
-        if (q >= limit)
-            break;
         if (q % 8 == 1 || q % 8 == 7) {
-            if (mod_pow(p, q) == 1 && sieve.is_prime(q))
+            if (mod_pow(p, q) == 1 && is_prime(q))
                 return q;
         }
     }
@@ -45,7 +52,6 @@ integer find_mersenne_factor(const sieve_of_eratosthenes& sieve, integer p) {
 }
 
 int main() {
-    sieve_of_eratosthenes sieve(limit);
-    std::cout << find_mersenne_factor(sieve, 929) << '\n';
+    std::cout << find_mersenne_factor(929) << '\n';
     return 0;
 }
