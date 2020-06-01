@@ -1,3 +1,4 @@
+#include <array>
 #include <iomanip>
 #include <iostream>
 #include <random>
@@ -9,25 +10,44 @@ public:
     std::string generate_sequence(size_t length);
     void mutate_sequence(std::string&);
     static void print_sequence(std::ostream&, const std::string&);
-private:
     enum class operation { change, erase, insert };
+    void set_weight(operation, unsigned int);
+private:
     char get_random_base() {
         return bases_[base_dist_(engine_)];
     }
-    operation get_random_operation() {
-        return static_cast<operation>(operation_dist_(engine_));
-    }
+    operation get_random_operation();
     static const char bases_[];
     std::mt19937 engine_;
     std::uniform_int_distribution<size_t> base_dist_;
-    std::uniform_int_distribution<int> operation_dist_;
+    std::array<unsigned int, 3> operation_weight_;
+    unsigned int total_weight_;
 };
 
 const char sequence_generator::bases_[] = { 'A', 'C', 'G', 'T' };
 
 sequence_generator::sequence_generator() : engine_(std::random_device()()),
     base_dist_(0, sizeof(bases_)/sizeof(bases_[0]) - 1),
-    operation_dist_(0, 2) {}
+    total_weight_(operation_weight_.size()) {
+    operation_weight_.fill(1);
+}
+
+sequence_generator::operation sequence_generator::get_random_operation() {
+    std::uniform_int_distribution<unsigned int> op_dist(0, total_weight_ - 1);
+    unsigned int n = op_dist(engine_), op = 0, weight = 0;
+    for (; op < operation_weight_.size(); ++op) {
+        weight += operation_weight_[op];
+        if (n < weight)
+            break;
+    }
+    return static_cast<operation>(op);
+}
+
+void sequence_generator::set_weight(operation op, unsigned int weight) {
+    total_weight_ -= operation_weight_[static_cast<size_t>(op)];
+    operation_weight_[static_cast<size_t>(op)] = weight;
+    total_weight_ += weight;
+}
 
 std::string sequence_generator::generate_sequence(size_t length) {
     std::string sequence;
@@ -92,6 +112,7 @@ void sequence_generator::print_sequence(std::ostream& out, const std::string& se
 
 int main() {
     sequence_generator gen;
+    gen.set_weight(sequence_generator::operation::change, 2);
     std::string sequence = gen.generate_sequence(250);
     std::cout << "Initial sequence:\n";
     sequence_generator::print_sequence(std::cout, sequence);
