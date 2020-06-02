@@ -22,7 +22,7 @@ private:
  * @param limit the maximum integer that can be tested for primality
  */
 inline sieve_of_eratosthenes::sieve_of_eratosthenes(size_t limit) {
-    limit = std::max(size_t(3), 1 + 2*(limit/2));
+    limit = std::max(size_t(3), limit);
     is_prime_.resize(limit/2, true);
     for (size_t p = 3; p * p <= limit; p += 2) {
         if (is_prime_[p/2 - 1]) {
