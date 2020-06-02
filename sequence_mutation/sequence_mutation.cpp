@@ -17,17 +17,17 @@ private:
         return bases_[base_dist_(engine_)];
     }
     operation get_random_operation();
-    static const char bases_[];
+    static const std::array<char, 4> bases_;
     std::mt19937 engine_;
     std::uniform_int_distribution<size_t> base_dist_;
     std::array<unsigned int, 3> operation_weight_;
     unsigned int total_weight_;
 };
 
-const char sequence_generator::bases_[] = { 'A', 'C', 'G', 'T' };
+const std::array<char, 4> sequence_generator::bases_{ 'A', 'C', 'G', 'T' };
 
 sequence_generator::sequence_generator() : engine_(std::random_device()()),
-    base_dist_(0, sizeof(bases_)/sizeof(bases_[0]) - 1),
+    base_dist_(0, bases_.size() - 1),
     total_weight_(operation_weight_.size()) {
     operation_weight_.fill(1);
 }
@@ -83,10 +83,9 @@ void sequence_generator::mutate_sequence(std::string& sequence) {
 }
 
 void sequence_generator::print_sequence(std::ostream& out, const std::string& sequence) {
-    constexpr size_t base_count = sizeof(bases_)/sizeof(bases_[0]);
-    size_t n = sequence.length();
-    size_t count[base_count] = { 0 };
-    for (size_t i = 0; i < n; ++i) {
+    constexpr size_t base_count = bases_.size();
+    std::array<size_t, base_count> count = { 0 };
+    for (size_t i = 0, n = sequence.length(); i < n; ++i) {
         if (i % 50 == 0) {
             if (i != 0)
                 out << '\n';
