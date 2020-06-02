@@ -22,6 +22,7 @@ See LICENSE for details.
 |abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
