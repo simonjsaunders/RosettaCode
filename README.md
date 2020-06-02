@@ -59,6 +59,7 @@ See LICENSE for details.
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
+|file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |four_is_magic|2020-01-17|https://rosettacode.org/wiki/Four_is_magic|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
