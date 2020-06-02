@@ -6,8 +6,8 @@
 
 void file_size_distribution(const std::filesystem::path& directory) {
     constexpr size_t n = 9;
-    std::array<std::uintmax_t, n> sizes = { 0, 1000, 10000, 100000,
-        1000000, 10000000, 100000000, 1000000000, 10000000000 };
+    constexpr std::array<std::uintmax_t, n> sizes = { 0, 1000, 10000,
+        100000, 1000000, 10000000, 100000000, 1000000000, 10000000000 };
     std::array<size_t, n + 1> count = { 0 };
     size_t files = 0;
     std::uintmax_t total_size = 0;
