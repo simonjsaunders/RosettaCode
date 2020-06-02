@@ -26,14 +26,13 @@ struct Sieve {
 
 impl Sieve {
     fn new(limit : usize) -> Sieve {
-        let size : usize = 1 + 2 * (limit/2);
-        let mut sieve = Sieve { composite : BitArray::new(size/2) };
+        let mut sieve = Sieve { composite : BitArray::new(limit/2) };
         let mut p = 3;
-        while p * p <= size {
+        while p * p <= limit {
             if !sieve.composite.get(p/2 - 1)  {
                 let inc = p * 2;
                 let mut q = p * p;
-                while q <= size {
+                while q <= limit {
                     sieve.composite.set(q/2 - 1, true);
                     q += inc;
                 }
