@@ -47,7 +47,6 @@ typedef struct sieve_tag {
 } sieve;
 
 bool sieve_create(sieve* s, uint32_t limit) {
-    limit = 2 * (limit/2) + 1;
     if (!bit_array_create(&s->not_prime, limit/2))
         return false;
     for (uint32_t p = 3; p * p <= limit; p += 2) {
