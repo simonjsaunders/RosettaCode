@@ -5,8 +5,6 @@
 #include <string>
 #include <vector>
 
-typedef std::uint64_t integer;
-
 struct number_names {
     const char* cardinal;
     const char* ordinal;
@@ -33,7 +31,7 @@ number_names tens[] = {
 struct named_number {
     const char* cardinal;
     const char* ordinal;
-    integer number;
+    uint64_t number;
 };
 
 named_number named_numbers[] = {
@@ -58,7 +56,7 @@ void append(std::vector<std::string>& v1, const std::vector<std::string>& v2) {
     v1.insert(v1.end(), v2.begin(), v2.end());
 }
 
-std::vector<std::string> number_name(integer n, bool ordinal) {
+std::vector<std::string> number_name(uint64_t n, bool ordinal) {
     std::vector<std::string> result;
     if (n < 20)
         result.push_back(get_name(small[n], ordinal));
@@ -75,7 +73,7 @@ std::vector<std::string> number_name(integer n, bool ordinal) {
         constexpr size_t names_len = std::size(named_numbers);
         for (size_t i = 1; i <= names_len; ++i) {
             if (i == names_len || n < named_numbers[i].number) {
-                integer p = named_numbers[i-1].number;
+                uint64_t p = named_numbers[i-1].number;
                 append(result, number_name(n/p, false));
                 if (n % p == 0) {
                     result.push_back(get_name(named_numbers[i-1], ordinal));
@@ -123,32 +121,34 @@ std::vector<std::string> sentence(size_t count) {
     return result;
 }
 
+size_t sentence_length(const std::vector<std::string>& words) {
+    size_t n = words.size();
+    if (n == 0)
+        return 0;
+    size_t length = n - 1;
+    for (size_t i = 0; i < n; ++i)
+        length += words[i].size();
+    return length;
+}
+
 int main() {
     std::cout.imbue(std::locale(""));
-    auto result = sentence(10000000);
-    size_t characters = 0;
-    size_t i = 0;
-    std::cout << "Number of letters in first 201 words in the sequence:\n";
-    for (; i < 201; ++i) {
-        if (i != 0) {
-            std::cout << ((i % 25 == 0) ? '\n' : ' ');
-        }
-        characters += result[i].size();
+    size_t n = 201;
+    auto result = sentence(n);
+    std::cout << "Number of letters in first " << n << " words in the sequence:\n";
+    for (size_t i = 0; i < n; ++i) {
         if (i != 0)
-            ++characters;
+            std::cout << (i % 25 == 0 ? '\n' : ' ');
         std::cout << std::setw(2) << count_letters(result[i]);
     }
     std::cout << '\n';
-    std::cout << "Number of characters: " << characters << '\n';
-    for (size_t n = 1000; i < 10000000; ++i) {
-        characters += result[i].size() + 1;
-        if (i + 1 == n) {
-            const std::string& word = result[i];
-            std::cout << "The " << n << "th word is '" << word << "' and has "
-                << count_letters(word) << " letters. ";
-            std::cout << "Number of characters: " << characters << '\n';
-            n *= 10;
-        }
+    std::cout << "Sentence length: " << sentence_length(result) << '\n';
+    for (n = 1000; n <= 10000000; n *= 10) {
+        result = sentence(n);
+        const std::string& word = result[n - 1];
+        std::cout << "The " << n << "th word is '" << word << "' and has "
+            << count_letters(word) << " letters. ";
+        std::cout << "Sentence length: " << sentence_length(result) << '\n';
     }
     return 0;
 }
