@@ -13,7 +13,7 @@ void file_size_distribution(const std::filesystem::path& directory) {
     std::uintmax_t total_size = 0;
     std::filesystem::recursive_directory_iterator iter(directory);
     for (const auto& dir_entry : iter) {
-        if (dir_entry.is_regular_file()) {
+        if (dir_entry.is_regular_file() && !dir_entry.is_symlink()) {
             std::uintmax_t file_size = dir_entry.file_size();
             total_size += file_size;
             auto i = std::lower_bound(sizes.begin(), sizes.end(), file_size);
