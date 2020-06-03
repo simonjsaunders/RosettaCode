@@ -5,11 +5,6 @@
 #include <vector>
 #include <limits>
 
-template <typename type, std::size_t size>
-constexpr size_t countof(type const (&)[size]) {
-    return size;
-}
-
 template<typename integer>
 class prime_generator {
 public:
@@ -33,7 +28,7 @@ private:
     static integer wheel_next(unsigned int& index) {
         integer offset = wheel_[index];
         ++index;
-        if (index == countof(wheel_))
+        if (index == std::size(wheel_))
             index = 0;
         return offset;
     }
@@ -60,7 +55,7 @@ const integer prime_generator<integer>::primes_[] = {
 
 template<typename integer>
 integer prime_generator<integer>::next_prime() {
-    if (count_ < countof(primes_))
+    if (count_ < std::size(primes_))
         return primes_[count_++];
     integer n = next_;
     integer prev = 0;

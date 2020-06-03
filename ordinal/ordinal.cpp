@@ -64,7 +64,7 @@ std::string number_name(integer n, bool ordinal) {
             result += get_name(small[n % 10], ordinal);
         }
     } else {
-        const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
+        constexpr size_t names_len = std::size(named_numbers);
         for (size_t i = 1; i <= names_len; ++i) {
             if (i == names_len || n < named_numbers[i].number) {
                 integer p = named_numbers[i-1].number;

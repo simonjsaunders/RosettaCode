@@ -29,7 +29,6 @@ named_number named_numbers[] = {
     { "quadrillion", 1000000000000000ULL },
     { "quintillion", 1000000000000000000ULL }
 };
-const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
 
 std::string cardinal(integer n) {
     std::string result;
@@ -42,6 +41,7 @@ std::string cardinal(integer n) {
             result += small[n % 10];
         }
     } else {
+        constexpr size_t names_len = std::size(named_numbers);
         for (size_t i = 1; i <= names_len; ++i) {
             if (i == names_len || n < named_numbers[i].number_) {
                 integer p = named_numbers[i-1].number_;

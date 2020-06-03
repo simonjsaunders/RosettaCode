@@ -19,7 +19,7 @@ constexpr double actual[] = {
 
 double f(double r) {
     double sq = 0;
-    constexpr size_t len = sizeof(actual)/sizeof(actual[0]);
+    constexpr size_t len = std::size(actual);
     for (size_t i = 0; i < len; ++i) {
         double eri = std::exp(r * i);
         double guess = (n0 * eri)/(1 + n0 * (eri - 1)/K);
