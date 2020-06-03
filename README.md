@@ -52,6 +52,7 @@ See LICENSE for details.
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
 |barnsley_fern|2020-04-17|https://rosettacode.org/wiki/Barnsley_fern|
 |bell|2020-01-13|https://rosettacode.org/wiki/Bell_numbers|
+|carmichael|2020-06-03|https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes|
 |cholesky|2020-04-25|https://rosettacode.org/wiki/Cholesky_decomposition|
 |circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
