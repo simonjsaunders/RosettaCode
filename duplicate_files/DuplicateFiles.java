@@ -99,7 +99,11 @@ public class DuplicateFiles {
             digest_.reset();
             try (DigestInputStream in = new DigestInputStream(new BufferedInputStream(new
                     FileInputStream(file.toString())), digest_)) {
-                while (in.read() != -1) {}
+                byte[] buffer = new byte[8192];
+                int bytes;
+                while ((bytes = in.read(buffer)) != -1) {
+                    digest_.update(buffer, 0, bytes);
+                }
             }
             return digest_.digest();
         }
