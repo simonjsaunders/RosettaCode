@@ -20,7 +20,7 @@ struct named_number {
     integer number_;
 };
 
-named_number named_numbers[] = {
+const named_number named_numbers[] = {
     { "hundred", 100 },
     { "thousand", 1000 },
     { "million", 1000000 },

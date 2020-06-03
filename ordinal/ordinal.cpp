@@ -9,7 +9,7 @@ struct number_names {
     const char* ordinal;
 };
 
-number_names small[] = {
+const number_names small[] = {
     { "zero", "zeroth" }, { "one", "first" }, { "two", "second" },
     { "three", "third" }, { "four", "fourth" }, { "five", "fifth" },
     { "six", "sixth" }, { "seven", "seventh" }, { "eight", "eighth" },
@@ -20,7 +20,7 @@ number_names small[] = {
     { "eighteen", "eighteenth" }, { "nineteen", "nineteenth" }
 };
 
-number_names tens[] = {
+const number_names tens[] = {
     { "twenty", "twentieth" }, { "thirty", "thirtieth" },
     { "forty", "fortieth" }, { "fifty", "fiftieth" },
     { "sixty", "sixtieth" }, { "seventy", "seventieth" },
@@ -33,7 +33,7 @@ struct named_number {
     integer number;
 };
 
-named_number named_numbers[] = {
+const named_number named_numbers[] = {
     { "hundred", "hundredth", 100 },
     { "thousand", "thousandth", 1000 },
     { "million", "millionth", 1000000 },
