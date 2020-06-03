@@ -97,8 +97,7 @@ public class DuplicateFiles {
 
         private byte[] getMD5Sum(Path file) throws IOException {
             digest_.reset();
-            try (DigestInputStream in = new DigestInputStream(new BufferedInputStream(new
-                    FileInputStream(file.toString())), digest_)) {
+            try (InputStream in = new FileInputStream(file.toString())) {
                 byte[] buffer = new byte[8192];
                 int bytes;
                 while ((bytes = in.read(buffer)) != -1) {
