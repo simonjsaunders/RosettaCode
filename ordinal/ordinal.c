@@ -39,7 +39,7 @@ const named_number named_numbers[] = {
     { "hundred", "hundredth", 100 },
     { "thousand", "thousandth", 1000 },
     { "million", "millionth", 1000000 },
-    { "billion", "biliionth", 1000000000 },
+    { "billion", "billionth", 1000000000 },
     { "trillion", "trillionth", 1000000000000 },
     { "quadrillion", "quadrillionth", 1000000000000000ULL },
     { "quintillion", "quintillionth", 1000000000000000000ULL }
