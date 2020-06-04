@@ -180,5 +180,6 @@ See LICENSE for details.
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
+|ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
