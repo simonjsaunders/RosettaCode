@@ -23,6 +23,7 @@ See LICENSE for details.
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
+|four_is|2020-06-04|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
