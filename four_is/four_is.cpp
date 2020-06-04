@@ -88,11 +88,6 @@ std::vector<std::string> number_name(uint64_t n, bool ordinal) {
     return result;
 }
 
-const char* words[] = {
-    "Four", "is", "the", "number", "of", "letters", "in", "the",
-    "first", "word", "of", "this", "sentence,"
-};
-
 size_t count_letters(const std::string& str) {
     size_t letters = 0;
     for (size_t i = 0, n = str.size(); i < n; ++i) {
@@ -103,7 +98,12 @@ size_t count_letters(const std::string& str) {
 }
 
 std::vector<std::string> sentence(size_t count) {
+    static const char* words[] = {
+        "Four", "is", "the", "number", "of", "letters", "in", "the",
+        "first", "word", "of", "this", "sentence,"
+    };
     std::vector<std::string> result;
+    result.reserve(count + 10);
     size_t n = std::size(words);
     for (size_t i = 0; i < n && i < count; ++i) {
         result.push_back(words[i]);
