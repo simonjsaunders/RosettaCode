@@ -58,6 +58,7 @@ See LICENSE for details.
 |circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
+|dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
