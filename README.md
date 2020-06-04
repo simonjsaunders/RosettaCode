@@ -97,6 +97,7 @@ See LICENSE for details.
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
+|ramanujan|2020-06-04|https://rosettacode.org/wiki/Ramanujan%27s_constant|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
 |safe_primes|2020-01-13|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
