@@ -40,9 +40,9 @@ public class Teacup {
                 if (rotated.equals(word) || !words.contains(rotated))
                     break;
                 teacupWords.add(rotated);
-                found.add(rotated);
             }
             if (teacupWords.size() == len) {
+                found.addAll(teacupWords);
                 System.out.print(word);
                 for (int i = 1; i < len; ++i)
                     System.out.print(" " + teacupWords.get(i));

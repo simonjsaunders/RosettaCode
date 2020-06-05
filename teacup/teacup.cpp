@@ -32,9 +32,9 @@ void find_teacup_words(const std::set<std::string>& words) {
             if (word == *w || words.find(word) == words.end())
                 break;
             teacup_words.push_back(word);
-            found.insert(word);
         }
         if (teacup_words.size() == len) {
+            found.insert(teacup_words.begin(), teacup_words.end());
             std::cout << teacup_words[0];
             for (size_t i = 1; i < len; ++i)
                 std::cout << ' ' << teacup_words[i];
