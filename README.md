@@ -114,6 +114,7 @@ See LICENSE for details.
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
+|teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
 |unique_chars|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
