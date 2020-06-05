@@ -37,7 +37,7 @@ std::string cardinal(integer n) {
     else if (n < 100) {
         result = tens[n/10 - 2];
         if (n % 10 != 0) {
-            result += " ";
+            result += "-";
             result += small[n % 10];
         }
     } else {
