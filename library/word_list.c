@@ -36,8 +36,7 @@ void word_list_append(word_list* words, const char* str) {
     words->words[words->size++] = xstrdup(str);
 }
 
-static
-int word_compare(const void* p1, const void* p2) {
+static int word_compare(const void* p1, const void* p2) {
     const char* w1 = *(const char**)p1;
     const char* w2 = *(const char**)p2;
     return strcmp(w1, w2);
