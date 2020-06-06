@@ -128,29 +128,29 @@ int hash_table_entry_cmp(const void* p1, const void* p2) {
     return strcmp(e1->key, e2->key);
 }
 
-typedef struct buffer_tag {
+typedef struct string_buffer_tag {
     size_t size;
     size_t capacity;
     char* string;
-} buffer_t;
+} string_buffer;
 
-void buffer_create(buffer_t* buffer, size_t capacity) {
+void string_buffer_create(string_buffer* buffer, size_t capacity) {
     buffer->size = 0;
     buffer->capacity = capacity;
     buffer->string = xmalloc(capacity);
 }
 
-void buffer_destroy(buffer_t* buffer) {
+void string_buffer_destroy(string_buffer* buffer) {
     free(buffer->string);
     buffer->string = NULL;
 }
 
-void buffer_clear(buffer_t* buffer) {
+void string_buffer_clear(string_buffer* buffer) {
     buffer->size = 0;
     buffer->string[0] = 0;
 }
 
-void buffer_append(buffer_t* buffer, char ch) {
+void string_buffer_append(string_buffer* buffer, char ch) {
     size_t min_capacity = buffer->size + 2;
     if (buffer->capacity < min_capacity) {
         size_t new_capacity = buffer->capacity * 2;
@@ -166,12 +166,12 @@ void buffer_append(buffer_t* buffer, char ch) {
 // A word is defined to be any run of characters for which isalpha
 // returns true, i.e. upper or lower case letters. All words are
 // converted to lower case.
-bool get_word(FILE* in, buffer_t* buffer) {
+bool get_word(FILE* in, string_buffer* buffer) {
     int c;
-    buffer_clear(buffer);
+    string_buffer_clear(buffer);
     while ((c = getc(in)) != EOF) {
         if (isalpha(c)) {
-            buffer_append(buffer, tolower(c));
+            string_buffer_append(buffer, tolower(c));
             break;
         }
     }
@@ -180,7 +180,7 @@ bool get_word(FILE* in, buffer_t* buffer) {
     while ((c = getc(in)) != EOF) {
         if (!isalpha(c))
             break;
-        buffer_append(buffer, tolower(c));
+        string_buffer_append(buffer, tolower(c));
     }
     return true;
 }
@@ -189,11 +189,11 @@ void get_top_words(FILE* in, int count) {
     hash_table ht = { 0 };
     hash_table_create(&ht, 1024);
     // Store word counts in the hash table
-    buffer_t buffer;
-    buffer_create(&buffer, 64);
+    string_buffer buffer;
+    string_buffer_create(&buffer, 64);
     while (get_word(in, &buffer))
         hash_table_inc(&ht, buffer.string);
-    buffer_destroy(&buffer);
+    string_buffer_destroy(&buffer);
     // Sort words in decreasing order of frequency
     hash_table_entry* words = xmalloc(sizeof(hash_table_entry) * ht.entries);
     for (size_t i = 0, j = 0; i < ht.size; ++i) {
