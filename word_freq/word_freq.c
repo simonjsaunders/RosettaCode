@@ -4,39 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-void fatal(const char* message) {
-    fprintf(stderr, "%s\n", message);
-    exit(1);
-}
-
-void* xmalloc(size_t n) {
-    void* ptr = malloc(n);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
-void* xcalloc(size_t count, size_t size) {
-    void* ptr = calloc(count, size);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
-void* xrealloc(void* p, size_t n) {
-    void* ptr = realloc(p, n);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
-char* xstrdup(const char* str) {
-    char* s = strdup(str);
-    if (s == NULL)
-        fatal("Out of memory");
-    return s;
-}
+#include "string_buffer.h"
+#include "xalloc.h"
 
 typedef struct hash_table_entry_tag {
     char* key;
@@ -126,41 +95,6 @@ int hash_table_entry_cmp(const void* p1, const void* p2) {
     if (e1->value < e2->value)
         return 1;
     return strcmp(e1->key, e2->key);
-}
-
-typedef struct string_buffer_tag {
-    size_t size;
-    size_t capacity;
-    char* string;
-} string_buffer;
-
-void string_buffer_create(string_buffer* buffer, size_t capacity) {
-    buffer->size = 0;
-    buffer->capacity = capacity;
-    buffer->string = xmalloc(capacity);
-}
-
-void string_buffer_destroy(string_buffer* buffer) {
-    free(buffer->string);
-    buffer->string = NULL;
-}
-
-void string_buffer_clear(string_buffer* buffer) {
-    buffer->size = 0;
-    buffer->string[0] = 0;
-}
-
-void string_buffer_append(string_buffer* buffer, char ch) {
-    size_t min_capacity = buffer->size + 2;
-    if (buffer->capacity < min_capacity) {
-        size_t new_capacity = buffer->capacity * 2;
-        if (new_capacity < min_capacity)
-            new_capacity = min_capacity;
-        buffer->string = xrealloc(buffer->string, new_capacity);
-        buffer->capacity = new_capacity;
-    }
-    buffer->string[buffer->size++] = ch;
-    buffer->string[buffer->size] = 0;
 }
 
 // A word is defined to be any run of characters for which isalpha

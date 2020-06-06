@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <string.h>
+#include "string_buffer.h"
 
 typedef uint64_t integer;
 
@@ -53,41 +53,16 @@ const char* get_big_name(const named_number* n, bool ordinal) {
     return ordinal ? n->ordinal : n->cardinal;
 }
 
-typedef struct string_builder_tag {
-    size_t size;
-    size_t capacity;
-    char* string;
-} string_builder;
-
-void string_builder_append(string_builder* sb, const char* str) {
-    size_t n = strlen(str);
-    size_t min_capacity = sb->size + n + 1;
-    if (sb->capacity < min_capacity) {
-        size_t new_capacity = sb->capacity * 2;
-        if (new_capacity < min_capacity)
-            new_capacity = min_capacity;
-        char* new_string = realloc(sb->string, new_capacity);
-        if (new_string == NULL) {
-            fprintf(stderr, "Out of memory\n");
-            exit(1);
-        }
-        sb->string = new_string;
-        sb->capacity = new_capacity;
-    }
-    memcpy(sb->string + sb->size, str, n + 1);
-    sb->size += n;
-}
-
-void append_number_name(string_builder* sb, integer n, bool ordinal) {
+void append_number_name(string_buffer* sb, integer n, bool ordinal) {
     if (n < 20)
-        string_builder_append(sb, get_small_name(&small[n], ordinal));
+        string_buffer_append_str(sb, get_small_name(&small[n], ordinal));
     else if (n < 100) {
         if (n % 10 == 0) {
-            string_builder_append(sb, get_small_name(&tens[n/10 - 2], ordinal));
+            string_buffer_append_str(sb, get_small_name(&tens[n/10 - 2], ordinal));
         } else {
-            string_builder_append(sb, get_small_name(&tens[n/10 - 2], false));
-            string_builder_append(sb, "-");
-            string_builder_append(sb, get_small_name(&small[n % 10], ordinal));
+            string_buffer_append_str(sb, get_small_name(&tens[n/10 - 2], false));
+            string_buffer_append(sb, '-');
+            string_buffer_append_str(sb, get_small_name(&small[n % 10], ordinal));
         }
     } else {
         const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
@@ -95,12 +70,12 @@ void append_number_name(string_builder* sb, integer n, bool ordinal) {
             if (i == names_len || n < named_numbers[i].number) {
                 integer p = named_numbers[i-1].number;
                 append_number_name(sb, n/p, false);
-                string_builder_append(sb, " ");
+                string_buffer_append(sb, ' ');
                 if (n % p == 0) {
-                    string_builder_append(sb, get_big_name(&named_numbers[i-1], ordinal));
+                    string_buffer_append_str(sb, get_big_name(&named_numbers[i-1], ordinal));
                 } else {
-                    string_builder_append(sb, get_big_name(&named_numbers[i-1], false));
-                    string_builder_append(sb, " ");
+                    string_buffer_append_str(sb, get_big_name(&named_numbers[i-1], false));
+                    string_buffer_append(sb, ' ');
                     append_number_name(sb, n % p, ordinal);
                 }
                 break;
@@ -110,7 +85,8 @@ void append_number_name(string_builder* sb, integer n, bool ordinal) {
 }
 
 char* number_name(integer n, bool ordinal) {
-    string_builder result = { 0 };
+    string_buffer result = { 0 };
+    string_buffer_create(&result, 8);
     append_number_name(&result, n, ordinal);
     return result.string;
 }

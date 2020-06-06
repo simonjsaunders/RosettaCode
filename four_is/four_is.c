@@ -5,6 +5,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include "word_list.h"
+#include "xalloc.h"
 
 typedef uint64_t integer;
 
@@ -53,63 +55,6 @@ const char* get_small_name(const number_names* n, bool ordinal) {
 
 const char* get_big_name(const named_number* n, bool ordinal) {
     return ordinal ? n->ordinal : n->cardinal;
-}
-
-void fatal(const char* message) {
-    fprintf(stderr, "%s\n", message);
-    exit(1);
-}
-
-void* xmalloc(size_t n) {
-    void* ptr = malloc(n);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
-void* xrealloc(void* p, size_t n) {
-    void* ptr = realloc(p, n);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
-char* xstrdup(const char* str) {
-    char* s = strdup(str);
-    if (s == NULL)
-        fatal("Out of memory");
-    return s;
-}
-
-typedef struct word_list_tag {
-    size_t size;
-    size_t capacity;
-    char** words;
-} word_list;
-
-void word_list_create(word_list* words, size_t capacity) {
-    words->size = 0;
-    words->capacity = capacity;
-    words->words = xmalloc(capacity * sizeof(char*));
-}
-
-void word_list_destroy(word_list* words) {
-    for (size_t i = 0; i < words->size; ++i)
-        free(words->words[i]);
-    free(words->words);
-    words->words = NULL;
-}
-
-void word_list_append(word_list* words, const char* str) {
-    size_t min_capacity = words->size + 1;
-    if (words->capacity < min_capacity) {
-        size_t new_capacity = (words->capacity * 3)/2;
-        if (new_capacity < min_capacity)
-            new_capacity = min_capacity;
-        words->words = xrealloc(words->words, new_capacity * sizeof(char*));
-        words->capacity = new_capacity;
-    }
-    words->words[words->size++] = xstrdup(str);
 }
 
 char* string_concat2(const char* str1, const char* str2) {
