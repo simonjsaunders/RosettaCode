@@ -85,11 +85,9 @@ command_list::command_list(const char* table) {
 }
 
 const command* command_list::find_command(const std::string& word) const {
-    for (const command& command : commands_) {
-        if (command.match(word))
-            return &command;
-    }
-    return nullptr;
+    auto iter = std::find_if(commands_.begin(), commands_.end(),
+        [&word](const command& cmd) { return cmd.match(word); });
+    return (iter != commands_.end()) ? &*iter : nullptr;
 }
 
 std::string test(const command_list& commands, const std::string& input) {
