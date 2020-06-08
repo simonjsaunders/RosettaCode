@@ -13,11 +13,11 @@ integer fermat(unsigned int n) {
     return 1 + pow(integer(2), p);
 }
 
-inline integer g(integer x, integer n) {
+inline integer g(const integer& x, const integer& n) {
     return (x * x + 1) % n;
 }
 
-integer pollard_rho(integer n) {
+integer pollard_rho(const integer& n) {
     integer x = 2, y = 2, d = 1, z = 1;
     int count = 0;
     for (;;) {
