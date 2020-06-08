@@ -184,6 +184,7 @@ See LICENSE for details.
 |cocktail_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+|long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
