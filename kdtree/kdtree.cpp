@@ -76,10 +76,10 @@ private:
         node* left_;
         node* right_;
     };
-    node* root_;
-    node* best_;
-    double best_dist_;
-    size_t visited_;
+    node* root_ = nullptr;
+    node* best_ = nullptr;
+    double best_dist_ = 0;
+    size_t visited_ = 0;
     std::vector<node> nodes_;
 
     struct node_cmp {
@@ -131,9 +131,6 @@ public:
      */
     template<typename iterator>
     kdtree(iterator begin, iterator end) {
-        best_ = nullptr;
-        best_dist_ = 0;
-        visited_ = 0;
         nodes_.reserve(std::distance(begin, end));
         for (auto i = begin; i != end; ++i)
             nodes_.emplace_back(*i);
@@ -150,9 +147,6 @@ public:
      */
     template<typename func>
     kdtree(func&& f, size_t n) {
-        best_ = nullptr;
-        best_dist_ = 0;
-        visited_ = 0;
         nodes_.reserve(n);
         for (size_t i = 0; i < n; ++i)
             nodes_.emplace_back(f());
