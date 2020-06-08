@@ -190,3 +190,4 @@ See LICENSE for details.
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
+|sierpinski_pentagon|2020-06-08|https://rosettacode.org/wiki/Sierpinski_pentagon|
