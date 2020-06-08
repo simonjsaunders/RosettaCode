@@ -183,6 +183,7 @@ See LICENSE for details.
 |circular_primes|2020-05-19|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
+|fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
