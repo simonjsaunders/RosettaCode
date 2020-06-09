@@ -13,16 +13,19 @@ integer fermat(unsigned int n) {
     return 1 + pow(integer(2), p);
 }
 
-inline integer g(const integer& x, const integer& n) {
-    return (x * x + 1) % n;
+inline void g(integer& x, const integer& n) {
+    x *= x;
+    x += 1;
+    x %= n;
 }
 
 integer pollard_rho(const integer& n) {
     integer x = 2, y = 2, d = 1, z = 1;
     int count = 0;
     for (;;) {
-        x = g(x, n);
-        y = g(g(y, n), n);
+        g(x, n);
+        g(y, n);
+        g(y, n);
         d = abs(x - y);
         z = (z * d) % n;
         ++count;
