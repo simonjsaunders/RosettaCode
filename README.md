@@ -189,6 +189,7 @@ See LICENSE for details.
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
+|magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
