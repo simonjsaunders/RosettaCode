@@ -27,9 +27,9 @@ bool is_prime(unsigned int n) {
 }
 
 int main() {
-    const size_t max = 20;
+    const unsigned int max = 20;
     integer primorial = 1;
-    for (size_t p = 0, count = 0, index = 0; count < max; ++p) {
+    for (unsigned int p = 0, count = 0, index = 0; count < max; ++p) {
         if (!is_prime(p))
             continue;
         primorial *= p;
