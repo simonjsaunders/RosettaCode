@@ -106,6 +106,7 @@ See LICENSE for details.
 |safe_primes|2020-01-13|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |sequence_mutation|2020-06-01|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
 |sexy_primes|2020-01-11|https://rosettacode.org/wiki/Sexy_primes|
+|sierpinski_arrowhead|2020-06-10|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
 |square_free|2020-04-03|https://rosettacode.org/wiki/Square-free_integers|
