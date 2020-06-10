@@ -2,25 +2,39 @@
 #include <iostream>
 #include <sstream>
 #include <gmpxx.h>
-#include "../library/sieve_of_eratosthenes.h"
 
 typedef mpz_class integer;
 
-bool is_prime(const integer& n) {
-    return mpz_probab_prime_p(n.get_mpz_t(), 25);
+bool is_probably_prime(const integer& n) {
+    return mpz_probab_prime_p(n.get_mpz_t(), 25) != 0;
+}
+
+bool is_prime(unsigned int n) {
+    if (n < 2)
+        return false;
+    if (n % 2 == 0)
+        return n == 2;
+    if (n % 3 == 0)
+        return n == 3;
+    for (unsigned int p = 5; p * p <= n; p += 4) {
+        if (n % p == 0)
+            return false;
+        p += 2;
+        if (n % p == 0)
+            return false;
+    }
+    return true;
 }
 
 int main() {
-    const size_t max_prime = 4000;
     const size_t max = 20;
-    sieve_of_eratosthenes sieve(max_prime);
     integer primorial = 1;
-    for (size_t p = 0, count = 0, index = 0; p < max_prime && count < max; ++p) {
-        if (!sieve.is_prime(p))
+    for (size_t p = 0, count = 0, index = 0; count < max; ++p) {
+        if (!is_prime(p))
             continue;
         primorial *= p;
         ++index;
-        if (is_prime(primorial - 1) || is_prime(primorial + 1)) {
+        if (is_probably_prime(primorial - 1) || is_probably_prime(primorial + 1)) {
             if (count > 0)
                 std::cout << ' ';
             std::cout << index;
