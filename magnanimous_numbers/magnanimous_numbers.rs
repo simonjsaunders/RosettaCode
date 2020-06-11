@@ -33,24 +33,16 @@ fn is_magnanimous(n : u32) -> bool {
     true
 }
 
-struct Magnanimous {
-    next: u32
-}
-
-impl Iterator for Magnanimous {
-    type Item = u32;
-    fn next(&mut self) -> Option<u32> {
-        let mut n = self.next;
+fn magnanimous() -> impl std::iter::Iterator<Item = u32> {
+    let mut next = 0;
+    std::iter::from_fn(move || {
+        let mut n = next;
         while !is_magnanimous(n) {
             n += 1;
         }
-        self.next = n + 1;
+        next = n + 1;
         Some(n)
-    }
-}
-
-fn magnanimous() -> Magnanimous {
-    Magnanimous { next: 0 }
+    })
 }
 
 fn main() {
