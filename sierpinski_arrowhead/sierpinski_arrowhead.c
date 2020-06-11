@@ -61,5 +61,6 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     write_sierpinski_arrowhead(out, 600, 8);
+    fclose(out);
     return EXIT_SUCCESS;
 }
