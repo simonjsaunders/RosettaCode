@@ -52,14 +52,25 @@ const char* get_name(const named_number& n, bool ordinal) {
     return ordinal ? n.ordinal : n.cardinal;
 }
 
+const named_number& get_named_number(uint64_t n) {
+    constexpr size_t names_len = std::size(named_numbers);
+    for (size_t i = 0; i + 1 < names_len; ++i) {
+        if (n < named_numbers[i + 1].number)
+            return named_numbers[i];
+    }
+    return named_numbers[names_len - 1];
+}
+
 void append(std::vector<std::string>& v1, const std::vector<std::string>& v2) {
     v1.insert(v1.end(), v2.begin(), v2.end());
 }
 
-std::vector<std::string> number_name(uint64_t n, bool ordinal) {
-    std::vector<std::string> result;
-    if (n < 20)
+size_t append_number_name(std::vector<std::string>& result, uint64_t n, bool ordinal) {
+    size_t count = 0;
+    if (n < 20) {
         result.push_back(get_name(small[n], ordinal));
+        count = 1;
+    }
     else if (n < 100) {
         if (n % 10 == 0) {
             result.push_back(get_name(tens[n/10 - 2], ordinal));
@@ -69,23 +80,21 @@ std::vector<std::string> number_name(uint64_t n, bool ordinal) {
             name += get_name(small[n % 10], ordinal);
             result.push_back(name);
         }
+        count = 1;
     } else {
-        constexpr size_t names_len = std::size(named_numbers);
-        for (size_t i = 1; i <= names_len; ++i) {
-            if (i == names_len || n < named_numbers[i].number) {
-                uint64_t p = named_numbers[i-1].number;
-                append(result, number_name(n/p, false));
-                if (n % p == 0) {
-                    result.push_back(get_name(named_numbers[i-1], ordinal));
-                } else {
-                    result.push_back(get_name(named_numbers[i-1], false));
-                    append(result, number_name(n % p, ordinal));
-                }
-                break;
-            }
+        const named_number& num = get_named_number(n);
+        uint64_t p = num.number;
+        count += append_number_name(result, n/p, false);
+        if (n % p == 0) {
+            result.push_back(get_name(num, ordinal));
+            ++count;
+        } else {
+            result.push_back(get_name(num, false));
+            ++count;
+            count += append_number_name(result, n % p, ordinal);
         }
     }
-    return result;
+    return count;
 }
 
 size_t count_letters(const std::string& str) {
@@ -109,14 +118,12 @@ std::vector<std::string> sentence(size_t count) {
         result.push_back(words[i]);
     }
     for (size_t i = 1; count > n; ++i) {
-        std::vector<std::string> v;
-        append(v, number_name(count_letters(result[i]), false));
-        v.push_back("in");
-        v.push_back("the");
-        append(v, number_name(i + 1, true));
-        v.back() += ',';
-        n += v.size();
-        append(result, v);
+        n += append_number_name(result, count_letters(result[i]), false);
+        result.push_back("in");
+        result.push_back("the");
+        n += 2;
+        n += append_number_name(result, i + 1, true);
+        result.back() += ',';
     }
     return result;
 }
