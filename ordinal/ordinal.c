@@ -53,6 +53,15 @@ const char* get_big_name(const named_number* n, bool ordinal) {
     return ordinal ? n->ordinal : n->cardinal;
 }
 
+const named_number* get_named_number(integer n) {
+    const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
+    for (size_t i = 0; i + 1 < names_len; ++i) {
+        if (n < named_numbers[i + 1].number)
+            return &named_numbers[i];
+    }
+    return &named_numbers[names_len - 1];
+}
+
 void append_number_name(string_buffer* sb, integer n, bool ordinal) {
     if (n < 20)
         string_buffer_append_str(sb, get_small_name(&small[n], ordinal));
@@ -65,21 +74,16 @@ void append_number_name(string_buffer* sb, integer n, bool ordinal) {
             string_buffer_append_str(sb, get_small_name(&small[n % 10], ordinal));
         }
     } else {
-        const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
-        for (size_t i = 1; i <= names_len; ++i) {
-            if (i == names_len || n < named_numbers[i].number) {
-                integer p = named_numbers[i-1].number;
-                append_number_name(sb, n/p, false);
-                string_buffer_append(sb, ' ');
-                if (n % p == 0) {
-                    string_buffer_append_str(sb, get_big_name(&named_numbers[i-1], ordinal));
-                } else {
-                    string_buffer_append_str(sb, get_big_name(&named_numbers[i-1], false));
-                    string_buffer_append(sb, ' ');
-                    append_number_name(sb, n % p, ordinal);
-                }
-                break;
-            }
+        const named_number* num = get_named_number(n);
+        integer p = num->number;
+        append_number_name(sb, n/p, false);
+        string_buffer_append(sb, ' ');
+        if (n % p == 0) {
+            string_buffer_append_str(sb, get_big_name(num, ordinal));
+        } else {
+            string_buffer_append_str(sb, get_big_name(num, false));
+            string_buffer_append(sb, ' ');
+            append_number_name(sb, n % p, ordinal);
         }
     }
 }

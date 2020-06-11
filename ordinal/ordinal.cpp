@@ -51,6 +51,15 @@ const char* get_name(const named_number& n, bool ordinal) {
     return ordinal ? n.ordinal : n.cardinal;
 }
 
+const named_number& get_named_number(integer n) {
+    constexpr size_t names_len = std::size(named_numbers);
+    for (size_t i = 0; i + 1 < names_len; ++i) {
+        if (n < named_numbers[i + 1].number)
+            return named_numbers[i];
+    }
+    return named_numbers[names_len - 1];
+}
+
 std::string number_name(integer n, bool ordinal) {
     std::string result;
     if (n < 20)
@@ -64,21 +73,16 @@ std::string number_name(integer n, bool ordinal) {
             result += get_name(small[n % 10], ordinal);
         }
     } else {
-        constexpr size_t names_len = std::size(named_numbers);
-        for (size_t i = 1; i <= names_len; ++i) {
-            if (i == names_len || n < named_numbers[i].number) {
-                integer p = named_numbers[i-1].number;
-                result = number_name(n/p, false);
-                result += " ";
-                if (n % p == 0) {
-                    result += get_name(named_numbers[i-1], ordinal);
-                } else {
-                    result += get_name(named_numbers[i-1], false);
-                    result += " ";
-                    result += number_name(n % p, ordinal);
-                }
-                break;
-            }
+        const named_number& num = get_named_number(n);
+        integer p = num.number;
+        result = number_name(n/p, false);
+        result += " ";
+        if (n % p == 0) {
+            result += get_name(num, ordinal);
+        } else {
+            result += get_name(num, false);
+            result += " ";
+            result += number_name(n % p, ordinal);
         }
     }
     return result;
