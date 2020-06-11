@@ -109,6 +109,7 @@ See LICENSE for details.
 |sexy_primes|2020-01-11|https://rosettacode.org/wiki/Sexy_primes|
 |sierpinski_arrowhead|2020-06-10|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sierpinski_curve|2020-06-11|https://rosettacode.org/wiki/Sierpinski_curve|
+|sierpinski_square|2020-06-11|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
 |square_free|2020-04-03|https://rosettacode.org/wiki/Square-free_integers|
