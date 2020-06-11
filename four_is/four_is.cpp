@@ -61,10 +61,6 @@ const named_number& get_named_number(uint64_t n) {
     return named_numbers[names_len - 1];
 }
 
-void append(std::vector<std::string>& v1, const std::vector<std::string>& v2) {
-    v1.insert(v1.end(), v2.begin(), v2.end());
-}
-
 size_t append_number_name(std::vector<std::string>& result, uint64_t n, bool ordinal) {
     size_t count = 0;
     if (n < 20) {
