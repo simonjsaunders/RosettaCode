@@ -57,6 +57,15 @@ const char* get_big_name(const named_number* n, bool ordinal) {
     return ordinal ? n->ordinal : n->cardinal;
 }
 
+const named_number* get_named_number(integer n) {
+    const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
+    for (size_t i = 0; i + 1 < names_len; ++i) {
+        if (n < named_numbers[i + 1].number)
+            return &named_numbers[i];
+    }
+    return &named_numbers[names_len - 1];
+}
+
 char* string_concat2(const char* str1, const char* str2) {
     const size_t len1 = strlen(str1);
     const size_t len2 = strlen(str2);
@@ -96,21 +105,16 @@ size_t append_number_name(word_list* words, integer n, bool ordinal) {
         }
         count = 1;
     } else {
-        const size_t names_len = sizeof(named_numbers)/sizeof(named_numbers[0]);
-        for (size_t i = 1; i <= names_len; ++i) {
-            if (i == names_len || n < named_numbers[i].number) {
-                integer p = named_numbers[i-1].number;
-                count += append_number_name(words, n/p, false);
-                if (n % p == 0) {
-                    word_list_append(words, get_big_name(&named_numbers[i-1], ordinal));
-                    ++count;
-                } else {
-                    word_list_append(words, get_big_name(&named_numbers[i-1], false));
-                    ++count;
-                    count += append_number_name(words, n % p, ordinal);
-                }
-                break;
-            }
+        const named_number* num = get_named_number(n);
+        integer p = num->number;
+        count += append_number_name(words, n/p, false);
+        if (n % p == 0) {
+            word_list_append(words, get_big_name(num, ordinal));
+            ++count;
+        } else {
+            word_list_append(words, get_big_name(num, false));
+            ++count;
+            count += append_number_name(words, n % p, ordinal);
         }
     }
     return count;
