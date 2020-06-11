@@ -30,6 +30,15 @@ const named_number named_numbers[] = {
     { "quintillion", 1000000000000000000ULL }
 };
 
+const named_number& get_named_number(integer n) {
+    constexpr size_t names_len = std::size(named_numbers);
+    for (size_t i = 0; i + 1 < names_len; ++i) {
+        if (n < named_numbers[i + 1].number_)
+            return named_numbers[i];
+    }
+    return named_numbers[names_len - 1];
+}
+
 std::string cardinal(integer n) {
     std::string result;
     if (n < 20)
@@ -41,19 +50,14 @@ std::string cardinal(integer n) {
             result += small[n % 10];
         }
     } else {
-        constexpr size_t names_len = std::size(named_numbers);
-        for (size_t i = 1; i <= names_len; ++i) {
-            if (i == names_len || n < named_numbers[i].number_) {
-                integer p = named_numbers[i-1].number_;
-                result = cardinal(n/p);
-                result += " ";
-                result += named_numbers[i-1].name_;
-                if (n % p != 0) {
-                    result += " ";
-                    result += cardinal(n % p);
-                }
-                break;
-            }
+        const named_number& num = get_named_number(n);
+        integer p = num.number_;
+        result = cardinal(n/p);
+        result += " ";
+        result += num.name_;
+        if (n % p != 0) {
+            result += " ";
+            result += cardinal(n % p);
         }
     }
     return result;
