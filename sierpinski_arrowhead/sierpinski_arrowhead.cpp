@@ -20,29 +20,21 @@ std::vector<point> sierpinski_arrowhead_next(const std::vector<point>& points) {
         x1 = points[i + 1].x;
         y1 = points[i + 1].y;
         double dx = x1 - x0;
-        output[j].x = x0;
-        output[j].y = y0;
+        output[j] = {x0, y0};
         if (y0 == y1) {
             double d = dx * sqrt3_2/2;
             if (d < 0) d = -d;
-            output[j + 1].x = x0 + dx/4;
-            output[j + 1].y = y0 - d;
-            output[j + 2].x = x1 - dx/4;
-            output[j + 2].y = y0 - d;
+            output[j + 1] = {x0 + dx/4, y0 - d};
+            output[j + 2] = {x1 - dx/4, y0 - d};
         } else if (y1 < y0) {
-            output[j + 1].x = x1;
-            output[j + 1].y = y0;
-            output[j + 2].x = x1 + dx/2;
-            output[j + 2].y = (y0 + y1)/2;
+            output[j + 1] = {x1, y0};
+            output[j + 2] = {x1 + dx/2, (y0 + y1)/2};
         } else {
-            output[j + 1].x = x0 - dx/2;
-            output[j + 1].y = (y0 + y1)/2;
-            output[j + 2].x = x0;
-            output[j + 2].y = y1;
+            output[j + 1] = {x0 - dx/2, (y0 + y1)/2};
+            output[j + 2] = {x0, y1};
         }
     }
-    output[j].x = x1;
-    output[j].y = y1;
+    output[j] = {x1, y1};
     return output;
 }
 
