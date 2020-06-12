@@ -193,6 +193,7 @@ See LICENSE for details.
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+|hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
