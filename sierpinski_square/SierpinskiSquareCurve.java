@@ -2,11 +2,12 @@ import java.io.*;
 
 public class SierpinskiSquareCurve implements AutoCloseable {
     public static void main(final String[] args) {
-        try (SierpinskiSquareCurve s = new SierpinskiSquareCurve("sierpinski_square.svg", 635)) {
+        try (SierpinskiSquareCurve s = new SierpinskiSquareCurve("sierpinski_square.svg")) {
             s.currentAngle = 0;
             s.currentX = 315;
             s.currentY = 630;
             s.lineLength = 5;
+            s.begin(635);
             s.execute(rewrite(5));
             s.end();
         } catch (final Exception ex) {
@@ -14,8 +15,11 @@ public class SierpinskiSquareCurve implements AutoCloseable {
         }
     }
 
-    private SierpinskiSquareCurve(final String file, final int size) throws IOException {
+    private SierpinskiSquareCurve(final String file) throws IOException {
         writer = new BufferedWriter(new FileWriter(file));
+    }
+
+    private void begin(final int size) throws IOException {
         write("<svg xmlns='http://www.w3.org/2000/svg' width='%d' height='%d'>\n", size, size);
         write("<rect width='100%%' height='100%%' fill='white'/>\n");
         write("<path stroke-width='1' stroke='black' fill='none' d='");
