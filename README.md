@@ -203,3 +203,4 @@ See LICENSE for details.
 |sierpinski_pentagon|2020-06-08|https://rosettacode.org/wiki/Sierpinski_pentagon|
 |sierpinski_triangle|2020-06-09|https://rosettacode.org/wiki/Sierpinski_triangle/Graphical|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
+|van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
