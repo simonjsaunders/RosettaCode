@@ -139,6 +139,8 @@ See LICENSE for details.
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
 |sequence_mutation|2020-06-02|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
+|sierpinski_curve|2020-06-12|https://rosettacode.org/wiki/Sierpinski_curve|
+|sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 
 ## Prolog Code Examples
