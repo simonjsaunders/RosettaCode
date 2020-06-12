@@ -3,8 +3,7 @@
 
 fn sierpinski_pentagon(mut document : svg::Document, mut x : f64, mut y : f64,
         mut side : f64, order: usize) -> svg::Document {
-    use svg::node::element::Path;
-    use svg::node::element::path::Data;
+    use svg::node::element::Polygon;
     use std::f64::consts::PI;
 
     let degrees72 = 0.4 * PI;
@@ -12,21 +11,20 @@ fn sierpinski_pentagon(mut document : svg::Document, mut x : f64, mut y : f64,
     let scale_factor = 1.0/(2.0 + degrees72.cos() * 2.0);
 
     if order == 1 {
-        let mut data = Data::new();
-        data = data.move_to((x, y));
+        let mut points = Vec::new();
+        points.push((x, y));
         for _ in 0..5 {
             x += angle.cos() * side;
             y -= angle.sin() * side;
             angle += degrees72;
-            data = data.line_to((x, y));
+            points.push((x, y));
         }
-        data = data.close();
-        let path = Path::new()
+        let polygon = Polygon::new()
             .set("fill", "blue")
             .set("stroke", "black")
             .set("stroke-width", "1")
-            .set("d", data);
-        document = document.add(path);
+            .set("points", points);
+        document = document.add(polygon);
     } else {
         side *= scale_factor;
         let distance = side + side * degrees72.cos() * 2.0;
@@ -48,8 +46,9 @@ fn write_sierpinski_pentagon(file : &str, size : usize,
     let margin = 5.0;
     let radius = (size as f64)/2.0 - 2.0 * margin;
     let side = radius * (0.2 * PI).sin() * 2.0;
+    let height = side * ((0.2 * PI).sin() + (0.4 * PI).sin());
     let x = (size as f64)/2.0;
-    let y = 3.0 * margin;
+    let y = (size as f64 - height)/2.0;
 
     let rect = Rectangle::new()
         .set("width", "100%")

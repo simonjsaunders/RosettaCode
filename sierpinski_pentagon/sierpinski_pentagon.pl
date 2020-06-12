@@ -9,8 +9,9 @@ write_sierpinski_pentagon(File, Size, Order):-
     Margin = 5,
     Radius is Size/2 - 2 * Margin,
     Side is Radius * sin(pi/5) * 2,
+    Height is Side * (sin(pi/5) + sin(2 * pi/5)),
     X is Size/2,
-    Y is 3 * Margin,
+    Y is (Size - Height)/2,
     Scale_factor is 1/(2 + cos(2 * pi/5) * 2),
     sierpinski_pentagon(Stream, X, Y, Scale_factor, Side, Order),
     write(Stream, "</svg>\n"),
@@ -19,7 +20,7 @@ write_sierpinski_pentagon(File, Size, Order):-
 sierpinski_pentagon(Stream, X, Y, _, Side, 1):-
     !,
     write(Stream, "<path stroke-width='1' stroke='black' fill='blue' d='"),
-    format(Stream, 'M ~g,~g ', [X, Y]),
+    format(Stream, 'M~g,~g ', [X, Y]),
     Angle is 6 * pi/5,
     write_pentagon_points(Stream, Side, Angle, X, Y, 5),
     write(Stream, "z'/>\n").
@@ -35,7 +36,7 @@ write_pentagon_points(Stream, Side, Angle, X, Y, N):-
     X1 is X + cos(Angle) * Side,
     Y1 is Y - sin(Angle) * Side,
     Angle1 is Angle + 2 * pi/5,
-    format(Stream, 'L ~g,~g ', [X1, Y1]),
+    format(Stream, 'L~g,~g ', [X1, Y1]),
     write_pentagon_points(Stream, Side, Angle1, X1, Y1, N1).
 
 sierpinski_pentagons(_, _, _, _, _, _, _, 0):-!.
