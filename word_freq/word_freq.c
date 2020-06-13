@@ -40,29 +40,20 @@ int compare_word_count(const void* p1, const void* p2) {
     return 0;
 }
 
-void key_destroy(gpointer key) {
-    g_string_free((GString*)key, TRUE);
-}
-
-void value_destroy(gpointer value) {
-    g_free(value);
-}
-
 void get_top_words(FILE* in, size_t count) {
-    GHashTable* ht = g_hash_table_new_full((GHashFunc)g_string_hash,
-                                           (GEqualFunc)g_string_equal,
-                                           key_destroy, value_destroy);
+    GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
+                                           g_free, g_free);
     // Store word counts in the hash table
     GString* word = g_string_sized_new(64);
     while (get_word(in, word)) {
-        gpointer value = g_hash_table_lookup(ht, word);
+        gpointer value = g_hash_table_lookup(ht, word->str);
         if (value != NULL) {
             size_t* count = (size_t*)value;
             ++*count;
         } else {
             size_t* count = g_new(size_t, 1);
             *count = 1;
-            g_hash_table_insert(ht, g_string_new(word->str), count);
+            g_hash_table_insert(ht, g_strdup(word->str), count);
         }
     }
     g_string_free(word, TRUE);
@@ -74,7 +65,7 @@ void get_top_words(FILE* in, size_t count) {
     gpointer key, value;
     g_hash_table_iter_init(&iter, ht);
     for (size_t i = 0; g_hash_table_iter_next(&iter, &key, &value); ++i) {
-        words[i].word = ((GString*)key)->str;
+        words[i].word = (char*)key;
         words[i].count = *(size_t*)value;
     }
     qsort(words, size, sizeof(word_count), compare_word_count);
