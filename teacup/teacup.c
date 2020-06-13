@@ -1,37 +1,43 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "string_buffer.h"
-#include "word_list.h"
-#include "xalloc.h"
+#include <glib.h>
 
-bool get_line(FILE* in, string_buffer* buffer) {
+bool get_line(FILE* in, GString* line) {
     int c, count = 0;
-    string_buffer_clear(buffer);
+    g_string_set_size(line, 0);
     while ((c = getc(in)) != EOF) {
         ++count;
         if (c == '\n')
             break;
-        string_buffer_append(buffer, c);
+        g_string_append_c(line, c);
     }
     return count > 0;
 }
 
-bool load_dictionary(const char* file, word_list* words) {
+void destroy_string(gpointer key) {
+    g_string_free((GString*)key, TRUE);
+}
+
+int string_compare(gconstpointer p1, gconstpointer p2) {
+    GString** s1 = (GString**)p1;
+    GString** s2 = (GString**)p2;
+    return strcmp((*s1)->str, (*s2)->str);
+}
+
+GPtrArray* load_dictionary(const char* file) {
     FILE* in = fopen(file, "r");
     if (in == 0) {
         perror(file);
-        return false;
+        return NULL;
     }
-    word_list_create(words, 1024);
-    string_buffer buffer;
-    string_buffer_create(&buffer, 64);
-    while (get_line(in, &buffer))
-        word_list_append(words, buffer.string);
-    string_buffer_destroy(&buffer);
-    word_list_sort(words);
-    return true;
+    GPtrArray* dict = g_ptr_array_new_full(1024, destroy_string);
+    GString* line = g_string_sized_new(64);
+    while (get_line(in, line))
+        g_ptr_array_add(dict, g_string_new(line->str));
+    g_ptr_array_sort(dict, string_compare);
+    g_string_free(line, TRUE);
+    return dict;
 }
 
 void rotate(char* str, size_t len) {
@@ -40,36 +46,44 @@ void rotate(char* str, size_t len) {
     str[len - 1] = c;
 }
 
-void find_teacup_words(const word_list* words) {
-    word_list teacup_words, found;
-    word_list_create(&teacup_words, 8);
-    word_list_create(&found, 8);
-    for (size_t i = 0; i < words->size; ++i) {
-        const char* word = words->words[i];
-        size_t len = strlen(word);
-        if (len < 3 || word_list_contains(&found, word))
+bool dictionary_search(const GPtrArray* dictionary, const GString* word) {
+    return bsearch(&word, dictionary->pdata, dictionary->len, sizeof(GString*),
+                   string_compare) != NULL;
+}
+
+void find_teacup_words(GPtrArray* dictionary) {
+    GHashTable* found = g_hash_table_new_full((GHashFunc)g_string_hash,
+                                              (GEqualFunc)g_string_equal,
+                                              destroy_string, NULL);
+    GPtrArray* teacup_words = g_ptr_array_new_full(8, destroy_string);
+    for (size_t i = 0, n = dictionary->len; i < n; ++i) {
+        GString* word = g_ptr_array_index(dictionary, i);
+        size_t len = word->len;
+        if (len < 3 || g_hash_table_contains(found, word))
             continue;
-        word_list_clear(&teacup_words);
-        char* copy = xstrdup(word);
+        g_ptr_array_set_size(teacup_words, 0);
+        GString* temp = g_string_new(word->str);
         for (size_t i = 0; i < len - 1; ++i) {
-            rotate(copy, len);
-            if (strcmp(word, copy) == 0 || !word_list_bsearch(words, copy))
+            rotate(temp->str, len);
+            if (g_string_equal(word, temp)
+                || !dictionary_search(dictionary, temp))
                 break;
-            word_list_append(&teacup_words, copy);
+            g_ptr_array_add(teacup_words, g_string_new(temp->str));
         }
-        free(copy);
-        if (teacup_words.size == len - 1) {
-            printf("%s", word);
-            word_list_append(&found, word);
+        g_string_free(temp, TRUE);
+        if (teacup_words->len == len - 1) {
+            printf("%s", word->str);
+            g_hash_table_insert(found, g_string_new(word->str), NULL);
             for (size_t i = 0; i < len - 1; ++i) {
-                printf(" %s", teacup_words.words[i]);
-                word_list_append(&found, teacup_words.words[i]);
+                GString* teacup_word = g_ptr_array_index(teacup_words, i);
+                printf(" %s", teacup_word->str);
+                g_hash_table_insert(found, g_string_new(teacup_word->str), NULL);
             }
             printf("\n");
         }
     }
-    word_list_destroy(&teacup_words);
-    word_list_destroy(&found);
+    g_ptr_array_free(teacup_words, TRUE);
+    g_hash_table_destroy(found);
 }
 
 int main(int argc, char** argv) {
@@ -77,10 +91,10 @@ int main(int argc, char** argv) {
         fprintf(stderr, "usage: %s dictionary\n", argv[0]);
         return EXIT_FAILURE;
     }
-    word_list words;
-    if (!load_dictionary(argv[1], &words))
+    GPtrArray* dictionary = load_dictionary(argv[1]);
+    if (dictionary == NULL)
         return EXIT_FAILURE;
-    find_teacup_words(&words);
-    word_list_destroy(&words);
+    find_teacup_words(dictionary);
+    g_ptr_array_free(dictionary, TRUE);
     return EXIT_SUCCESS;
 }
