@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "string_buffer.h"
+#include <glib.h>
 
 typedef uint64_t integer;
 
@@ -62,43 +62,42 @@ const named_number* get_named_number(integer n) {
     return &named_numbers[names_len - 1];
 }
 
-void append_number_name(string_buffer* sb, integer n, bool ordinal) {
+void append_number_name(GString* gstr, integer n, bool ordinal) {
     if (n < 20)
-        string_buffer_append_str(sb, get_small_name(&small[n], ordinal));
+        g_string_append(gstr, get_small_name(&small[n], ordinal));
     else if (n < 100) {
         if (n % 10 == 0) {
-            string_buffer_append_str(sb, get_small_name(&tens[n/10 - 2], ordinal));
+            g_string_append(gstr, get_small_name(&tens[n/10 - 2], ordinal));
         } else {
-            string_buffer_append_str(sb, get_small_name(&tens[n/10 - 2], false));
-            string_buffer_append(sb, '-');
-            string_buffer_append_str(sb, get_small_name(&small[n % 10], ordinal));
+            g_string_append(gstr, get_small_name(&tens[n/10 - 2], false));
+            g_string_append_c(gstr, '-');
+            g_string_append(gstr, get_small_name(&small[n % 10], ordinal));
         }
     } else {
         const named_number* num = get_named_number(n);
         integer p = num->number;
-        append_number_name(sb, n/p, false);
-        string_buffer_append(sb, ' ');
+        append_number_name(gstr, n/p, false);
+        g_string_append_c(gstr, ' ');
         if (n % p == 0) {
-            string_buffer_append_str(sb, get_big_name(num, ordinal));
+            g_string_append(gstr, get_big_name(num, ordinal));
         } else {
-            string_buffer_append_str(sb, get_big_name(num, false));
-            string_buffer_append(sb, ' ');
-            append_number_name(sb, n % p, ordinal);
+            g_string_append(gstr, get_big_name(num, false));
+            g_string_append_c(gstr, ' ');
+            append_number_name(gstr, n % p, ordinal);
         }
     }
 }
 
-char* number_name(integer n, bool ordinal) {
-    string_buffer result = { 0 };
-    string_buffer_create(&result, 8);
-    append_number_name(&result, n, ordinal);
-    return result.string;
+GString* number_name(integer n, bool ordinal) {
+    GString* result = g_string_sized_new(8);
+    append_number_name(result, n, ordinal);
+    return result;
 }
 
 void test_ordinal(integer n) {
-    char* name = number_name(n, true);
-    printf("%llu: %s\n", n, name);
-    free(name);
+    GString* name = number_name(n, true);
+    printf("%llu: %s\n", n, name->str);
+    g_string_free(name, TRUE);
 }
 
 int main() {
