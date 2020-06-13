@@ -83,82 +83,63 @@ void* xrealloc(void* p, size_t n) {
     return ptr;
 }
 
-#define SHORT_STRING_MAX 16
-
-typedef struct string_tag {
+typedef struct string_buffer_tag {
     size_t size;
     size_t capacity;
-    union {
-        char buffer[SHORT_STRING_MAX];
-        char* ptr;
-    } str;
-} string_t;
+    char* string;
+} string_buffer;
 
-void string_create(string_t* s, const char* str) {
-    size_t len = strlen(str);
-    size_t capacity = len + 1;
-    if (SHORT_STRING_MAX < capacity) {
-        s->str.ptr = xmalloc(capacity);
-        s->capacity = capacity;
-        memcpy(s->str.ptr, str, len + 1);
-    } else {
-        s->capacity = SHORT_STRING_MAX;
-        memcpy(s->str.buffer, str, len + 1);
-    }
-    s->size = len;
+void string_buffer_create(string_buffer* buffer, size_t capacity) {
+    buffer->size = 0;
+    buffer->capacity = capacity;
+    buffer->string = xmalloc(capacity);
 }
 
-void string_destroy(string_t* s) {
-    if (s->capacity > SHORT_STRING_MAX)
-        free(s->str.ptr);
-    s->size = 0;
-    s->capacity = 0;
+void string_buffer_destroy(string_buffer* buffer) {
+    free(buffer->string);
+    buffer->string = NULL;
+    buffer->size = 0;
+    buffer->capacity = 0;
 }
 
-void string_append(string_t* s, const char* str) {
-    size_t len = strlen(str);
-    size_t min_capacity = len + s->size + 1;
-    if (s->capacity < min_capacity) {
-        size_t new_capacity = 2 * s->capacity;
+void string_buffer_clear(string_buffer* buffer) {
+    buffer->size = 0;
+}
+
+void string_buffer_append(string_buffer* buffer, const char* str, size_t len) {
+    size_t min_capacity = buffer->size + len + 1;
+    if (buffer->capacity < min_capacity) {
+        size_t new_capacity = 5*buffer->capacity/4;
         if (new_capacity < min_capacity)
             new_capacity = min_capacity;
-        if (s->capacity == SHORT_STRING_MAX) {
-            char* ptr = xmalloc(new_capacity);
-            memcpy(ptr, s->str.buffer, s->size);
-            s->str.ptr = ptr;
-        }
-        else
-            s->str.ptr = xrealloc(s->str.ptr, new_capacity);
-        s->capacity = new_capacity;
+        buffer->string = xrealloc(buffer->string, new_capacity);
+        buffer->capacity = new_capacity;
     }
-    char* dst = s->capacity > SHORT_STRING_MAX ? s->str.ptr : s->str.buffer;
-    memcpy(dst + s->size, str, len + 1);
-    s->size += len;
+    memcpy(buffer->string + buffer->size, str, len + 1);
+    buffer->size += len;
 }
 
-const char* string_cstr(const string_t* s) {
-    return s->capacity > SHORT_STRING_MAX ? s->str.ptr : s->str.buffer;
-}
-
-size_t string_length(const string_t* s) {
-    return s->size;
-}
+typedef struct word_tag {
+    size_t offset;
+    size_t length;
+} word;
 
 typedef struct word_list_tag {
     size_t size;
     size_t capacity;
-    string_t* words;
+    word* words;
+    string_buffer str;
 } word_list;
 
 void word_list_create(word_list* words, size_t capacity) {
     words->size = 0;
     words->capacity = capacity;
-    words->words = xmalloc(capacity * sizeof(string_t));
+    words->words = xmalloc(capacity * sizeof(word));
+    string_buffer_create(&words->str, capacity*8);
 }
 
 void word_list_destroy(word_list* words) {
-    for (size_t i = 0; i < words->size; ++i)
-        string_destroy(&words->words[i]);
+    string_buffer_destroy(&words->str);
     free(words->words);
     words->words = NULL;
     words->size = 0;
@@ -166,23 +147,32 @@ void word_list_destroy(word_list* words) {
 }
 
 void word_list_clear(word_list* words) {
-    for (size_t i = 0; i < words->size; ++i)
-        string_destroy(&words->words[i]);
+    string_buffer_clear(&words->str);
     words->size = 0;
 }
 
-string_t* word_list_append(word_list* words, const char* str) {
+void word_list_append(word_list* words, const char* str) {
+    size_t offset = words->str.size;
+    size_t len = strlen(str);
+    string_buffer_append(&words->str, str, len);
     size_t min_capacity = words->size + 1;
     if (words->capacity < min_capacity) {
-        size_t new_capacity = (words->capacity * 3)/2;
+        size_t new_capacity = (words->capacity * 5)/4;
         if (new_capacity < min_capacity)
             new_capacity = min_capacity;
-        words->words = xrealloc(words->words, new_capacity * sizeof(string_t));
+        words->words = xrealloc(words->words, new_capacity * sizeof(word));
         words->capacity = new_capacity;
     }
-    string_t* s = &words->words[words->size++];
-    string_create(s, str);
-    return s;
+    word* w = &words->words[words->size++];
+    w->offset = offset;
+    w->length = len;
+}
+
+void word_list_extend(word_list* words, const char* str) {
+    word* w = &words->words[words->size - 1];
+    size_t len = strlen(str);
+    w->length += len;
+    string_buffer_append(&words->str, str, len);
 }
 
 size_t append_number_name(word_list* words, integer n, bool ordinal) {
@@ -194,9 +184,9 @@ size_t append_number_name(word_list* words, integer n, bool ordinal) {
         if (n % 10 == 0) {
             word_list_append(words, get_small_name(&tens[n/10 - 2], ordinal));
         } else {
-            string_t* str = word_list_append(words, get_small_name(&tens[n/10 - 2], false));
-            string_append(str, "-");
-            string_append(str, get_small_name(&small[n % 10], ordinal));
+            word_list_append(words, get_small_name(&tens[n/10 - 2], false));
+            word_list_extend(words, "-");
+            word_list_extend(words, get_small_name(&small[n % 10], ordinal));
         }
         count = 1;
     } else {
@@ -215,10 +205,11 @@ size_t append_number_name(word_list* words, integer n, bool ordinal) {
     return count;
 }
 
-size_t count_letters(const string_t* str) {
+size_t count_letters(const word_list* words, size_t index) {
+    const word* w = &words->words[index];
     size_t letters = 0;
-    const char* s = string_cstr(str);
-    for (size_t i = 0, n = string_length(str); i < n; ++i) {
+    const char* s = words->str.string + w->offset;
+    for (size_t i = 0, n = w->length; i < n; ++i) {
         if (isalpha((unsigned char)s[i]))
             ++letters;
     }
@@ -235,13 +226,13 @@ void sentence(word_list* result, size_t count) {
     for (size_t i = 0; i < n; ++i)
         word_list_append(result, words[i]);
     for (size_t i = 1; count > n; ++i) {
-        n += append_number_name(result, count_letters(&result->words[i]), false);
+        n += append_number_name(result, count_letters(result, i), false);
         word_list_append(result, "in");
         word_list_append(result, "the");
         n += 2;
         n += append_number_name(result, i + 1, true);
         // Append a comma to the final word
-        string_append(&result->words[result->size - 1], ",");
+        word_list_extend(result, ",");
     }
 }
 
@@ -249,10 +240,7 @@ size_t sentence_length(const word_list* words) {
     size_t n = words->size;
     if (n == 0)
         return 0;
-    size_t length = n - 1;
-    for (size_t i = 0; i < n; ++i)
-        length += string_length(&words->words[i]);
-    return length;
+    return words->str.size + n - 1;
 }
 
 int main() {
@@ -265,14 +253,15 @@ int main() {
     for (size_t i = 0; i < n; ++i) {
         if (i != 0)
             printf("%c", i % 25 == 0 ? '\n' : ' ');
-        printf("%'2lu", count_letters(&result.words[i]));
+        printf("%'2lu", count_letters(&result, i));
     }
     printf("\nSentence length: %'lu\n", sentence_length(&result));
     for (n = 1000; n <= 10000000; n *= 10) {
         sentence(&result, n);
-        const string_t* word = &result.words[n - 1];
-        printf("The %'luth word is '%s' and has %lu letters. ", n, string_cstr(word),
-               count_letters(word));
+        const word* w = &result.words[n - 1];
+        const char* s = result.str.string + w->offset;
+        printf("The %'luth word is '%.*s' and has %lu letters. ", n, (int)w->length, s,
+               count_letters(&result, n - 1));
         printf("Sentence length: %'lu\n" , sentence_length(&result));
     }
     word_list_destroy(&result);
