@@ -37,6 +37,7 @@ GPtrArray* load_dictionary(const char* file) {
         g_ptr_array_add(dict, g_string_new(line->str));
     g_ptr_array_sort(dict, string_compare);
     g_string_free(line, TRUE);
+    fclose(in);
     return dict;
 }
 
