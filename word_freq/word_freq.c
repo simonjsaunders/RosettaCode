@@ -75,7 +75,7 @@ void get_top_words(FILE* in, size_t count) {
     g_hash_table_iter_init(&iter, ht);
     for (size_t i = 0; g_hash_table_iter_next(&iter, &key, &value); ++i) {
         words[i].word = ((GString*)key)->str;
-        words[i].count = *(unsigned int*)value;
+        words[i].count = *(size_t*)value;
     }
     qsort(words, size, sizeof(word_count), compare_word_count);
 
