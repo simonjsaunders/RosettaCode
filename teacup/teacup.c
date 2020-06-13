@@ -69,7 +69,7 @@ void find_teacup_words(GPtrArray* dictionary) {
         g_free(temp);
         if (teacup_words->len == len - 1) {
             printf("%s", word);
-            g_hash_table_insert(found, g_strdup(word), NULL);
+            g_hash_table_add(found, g_strdup(word));
             for (size_t i = 0; i < len - 1; ++i) {
                 const char* teacup_word = g_ptr_array_index(teacup_words, i);
                 printf(" %s", teacup_word);
