@@ -1,8 +1,9 @@
 import java.io.*;
 
-public class SierpinskiCurve implements AutoCloseable {
+public class SierpinskiCurve {
     public static void main(final String[] args) {
-        try (SierpinskiCurve s = new SierpinskiCurve("sierpinski_curve.svg")) {
+        try (Writer writer = new BufferedWriter(new FileWriter("sierpinski_curve.svg"))) {
+            SierpinskiCurve s = new SierpinskiCurve(writer);
             s.currentAngle = 45;
             s.currentX = 535;
             s.currentY = 5;
@@ -15,18 +16,14 @@ public class SierpinskiCurve implements AutoCloseable {
         }
     }
 
-    private SierpinskiCurve(final String file) throws IOException {
-        writer = new BufferedWriter(new FileWriter(file));
+    private SierpinskiCurve(final Writer writer) {
+        this.writer = writer;
     }
 
     private void begin(final int size) throws IOException {
         write("<svg xmlns='http://www.w3.org/2000/svg' width='%d' height='%d'>\n", size, size);
         write("<rect width='100%%' height='100%%' fill='white'/>\n");
         write("<path stroke-width='1' stroke='black' fill='none' d='");
-    }
-
-    public void close() throws IOException {
-        writer.close();
     }
 
     private void end() throws IOException {
