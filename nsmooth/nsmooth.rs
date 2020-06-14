@@ -39,9 +39,9 @@ fn find_nsmooth_numbers(n : u32, count : usize) -> Vec<rug::Integer> {
     use rug::{Assign, Integer};
     let primes = find_primes(2, n);
     let num_primes = primes.len();
-    let mut result : Vec<Integer> = Vec::with_capacity(count);
-    let mut queue : Vec<Integer> = Vec::with_capacity(num_primes);
-    let mut index : Vec<usize> = Vec::with_capacity(num_primes);
+    let mut result = Vec::with_capacity(count);
+    let mut queue = Vec::with_capacity(num_primes);
+    let mut index = Vec::with_capacity(num_primes);
     for i in 0..num_primes {
         index.push(0);
         queue.push(Integer::from(primes[i]));
