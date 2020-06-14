@@ -30,12 +30,13 @@ public class DuplicateFiles {
             if (!containsDuplicates(map))
                 continue;
             List<List<String>> fileSets = new ArrayList<>(map.values());
+            for (List<String> files : fileSets)
+                Collections.sort(files);
             Collections.sort(fileSets, new StringListComparator());
             FileKey key = e.getKey();
             System.out.println();
             System.out.println("Size: " + key.size_ + " bytes");
             for (List<String> files : fileSets) {
-                Collections.sort(files);
                 for (int i = 0, n = files.size(); i < n; ++i) {
                     if (i > 0)
                         System.out.print(" = ");
