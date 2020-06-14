@@ -52,21 +52,21 @@ void find_teacup_words(GPtrArray* dictionary) {
     GHashTable* found = g_hash_table_new_full(g_str_hash, g_str_equal,
                                               g_free, NULL);
     GPtrArray* teacup_words = g_ptr_array_new_full(8, g_free);
+    GString* temp = g_string_sized_new(8);
     for (size_t i = 0, n = dictionary->len; i < n; ++i) {
         const char* word = g_ptr_array_index(dictionary, i);
         size_t len = strlen(word);
         if (len < 3 || g_hash_table_contains(found, word))
             continue;
         g_ptr_array_set_size(teacup_words, 0);
-        char* temp = g_strdup(word);
+        g_string_assign(temp, word);
         for (size_t i = 0; i < len - 1; ++i) {
-            rotate(temp, len);
-            if (strcmp(word, temp) == 0
-                || !dictionary_search(dictionary, temp))
+            rotate(temp->str, len);
+            if (strcmp(word, temp->str) == 0
+                || !dictionary_search(dictionary, temp->str))
                 break;
-            g_ptr_array_add(teacup_words, g_strdup(temp));
+            g_ptr_array_add(teacup_words, g_strdup(temp->str));
         }
-        g_free(temp);
         if (teacup_words->len == len - 1) {
             printf("%s", word);
             g_hash_table_add(found, g_strdup(word));
@@ -78,6 +78,7 @@ void find_teacup_words(GPtrArray* dictionary) {
             printf("\n");
         }
     }
+    g_string_free(temp, TRUE);
     g_ptr_array_free(teacup_words, TRUE);
     g_hash_table_destroy(found);
 }
