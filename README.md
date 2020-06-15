@@ -126,7 +126,7 @@ See LICENSE for details.
 |unique_chars|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprimeable|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
-
+|word_break|2020-06-15|https://rosettacode.org/wiki/Word_break_problem|
 
 ## Java Code Examples
 
