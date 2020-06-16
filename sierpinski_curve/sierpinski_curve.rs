@@ -69,12 +69,12 @@ impl SierpinskiCurve {
             .set("width", "100%")
             .set("height", "100%")
             .set("fill", "white");
-        let mut hilbert = SierpinskiCurve::new(x, y, 7.0, 45);
+        let mut s = SierpinskiCurve::new(x, y, 7.0, 45);
         let document = svg::Document::new()
             .set("width", size)
             .set("height", size)
             .add(rect)
-            .add(hilbert.execute(order));
+            .add(s.execute(order));
         svg::save(file, &document)
     }
 }
