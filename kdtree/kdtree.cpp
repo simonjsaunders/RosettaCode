@@ -130,10 +130,7 @@ public:
      * @param end end of range
      */
     template<typename iterator>
-    kdtree(iterator begin, iterator end) {
-        nodes_.reserve(std::distance(begin, end));
-        for (auto i = begin; i != end; ++i)
-            nodes_.emplace_back(*i);
+    kdtree(iterator begin, iterator end) : nodes_(begin, end) {
         root_ = make_tree(0, nodes_.size(), 0);
     }
     
