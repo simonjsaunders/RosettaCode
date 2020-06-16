@@ -202,6 +202,7 @@ See LICENSE for details.
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
+|prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
 |sierpinski_arrowhead|2020-06-11|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sierpinski_curve|2020-06-16|https://rosettacode.org/wiki/Sierpinski_curve|
