@@ -5,8 +5,8 @@ public class SierpinskiCurve {
         try (Writer writer = new BufferedWriter(new FileWriter("sierpinski_curve.svg"))) {
             SierpinskiCurve s = new SierpinskiCurve(writer);
             s.currentAngle = 45;
-            s.currentX = 535;
-            s.currentY = 5;
+            s.currentX = 5;
+            s.currentY = 10;
             s.lineLength = 7;
             s.begin(545);
             s.execute(rewrite(5));
@@ -39,10 +39,10 @@ public class SierpinskiCurve {
                     line(lineLength);
                     break;
                 case '+':
-                    turn(-ANGLE);
+                    turn(ANGLE);
                     break;
                 case '-':
-                    turn(ANGLE);
+                    turn(-ANGLE);
                     break;
             }
         }
@@ -51,7 +51,7 @@ public class SierpinskiCurve {
     private void line(final double length) throws IOException {
         final double theta = (Math.PI * currentAngle) / 180.0;
         currentX += length * Math.cos(theta);
-        currentY += length * Math.sin(theta);
+        currentY -= length * Math.sin(theta);
         write("L%g,%g\n", currentX, currentY);
     }
 
