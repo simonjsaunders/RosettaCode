@@ -205,6 +205,7 @@ See LICENSE for details.
 |sierpinski_arrowhead|2020-06-11|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sierpinski_curve|2020-06-16|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_pentagon|2020-06-08|https://rosettacode.org/wiki/Sierpinski_pentagon|
+|sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |sierpinski_triangle|2020-06-09|https://rosettacode.org/wiki/Sierpinski_triangle/Graphical|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
