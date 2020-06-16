@@ -4,11 +4,12 @@ public class SierpinskiSquareCurve {
     public static void main(final String[] args) {
         try (Writer writer = new BufferedWriter(new FileWriter("sierpinski_square.svg"))) {
             SierpinskiSquareCurve s = new SierpinskiSquareCurve(writer);
+            int size = 635, length = 5;
             s.currentAngle = 0;
-            s.currentX = 315;
-            s.currentY = 630;
-            s.lineLength = 5;
-            s.begin(635);
+            s.currentX = (size - length)/2;
+            s.currentY = length;
+            s.lineLength = length;
+            s.begin(size);
             s.execute(rewrite(5));
             s.end();
         } catch (final Exception ex) {
@@ -38,10 +39,10 @@ public class SierpinskiSquareCurve {
                     line(lineLength);
                     break;
                 case '+':
-                    turn(-ANGLE);
+                    turn(ANGLE);
                     break;
                 case '-':
-                    turn(ANGLE);
+                    turn(-ANGLE);
                     break;
             }
         }

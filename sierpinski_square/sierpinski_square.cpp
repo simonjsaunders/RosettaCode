@@ -30,16 +30,15 @@ void execute(std::ostream& out, const std::string& s, double x, double y,
         if (c == 'F')
             line(out, x, y, length, angle);
         else if (c == '+')
-            angle = (angle - 90) % 360;
-        else if (c == '-')
             angle = (angle + 90) % 360;
+        else if (c == '-')
+            angle = (angle - 90) % 360;
     }
 }
 
 int main() {
-    const int size = 635;
+    const int size = 635, length = 5;
     const int order = 5;
-    const double x = 315, y = 630, length = 5;
     std::ofstream out("sierpinski_square.svg");
     if (!out) {
         std::cerr << "Cannot open output file\n";
@@ -52,7 +51,7 @@ int main() {
     std::string s = "F+XF+F+XF";
     for (int i = 0; i < order; ++i)
         s = rewrite(s);
-    execute(out, s, x, y, length, 0);
+    execute(out, s, (size - length)/2, length, length, 0);
     out << "'/>\n</svg>\n";
     return 0;
 }
