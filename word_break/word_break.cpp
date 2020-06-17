@@ -24,10 +24,12 @@ using dictionary = std::set<std::string, string_comparator>;
 template <typename iterator, typename separator>
 std::string join(iterator begin, iterator end, separator sep) {
     std::string result;
-    result += *begin++;
-    for (; begin != end; ++begin) {
-        result += sep;
-        result += *begin;
+    if (begin != end) {
+        result += *begin++;
+        for (; begin != end; ++begin) {
+            result += sep;
+            result += *begin;
+        }
     }
     return result;
 }
