@@ -26,7 +26,7 @@ std::string join(iterator begin, iterator end, separator sep) {
     std::string result;
     result += *begin++;
     for (; begin != end; ++begin) {
-        result += ' ';
+        result += sep;
         result += *begin;
     }
     return result;
