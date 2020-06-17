@@ -1,70 +1,84 @@
-#include <fstream>
+#include <algorithm>
 #include <iostream>
-#include <list>
+#include <optional>
 #include <set>
 #include <string>
+#include <string_view>
+#include <vector>
 
-auto load_dictionary(const std::string& filename) {
-    std::ifstream in(filename);
-    if (!in)
-        throw std::runtime_error("Cannot open file " + filename);
-    std::set<std::string> words;
-    std::string word;
-    while (getline(in, word))
-        words.insert(word);
-    return words;
+struct string_comparator {
+    using is_transparent = void;
+    bool operator()(const std::string& lhs, const std::string& rhs) const {
+        return lhs < rhs;
+    }
+    bool operator()(const std::string& lhs, const std::string_view& rhs) const {
+        return lhs < rhs;
+    }
+    bool operator()(const std::string_view& lhs, const std::string& rhs) const {
+        return lhs < rhs;
+    }
+};
+
+using dictionary = std::set<std::string, string_comparator>;
+
+template <typename iterator, typename separator>
+std::string join(iterator begin, iterator end, separator sep) {
+    std::string result;
+    result += *begin++;
+    for (; begin != end; ++begin) {
+        result += ' ';
+        result += *begin;
+    }
+    return result;
 }
 
-bool split_into_words(const std::set<std::string>& dict,
-                      const std::string& str,
-                      std::list<std::string>& words) {
-    for (size_t len = str.size(); len > 0; --len) {
-        auto word = str.substr(0, len);
-        if (dict.find(word) == dict.end())
-            continue;
-        if (len == str.size()) {
-            words.push_back(word);
-            return true;
-        } else if (split_into_words(dict, str.substr(len), words)) {
-            words.push_front(word);
-            return true;
+auto create_string(const std::string_view& s,
+                   const std::vector<std::optional<size_t>>& v) {
+    auto idx = s.size();
+    std::vector<std::string_view> sv;
+    while (v[idx].has_value()) {
+        size_t prev = v[idx].value();
+        sv.push_back(s.substr(prev, idx - prev));
+        idx = prev;
+    }
+    std::reverse(sv.begin(), sv.end());
+    return join(sv.begin(), sv.end(), ' ');
+}
+
+std::optional<std::string> word_break(const std::string_view& str,
+                                      const dictionary& dict) {
+    auto size = str.size() + 1;
+    std::vector<std::optional<size_t>> possible(size);
+    auto check_word = [&dict, &str](size_t i, size_t j)
+            -> std::optional<size_t> {
+        if (dict.find(str.substr(i, j - i)) != dict.end())
+            return i;
+        return std::nullopt;
+    };
+    for (size_t i = 1; i < size; ++i) {
+        if (!possible[i].has_value())
+            possible[i] = check_word(0, i);
+        if (possible[i].has_value()) {
+            for (size_t j = i + 1; j < size; ++j) {
+                if (!possible[j].has_value())
+                    possible[j] = check_word(i, j);
+            }
+            if (possible[str.size()].has_value())
+                return create_string(str, possible);
         }
     }
-    return false;
-}
-
-void print_words(const std::list<std::string>& words) {
-    if (words.empty())
-        return;
-    auto i = words.begin();
-    std::cout << *i++;
-    for (; i != words.end(); ++i)
-        std::cout << ' ' << *i;
-    std::cout << '\n';
-}
-
-void test(const std::set<std::string>& dict, const std::string& input) {
-    std::list<std::string> words;
-    std::cout << "input: " << input << "\nresult: ";
-    if (split_into_words(dict, input, words))
-        print_words(words);
-    else
-        std::cout << "impossible!\n";
+    return std::nullopt;
 }
 
 int main(int argc, char** argv) {
-    if (argc != 2) {
-        std::cerr << "usage: " << argv[0] << " dictionary\n";
-        return EXIT_FAILURE;
-    }
-    try {
-        auto dict = load_dictionary(argv[1]);
-        test(dict, "wordbreakproblem");
-        test(dict, "segmenttheinputstring");
-        test(dict, "1234");
-    } catch (const std::exception& ex) {
-        std::cerr << ex.what() << '\n';
-        return EXIT_FAILURE;
-    }
-    return EXIT_SUCCESS;
+    dictionary dict;
+    dict.insert("a");
+    dict.insert("bc");
+    dict.insert("abc");
+    dict.insert("cd");
+    dict.insert("b");
+    auto result = word_break("abcd", dict);
+    if (result.has_value())
+        std::cout << result.value() << '\n';
+    return 0;
 }
