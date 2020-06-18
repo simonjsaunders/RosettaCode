@@ -15,7 +15,7 @@ fn load_dictionary(filename : &str) -> std::io::Result<BTreeSet<String>> {
 }
 
 fn find_teacup_words(dict : &BTreeSet<String>) {
-    let mut teacup_words : BTreeSet<String> = BTreeSet::new();
+    let mut teacup_words : Vec<String> = Vec::new();
     let mut found : HashSet<String> = HashSet::new();
     for word in dict {
         let len = word.len();
@@ -33,8 +33,8 @@ fn find_teacup_words(dict : &BTreeSet<String>) {
                         is_teacup_word = false;
                         break;
                     }
-                    if !w.eq(word) {
-                        teacup_words.insert(w);
+                    if !w.eq(word) && !teacup_words.contains(&w) {
+                        teacup_words.push(w);
                     }
                 },
                 Err(_) => {
