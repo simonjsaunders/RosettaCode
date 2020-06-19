@@ -116,7 +116,6 @@ See LICENSE for details.
 |squeeze|2020-01-09|https://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
 |stirling1|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
-|stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
