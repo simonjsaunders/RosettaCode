@@ -2,6 +2,7 @@ use std::collections::BTreeSet;
 use std::collections::HashSet;
 use std::fs::File;
 use std::io::{self, BufRead};
+use std::iter::FromIterator;
 
 fn load_dictionary(filename : &str) -> std::io::Result<BTreeSet<String>> {
     let file = File::open(filename)?;
@@ -24,23 +25,16 @@ fn find_teacup_words(dict : &BTreeSet<String>) {
         }
         teacup_words.clear();
         let mut is_teacup_word = true;
-        let mut bytes = word.as_bytes().to_vec();
+        let mut chars : Vec<char> = word.chars().collect();
         for _ in 1..len {
-            bytes.rotate_left(1);
-            match String::from_utf8(bytes.to_vec()) {
-                Ok(w) => {
-                    if !dict.contains(&w) {
-                        is_teacup_word = false;
-                        break;
-                    }
-                    if !w.eq(word) && !teacup_words.contains(&w) {
-                        teacup_words.push(w);
-                    }
-                },
-                Err(_) => {
-                    is_teacup_word = false;
-                    break;
-                }
+            chars.rotate_left(1);
+            let w = String::from_iter(&chars);
+            if !dict.contains(&w) {
+                is_teacup_word = false;
+                break;
+            }
+            if !w.eq(word) && !teacup_words.contains(&w) {
+                teacup_words.push(w);
             }
         }
         if !is_teacup_word || teacup_words.is_empty() {
