@@ -67,6 +67,7 @@ See LICENSE for details.
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
 |file_extension|2020-06-04|https://rosettacode.org/wiki/File_extension_is_in_extensions_list|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
+|fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |four_is|2020-06-03|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
 |four_is_magic|2020-01-17|https://rosettacode.org/wiki/Four_is_magic|
