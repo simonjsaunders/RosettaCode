@@ -10,6 +10,7 @@ void reverse(std::istream& in, std::ostream& out) {
         std::reverse(std::begin(record), std::end(record));
         out.write(record, record_length);
     }
+    out.flush();
 }
 
 int main(int argc, char** argv) {
