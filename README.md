@@ -9,7 +9,10 @@ code shared by two or more tasks.
 
 The code presented here is not intended to be of production quality.
 It is meant for expository purposes only. My goal is to present clear, concise,
-efficient code.
+efficient code. My usual approach is to have a go at solving a task myself
+before I look too closely at existing solutions. If my solution is as good as
+as any of the existing ones (in terms of efficiency or elegance) I'll keep it,
+otherwise I might submit a translation of someone else's solution instead.
 
 All code is released under the GNU Free Documentation License, version 1.2.
 See LICENSE for details.
