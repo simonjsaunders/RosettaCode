@@ -218,3 +218,4 @@ See LICENSE for details.
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
+|yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
