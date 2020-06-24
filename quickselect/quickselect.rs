@@ -17,22 +17,20 @@ fn pivot_index(left : usize, right : usize) -> usize {
     return left + (right - left)/2;
 }
 
-fn select<T: Ord>(a: &mut [T], left : usize, right : usize, n : usize) {
-    let mut low = left;
-    let mut high = right;
+fn select<T: Ord>(a: &mut [T], mut left : usize, mut right : usize, n : usize) {
     loop {
-        if low == high {
+        if left == right {
             break;
         }
-        let mut pivot = pivot_index(low, high);
-        pivot = partition(a, low, high, pivot);
+        let mut pivot = pivot_index(left, right);
+        pivot = partition(a, left, right, pivot);
         if n == pivot {
             break;
         }
         else if n < pivot {
-            high = pivot - 1;
+            right = pivot - 1;
         } else {
-            low = pivot + 1;
+            left = pivot + 1;
         }
     }
 }
