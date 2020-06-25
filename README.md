@@ -219,6 +219,7 @@ See LICENSE for details.
 |sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |sierpinski_triangle|2020-06-09|https://rosettacode.org/wiki/Sierpinski_triangle/Graphical|
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
+|textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
