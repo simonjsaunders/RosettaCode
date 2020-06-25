@@ -16,8 +16,8 @@ bool get_line(FILE* in, GString* line) {
 }
 
 int string_compare(gconstpointer p1, gconstpointer p2) {
-    const char** s1 = (const char**)p1;
-    const char** s2 = (const char**)p2;
+    const char* const* s1 = p1;
+    const char* const* s2 = p2;
     return strcmp(*s1, *s2);
 }
 

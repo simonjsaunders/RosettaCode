@@ -31,8 +31,8 @@ typedef struct word_count_tag {
 } word_count;
 
 int compare_word_count(const void* p1, const void* p2) {
-    const word_count* w1 = (const word_count*)p1;
-    const word_count* w2 = (const word_count*)p2;
+    const word_count* w1 = p1;
+    const word_count* w2 = p2;
     if (w1->count > w2->count)
         return -1;
     if (w1->count < w2->count)
@@ -48,7 +48,7 @@ void get_top_words(FILE* in, size_t count) {
     while (get_word(in, word)) {
         gpointer value = g_hash_table_lookup(ht, word->str);
         if (value != NULL) {
-            size_t* count = (size_t*)value;
+            size_t* count = value;
             ++*count;
         } else {
             size_t* count = g_new(size_t, 1);

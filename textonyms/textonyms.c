@@ -44,8 +44,8 @@ typedef struct textonym_tag {
 } textonym_t;
 
 int compare_by_text_length(const void* p1, const void* p2) {
-    const textonym_t* t1 = (const textonym_t*)p1;
-    const textonym_t* t2 = (const textonym_t*)p2;
+    const textonym_t* t1 = p1;
+    const textonym_t* t2 = p2;
     if (t1->length > t2->length)
         return -1;
     if (t1->length < t2->length)
@@ -54,8 +54,8 @@ int compare_by_text_length(const void* p1, const void* p2) {
 }
 
 int compare_by_word_count(const void* p1, const void* p2) {
-    const textonym_t* t1 = (const textonym_t*)p1;
-    const textonym_t* t2 = (const textonym_t*)p2;
+    const textonym_t* t1 = p1;
+    const textonym_t* t2 = p2;
     if (t1->words->len > t2->words->len)
         return -1;
     if (t1->words->len < t2->words->len)
@@ -93,7 +93,7 @@ bool get_line(FILE* in, GString* line) {
 }
 
 void free_strings(gpointer ptr) {
-    g_ptr_array_free((GPtrArray*)ptr, TRUE);
+    g_ptr_array_free(ptr, TRUE);
 }
 
 bool find_textonyms(const char* filename) {
@@ -107,7 +107,6 @@ bool find_textonyms(const char* filename) {
     GString* word = g_string_sized_new(64);
     GString* text = g_string_sized_new(64);
     guint count = 0;
-    guint textonyms = 0;
     while (get_line(in, word)) {
         if (!text_string(word, text))
             continue;
@@ -129,9 +128,8 @@ bool find_textonyms(const char* filename) {
     while (g_hash_table_iter_next(&iter, &key, &value)) {
         GPtrArray* v = (GPtrArray*)value;
         if (v->len > 1) {
-            ++textonyms;
             textonym_t textonym;
-            textonym.text = (const char*)key;
+            textonym.text = key;
             textonym.length = strlen(key);
             textonym.words = v;
             g_array_append_val(words, textonym);
@@ -142,6 +140,7 @@ bool find_textonyms(const char* filename) {
            count, filename);
     guint size = g_hash_table_size(ht);
     printf("They require %u digit combinations to represent them.\n", size);
+    guint textonyms = words->len;
     printf("%u digit combinations represent Textonyms.\n", textonyms);
 
     guint top = 5;
