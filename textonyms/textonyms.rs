@@ -40,7 +40,8 @@ fn find_textonyms(filename: &str) -> std::io::Result<()> {
     let mut count = 0;
 
     for line in io::BufReader::new(file).lines() {
-        let word = line?;
+        let mut word = line?;
+        word.make_ascii_lowercase();
         if let Some(text) = text_string(&word) {
             let words = table.entry(text).or_insert(Vec::new());
             words.push(word);
