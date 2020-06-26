@@ -32,7 +32,7 @@ bool get_top_words(const char* filename, size_t count) {
     // Store word counts in a hash table
     GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
                                            g_free, g_free);
-    GRegex* regex = g_regex_new("\\w+", G_REGEX_CASELESS, 0, NULL);
+    GRegex* regex = g_regex_new("\\w+", 0, 0, NULL);
     GMatchInfo* match_info;
     g_regex_match(regex, text, 0, &match_info);
     while (g_match_info_matches(match_info)) {
