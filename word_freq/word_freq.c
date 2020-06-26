@@ -1,29 +1,6 @@
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <glib.h>
-
-// A word is defined to be any run of characters for which isalpha
-// returns true, i.e. upper or lower case letters. All words are
-// converted to lower case.
-bool get_word(FILE* in, GString* word) {
-    int c;
-    g_string_set_size(word, 0);
-    while ((c = getc(in)) != EOF) {
-        if (isalpha(c)) {
-            g_string_append_c(word, tolower(c));
-            break;
-        }
-    }
-    if (word->len == 0)
-        return false;
-    while ((c = getc(in)) != EOF) {
-        if (!isalpha(c))
-            break;
-        g_string_append_c(word, tolower(c));
-    }
-    return true;
-}
 
 typedef struct word_count_tag {
     const char* word;
@@ -40,23 +17,40 @@ int compare_word_count(const void* p1, const void* p2) {
     return 0;
 }
 
-void get_top_words(FILE* in, size_t count) {
+bool get_top_words(const char* filename, size_t count) {
+    GMappedFile* mapped_file = g_mapped_file_new(filename, FALSE, NULL);
+    if (mapped_file == NULL) {
+        fprintf(stderr, "Cannot open file %s\n", filename);
+        return false;
+    }
+    const char* text = g_mapped_file_get_contents(mapped_file);
+    if (text == NULL) {
+        fprintf(stderr, "File %s is empty\n", filename);
+        return false;
+    }
+    // Store word counts in a hash table
     GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
                                            g_free, g_free);
-    // Store word counts in the hash table
-    GString* word = g_string_sized_new(64);
-    while (get_word(in, word)) {
-        gpointer value = g_hash_table_lookup(ht, word->str);
-        if (value != NULL) {
-            size_t* count = value;
+    GRegex* regex = g_regex_new("\\w+", G_REGEX_CASELESS, 0, NULL);
+    GMatchInfo* match_info;
+    g_regex_match(regex, text, 0, &match_info);
+    while (g_match_info_matches(match_info)) {
+        char* word = g_match_info_fetch(match_info, 0);
+        char* lower = g_utf8_strdown(word, -1);
+        g_free(word);
+        size_t* count = g_hash_table_lookup(ht, lower);
+        if (count != NULL) {
             ++*count;
+            g_free(lower);
         } else {
-            size_t* count = g_new(size_t, 1);
+            count = g_new(size_t, 1);
             *count = 1;
-            g_hash_table_insert(ht, g_strdup(word->str), count);
+            g_hash_table_insert(ht, lower, count);
         }
+        g_match_info_next(match_info, NULL);
     }
-    g_string_free(word, TRUE);
+    g_match_info_free(match_info);
+    g_regex_unref(regex);
 
     // Sort words in decreasing order of frequency
     size_t size = g_hash_table_size(ht);
@@ -65,7 +59,7 @@ void get_top_words(FILE* in, size_t count) {
     gpointer key, value;
     g_hash_table_iter_init(&iter, ht);
     for (size_t i = 0; g_hash_table_iter_next(&iter, &key, &value); ++i) {
-        words[i].word = (char*)key;
+        words[i].word = key;
         words[i].count = *(size_t*)value;
     }
     qsort(words, size, sizeof(word_count), compare_word_count);
@@ -79,19 +73,16 @@ void get_top_words(FILE* in, size_t count) {
         printf("%lu\t%lu\t%s\n", i + 1, words[i].count, words[i].word);
     g_free(words);
     g_hash_table_destroy(ht);
+    g_mapped_file_unref(mapped_file);
+    return true;
 }
 
 int main(int argc, char** argv) {
     if (argc != 2) {
         fprintf(stderr, "usage: %s file\n", argv[0]);
-        return 1;
+        return EXIT_FAILURE;
     }
-    FILE* in = fopen(argv[1], "r");
-    if (in == NULL) {
-        perror(argv[1]);
-        return 1;
-    }
-    get_top_words(in, 15);
-    fclose(in);
-    return 0;
+    if (!get_top_words(argv[1], 15))
+        return EXIT_FAILURE;
+    return EXIT_SUCCESS;
 }
