@@ -36,9 +36,8 @@ void print(iterator begin, iterator end) {
     if (begin == end)
         return;
     std::cout << *begin++;
-    while (begin != end) {
+    while (begin != end)
         std::cout << ' ' << *begin++;
-    }
     std::cout << '\n';
 }
 
