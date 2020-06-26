@@ -49,12 +49,11 @@ fn find_textonyms(filename: &str) -> std::io::Result<()> {
         }
     }
 
-    let mut textonyms = Vec::new();
-    for (text, words) in &table {
-        if words.len() > 1 {
-            textonyms.push((text, words));
-        }
-    }
+    let mut textonyms: Vec<(&String, &Vec<String>)> = table
+        .iter()
+        .filter(|x| x.1.len() > 1)
+        .collect();
+
     println!("There are {} words in '{}' which can be represented by the digit key mapping.",
            count, filename);
     println!("They require {} digit combinations to represent them.", table.len());
