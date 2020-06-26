@@ -26,6 +26,7 @@ bool get_top_words(const char* filename, size_t count) {
     const char* text = g_mapped_file_get_contents(mapped_file);
     if (text == NULL) {
         fprintf(stderr, "File %s is empty\n", filename);
+        g_mapped_file_unref(mapped_file);
         return false;
     }
     // Store word counts in a hash table
