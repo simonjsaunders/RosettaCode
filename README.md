@@ -62,6 +62,7 @@ See LICENSE for details.
 |carmichael|2020-06-03|https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes|
 |cholesky|2020-04-25|https://rosettacode.org/wiki/Cholesky_decomposition|
 |circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
+|cocktail_sort2|2020-06-26|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
