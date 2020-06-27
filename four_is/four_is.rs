@@ -128,14 +128,14 @@ impl WordList {
     }
     fn append(&mut self, s: &str) {
         let offset = self.string.len();
-        self.string.push_str(&s);
+        self.string.push_str(s);
         self.words.push((offset, offset + s.len()));
     }
     fn extend(&mut self, s: &str) {
         let len = self.words.len();
         let mut w = &mut self.words[len - 1];
         w.1 += s.len();
-        self.string.push_str(&s);
+        self.string.push_str(s);
     }
     fn len(&self) -> usize {
         self.words.len()
