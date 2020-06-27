@@ -140,6 +140,7 @@ See LICENSE for details.
 |---------|--------------|----------------|
 |abbrev_simple|2020-02-29|https://rosettacode.org/wiki/Abbreviations,_simple|
 |circular_primes|2020-06-16|https://rosettacode.org/wiki/Circular_primes|
+|cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
