@@ -21,8 +21,10 @@ fn main() {
         groups.push(CircularQueue::with_capacity(max_groups));
     }
 
-    let mut p = 2;    
-    while p < max {
+    for p in 2..max {
+        if !sieve.is_prime(p) {
+            continue;
+        }
         if !sieve.is_prime(p + diff) && (p < diff + 2 || !sieve.is_prime(p - diff)) {
             unsexy_count += 1;
             unsexy_primes.push(p);
@@ -38,10 +40,6 @@ fn main() {
                 group_count[group_size] += 1;
                 groups[group_size].push(group.clone());
             }
-        }
-        p += 1;
-        while p < max && !sieve.is_prime(p) {
-            p += 1;
         }
     }
 

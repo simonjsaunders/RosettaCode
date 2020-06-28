@@ -25,7 +25,9 @@ int main() {
     int unsexy_count = 0;
     circular_buffer<int> unsexy_primes(max_unsexy);
 
-    for (int p = 2; p < max; ) {
+    for (int p = 2; p < max; ++p) {
+        if (!sieve.is_prime(p))
+            continue;
         if (!sieve.is_prime(p + diff) && (p - diff < 2 || !sieve.is_prime(p - diff))) {
             // if p + diff and p - diff aren't prime then p can't be sexy
             ++unsexy_count;
@@ -43,10 +45,6 @@ int main() {
                 groups[group_size].push_back(group);
             }
         }
-        // skip to next prime number
-        ++p;
-        while (p < max && !sieve.is_prime(p))
-            ++p;
     }
 
     for (int size = 1; size < max_group_size; ++size) {
