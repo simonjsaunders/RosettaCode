@@ -60,19 +60,21 @@ void find_teacup_words(GPtrArray* dictionary) {
             continue;
         g_ptr_array_set_size(teacup_words, 0);
         g_string_assign(temp, word);
+        bool is_teacup_word = true;
         for (size_t i = 0; i < len - 1; ++i) {
             rotate(temp->str, len);
-            if (strcmp(word, temp->str) == 0)
-                break;
             char* w = dictionary_search(dictionary, temp->str);
-            if (w == NULL)
+            if (w == NULL) {
+                is_teacup_word = false;
                 break;
-            g_ptr_array_add(teacup_words, w);
+            }
+            if (strcmp(word, w) != 0 && !g_ptr_array_find(teacup_words, w, NULL))
+                g_ptr_array_add(teacup_words, w);
         }
-        if (teacup_words->len == len - 1) {
+        if (is_teacup_word && teacup_words->len > 0) {
             printf("%s", word);
             g_hash_table_add(found, word);
-            for (size_t i = 0; i < len - 1; ++i) {
+            for (size_t i = 0; i < teacup_words->len; ++i) {
                 char* teacup_word = g_ptr_array_index(teacup_words, i);
                 printf(" %s", teacup_word);
                 g_hash_table_add(found, teacup_word);
