@@ -2,10 +2,11 @@
 #include <string.h>
 
 void swap(char* p1, char* p2, size_t size) {
-    char tmp[size];
-    memcpy(tmp, p1, size);
-    memmove(p1, p2, size);
-    memcpy(p2, tmp, size);
+    for (; size-- > 0; ++p1, ++p2) {
+        char tmp = *p1;
+        *p1 = *p2;
+        *p2 = tmp;
+    }
 }
 
 void cocktail_shaker_sort(void* base, size_t count, size_t size,
