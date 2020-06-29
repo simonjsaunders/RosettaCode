@@ -10,29 +10,26 @@ void swap(char* p1, char* p2, size_t size) {
 
 void cocktail_shaker_sort(void* base, size_t count, size_t size,
                           int (*cmp)(const void*, const void*)) {
-    size_t begin = 0;
-    size_t end = count;
-    if (end == 0)
+    char* begin = base;
+    char* end = base + size * count;
+    if (end == begin)
         return;
-    char* array = base;
-    for (--end; begin < end; ) {
-        size_t new_begin = end;
-        size_t new_end = begin;
-        for (size_t i = begin; i < end; ++i) {
-            char* p1 = array + i * size;
-            char* p2 = p1 + size;
-            if (cmp(p1, p2) > 0) {
-                swap(p1, p2, size);
-                new_end = i;
+    for (end -= size; begin < end; ) {
+        char* new_begin = end;
+        char* new_end = begin;
+        for (char* p = begin; p < end; p += size) {
+            char* q = p + size;
+            if (cmp(p, q) > 0) {
+                swap(p, q, size);
+                new_end = p;
             }
         }
         end = new_end;
-        for (size_t i = end; i > begin; --i) {
-            char* p1 = array + (i - 1) * size;
-            char* p2 = p1 + size;
-            if (cmp(p1, p2) > 0) {
-                swap(p1, p2, size);
-                new_begin = i;
+        for (char* p = end; p > begin; p -= size) {
+            char* q = p - size;
+            if (cmp(q, p) > 0) {
+                swap(p, q, size);
+                new_begin = p;
             }
         }
         begin = new_begin;
