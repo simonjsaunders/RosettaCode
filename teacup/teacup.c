@@ -43,18 +43,18 @@ void rotate(char* str, size_t len) {
     str[len - 1] = c;
 }
 
-bool dictionary_search(const GPtrArray* dictionary, const char* word) {
-    return bsearch(&word, dictionary->pdata, dictionary->len, sizeof(char*),
-                   string_compare) != NULL;
+char* dictionary_search(const GPtrArray* dictionary, const char* word) {
+    char** result = bsearch(&word, dictionary->pdata, dictionary->len,
+                            sizeof(char*), string_compare);
+    return result != NULL ? *result : NULL;
 }
 
 void find_teacup_words(GPtrArray* dictionary) {
-    GHashTable* found = g_hash_table_new_full(g_str_hash, g_str_equal,
-                                              g_free, NULL);
-    GPtrArray* teacup_words = g_ptr_array_new_full(8, g_free);
+    GHashTable* found = g_hash_table_new(g_str_hash, g_str_equal);
+    GPtrArray* teacup_words = g_ptr_array_new();
     GString* temp = g_string_sized_new(8);
     for (size_t i = 0, n = dictionary->len; i < n; ++i) {
-        const char* word = g_ptr_array_index(dictionary, i);
+        char* word = g_ptr_array_index(dictionary, i);
         size_t len = strlen(word);
         if (len < 3 || g_hash_table_contains(found, word))
             continue;
@@ -62,18 +62,20 @@ void find_teacup_words(GPtrArray* dictionary) {
         g_string_assign(temp, word);
         for (size_t i = 0; i < len - 1; ++i) {
             rotate(temp->str, len);
-            if (strcmp(word, temp->str) == 0
-                || !dictionary_search(dictionary, temp->str))
+            if (strcmp(word, temp->str) == 0)
                 break;
-            g_ptr_array_add(teacup_words, g_strdup(temp->str));
+            char* w = dictionary_search(dictionary, temp->str);
+            if (w == NULL)
+                break;
+            g_ptr_array_add(teacup_words, w);
         }
         if (teacup_words->len == len - 1) {
             printf("%s", word);
-            g_hash_table_add(found, g_strdup(word));
+            g_hash_table_add(found, word);
             for (size_t i = 0; i < len - 1; ++i) {
-                const char* teacup_word = g_ptr_array_index(teacup_words, i);
+                char* teacup_word = g_ptr_array_index(teacup_words, i);
                 printf(" %s", teacup_word);
-                g_hash_table_add(found, g_strdup(teacup_word));
+                g_hash_table_add(found, teacup_word);
             }
             printf("\n");
         }
