@@ -24,6 +24,7 @@ See LICENSE for details.
 |abbrev_easy|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
+|cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |four_is|2020-06-04|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
