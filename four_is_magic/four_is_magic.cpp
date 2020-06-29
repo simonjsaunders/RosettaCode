@@ -67,31 +67,40 @@ inline char uppercase(char ch) {
     return static_cast<char>(std::toupper(static_cast<unsigned char>(ch)));
 }
 
-void magic(integer n) {
+std::string magic(integer n) {
+    std::string result;
     for (unsigned int i = 0; ; ++i) {
         std::string text(cardinal(n));
         if (i == 0)
             text[0] = uppercase(text[0]);
+        result += text;
         if (n == 4) {
-            std::cout << text << " is magic.\n";
+            result += " is magic.";
             break;
         }
         integer len = text.length();
-        std::cout << text << " is " << cardinal(len) << ", ";
+        result += " is ";
+        result += cardinal(len);
+        result += ", ";
         n = len;
     }
+    return result;
+}
+
+void test_magic(integer n) {
+    std::cout << magic(n) << '\n';
 }
 
 int main() {
-    magic(5);
-    magic(13);
-    magic(78);
-    magic(797);
-    magic(2739);
-    magic(4000);
-    magic(7893);
-    magic(93497412);
-    magic(2673497412U);
-    magic(10344658531277200972ULL);
+    test_magic(5);
+    test_magic(13);
+    test_magic(78);
+    test_magic(797);
+    test_magic(2739);
+    test_magic(4000);
+    test_magic(7893);
+    test_magic(93497412);
+    test_magic(2673497412U);
+    test_magic(10344658531277200972ULL);
     return 0;
 }

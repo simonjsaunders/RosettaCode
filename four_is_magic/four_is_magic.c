@@ -59,7 +59,7 @@ size_t append_number_name(GString* str, uint64_t n) {
     return str->len - len;
 }
 
-void magic(uint64_t n) {
+GString* magic(uint64_t n) {
     GString* str = g_string_new(NULL);
     for (unsigned int i = 0; ; ++i) {
         size_t count = append_number_name(str, n);
@@ -74,20 +74,25 @@ void magic(uint64_t n) {
         g_string_append(str, ", ");
         n = count;
     }
+    return str;
+}
+
+void test_magic(uint64_t n) {
+    GString* str = magic(n);
     printf("%s\n", str->str);
     g_string_free(str, TRUE);
 }
 
 int main() {
-    magic(5);
-    magic(13);
-    magic(78);
-    magic(797);
-    magic(2739);
-    magic(4000);
-    magic(7893);
-    magic(93497412);
-    magic(2673497412U);
-    magic(10344658531277200972ULL);
+    test_magic(5);
+    test_magic(13);
+    test_magic(78);
+    test_magic(797);
+    test_magic(2739);
+    test_magic(4000);
+    test_magic(7893);
+    test_magic(93497412);
+    test_magic(2673497412U);
+    test_magic(10344658531277200972ULL);
     return 0;
 }
