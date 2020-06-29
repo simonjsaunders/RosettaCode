@@ -16,8 +16,9 @@ void cocktail_sort(void* base, size_t count, size_t size,
     char* end = base + size * count;
     if (end == begin)
         return;
-    for (end -= size; ; ) {
-        bool swapped = false;
+    bool swapped = true;
+    for (end -= size; swapped; ) {
+        swapped = false;
         for (char* p = begin; p < end; p += size) {
             char* q = p + size;
             if (cmp(p, q) > 0) {
@@ -25,18 +26,16 @@ void cocktail_sort(void* base, size_t count, size_t size,
                 swapped = true;
             }
         }
-        if (swapped) {
-            swapped = false;
-            for (char* p = end; p > begin; p -= size) {
-                char* q = p - size;
-                if (cmp(q, p) > 0) {
-                    swap(p, q, size);
-                    swapped = true;
-                }
-            }
-        }
         if (!swapped)
             break;
+        swapped = false;
+        for (char* p = end; p > begin; p -= size) {
+            char* q = p - size;
+            if (cmp(q, p) > 0) {
+                swap(p, q, size);
+                swapped = true;
+            }
+        }
     }
 }
 
