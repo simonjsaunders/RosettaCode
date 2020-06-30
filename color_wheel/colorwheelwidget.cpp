@@ -51,9 +51,10 @@ void ColorWheelWidget::paintEvent(QPaintEvent *event) {
     const QColor white(255, 255, 255);
     painter.fillRect(event->rect(), backgroundColor);
     const int margin = 10;
-    const int diameter = std::min(width(), height()) - 2*margin;
-    QRectF rect(margin, margin, diameter, diameter);
-    QPointF center(margin + diameter/2.0, margin + diameter/2.0);
+    const double diameter = std::min(width(), height()) - 2*margin;
+    QPointF center(width()/2.0, height()/2.0);
+    QRectF rect(center.x() - diameter/2.0, center.y() - diameter/2.0,
+                diameter, diameter);
     for (int angle = 0; angle < 360; ++angle) {
         QColor color(hsvToRgb(angle, 1.0, 1.0));
         QRadialGradient gradient(center, diameter/2.0);
