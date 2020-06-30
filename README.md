@@ -67,6 +67,7 @@ See LICENSE for details.
 |circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort2|2020-06-26|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
+|color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
