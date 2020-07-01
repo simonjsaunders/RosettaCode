@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
-bool is_left_truncatable(const sieve_of_eratosthenes& sieve, int p) {
+bool is_left_truncatable(const prime_sieve& sieve, int p) {
     for (int n = 10, q = p; p > n; n *= 10) {
         if (!sieve.is_prime(p % n) || q == p % n)
             return false;
@@ -10,7 +10,7 @@ bool is_left_truncatable(const sieve_of_eratosthenes& sieve, int p) {
     return true;
 }
 
-bool is_right_truncatable(const sieve_of_eratosthenes& sieve, int p) {
+bool is_right_truncatable(const prime_sieve& sieve, int p) {
     for (int q = p/10; q > 0; q /= 10) {
         if (!sieve.is_prime(q))
             return false;
@@ -22,7 +22,7 @@ int main() {
     const int limit = 1000000;
 
     // find the prime numbers up to the limit
-    sieve_of_eratosthenes sieve(limit + 1);
+    prime_sieve sieve(limit + 1);
 
     int largest_left = 0;
     int largest_right = 0;

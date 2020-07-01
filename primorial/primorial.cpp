@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <gmpxx.h>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 typedef mpz_class integer;
 
@@ -16,7 +16,7 @@ int main() {
     const size_t max_prime = 20000000;
     const size_t max_index = 1000000;
 
-    sieve_of_eratosthenes sieve(max_prime);
+    prime_sieve sieve(max_prime);
     
     integer primorial = 1;
     for (size_t p = 0, index = 0, power = 10; p < max_prime && index <= max_index; ++p) {

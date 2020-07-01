@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <locale>
 #include <sstream>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 int main() {
     const int limit1 = 1000000;
@@ -11,7 +11,7 @@ int main() {
     const int array_size = limit2 + 100;
 
     // find the prime numbers up to array_size
-    sieve_of_eratosthenes sieve(array_size);
+    prime_sieve sieve(array_size);
 
     // write numbers with groups of digits separated according to the system default locale
     std::cout.imbue(std::locale(""));

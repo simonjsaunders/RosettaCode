@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdint>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 typedef uint32_t integer;
 
@@ -23,7 +23,7 @@ integer change_digit(integer n, int index, int new_digit) {
 }
 
 // returns true if n unprimeable
-bool unprimeable(const sieve_of_eratosthenes& sieve, integer n) {
+bool unprimeable(const prime_sieve& sieve, integer n) {
     if (sieve.is_prime(n))
         return false;
     int d = count_digits(n);
@@ -39,7 +39,7 @@ bool unprimeable(const sieve_of_eratosthenes& sieve, integer n) {
 
 int main() {
     const integer limit = 10000000;
-    sieve_of_eratosthenes sieve(limit);
+    prime_sieve sieve(limit);
 
     // print numbers with commas
     std::cout.imbue(std::locale(""));

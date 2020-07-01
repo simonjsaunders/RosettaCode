@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 using integer = uint32_t;
 using vector = std::vector<integer>;
@@ -59,7 +59,7 @@ void diffs::print(std::ostream& out) {
 int main() {
     const integer limit = 1000000;
     const size_t max_group_size = 4;
-    sieve_of_eratosthenes sieve(limit);
+    prime_sieve sieve(limit);
     diffs d[] = { {2}, {1}, {2, 2}, {2, 4}, {4, 2}, {6, 4, 2} };
     vector group;
     for (integer p = 0; p < limit; ++p) {

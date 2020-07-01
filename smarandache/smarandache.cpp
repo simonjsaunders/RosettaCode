@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdint>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 using integer = uint32_t;
 
@@ -20,7 +20,7 @@ integer next_prime_digit_number(integer n) {
 
 int main() {
     const integer limit = 10000000;
-    sieve_of_eratosthenes sieve(limit);
+    prime_sieve sieve(limit);
     integer n = 0, n1 = 0, n2 = 0, n3 = 0;
     std::cout << "First 25 SPDS primes:\n";
     for (int i = 0; ; ) {

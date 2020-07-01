@@ -1,5 +1,5 @@
-#ifndef SIEVE_OF_ERATOSTHENES_H
-#define SIEVE_OF_ERATOSTHENES_H
+#ifndef PRIME_SIEVE_HPP
+#define PRIME_SIEVE_HPP
 
 #include <algorithm>
 #include <vector>
@@ -8,9 +8,9 @@
  * A simple implementation of the Sieve of Eratosthenes.
  * See https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes.
  */
-class sieve_of_eratosthenes {
+class prime_sieve {
 public:
-    explicit sieve_of_eratosthenes(size_t);
+    explicit prime_sieve(size_t);
     bool is_prime(size_t) const;
 private:
     std::vector<bool> is_prime_;
@@ -21,7 +21,7 @@ private:
  *
  * @param limit the maximum integer that can be tested for primality
  */
-inline sieve_of_eratosthenes::sieve_of_eratosthenes(size_t limit) {
+inline prime_sieve::prime_sieve(size_t limit) {
     limit = std::max(size_t(3), limit);
     is_prime_.resize(limit/2, true);
     for (size_t p = 3; p * p <= limit; p += 2) {
@@ -41,7 +41,7 @@ inline sieve_of_eratosthenes::sieve_of_eratosthenes(size_t limit) {
  * constructor
  * @return true if the integer is prime
  */
-inline bool sieve_of_eratosthenes::is_prime(size_t n) const {
+inline bool prime_sieve::is_prime(size_t n) const {
     if (n == 2)
         return true;
     if (n < 2 || n % 2 == 0)

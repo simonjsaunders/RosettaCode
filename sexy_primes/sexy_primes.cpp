@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <boost/circular_buffer.hpp>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 int main() {
     using std::cout;
@@ -18,7 +18,7 @@ int main() {
     const int max_unsexy = 10;
 
     // Use Sieve of Eratosthenes to find prime numbers up to max
-    sieve_of_eratosthenes sieve(array_size);
+    prime_sieve sieve(array_size);
 
     std::array<int, max_group_size> group_count{0};
     vector<group_buffer> groups(max_group_size, group_buffer(max_groups));

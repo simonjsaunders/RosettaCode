@@ -1,11 +1,11 @@
 #include <cstdint>
 #include <iostream>
 #include <string>
-#include "../library/sieve_of_eratosthenes.h"
+#include "prime_sieve.hpp"
 
 using integer = uint64_t;
 
-bool square_free(const sieve_of_eratosthenes& sieve, integer n) {
+bool square_free(const prime_sieve& sieve, integer n) {
     if (n % 4 == 0)
         return false;
     for (integer p = 3; p * p <= n; p += 2) {
@@ -15,7 +15,7 @@ bool square_free(const sieve_of_eratosthenes& sieve, integer n) {
     return true;
 }
 
-void print_square_free_numbers(const sieve_of_eratosthenes& sieve, integer from, integer to) {
+void print_square_free_numbers(const prime_sieve& sieve, integer from, integer to) {
     std::cout << "Square-free numbers between " << from
         << " and " << to << ":\n";
     std::string line;
@@ -34,7 +34,7 @@ void print_square_free_numbers(const sieve_of_eratosthenes& sieve, integer from,
         std::cout << line << '\n';
 }
 
-void print_square_free_count(const sieve_of_eratosthenes& sieve, integer from, integer to) {
+void print_square_free_count(const prime_sieve& sieve, integer from, integer to) {
     integer count = 0;
     for (integer i = from; i <= to; ++i) {
         if (square_free(sieve, i))
@@ -45,7 +45,7 @@ void print_square_free_count(const sieve_of_eratosthenes& sieve, integer from, i
 }
 
 int main() {
-    sieve_of_eratosthenes sieve(1000001);
+    prime_sieve sieve(1000001);
     print_square_free_numbers(sieve, 1, 145);
     print_square_free_numbers(sieve, 1000000000000LL, 1000000000145LL);
     print_square_free_count(sieve, 1, 100);
