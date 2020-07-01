@@ -1,60 +1,7 @@
-struct BitArray {
-    array: Vec<u32>,
-}
+mod bit_array;
+mod prime_sieve;
 
-impl BitArray {
-    fn new(size: usize) -> BitArray {
-        BitArray {
-            array: vec![0; (size + 31) / 32],
-        }
-    }
-    fn get(&self, index: usize) -> bool {
-        let bit = 1 << (index & 31);
-        (self.array[index >> 5] & bit) != 0
-    }
-    fn set(&mut self, index: usize, new_val: bool) {
-        let bit = 1 << (index & 31);
-        if new_val {
-            self.array[index >> 5] |= bit;
-        } else {
-            self.array[index >> 5] &= !bit;
-        }
-    }
-}
-
-struct PrimeSieve {
-    composite: BitArray,
-}
-
-impl PrimeSieve {
-    fn new(limit: usize) -> PrimeSieve {
-        let mut sieve = PrimeSieve {
-            composite: BitArray::new(limit / 2),
-        };
-        let mut p = 3;
-        while p * p <= limit {
-            if !sieve.composite.get(p / 2 - 1) {
-                let inc = p * 2;
-                let mut q = p * p;
-                while q <= limit {
-                    sieve.composite.set(q / 2 - 1, true);
-                    q += inc;
-                }
-            }
-            p += 2;
-        }
-        sieve
-    }
-    fn is_prime(&self, n: usize) -> bool {
-        if n < 2 {
-            return false;
-        }
-        if n % 2 == 0 {
-            return n == 2;
-        }
-        !self.composite.get(n / 2 - 1)
-    }
-}
+use prime_sieve::PrimeSieve;
 
 fn find_prime_partition(
     sieve: &PrimeSieve,
