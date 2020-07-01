@@ -203,6 +203,7 @@ See LICENSE for details.
 |circular_primes|2020-05-19|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
+|color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
