@@ -8,16 +8,15 @@ fn load_dictionary(filename: &str) -> std::io::Result<BTreeSet<String>> {
     let file = File::open(filename)?;
     let mut dict = BTreeSet::new();
     for line in io::BufReader::new(file).lines() {
-        if let Ok(word) = line {
-            dict.insert(word);
-        }
+        let word = line?;
+        dict.insert(word);
     }
     Ok(dict)
 }
 
 fn find_teacup_words(dict: &BTreeSet<String>) {
-    let mut teacup_words: Vec<String> = Vec::new();
-    let mut found: HashSet<String> = HashSet::new();
+    let mut teacup_words: Vec<&String> = Vec::new();
+    let mut found: HashSet<&String> = HashSet::new();
     for word in dict {
         let len = word.len();
         if len < 3 || found.contains(word) {
@@ -28,22 +27,25 @@ fn find_teacup_words(dict: &BTreeSet<String>) {
         let mut chars: Vec<char> = word.chars().collect();
         for _ in 1..len {
             chars.rotate_left(1);
-            let w = String::from_iter(&chars);
-            if !dict.contains(&w) {
-                is_teacup_word = false;
-                break;
-            }
-            if !w.eq(word) && !teacup_words.contains(&w) {
-                teacup_words.push(w);
+            match dict.get(&String::from_iter(&chars)) {
+                Some(w) => {
+                    if !w.eq(word) && !teacup_words.contains(&w) {
+                        teacup_words.push(w);
+                    }
+                }
+                None => {
+                    is_teacup_word = false;
+                    break;
+                }
             }
         }
         if !is_teacup_word || teacup_words.is_empty() {
             continue;
         }
         print!("{}", word);
-        found.insert(word.to_string());
+        found.insert(word);
         for w in &teacup_words {
-            found.insert(w.to_string());
+            found.insert(w);
             print!(" {}", w);
         }
         println!();
