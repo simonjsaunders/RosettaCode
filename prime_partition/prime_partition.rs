@@ -1,16 +1,18 @@
 struct BitArray {
-    array : Vec<u32>
+    array: Vec<u32>,
 }
 
 impl BitArray {
-    fn new(size : usize) -> BitArray {
-        BitArray { array : vec![0; (size+31)/32] }
+    fn new(size: usize) -> BitArray {
+        BitArray {
+            array: vec![0; (size + 31) / 32],
+        }
     }
-    fn get(&self, index : usize) -> bool {
+    fn get(&self, index: usize) -> bool {
         let bit = 1 << (index & 31);
         (self.array[index >> 5] & bit) != 0
     }
-    fn set(&mut self, index : usize, new_val : bool) {
+    fn set(&mut self, index: usize, new_val: bool) {
         let bit = 1 << (index & 31);
         if new_val {
             self.array[index >> 5] |= bit;
@@ -21,19 +23,21 @@ impl BitArray {
 }
 
 struct PrimeSieve {
-    composite : BitArray
+    composite: BitArray,
 }
 
 impl PrimeSieve {
-    fn new(limit : usize) -> PrimeSieve {
-        let mut sieve = PrimeSieve { composite : BitArray::new(limit/2) };
+    fn new(limit: usize) -> PrimeSieve {
+        let mut sieve = PrimeSieve {
+            composite: BitArray::new(limit / 2),
+        };
         let mut p = 3;
         while p * p <= limit {
-            if !sieve.composite.get(p/2 - 1)  {
+            if !sieve.composite.get(p / 2 - 1) {
                 let inc = p * 2;
                 let mut q = p * p;
                 while q <= limit {
-                    sieve.composite.set(q/2 - 1, true);
+                    sieve.composite.set(q / 2 - 1, true);
                     q += inc;
                 }
             }
@@ -41,19 +45,25 @@ impl PrimeSieve {
         }
         sieve
     }
-    fn is_prime(&self, n : usize) -> bool {
+    fn is_prime(&self, n: usize) -> bool {
         if n < 2 {
             return false;
         }
         if n % 2 == 0 {
             return n == 2;
         }
-        !self.composite.get(n/2 - 1)
+        !self.composite.get(n / 2 - 1)
     }
 }
 
-fn find_prime_partition(sieve : &PrimeSieve, number : usize, count : usize,
-    min_prime : usize, primes : &mut Vec<usize>, index : usize) -> bool {
+fn find_prime_partition(
+    sieve: &PrimeSieve,
+    number: usize,
+    count: usize,
+    min_prime: usize,
+    primes: &mut Vec<usize>,
+    index: usize,
+) -> bool {
     if count == 1 {
         if number >= min_prime && sieve.is_prime(number) {
             primes[index] = number;
@@ -62,8 +72,9 @@ fn find_prime_partition(sieve : &PrimeSieve, number : usize, count : usize,
         return false;
     }
     for p in min_prime..number {
-        if sieve.is_prime(p) && find_prime_partition(sieve, number - p,
-                count - 1, p + 1, primes, index + 1) {
+        if sieve.is_prime(p)
+            && find_prime_partition(sieve, number - p, count - 1, p + 1, primes, index + 1)
+        {
             primes[index] = p;
             return true;
         }
@@ -71,7 +82,7 @@ fn find_prime_partition(sieve : &PrimeSieve, number : usize, count : usize,
     false
 }
 
-fn print_prime_partition(sieve : &PrimeSieve, number : usize, count : usize) {
+fn print_prime_partition(sieve: &PrimeSieve, number: usize, count: usize) {
     let mut primes = vec![0; count];
     if !find_prime_partition(sieve, number, count, 2, &mut primes, 0) {
         println!("{} cannot be partitioned into {} primes.", number, count);

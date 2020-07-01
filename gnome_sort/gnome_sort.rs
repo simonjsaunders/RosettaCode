@@ -1,14 +1,13 @@
 fn gnome_sort<T: Ord>(a: &mut [T]) {
     let len = a.len();
-    let mut i : usize = 1;
-    let mut j : usize = 2;
+    let mut i: usize = 1;
+    let mut j: usize = 2;
     while i < len {
         if a[i - 1] <= a[i] {
             // for descending sort, use >= for comparison
             i = j;
             j += 1;
-        }
-        else {
+        } else {
             a.swap(i - 1, i);
             i -= 1;
             if i == 0 {

@@ -1,4 +1,4 @@
-fn bit_count(mut n : usize) -> usize {
+fn bit_count(mut n: usize) -> usize {
     let mut count = 0;
     while n > 0 {
         n >>= 1;
@@ -6,8 +6,8 @@ fn bit_count(mut n : usize) -> usize {
     }
     count
 }
- 
-fn mod_pow(p : usize, n : usize) -> usize {
+
+fn mod_pow(p: usize, n: usize) -> usize {
     let mut square = 1;
     let mut bits = bit_count(p);
     while bits > 0 {
@@ -21,7 +21,7 @@ fn mod_pow(p : usize, n : usize) -> usize {
     return square;
 }
 
-fn is_prime(n : usize) -> bool {
+fn is_prime(n: usize) -> bool {
     if n < 2 {
         return false;
     }
@@ -45,7 +45,7 @@ fn is_prime(n : usize) -> bool {
     true
 }
 
-fn find_mersenne_factor(p : usize) -> usize {
+fn find_mersenne_factor(p: usize) -> usize {
     let mut k = 0;
     loop {
         k += 1;
@@ -58,6 +58,6 @@ fn find_mersenne_factor(p : usize) -> usize {
     }
 }
 
-fn main() { 
+fn main() {
     println!("{}", find_mersenne_factor(929));
 }

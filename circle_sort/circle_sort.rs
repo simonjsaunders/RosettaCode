@@ -1,10 +1,10 @@
-fn _circle_sort<T: Ord>(a: &mut [T], low: usize, high: usize, swaps : usize) -> usize {
+fn _circle_sort<T: Ord>(a: &mut [T], low: usize, high: usize, swaps: usize) -> usize {
     if low == high {
         return swaps;
     }
     let mut lo = low;
     let mut hi = high;
-    let mid = (hi - lo)/2;
+    let mid = (hi - lo) / 2;
     let mut s = swaps;
     while lo < hi {
         if a[lo] > a[hi] {
@@ -28,9 +28,9 @@ fn _circle_sort<T: Ord>(a: &mut [T], low: usize, high: usize, swaps : usize) -> 
 fn circle_sort<T: Ord>(a: &mut [T]) {
     let len = a.len();
     loop {
-         if _circle_sort(a, 0, len - 1, 0) == 0 {
-             break;
-         }        
+        if _circle_sort(a, 0, len - 1, 0) == 0 {
+            break;
+        }
     }
 }
 

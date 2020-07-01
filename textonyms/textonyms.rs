@@ -12,7 +12,7 @@ fn text_char(ch: char) -> Option<char> {
         'p' | 'q' | 'r' | 's' => Some('7'),
         't' | 'u' | 'v' => Some('8'),
         'w' | 'x' | 'y' | 'z' => Some('9'),
-        _ => None
+        _ => None,
     }
 }
 
@@ -49,15 +49,21 @@ fn find_textonyms(filename: &str) -> std::io::Result<()> {
         }
     }
 
-    let mut textonyms: Vec<(&String, &Vec<String>)> = table
-        .iter()
-        .filter(|x| x.1.len() > 1)
-        .collect();
+    let mut textonyms: Vec<(&String, &Vec<String>)> =
+        table.iter().filter(|x| x.1.len() > 1).collect();
 
-    println!("There are {} words in '{}' which can be represented by the digit key mapping.",
-           count, filename);
-    println!("They require {} digit combinations to represent them.", table.len());
-    println!("{} digit combinations represent Textonyms.", textonyms.len());
+    println!(
+        "There are {} words in '{}' which can be represented by the digit key mapping.",
+        count, filename
+    );
+    println!(
+        "They require {} digit combinations to represent them.",
+        table.len()
+    );
+    println!(
+        "{} digit combinations represent Textonyms.",
+        textonyms.len()
+    );
 
     let top = std::cmp::min(5, textonyms.len());
     textonyms.sort_by_key(|x| (std::cmp::Reverse(x.1.len()), x.0));
@@ -72,13 +78,13 @@ fn find_textonyms(filename: &str) -> std::io::Result<()> {
 }
 
 fn main() {
-    let args : Vec<String> = std::env::args().collect();
+    let args: Vec<String> = std::env::args().collect();
     if args.len() != 2 {
         eprintln!("usage: {} word-list", args[0]);
         std::process::exit(1);
     }
     match find_textonyms(&args[1]) {
         Ok(()) => {}
-        Err(error) => eprintln!("{}: {}", args[1], error)
+        Err(error) => eprintln!("{}: {}", args[1], error),
     }
 }

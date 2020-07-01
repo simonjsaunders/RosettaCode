@@ -1,6 +1,6 @@
 struct NumberNames {
     cardinal: &'static str,
-    ordinal: &'static str
+    ordinal: &'static str,
 }
 
 impl NumberNames {
@@ -13,43 +13,127 @@ impl NumberNames {
 }
 
 const SMALL_NAMES: [NumberNames; 20] = [
-    NumberNames { cardinal: "zero", ordinal: "zeroth" },
-    NumberNames { cardinal: "one", ordinal: "first" },
-    NumberNames { cardinal: "two", ordinal: "second" },
-    NumberNames { cardinal: "three", ordinal: "third" }, 
-    NumberNames { cardinal: "four", ordinal: "fourth" },
-    NumberNames { cardinal: "five", ordinal: "fifth" },
-    NumberNames { cardinal: "six", ordinal: "sixth" },
-    NumberNames { cardinal: "seven", ordinal: "seventh" },
-    NumberNames { cardinal: "eight", ordinal: "eighth" },
-    NumberNames { cardinal: "nine", ordinal: "ninth" },
-    NumberNames { cardinal: "ten", ordinal: "tenth" },
-    NumberNames { cardinal: "eleven", ordinal: "eleventh" },
-    NumberNames { cardinal: "twelve", ordinal: "twelfth" },
-    NumberNames { cardinal: "thirteen", ordinal: "thirteenth" },
-    NumberNames { cardinal: "fourteen", ordinal: "fourteenth" },
-    NumberNames { cardinal: "fifteen", ordinal: "fifteenth" },
-    NumberNames { cardinal: "sixteen", ordinal: "sixteenth" },
-    NumberNames { cardinal: "seventeen", ordinal: "seventeenth" },
-    NumberNames { cardinal: "eighteen", ordinal: "eighteenth" },
-    NumberNames { cardinal: "nineteen", ordinal: "nineteenth" }
+    NumberNames {
+        cardinal: "zero",
+        ordinal: "zeroth",
+    },
+    NumberNames {
+        cardinal: "one",
+        ordinal: "first",
+    },
+    NumberNames {
+        cardinal: "two",
+        ordinal: "second",
+    },
+    NumberNames {
+        cardinal: "three",
+        ordinal: "third",
+    },
+    NumberNames {
+        cardinal: "four",
+        ordinal: "fourth",
+    },
+    NumberNames {
+        cardinal: "five",
+        ordinal: "fifth",
+    },
+    NumberNames {
+        cardinal: "six",
+        ordinal: "sixth",
+    },
+    NumberNames {
+        cardinal: "seven",
+        ordinal: "seventh",
+    },
+    NumberNames {
+        cardinal: "eight",
+        ordinal: "eighth",
+    },
+    NumberNames {
+        cardinal: "nine",
+        ordinal: "ninth",
+    },
+    NumberNames {
+        cardinal: "ten",
+        ordinal: "tenth",
+    },
+    NumberNames {
+        cardinal: "eleven",
+        ordinal: "eleventh",
+    },
+    NumberNames {
+        cardinal: "twelve",
+        ordinal: "twelfth",
+    },
+    NumberNames {
+        cardinal: "thirteen",
+        ordinal: "thirteenth",
+    },
+    NumberNames {
+        cardinal: "fourteen",
+        ordinal: "fourteenth",
+    },
+    NumberNames {
+        cardinal: "fifteen",
+        ordinal: "fifteenth",
+    },
+    NumberNames {
+        cardinal: "sixteen",
+        ordinal: "sixteenth",
+    },
+    NumberNames {
+        cardinal: "seventeen",
+        ordinal: "seventeenth",
+    },
+    NumberNames {
+        cardinal: "eighteen",
+        ordinal: "eighteenth",
+    },
+    NumberNames {
+        cardinal: "nineteen",
+        ordinal: "nineteenth",
+    },
 ];
 
 const TENS: [NumberNames; 8] = [
-    NumberNames { cardinal: "twenty", ordinal: "twentieth" },
-    NumberNames { cardinal: "thirty", ordinal: "thirtieth" },
-    NumberNames { cardinal: "forty", ordinal: "fortieth" },
-    NumberNames { cardinal: "fifty", ordinal: "fiftieth" },
-    NumberNames { cardinal: "sixty", ordinal: "sixtieth" },
-    NumberNames { cardinal: "seventy", ordinal: "seventieth" },
-    NumberNames { cardinal: "eighty", ordinal: "eightieth" },
-    NumberNames { cardinal: "ninety", ordinal: "ninetieth" }
+    NumberNames {
+        cardinal: "twenty",
+        ordinal: "twentieth",
+    },
+    NumberNames {
+        cardinal: "thirty",
+        ordinal: "thirtieth",
+    },
+    NumberNames {
+        cardinal: "forty",
+        ordinal: "fortieth",
+    },
+    NumberNames {
+        cardinal: "fifty",
+        ordinal: "fiftieth",
+    },
+    NumberNames {
+        cardinal: "sixty",
+        ordinal: "sixtieth",
+    },
+    NumberNames {
+        cardinal: "seventy",
+        ordinal: "seventieth",
+    },
+    NumberNames {
+        cardinal: "eighty",
+        ordinal: "eightieth",
+    },
+    NumberNames {
+        cardinal: "ninety",
+        ordinal: "ninetieth",
+    },
 ];
 
 struct NamedNumber {
     cardinal: &'static str,
     ordinal: &'static str,
-    number: usize
+    number: usize,
 }
 
 impl NamedNumber {
@@ -66,36 +150,38 @@ const NAMED_NUMBERS: [NamedNumber; N] = [
     NamedNumber {
         cardinal: "hundred",
         ordinal: "hundredth",
-        number: 100
+        number: 100,
     },
     NamedNumber {
         cardinal: "thousand",
         ordinal: "thousandth",
-        number: 1000 },
+        number: 1000,
+    },
     NamedNumber {
         cardinal: "million",
         ordinal: "millionth",
-        number: 1000000
+        number: 1000000,
     },
     NamedNumber {
         cardinal: "billion",
         ordinal: "billionth",
-        number: 1000000000 },
+        number: 1000000000,
+    },
     NamedNumber {
         cardinal: "trillion",
         ordinal: "trillionth",
-        number: 1000000000000
+        number: 1000000000000,
     },
     NamedNumber {
         cardinal: "quadrillion",
         ordinal: "quadrillionth",
-        number: 1000000000000000
+        number: 1000000000000000,
     },
     NamedNumber {
         cardinal: "quintillion",
         ordinal: "quintillionth",
-        number: 1000000000000000000
-    }
+        number: 1000000000000000000,
+    },
 ];
 
 fn big_name(n: usize) -> &'static NamedNumber {
@@ -103,7 +189,7 @@ fn big_name(n: usize) -> &'static NamedNumber {
         if n < NAMED_NUMBERS[i].number {
             return &NAMED_NUMBERS[i - 1];
         }
-    } 
+    }
     &NAMED_NUMBERS[N - 1]
 }
 
@@ -119,12 +205,15 @@ fn count_letters(s: &str) -> usize {
 
 struct WordList {
     words: Vec<(usize, usize)>,
-    string: String
+    string: String,
 }
 
 impl WordList {
     fn new() -> WordList {
-        WordList { words: Vec::new(), string: String::new() }
+        WordList {
+            words: Vec::new(),
+            string: String::new(),
+        }
     }
     fn append(&mut self, s: &str) {
         let offset = self.string.len();
@@ -160,16 +249,16 @@ fn append_number_name(words: &mut WordList, n: usize, ordinal: bool) -> usize {
         count += 1;
     } else if n < 100 {
         if n % 10 == 0 {
-            words.append(TENS[n/10 - 2].get_name(ordinal));
+            words.append(TENS[n / 10 - 2].get_name(ordinal));
         } else {
-            words.append(TENS[n/10 - 2].get_name(false));
+            words.append(TENS[n / 10 - 2].get_name(false));
             words.extend("-");
             words.extend(SMALL_NAMES[n % 10].get_name(ordinal));
         }
         count += 1;
     } else {
         let big = big_name(n);
-        count += append_number_name(words, n/big.number, false);
+        count += append_number_name(words, n / big.number, false);
         if n % big.number == 0 {
             words.append(big.get_name(ordinal));
             count += 1;
@@ -185,8 +274,20 @@ fn append_number_name(words: &mut WordList, n: usize, ordinal: bool) -> usize {
 fn sentence(count: usize) -> WordList {
     let mut result = WordList::new();
     const WORDS: &'static [&'static str] = &[
-        "Four", "is", "the", "number", "of", "letters", "in", "the",
-        "first", "word", "of", "this", "sentence,"];
+        "Four",
+        "is",
+        "the",
+        "number",
+        "of",
+        "letters",
+        "in",
+        "the",
+        "first",
+        "word",
+        "of",
+        "this",
+        "sentence,",
+    ];
     for s in WORDS {
         result.append(s);
     }
@@ -225,8 +326,12 @@ fn main() {
     while n <= 10000000 {
         let s = sentence(n);
         let word = s.get_word(n - 1);
-        print!("The {}th word is '{}' and has {} letters. ", n, word,
-                count_letters(word));
+        print!(
+            "The {}th word is '{}' and has {} letters. ",
+            n,
+            word,
+            count_letters(word)
+        );
         println!("Sentence length: {}", s.sentence_length());
         n *= 10;
     }

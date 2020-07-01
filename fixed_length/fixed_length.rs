@@ -1,9 +1,12 @@
+use std::fs::File;
 use std::io::prelude::*;
 use std::io::{BufReader, BufWriter};
-use std::fs::File;
 
-fn reverse_file(input_filename: &str, output_filename: &str,
-    record_len: usize) -> std::io::Result<()> {
+fn reverse_file(
+    input_filename: &str,
+    output_filename: &str,
+    record_len: usize,
+) -> std::io::Result<()> {
     let mut input = BufReader::new(File::open(input_filename)?);
     let mut output = BufWriter::new(File::create(output_filename)?);
     let mut buffer = vec![0; record_len];
@@ -18,6 +21,6 @@ fn reverse_file(input_filename: &str, output_filename: &str,
 fn main() {
     match reverse_file("infile.dat", "outfile.dat", 80) {
         Ok(()) => {}
-        Err(error) => eprintln!("I/O error: {}", error)
+        Err(error) => eprintln!("I/O error: {}", error),
     }
 }

@@ -1,7 +1,7 @@
 // [dependencies]
 // rug = "1.8"
 
-fn is_prime(n : u32) -> bool {
+fn is_prime(n: u32) -> bool {
     if n < 2 {
         return false;
     }
@@ -25,8 +25,8 @@ fn is_prime(n : u32) -> bool {
     true
 }
 
-fn find_primes(from : u32, to : u32) -> Vec<u32> {
-    let mut primes : Vec<u32> = Vec::new();
+fn find_primes(from: u32, to: u32) -> Vec<u32> {
+    let mut primes: Vec<u32> = Vec::new();
     for p in from..=to {
         if is_prime(p) {
             primes.push(p);
@@ -35,7 +35,7 @@ fn find_primes(from : u32, to : u32) -> Vec<u32> {
     primes
 }
 
-fn find_nsmooth_numbers(n : u32, count : usize) -> Vec<rug::Integer> {
+fn find_nsmooth_numbers(n: u32, count: usize) -> Vec<rug::Integer> {
     use rug::{Assign, Integer};
     let primes = find_primes(2, n);
     let num_primes = primes.len();
@@ -54,7 +54,7 @@ fn find_nsmooth_numbers(n : u32, count : usize) -> Vec<rug::Integer> {
                 queue[p].assign(&result[index[p]] * primes[p]);
             }
         }
-        let mut min_index : usize = 0;
+        let mut min_index: usize = 0;
         for p in 1..num_primes {
             if queue[min_index] > queue[p] {
                 min_index = p;
@@ -65,7 +65,7 @@ fn find_nsmooth_numbers(n : u32, count : usize) -> Vec<rug::Integer> {
     result
 }
 
-fn print_nsmooth_numbers(n : u32, begin : usize, count : usize) {
+fn print_nsmooth_numbers(n: u32, begin: usize, count: usize) {
     let numbers = find_nsmooth_numbers(n, begin + count);
     print!("{}: {}", n, &numbers[begin]);
     for i in 1..count {
@@ -73,7 +73,6 @@ fn print_nsmooth_numbers(n : u32, begin : usize, count : usize) {
     }
     println!();
 }
-
 
 fn main() {
     println!("First 25 n-smooth numbers for n = 2 -> 29:");

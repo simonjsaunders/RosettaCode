@@ -1,4 +1,4 @@
-fn is_prime(n : u32) -> bool {
+fn is_prime(n: u32) -> bool {
     if n < 2 {
         return false;
     }
@@ -22,7 +22,7 @@ fn is_prime(n : u32) -> bool {
     true
 }
 
-fn is_left_truncatable(p : u32) -> bool {
+fn is_left_truncatable(p: u32) -> bool {
     let mut n = 10;
     let mut q = p;
     while p > n {
@@ -34,9 +34,9 @@ fn is_left_truncatable(p : u32) -> bool {
     }
     true
 }
- 
-fn is_right_truncatable(p : u32) -> bool {
-    let mut q = p/10;
+
+fn is_right_truncatable(p: u32) -> bool {
+    let mut q = p / 10;
     while q > 0 {
         if !is_prime(q) {
             return false;

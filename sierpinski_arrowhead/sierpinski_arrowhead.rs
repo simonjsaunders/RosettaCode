@@ -1,47 +1,50 @@
 // [dependencies]
 // svg = "0.8.0"
 
-const SQRT3_2 : f64 = 0.86602540378444;
+const SQRT3_2: f64 = 0.86602540378444;
 
 use svg::node::element::path::Data;
 
 struct Cursor {
-    x : f64,
-    y : f64,
-    angle : i32
+    x: f64,
+    y: f64,
+    angle: i32,
 }
 
 impl Cursor {
-    fn new(x : f64, y : f64) -> Cursor {
-        Cursor { x : x, y : y, angle : 0 }
+    fn new(x: f64, y: f64) -> Cursor {
+        Cursor {
+            x: x,
+            y: y,
+            angle: 0,
+        }
     }
-    fn turn(&mut self, angle : i32) {
+    fn turn(&mut self, angle: i32) {
         self.angle = (self.angle + angle) % 360;
     }
-    fn draw_line(&mut self, data : Data, length : f64) -> Data {
+    fn draw_line(&mut self, data: Data, length: f64) -> Data {
         use std::f64::consts::PI;
-        let theta = (PI * self.angle as f64)/180.0;
+        let theta = (PI * self.angle as f64) / 180.0;
         self.x += length * theta.cos();
         self.y += length * theta.sin();
         data.line_to((self.x, self.y))
     }
 }
 
-fn curve(mut data : Data, order : usize, length : f64, cursor : &mut Cursor, angle : i32) -> Data {
+fn curve(mut data: Data, order: usize, length: f64, cursor: &mut Cursor, angle: i32) -> Data {
     if order == 0 {
         return cursor.draw_line(data, length);
     }
-    data = curve(data, order - 1, length/2.0, cursor, -angle);
+    data = curve(data, order - 1, length / 2.0, cursor, -angle);
     cursor.turn(angle);
-    data = curve(data, order - 1, length/2.0, cursor, angle);
+    data = curve(data, order - 1, length / 2.0, cursor, angle);
     cursor.turn(angle);
-    curve(data, order - 1, length/2.0, cursor, -angle)
+    curve(data, order - 1, length / 2.0, cursor, -angle)
 }
 
-fn write_sierpinski_arrowhead(file : &str, size : usize,
-    order : usize) -> std::io::Result<()> {
-    use svg::node::element::Rectangle;
+fn write_sierpinski_arrowhead(file: &str, size: usize, order: usize) -> std::io::Result<()> {
     use svg::node::element::Path;
+    use svg::node::element::Rectangle;
 
     let margin = 20.0;
     let side = (size as f64) - 2.0 * margin;

@@ -3,7 +3,7 @@ fn comb_sort<T: Ord>(a: &mut [T]) {
     let mut gap = len;
     let mut swapped = true;
     while gap > 1 || swapped {
-        gap = (4 * gap)/5;
+        gap = (4 * gap) / 5;
         if gap < 1 {
             gap = 1;
         }

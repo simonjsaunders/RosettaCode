@@ -44,11 +44,20 @@ fn main() {
     }
 
     for size in 1..max_group_size {
-        println!("Number of groups of size {} is {}", size + 1, group_count[size]);
+        println!(
+            "Number of groups of size {} is {}",
+            size + 1,
+            group_count[size]
+        );
         println!("Last {} groups of size {}:", groups[size].len(), size + 1);
-        println!("{}\n", groups[size].asc_iter()
-            .map(|g| format!("({})", to_string(&mut g.iter())))
-            .collect::<Vec<String>>().join(", "));
+        println!(
+            "{}\n",
+            groups[size]
+                .asc_iter()
+                .map(|g| format!("({})", to_string(&mut g.iter())))
+                .collect::<Vec<String>>()
+                .join(", ")
+        );
     }
     println!("Number of unsexy primes is {}", unsexy_count);
     println!("Last {} unsexy primes:", unsexy_primes.len());
@@ -56,5 +65,7 @@ fn main() {
 }
 
 fn to_string<T: ToString>(iter: &mut dyn std::iter::Iterator<Item = T>) -> String {
-    iter.map(|n| n.to_string()).collect::<Vec<String>>().join(", ")
+    iter.map(|n| n.to_string())
+        .collect::<Vec<String>>()
+        .join(", ")
 }

@@ -1,4 +1,4 @@
-fn is_prime(n : u32) -> bool {
+fn is_prime(n: u32) -> bool {
     if n < 2 {
         return false;
     }
@@ -22,8 +22,8 @@ fn is_prime(n : u32) -> bool {
     true
 }
 
-fn is_magnanimous(n : u32) -> bool {
-    let mut p : u32 = 10;
+fn is_magnanimous(n: u32) -> bool {
+    let mut p: u32 = 10;
     while n >= p {
         if !is_prime(n % p + n / p) {
             return false;

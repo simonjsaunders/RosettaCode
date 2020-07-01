@@ -1,7 +1,7 @@
 // [dependencies]
 // rug = "1.8"
 
-fn is_prime(n : u32) -> bool {
+fn is_prime(n: u32) -> bool {
     if n < 2 {
         return false;
     }
@@ -25,9 +25,9 @@ fn is_prime(n : u32) -> bool {
     true
 }
 
-fn cycle(n : u32) -> u32 {
-    let mut m : u32 = n;
-    let mut p : u32 = 1;
+fn cycle(n: u32) -> u32 {
+    let mut m: u32 = n;
+    let mut p: u32 = 1;
     while m >= 10 {
         p *= 10;
         m /= 10;
@@ -35,11 +35,11 @@ fn cycle(n : u32) -> u32 {
     m + 10 * (n % p)
 }
 
-fn is_circular_prime(p : u32) -> bool {
+fn is_circular_prime(p: u32) -> bool {
     if !is_prime(p) {
         return false;
     }
-    let mut p2 : u32 = cycle(p);
+    let mut p2: u32 = cycle(p);
     while p2 != p {
         if p2 < p || !is_prime(p2) {
             return false;
@@ -49,8 +49,8 @@ fn is_circular_prime(p : u32) -> bool {
     true
 }
 
-fn test_repunit(digits : usize) {
-    use rug::{Integer, integer::IsPrime};
+fn test_repunit(digits: usize) {
+    use rug::{integer::IsPrime, Integer};
     let repunit = "1".repeat(digits);
     let bignum = Integer::from_str_radix(&repunit, 10).unwrap();
     if bignum.is_probably_prime(10) != IsPrime::No {
@@ -61,10 +61,10 @@ fn test_repunit(digits : usize) {
 }
 
 fn main() {
-    use rug::{Integer, integer::IsPrime};
+    use rug::{integer::IsPrime, Integer};
     println!("First 19 circular primes:");
     let mut count = 0;
-    let mut p : u32 = 2;
+    let mut p: u32 = 2;
     while count < 19 {
         if is_circular_prime(p) {
             if count > 0 {
@@ -77,8 +77,8 @@ fn main() {
     }
     println!();
     println!("Next 4 circular primes:");
-    let mut repunit : u32 = 1;
-    let mut digits : usize = 1;
+    let mut repunit: u32 = 1;
+    let mut digits: usize = 1;
     while repunit < p {
         repunit = 10 * repunit + 1;
         digits += 1;

@@ -27,6 +27,6 @@ fn semordnilap(filename: &str) -> std::io::Result<()> {
 fn main() {
     match semordnilap("unixdict.txt") {
         Ok(()) => {}
-        Err(error) => eprintln!("{}", error)
+        Err(error) => eprintln!("{}", error),
     }
 }

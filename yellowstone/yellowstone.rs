@@ -3,8 +3,8 @@
 // plotters = "^0.2.15"
 
 use num::integer::gcd;
-use std::collections::HashSet;
 use plotters::prelude::*;
+use std::collections::HashSet;
 
 fn yellowstone_sequence() -> impl std::iter::Iterator<Item = u32> {
     let mut sequence: HashSet<u32> = HashSet::new();
@@ -46,7 +46,8 @@ fn plot_yellowstone(filename: &str) -> Result<(), Box<dyn std::error::Error>> {
     chart.configure_mesh().draw()?;
     chart.draw_series(LineSeries::new(
         yellowstone_sequence().take(100).enumerate(),
-        &BLUE))?;
+        &BLUE,
+    ))?;
     Ok(())
 }
 
@@ -58,6 +59,6 @@ fn main() {
     println!();
     match plot_yellowstone("yellowstone.png") {
         Ok(()) => {}
-        Err(error) => eprintln!("Error: {}", error)
+        Err(error) => eprintln!("Error: {}", error),
     }
 }

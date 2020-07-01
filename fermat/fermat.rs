@@ -3,15 +3,15 @@
 
 use rug::Integer;
 
-fn fermat(n : u32) -> Integer {
+fn fermat(n: u32) -> Integer {
     Integer::from(Integer::u_pow_u(2, 2u32.pow(n))) + 1
 }
 
-fn g(x : Integer, n : &Integer) -> Integer {
+fn g(x: Integer, n: &Integer) -> Integer {
     (Integer::from(&x * &x) + 1) % n
 }
 
-fn pollard_rho(n : &Integer) -> Integer {
+fn pollard_rho(n: &Integer) -> Integer {
     use rug::Assign;
 
     let mut x = Integer::from(2);
@@ -42,7 +42,7 @@ fn pollard_rho(n : &Integer) -> Integer {
     d
 }
 
-fn get_prime_factors(n : &Integer) -> Vec<Integer> {
+fn get_prime_factors(n: &Integer) -> Vec<Integer> {
     use rug::integer::IsPrime;
     let mut factors = Vec::new();
     let mut m = Integer::from(n);
@@ -57,7 +57,7 @@ fn get_prime_factors(n : &Integer) -> Vec<Integer> {
             break;
         }
         factors.push(Integer::from(&f));
-        m = m/f;
+        m = m / f;
     }
     factors
 }

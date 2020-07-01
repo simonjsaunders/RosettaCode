@@ -1,16 +1,18 @@
 struct BitArray {
-    array : Vec<u32>
+    array: Vec<u32>,
 }
 
 impl BitArray {
-    fn new(size : usize) -> BitArray {
-        BitArray { array : vec![0; (size+31)/32] }
+    fn new(size: usize) -> BitArray {
+        BitArray {
+            array: vec![0; (size + 31) / 32],
+        }
     }
-    fn get(&self, index : usize) -> bool {
+    fn get(&self, index: usize) -> bool {
         let bit = 1 << (index & 31);
         (self.array[index >> 5] & bit) != 0
     }
-    fn set(&mut self, index : usize, new_val : bool) {
+    fn set(&mut self, index: usize, new_val: bool) {
         let bit = 1 << (index & 31);
         if new_val {
             self.array[index >> 5] |= bit;
@@ -21,19 +23,21 @@ impl BitArray {
 }
 
 struct PrimeSieve {
-    composite : BitArray
+    composite: BitArray,
 }
 
 impl PrimeSieve {
-    fn new(limit : usize) -> PrimeSieve {
-        let mut sieve = PrimeSieve { composite : BitArray::new(limit/2) };
+    fn new(limit: usize) -> PrimeSieve {
+        let mut sieve = PrimeSieve {
+            composite: BitArray::new(limit / 2),
+        };
         let mut p = 3;
         while p * p <= limit {
-            if !sieve.composite.get(p/2 - 1)  {
+            if !sieve.composite.get(p / 2 - 1) {
                 let inc = p * 2;
                 let mut q = p * p;
                 while q <= limit {
-                    sieve.composite.set(q/2 - 1, true);
+                    sieve.composite.set(q / 2 - 1, true);
                     q += inc;
                 }
             }
@@ -41,14 +45,14 @@ impl PrimeSieve {
         }
         sieve
     }
-    fn is_prime(&self, n : usize) -> bool {
+    fn is_prime(&self, n: usize) -> bool {
         if n < 2 {
             return false;
         }
         if n % 2 == 0 {
             return n == 2;
         }
-        !self.composite.get(n/2 - 1)
+        !self.composite.get(n / 2 - 1)
     }
 }
 
@@ -72,7 +76,7 @@ fn change_digit(mut n: u32, mut index: u32, new_digit: u32) -> u32 {
         n /= 10;
         index -= 1;
     }
-    changed += (10 * (n/10) + new_digit) * p;
+    changed += (10 * (n / 10) + new_digit) * p;
     changed
 }
 
@@ -120,6 +124,6 @@ fn main() {
         n += 1;
     }
     for i in 0..10 {
-        println!("Least unprimeable number ending in {}: {}" , i, lowest[i]);
+        println!("Least unprimeable number ending in {}: {}", i, lowest[i]);
     }
 }

@@ -1,10 +1,15 @@
 // [dependencies]
 // svg = "0.8.0"
 
-const SQRT3_2 : f64 = 0.86602540378444;
+const SQRT3_2: f64 = 0.86602540378444;
 
-fn sierpinski_triangle(mut document : svg::Document, mut x : f64, mut y : f64,
-        mut side : f64, order: usize) -> svg::Document {
+fn sierpinski_triangle(
+    mut document: svg::Document,
+    mut x: f64,
+    mut y: f64,
+    mut side: f64,
+    order: usize,
+) -> svg::Document {
     use svg::node::element::Polygon;
 
     if order == 1 {
@@ -32,8 +37,7 @@ fn sierpinski_triangle(mut document : svg::Document, mut x : f64, mut y : f64,
     document
 }
 
-fn write_sierpinski_triangle(file : &str, size : usize,
-        order : usize) -> std::io::Result<()> {
+fn write_sierpinski_triangle(file: &str, size: usize, order: usize) -> std::io::Result<()> {
     use svg::node::element::Rectangle;
 
     let margin = 20.0;
