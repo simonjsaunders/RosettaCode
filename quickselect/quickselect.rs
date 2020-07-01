@@ -1,6 +1,6 @@
 // See https://en.wikipedia.org/wiki/Quickselect
 
-fn partition<T: Ord>(a: &mut [T], left: usize, right: usize, pivot: usize) -> usize {
+fn partition<T: PartialOrd>(a: &mut [T], left: usize, right: usize, pivot: usize) -> usize {
     a.swap(pivot, right);
     let mut store_index = left;
     for i in left..right {
@@ -17,7 +17,7 @@ fn pivot_index(left: usize, right: usize) -> usize {
     return left + (right - left) / 2;
 }
 
-fn select<T: Ord>(a: &mut [T], mut left: usize, mut right: usize, n: usize) {
+fn select<T: PartialOrd>(a: &mut [T], mut left: usize, mut right: usize, n: usize) {
     loop {
         if left == right {
             break;
@@ -37,7 +37,7 @@ fn select<T: Ord>(a: &mut [T], mut left: usize, mut right: usize, n: usize) {
 // Rearranges the elements of 'a' such that the element at index 'n' is
 // the same as it would be if the array were sorted, smaller elements are
 // to the left of it and larger elements are to its right.
-fn nth_element<T: Ord>(a: &mut [T], n: usize) {
+fn nth_element<T: PartialOrd>(a: &mut [T], n: usize) {
     let len = a.len();
     select(a, 0, len - 1, n);
 }

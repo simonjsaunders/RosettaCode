@@ -1,4 +1,4 @@
-fn comb_sort<T: Ord>(a: &mut [T]) {
+fn comb_sort<T: PartialOrd>(a: &mut [T]) {
     let len = a.len();
     let mut gap = len;
     let mut swapped = true;

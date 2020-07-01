@@ -1,4 +1,4 @@
-fn cocktail_sort<T: Ord>(a: &mut [T]) {
+fn cocktail_sort<T: PartialOrd>(a: &mut [T]) {
     let len = a.len();
     loop {
         let mut swapped = false;

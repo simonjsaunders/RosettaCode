@@ -1,4 +1,4 @@
-fn gnome_sort<T: Ord>(a: &mut [T]) {
+fn gnome_sort<T: PartialOrd>(a: &mut [T]) {
     let len = a.len();
     let mut i: usize = 1;
     let mut j: usize = 2;

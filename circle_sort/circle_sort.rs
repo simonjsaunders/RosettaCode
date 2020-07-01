@@ -1,4 +1,4 @@
-fn _circle_sort<T: Ord>(a: &mut [T], low: usize, high: usize, swaps: usize) -> usize {
+fn _circle_sort<T: PartialOrd>(a: &mut [T], low: usize, high: usize, swaps: usize) -> usize {
     if low == high {
         return swaps;
     }
@@ -25,7 +25,7 @@ fn _circle_sort<T: Ord>(a: &mut [T], low: usize, high: usize, swaps: usize) -> u
     return s;
 }
 
-fn circle_sort<T: Ord>(a: &mut [T]) {
+fn circle_sort<T: PartialOrd>(a: &mut [T]) {
     let len = a.len();
     loop {
         if _circle_sort(a, 0, len - 1, 0) == 0 {
