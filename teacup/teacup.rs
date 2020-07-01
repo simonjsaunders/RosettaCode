@@ -27,16 +27,13 @@ fn find_teacup_words(dict: &BTreeSet<String>) {
         let mut chars: Vec<char> = word.chars().collect();
         for _ in 1..len {
             chars.rotate_left(1);
-            match dict.get(&String::from_iter(&chars)) {
-                Some(w) => {
-                    if !w.eq(word) && !teacup_words.contains(&w) {
-                        teacup_words.push(w);
-                    }
+            if let Some(w) = dict.get(&String::from_iter(&chars)) {
+                if !w.eq(word) && !teacup_words.contains(&w) {
+                    teacup_words.push(w);
                 }
-                None => {
-                    is_teacup_word = false;
-                    break;
-                }
+            } else {
+                is_teacup_word = false;
+                break;
             }
         }
         if !is_teacup_word || teacup_words.is_empty() {
