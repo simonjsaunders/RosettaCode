@@ -52,8 +52,7 @@ impl SierpinskiCurve {
             .set("d", data)
     }
     fn draw_line(&mut self, data: Data) -> Data {
-        use std::f64::consts::PI;
-        let theta = (PI * self.current_angle as f64) / 180.0;
+        let theta = (self.current_angle as f64).to_radians();
         self.current_x += self.line_length * theta.cos();
         self.current_y -= self.line_length * theta.sin();
         data.line_to((self.current_x, self.current_y))

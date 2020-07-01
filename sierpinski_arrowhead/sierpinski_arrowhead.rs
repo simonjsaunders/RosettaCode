@@ -23,8 +23,7 @@ impl Cursor {
         self.angle = (self.angle + angle) % 360;
     }
     fn draw_line(&mut self, data: Data, length: f64) -> Data {
-        use std::f64::consts::PI;
-        let theta = (PI * self.angle as f64) / 180.0;
+        let theta = (self.angle as f64).to_radians();
         self.x += length * theta.cos();
         self.y += length * theta.sin();
         data.line_to((self.x, self.y))
