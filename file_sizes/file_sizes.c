@@ -19,7 +19,7 @@ static int callback(const char* file, const struct stat* sp, int flag) {
         ++files;
         total_size += file_size;
         size_t index = 0;
-        for (; index <= nsizes && sizes[index] < file_size; ++index);
+        for (; index < nsizes && sizes[index] < file_size; ++index);
         ++count[index];
     } else if (flag == FTW_DNR) {
         fprintf(stderr, "Cannot read directory %s.\n", file);
