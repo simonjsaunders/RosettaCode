@@ -7,7 +7,7 @@ use image::{Rgb, RgbImage};
 fn hsv_to_rgb(h: f64, s: f64, v: f64) -> Rgb<u8> {
     let hp = h / 60.0;
     let c = s * v;
-    let x = c * (1.0 - (hp.rem_euclid(2.0) - 1.0).abs());
+    let x = c * (1.0 - (hp % 2.0 - 1.0).abs());
     let m = v - c;
     let mut r = 0.0;
     let mut g = 0.0;
