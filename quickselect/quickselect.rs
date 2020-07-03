@@ -10,7 +10,7 @@ fn partition<T: PartialOrd>(a: &mut [T], left: usize, right: usize, pivot: usize
         }
     }
     a.swap(right, store_index);
-    return store_index;
+    store_index
 }
 
 fn pivot_index(left: usize, right: usize) -> usize {
@@ -38,8 +38,7 @@ fn select<T: PartialOrd>(a: &mut [T], mut left: usize, mut right: usize, n: usiz
 // the same as it would be if the array were sorted, smaller elements are
 // to the left of it and larger elements are to its right.
 fn nth_element<T: PartialOrd>(a: &mut [T], n: usize) {
-    let len = a.len();
-    select(a, 0, len - 1, n);
+    select(a, 0, a.len() - 1, n);
 }
 
 fn main() {
