@@ -149,6 +149,7 @@ See LICENSE for details.
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
+|nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
