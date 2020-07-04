@@ -136,6 +136,7 @@ See LICENSE for details.
 |unprimeable|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word_break|2020-06-15|https://rosettacode.org/wiki/Word_break_problem|
+|word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
 |yellowstone|2020-06-23|https://rosettacode.org/wiki/Yellowstone_sequence|
 
 ## Java Code Examples
