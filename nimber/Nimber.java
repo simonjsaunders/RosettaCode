@@ -20,7 +20,7 @@ public class Nimber {
     // nim-product of two numbers
     public static int nimProduct(int x, int y) {
         if (x < 2 || y < 2)
-        return x * y;
+            return x * y;
         int h = hpo2(x);
         if (x > h)
             return nimProduct(h, y) ^ nimProduct(x ^ h, y);
