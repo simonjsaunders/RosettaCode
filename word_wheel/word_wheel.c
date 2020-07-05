@@ -4,9 +4,9 @@
 #define MAX_WORD 80
 #define LETTERS 26
 
-inline bool is_letter(char c) { return c >= 'a' && c <= 'z'; }
+bool is_letter(char c) { return c >= 'a' && c <= 'z'; }
 
-inline int index(char c) { return c - 'a'; }
+int index(char c) { return c - 'a'; }
 
 void word_wheel(const char* letters, char central, int min_length, FILE* dict) {
     int max_count[LETTERS] = { 0 };
