@@ -11,12 +11,8 @@ class letterset {
 public:
     explicit letterset(const std::string& str) {
         count_.fill(0);
-        for (char c : str) {
-            if (c >= 'a' && c <= 'z')
-                ++count_[c - 'a' + 1];
-            else
-                ++count_[0];
-        }
+        for (char c : str)
+            ++count_[index(c)];
     }
     bool contains(const letterset& set) const {
         for (size_t i = 0; i < count_.size(); ++i) {
@@ -26,14 +22,14 @@ public:
         return true;
     }
     unsigned int count(char c) const {
-        if (c >= 'a' && c <= 'z')
-            return count_[c - 'a' + 1];
-        return 0;
+        return count_[index(c)];
     }
     bool is_valid() const {
         return count_[0] == 0;
     }
 private:
+    static bool is_letter(char c) { return c >= 'a' && c <= 'z'; }
+    static int index(char c) { return is_letter(c) ? c - 'a' + 1 : 0; }
     // elements 1..26 contain the number of times each lowercase
     // letter occurs in the word
     // element 0 is the number of other characters in the word
