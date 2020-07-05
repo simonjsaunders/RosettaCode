@@ -1,24 +1,30 @@
+#include <stdbool.h>
 #include <stdio.h>
 
 #define MAX_WORD 80
+#define LETTERS 26
+
+inline bool is_letter(char c) { return c >= 'a' && c <= 'z'; }
+
+inline int index(char c) { return c - 'a'; }
 
 void word_wheel(const char* letters, char central, int min_length, FILE* dict) {
-    int max_count[26] = { 0 };
+    int max_count[LETTERS] = { 0 };
     for (const char* p = letters; *p; ++p) {
         char c = *p;
-        if (c >= 'a' && c <= 'z')
-            ++max_count[c - 'a'];
+        if (is_letter(c))
+            ++max_count[index(c)];
     }
     char word[MAX_WORD + 1] = { 0 };
     while (fgets(word, MAX_WORD, dict)) {
-        int count[26] = { 0 };
+        int count[LETTERS] = { 0 };
         for (const char* p = word; *p; ++p) {
             char c = *p;
             if (c == '\n') {
-                if (p >= word + min_length && count[central - 'a'] > 0)
+                if (p >= word + min_length && count[index(central)] > 0)
                     printf("%s", word);
-            } else if (c >= 'a' && c <= 'z') {
-                int i = c - 'a';
+            } else if (is_letter(c)) {
+                int i = index(c);
                 if (++count[i] > max_count[i]) {
                     break;
                 }
