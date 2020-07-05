@@ -49,6 +49,7 @@ See LICENSE for details.
 |textonyms|2020-06-24|https://rosettacode.org/wiki/Textonyms|
 |unprimeable|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
 |word_freq|2020-05-25|https://rosettacode.org/wiki/Word_frequency|
+|word_wheel|2020-07-05|https://rosettacode.org/wiki/Word_wheel|
 
 ## C++ Code Examples
 
