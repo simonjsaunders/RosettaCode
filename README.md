@@ -47,6 +47,7 @@ See LICENSE for details.
 |stirling2|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |teacup|2020-06-06|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-24|https://rosettacode.org/wiki/Textonyms|
+|tree_sort|2020-07-06|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
 |unprimeable|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
 |word_freq|2020-05-25|https://rosettacode.org/wiki/Word_frequency|
 |word_wheel|2020-07-05|https://rosettacode.org/wiki/Word_wheel|
