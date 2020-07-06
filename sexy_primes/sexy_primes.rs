@@ -21,10 +21,7 @@ fn main() {
         groups.push(CircularQueue::with_capacity(max_groups));
     }
 
-    for p in 2..max {
-        if !sieve.is_prime(p) {
-            continue;
-        }
+    for p in sieve.primes_from(2).take_while(|x| *x < max) {
         if !sieve.is_prime(p + diff) && (p < diff + 2 || !sieve.is_prime(p - diff)) {
             unsexy_count += 1;
             unsexy_primes.push(p);
