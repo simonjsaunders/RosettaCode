@@ -159,6 +159,7 @@ See LICENSE for details.
 |sierpinski_curve|2020-06-12|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
+|tree_sort|2020-07-07|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
 
 ## Prolog Code Examples
 
