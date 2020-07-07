@@ -191,6 +191,7 @@ See LICENSE for details.
 |prime_partition|2020-05-03|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |sexy_primes|2020-04-12|https://rosettacode.org/wiki/Sexy_primes|
+|sierpinski_carpet|2020-07-07|https://rosettacode.org/wiki/Sierpinski_carpet|
 |sierpinski_pentagon|2020-06-07|https://rosettacode.org/wiki/Sierpinski_pentagon|
 |sort_oid|2020-05-05|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
