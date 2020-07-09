@@ -213,6 +213,7 @@ See LICENSE for details.
 |color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
+|douglas_puecker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |four_is|2020-06-25|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
