@@ -30,6 +30,7 @@ See LICENSE for details.
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |four_is|2020-06-04|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
+|ip_address|2020-07-09|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
