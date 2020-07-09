@@ -23,6 +23,7 @@ See LICENSE for details.
 |---------|--------------|----------------|
 |abbrev_easy|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
+|canonicalize_cidr|2020-07-09|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
