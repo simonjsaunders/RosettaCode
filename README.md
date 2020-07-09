@@ -27,7 +27,7 @@ See LICENSE for details.
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
-|douglas_puecker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|douglas_peucker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |four_is|2020-06-04|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
@@ -214,7 +214,7 @@ See LICENSE for details.
 |color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
-|douglas_puecker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |four_is|2020-06-25|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|

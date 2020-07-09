@@ -41,7 +41,7 @@ fn rdp(points: &[Point], epsilon: f64, result: &mut Vec<Point>) {
     }
 }
 
-fn ramer_douglas_puecker(points: &[Point], epsilon: f64) -> Vec<Point> {
+fn ramer_douglas_peucker(points: &[Point], epsilon: f64) -> Vec<Point> {
     let mut result = Vec::new();
     if points.len() > 0 && epsilon >= 0.0 {
         result.push(points[0]);
@@ -63,7 +63,7 @@ fn main() {
         Point { x: 8.0, y: 9.0 },
         Point { x: 9.0, y: 9.0 },
     ];
-    for p in ramer_douglas_puecker(&points, 1.0) {
+    for p in ramer_douglas_peucker(&points, 1.0) {
         println!("{}", p);
     }
 }
