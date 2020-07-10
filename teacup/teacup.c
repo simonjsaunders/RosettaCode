@@ -3,37 +3,36 @@
 #include <stdlib.h>
 #include <glib.h>
 
-bool get_line(FILE* in, GString* line) {
-    int c, count = 0;
-    g_string_set_size(line, 0);
-    while ((c = getc(in)) != EOF) {
-        ++count;
-        if (c == '\n')
-            break;
-        g_string_append_c(line, c);
-    }
-    return count > 0;
-}
-
 int string_compare(gconstpointer p1, gconstpointer p2) {
     const char* const* s1 = p1;
     const char* const* s2 = p2;
     return strcmp(*s1, *s2);
 }
 
-GPtrArray* load_dictionary(const char* file) {
-    FILE* in = fopen(file, "r");
-    if (in == 0) {
-        perror(file);
+GPtrArray* load_dictionary(const char* file, GError** error_ptr) {
+    GError* error = NULL;
+    GIOChannel* channel = g_io_channel_new_file(file, "r", &error);
+    if (channel == NULL) {
+        g_propagate_error(error_ptr, error);
         return NULL;
     }
     GPtrArray* dict = g_ptr_array_new_full(1024, g_free);
     GString* line = g_string_sized_new(64);
-    while (get_line(in, line))
-        g_ptr_array_add(dict, g_strdup(line->str));
-    g_ptr_array_sort(dict, string_compare);
+    gsize term_pos;
+    while (g_io_channel_read_line_string(channel, line, &term_pos,
+                                         &error) == G_IO_STATUS_NORMAL) {
+        char* word = g_strdup(line->str);
+        word[term_pos] = '\0';
+        g_ptr_array_add(dict, word);
+    }
     g_string_free(line, TRUE);
-    fclose(in);
+    g_io_channel_unref(channel);
+    if (error != NULL) {
+        g_propagate_error(error_ptr, error);
+        g_ptr_array_free(dict, TRUE);
+        return NULL;
+    }
+    g_ptr_array_sort(dict, string_compare);
     return dict;
 }
 
@@ -92,9 +91,16 @@ int main(int argc, char** argv) {
         fprintf(stderr, "usage: %s dictionary\n", argv[0]);
         return EXIT_FAILURE;
     }
-    GPtrArray* dictionary = load_dictionary(argv[1]);
-    if (dictionary == NULL)
+    GError* error = NULL;
+    GPtrArray* dictionary = load_dictionary(argv[1], &error);
+    if (dictionary == NULL) {
+        if (error != NULL) {
+            fprintf(stderr, "Cannot load dictionary file '%s': %s\n",
+                    argv[1], error->message);
+            g_error_free(error);
+        }
         return EXIT_FAILURE;
+    }
     find_teacup_words(dictionary);
     g_ptr_array_free(dictionary, TRUE);
     return EXIT_SUCCESS;
