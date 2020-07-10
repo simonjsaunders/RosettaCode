@@ -89,7 +89,7 @@ bool find_textonyms(const char* filename, GError** error_ptr) {
     GIOChannel* channel = g_io_channel_new_file(filename, "r", &error);
     if (channel == NULL) {
         g_propagate_error(error_ptr, error);
-        return NULL;
+        return false;
     }
     GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
                                            g_free, free_strings);
@@ -116,7 +116,7 @@ bool find_textonyms(const char* filename, GError** error_ptr) {
     if (error != NULL) {
         g_propagate_error(error_ptr, error);
         g_hash_table_destroy(ht);
-        return NULL;
+        return false;
     }
 
     GArray* words = g_array_new(FALSE, FALSE, sizeof(textonym_t));
