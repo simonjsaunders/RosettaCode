@@ -29,7 +29,7 @@ char text_char(char c) {
 bool text_string(const GString* word, GString* text) {
     g_string_set_size(text, word->len);
     for (size_t i = 0; i < word->len; ++i) {
-        char c = text_char(word->str[i]);
+        char c = text_char(g_ascii_tolower(word->str[i]));
         if (c == 0)
             return false;
         text->str[i] = c;
@@ -80,34 +80,26 @@ void print_top_words(GArray* textonyms, guint top) {
     }
 }
 
-bool get_line(FILE* in, GString* line) {
-    int c, count = 0;
-    g_string_truncate(line, 0);
-    while ((c = getc(in)) != EOF) {
-        ++count;
-        if (c == '\n')
-            break;
-        g_string_append_c(line, g_ascii_tolower(c));
-    }
-    return count > 0;
-}
-
 void free_strings(gpointer ptr) {
     g_ptr_array_free(ptr, TRUE);
 }
 
-bool find_textonyms(const char* filename) {
-    FILE* in = fopen(filename, "r");
-    if (in == NULL) {
-        perror(filename);
-        return false;
+bool find_textonyms(const char* filename, GError** error_ptr) {
+    GError* error = NULL;
+    GIOChannel* channel = g_io_channel_new_file(filename, "r", &error);
+    if (channel == NULL) {
+        g_propagate_error(error_ptr, error);
+        return NULL;
     }
     GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
                                            g_free, free_strings);
     GString* word = g_string_sized_new(64);
     GString* text = g_string_sized_new(64);
     guint count = 0;
-    while (get_line(in, word)) {
+    gsize term_pos;
+    while (g_io_channel_read_line_string(channel, word, &term_pos,
+                                         &error) == G_IO_STATUS_NORMAL) {
+        g_string_truncate(word, term_pos);
         if (!text_string(word, text))
             continue;
         GPtrArray* words = g_hash_table_lookup(ht, text->str);
@@ -118,15 +110,21 @@ bool find_textonyms(const char* filename) {
         g_ptr_array_add(words, g_strdup(word->str));
         ++count;
     }
+    g_io_channel_unref(channel);
     g_string_free(word, TRUE);
     g_string_free(text, TRUE);
+    if (error != NULL) {
+        g_propagate_error(error_ptr, error);
+        g_hash_table_destroy(ht);
+        return NULL;
+    }
 
     GArray* words = g_array_new(FALSE, FALSE, sizeof(textonym_t));
     GHashTableIter iter;
     gpointer key, value;
     g_hash_table_iter_init(&iter, ht);
     while (g_hash_table_iter_next(&iter, &key, &value)) {
-        GPtrArray* v = (GPtrArray*)value;
+        GPtrArray* v = value;
         if (v->len > 1) {
             textonym_t textonym;
             textonym.text = key;
@@ -157,7 +155,6 @@ bool find_textonyms(const char* filename) {
 
     g_array_free(words, TRUE);
     g_hash_table_destroy(ht);
-    fclose(in);
     return true;
 }
 
@@ -166,7 +163,13 @@ int main(int argc, char** argv) {
         fprintf(stderr, "usage: %s word-list\n", argv[0]);
         return EXIT_FAILURE;
     }
-    if (!find_textonyms(argv[1]))
+    GError* error = NULL;
+    if (!find_textonyms(argv[1], &error)) {
+        if (error != NULL) {
+            fprintf(stderr, "%s: %s\n", argv[1], error->message);
+            g_error_free(error);
+        }
         return EXIT_FAILURE;
+    }
     return EXIT_SUCCESS;
 }
