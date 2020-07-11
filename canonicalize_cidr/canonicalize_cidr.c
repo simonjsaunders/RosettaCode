@@ -4,7 +4,7 @@
 
 typedef struct cidr_tag {
     uint32_t address;
-    uint32_t mask;
+    uint32_t mask_length;
 } cidr_t;
 
 // Convert a string in CIDR format to an IPv4 address and netmask,
@@ -27,19 +27,12 @@ bool cidr_parse(const char* str, cidr_t* cidr) {
     uint32_t address = (a << 24) + (b << 16) + (c << 8) + d;
     address &= mask;
     cidr->address = address;
-    cidr->mask = mask;
+    cidr->mask_length = m;
     return true;
-}
-
-uint8_t mask_length(uint32_t mask) {
-    uint8_t length = 32;
-    for (; (mask & 1) == 0 && length > 0; mask >>= 1, --length) {}
-    return length;
 }
 
 // Write a string in CIDR notation into the supplied buffer.
 void cidr_format(const cidr_t* cidr, char* str, size_t size) {
-    uint8_t m = mask_length(cidr->mask);
     uint32_t address = cidr->address;
     uint8_t d = address & UINT8_MAX;
     address >>= 8;
@@ -48,7 +41,8 @@ void cidr_format(const cidr_t* cidr, char* str, size_t size) {
     uint8_t b = address & UINT8_MAX;
     address >>= 8;
     uint8_t a = address & UINT8_MAX;
-    snprintf(str, size, "%hhu.%hhu.%hhu.%hhu/%hhu", a, b, c, d, m);
+    snprintf(str, size, "%hhu.%hhu.%hhu.%hhu/%u", a, b, c, d,
+             cidr->mask_length);
 }
 
 int main(int argc, char** argv) {
