@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 
@@ -24,7 +25,7 @@ private:
 std::istream& operator>>(std::istream& in, ipv4_cidr& cidr) {
     int a, b, c, d, m;
     char ch;
-    if (!(in >> a >> ch) || a < 0 || a > UINT8_MAX || ch != '.'
+    if (!(in >> a >> std::noskipws >> ch) || a < 0 || a > UINT8_MAX || ch != '.'
         || !(in >> b >> ch) || b < 0 || b > UINT8_MAX || ch != '.'
         || !(in >> c >> ch) || c < 0 || c > UINT8_MAX || ch != '.'
         || !(in >> d >> ch) || d < 0 || d > UINT8_MAX || ch != '/'
