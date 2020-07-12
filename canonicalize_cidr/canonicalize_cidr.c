@@ -13,15 +13,11 @@ bool cidr_parse(const char* str, cidr_t* cidr) {
     int a, b, c, d, m;
     if (sscanf(str, "%d.%d.%d.%d/%d", &a, &b, &c, &d, &m) != 5)
         return false;
-    if (m < 1 || m > 32)
-        return false;
-    if (a < 0 || a > UINT8_MAX)
-        return false;
-    if (b < 0 || b > UINT8_MAX)
-        return false;
-    if (c < 0 || c > UINT8_MAX)
-        return false;
-    if (d < 0 || d > UINT8_MAX)
+    if (m < 1 || m > 32
+        || a < 0 || a > UINT8_MAX
+        || b < 0 || b > UINT8_MAX
+        || c < 0 || c > UINT8_MAX
+        || d < 0 || d > UINT8_MAX)
         return false;
     uint32_t mask = ~((1 << (32 - m)) - 1);
     uint32_t address = (a << 24) + (b << 16) + (c << 8) + d;
