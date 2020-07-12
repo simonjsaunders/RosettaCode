@@ -4,7 +4,7 @@
 
 typedef struct cidr_tag {
     uint32_t address;
-    uint32_t mask_length;
+    unsigned int mask_length;
 } cidr_t;
 
 // Convert a string in CIDR format to an IPv4 address and netmask,
