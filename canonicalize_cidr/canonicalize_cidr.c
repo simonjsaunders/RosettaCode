@@ -34,14 +34,14 @@ bool cidr_parse(const char* str, cidr_t* cidr) {
 // Write a string in CIDR notation into the supplied buffer.
 void cidr_format(const cidr_t* cidr, char* str, size_t size) {
     uint32_t address = cidr->address;
-    uint8_t d = address & UINT8_MAX;
+    unsigned int d = address & UINT8_MAX;
     address >>= 8;
-    uint8_t c = address & UINT8_MAX;
+    unsigned int c = address & UINT8_MAX;
     address >>= 8;
-    uint8_t b = address & UINT8_MAX;
+    unsigned int b = address & UINT8_MAX;
     address >>= 8;
-    uint8_t a = address & UINT8_MAX;
-    snprintf(str, size, "%hhu.%hhu.%hhu.%hhu/%u", a, b, c, d,
+    unsigned int a = address & UINT8_MAX;
+    snprintf(str, size, "%u.%u.%u.%u/%u", a, b, c, d,
              cidr->mask_length);
 }
 
