@@ -223,6 +223,7 @@ See LICENSE for details.
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
+|leonardo|2020-07-13|https://rosettacode.org/wiki/Leonardo_numbers|
 |lex_sort|2020-06-18|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
