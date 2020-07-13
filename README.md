@@ -38,7 +38,7 @@ See LICENSE for details.
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |nsmooth|2020-05-15|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
-|palindrome_dates|2020-05-11|http://rosettacode.org/wiki/Palindrome_dates|
+|palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-05-15|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
@@ -108,7 +108,7 @@ See LICENSE for details.
 |next_highest_int|2020-05-06|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
-|palindrome_dates|2020-05-10|http://rosettacode.org/wiki/Palindrome_dates|
+|palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force|2020-02-29|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
@@ -233,7 +233,7 @@ See LICENSE for details.
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
-|palindrome_dates|2020-07-13|http://rosettacode.org/wiki/Palindrome_dates|
+|palindrome_dates|2020-07-13|https://rosettacode.org/wiki/Palindrome_dates|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
