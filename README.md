@@ -185,6 +185,7 @@ See LICENSE for details.
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-05-02|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |lcp|2020-04-26|https://rosettacode.org/wiki/Longest_common_prefix|
+|leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |lex_sort|2020-04-26|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_primes|2020-05-13|https://rosettacode.org/wiki/Long_primes|
 |long_year|2020-05-08|https://rosettacode.org/wiki/Long_year%3F|
