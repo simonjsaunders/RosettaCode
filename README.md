@@ -95,6 +95,7 @@ See LICENSE for details.
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |least_squares|2020-06-01|https://rosettacode.org/wiki/Logistic_Curve_Fitting_in_Epidemiology|
+|leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-04-05|https://rosettacode.org/wiki/Long_year%3F|
 |lu_decompose|2020-04-25|https://rosettacode.org/wiki/LU_decomposition|
@@ -223,6 +224,7 @@ See LICENSE for details.
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
+|leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |leonardo|2020-07-13|https://rosettacode.org/wiki/Leonardo_numbers|
 |lex_sort|2020-06-18|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
