@@ -88,6 +88,7 @@ See LICENSE for details.
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
+|jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
 |kdtree|2019-12-07|https://rosettacode.org/wiki/K-d_tree|
 |koch_curve|2020-05-27|https://rosettacode.org/wiki/Koch_curve|
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
