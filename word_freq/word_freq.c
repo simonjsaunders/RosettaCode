@@ -18,9 +18,11 @@ int compare_word_count(const void* p1, const void* p2) {
 }
 
 bool get_top_words(const char* filename, size_t count) {
-    GMappedFile* mapped_file = g_mapped_file_new(filename, FALSE, NULL);
+    GError* error = NULL;
+    GMappedFile* mapped_file = g_mapped_file_new(filename, FALSE, &error);
     if (mapped_file == NULL) {
-        fprintf(stderr, "Cannot open file %s\n", filename);
+        fprintf(stderr, "%s\n", error->message);
+        g_error_free(error);
         return false;
     }
     const char* text = g_mapped_file_get_contents(mapped_file);
@@ -29,12 +31,13 @@ bool get_top_words(const char* filename, size_t count) {
         g_mapped_file_unref(mapped_file);
         return false;
     }
+    gsize file_size = g_mapped_file_get_length(mapped_file);
     // Store word counts in a hash table
     GHashTable* ht = g_hash_table_new_full(g_str_hash, g_str_equal,
                                            g_free, g_free);
     GRegex* regex = g_regex_new("\\w+", 0, 0, NULL);
     GMatchInfo* match_info;
-    g_regex_match(regex, text, 0, &match_info);
+    g_regex_match_full(regex, text, file_size, 0, 0, &match_info, NULL);
     while (g_match_info_matches(match_info)) {
         char* word = g_match_info_fetch(match_info, 0);
         char* lower = g_utf8_strdown(word, -1);
@@ -52,6 +55,7 @@ bool get_top_words(const char* filename, size_t count) {
     }
     g_match_info_free(match_info);
     g_regex_unref(regex);
+    g_mapped_file_unref(mapped_file);
 
     // Sort words in decreasing order of frequency
     size_t size = g_hash_table_size(ht);
@@ -74,7 +78,6 @@ bool get_top_words(const char* filename, size_t count) {
         printf("%lu\t%lu\t%s\n", i + 1, words[i].count, words[i].word);
     g_free(words);
     g_hash_table_destroy(ht);
-    g_mapped_file_unref(mapped_file);
     return true;
 }
 
