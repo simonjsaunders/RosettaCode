@@ -237,6 +237,7 @@ See LICENSE for details.
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-13|https://rosettacode.org/wiki/Palindrome_dates|
+|peano_curve|2020-07-15|https://rosettacode.org/wiki/Peano_curve|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
