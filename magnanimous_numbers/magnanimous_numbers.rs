@@ -33,20 +33,8 @@ fn is_magnanimous(n: u32) -> bool {
     true
 }
 
-fn magnanimous() -> impl std::iter::Iterator<Item = u32> {
-    let mut next = 0;
-    std::iter::from_fn(move || {
-        let mut n = next;
-        while !is_magnanimous(n) {
-            n += 1;
-        }
-        next = n + 1;
-        Some(n)
-    })
-}
-
 fn main() {
-    let mut m = magnanimous().take(400);
+    let mut m = (0..).filter(|x| is_magnanimous(*x)).take(400);
     println!("First 45 magnanimous numbers:");
     for (i, n) in m.by_ref().take(45).enumerate() {
         if i > 0 && i % 15 == 0 {
