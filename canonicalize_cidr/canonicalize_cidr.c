@@ -42,14 +42,22 @@ void cidr_format(const cidr_t* cidr, char* str, size_t size) {
 }
 
 int main(int argc, char** argv) {
-    for (int i = 1; i < argc; ++i) {
+    const char* tests[] = {
+        "87.70.141.1/22",
+        "36.18.154.103/12",
+        "62.62.197.11/29",
+        "67.137.119.181/4",
+        "161.214.74.21/24",
+        "184.232.176.184/18"
+    };
+    for (int i = 0; i < sizeof(tests)/sizeof(tests[0]); ++i) {
         cidr_t cidr;
-        if (cidr_parse(argv[i], &cidr)) {
+        if (cidr_parse(tests[i], &cidr)) {
             char out[32];
             cidr_format(&cidr, out, sizeof(out));
-            puts(out);
+            printf("%-18s -> %s\n", tests[i], out);
         } else {
-            fprintf(stderr, "%s: invalid CIDR\n", argv[i]);
+            fprintf(stderr, "%s: invalid CIDR\n", tests[i]);
         }
     }
     return 0;

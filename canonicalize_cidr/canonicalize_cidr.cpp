@@ -25,7 +25,7 @@ private:
 std::istream& operator>>(std::istream& in, ipv4_cidr& cidr) {
     int a, b, c, d, m;
     char ch;
-    if (!(in >> a >> std::noskipws >> ch) || a < 0 || a > UINT8_MAX || ch != '.'
+    if (!(in >> a >> ch) || a < 0 || a > UINT8_MAX || ch != '.'
         || !(in >> b >> ch) || b < 0 || b > UINT8_MAX || ch != '.'
         || !(in >> c >> ch) || c < 0 || c > UINT8_MAX || ch != '.'
         || !(in >> d >> ch) || d < 0 || d > UINT8_MAX || ch != '/'
@@ -57,13 +57,22 @@ std::ostream& operator<<(std::ostream& out, const ipv4_cidr& cidr) {
 }
 
 int main(int argc, char** argv) {
-    for (int i = 1; i < argc; ++i) {
-        std::istringstream in(argv[i]);
+    const char* tests[] = {
+        "87.70.141.1/22",
+        "36.18.154.103/12",
+        "62.62.197.11/29",
+        "67.137.119.181/4",
+        "161.214.74.21/24",
+        "184.232.176.184/18"
+    };
+    for (auto test : tests) {
+        std::istringstream in(test);
         ipv4_cidr cidr;
         if (in >> cidr)
-            std::cout << cidr << '\n';
+            std::cout << std::setw(18) << std::left << test << " -> "
+                << cidr << '\n';
         else
-            std::cerr << argv[i] << ": invalid CIDR\n";
+            std::cerr << test << ": invalid CIDR\n";
     }
     return 0;
 }
