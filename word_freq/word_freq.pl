@@ -30,4 +30,4 @@ print_top_words([Word - Count|Rest], N, R):-
     print_top_words(Rest, N1, R1).
 
 main:-
-    print_top_words("135-0.txt", 15).
+    print_top_words("135-0.txt", 10).

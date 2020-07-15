@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
         fprintf(stderr, "usage: %s file\n", argv[0]);
         return EXIT_FAILURE;
     }
-    if (!get_top_words(argv[1], 15))
+    if (!get_top_words(argv[1], 10))
         return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
