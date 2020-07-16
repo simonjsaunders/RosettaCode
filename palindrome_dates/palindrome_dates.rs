@@ -2,8 +2,7 @@
 // chrono = "0.4"
 
 fn is_palindrome(s: &str) -> bool {
-    let r: String = s.chars().rev().collect();
-    s == r
+    s.chars().rev().eq(s.chars())
 }
 
 fn main() {
