@@ -154,6 +154,7 @@ See LICENSE for details.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |abbrev_simple|2020-02-29|https://rosettacode.org/wiki/Abbreviations,_simple|
+|abelian_sandpile2|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model|
 |circular_primes|2020-06-16|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
