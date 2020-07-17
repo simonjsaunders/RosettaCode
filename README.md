@@ -61,6 +61,7 @@ See LICENSE for details.
 |---------|--------------|----------------|
 |abbrev_easy|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
+|abelian_sandpile|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model/Identity|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
