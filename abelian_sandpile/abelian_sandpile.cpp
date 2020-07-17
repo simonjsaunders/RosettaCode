@@ -121,7 +121,7 @@ int main() {
     std::cout << "s1 + s2 = \n";
     sum1.print(std::cout);
     std::cout << "\ns2 + s1 = \n";
-    sum1.print(std::cout);
+    sum2.print(std::cout);
     std::cout << '\n';
     
     std::cout << "Identity:\n";
