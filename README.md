@@ -199,6 +199,7 @@ See LICENSE for details.
 |nimber|2020-05-28|https://rosettacode.org/wiki/Nimber_arithmetic|
 |ordinal|2020-04-18|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful|2020-05-02|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
+|peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
 |prime_partition|2020-05-03|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |sexy_primes|2020-04-12|https://rosettacode.org/wiki/Sexy_primes|
