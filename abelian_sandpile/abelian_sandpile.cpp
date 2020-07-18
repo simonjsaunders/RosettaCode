@@ -103,7 +103,7 @@ int main() {
     std::cout << std::boolalpha;
 
     std::cout << "Avalanche:\n";
-    abelian_sandpile sp({4,3,3, 3,1,2, 0,2,3});
+    abelian_sandpile sp{4,3,3, 3,1,2, 0,2,3};
     while (!sp.is_stable()) {
         sp.print(std::cout);
         std::cout << "stable? " << sp.is_stable() << "\n\n";
@@ -113,8 +113,8 @@ int main() {
     std::cout << "stable? " << sp.is_stable() << "\n\n";
 
     std::cout << "Commutativity:\n";
-    abelian_sandpile s1({1,2,0, 2,1,1, 0,1,3});
-    abelian_sandpile s2({2,1,3, 1,0,1, 0,1,0});
+    abelian_sandpile s1{1,2,0, 2,1,1, 0,1,3};
+    abelian_sandpile s2{2,1,3, 1,0,1, 0,1,0};
     abelian_sandpile sum1(s1 + s2);
     abelian_sandpile sum2(s2 + s1);
     std::cout << "s1 + s2 equals s2 + s1? " << (sum1 == sum2) << "\n\n";
@@ -125,8 +125,8 @@ int main() {
     std::cout << '\n';
     
     std::cout << "Identity:\n";
-    abelian_sandpile s3({3,3,3, 3,3,3, 3,3,3});
-    abelian_sandpile s3_id({2,1,2, 1,0,1, 2,1,2});
+    abelian_sandpile s3{3,3,3, 3,3,3, 3,3,3};
+    abelian_sandpile s3_id{2,1,2, 1,0,1, 2,1,2};
     abelian_sandpile sum3(s3 + s3_id);
     abelian_sandpile sum4(s3_id + s3_id);
     std::cout << "s3 + s3_id equals s3? " << (sum3 == s3) << '\n';
