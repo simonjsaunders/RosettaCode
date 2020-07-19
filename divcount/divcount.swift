@@ -10,12 +10,12 @@ func divisorCount(number: Int) -> Int {
     // Odd prime factors up to the square root
     var p = 3
     while p * p <= n {
-        var sum = 1
+        var count = 1
         while n % p == 0 {
-            sum += 1
+            count += 1
             n /= p
         }
-        total *= sum
+        total *= count
         p += 2
     }
     // If n > 1 then it's prime
