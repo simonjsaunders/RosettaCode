@@ -2,8 +2,7 @@
 
 This repository contains example code submitted to Rosetta Code by
 Simon J. Saunders (user name simonjsaunders). Here you will find example programs
-written in C, C++, Java, Prolog and Rust. For the most part they are designed
-to solve a specific task and aren't necessarily reusable. There is a sub-directory
+written in C, C++, Java, Prolog, Rust and Swift. There is a sub-directory
 containing the source code for each task. The library sub-directory contains
 code shared by two or more tasks.
 
@@ -260,3 +259,8 @@ See LICENSE for details.
 |unprimeable|2020-06-30|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
+
+## Swift Code Examples
+|Directory|Date Submitted|Rosetta Code URL|
+|---------|--------------|----------------|
+|divcount|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_with_exactly_n_divisors|
