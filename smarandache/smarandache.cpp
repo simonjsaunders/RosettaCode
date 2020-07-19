@@ -24,19 +24,25 @@ bool is_prime(integer n) {
         return n == 2;
     if (n % 3 == 0)
         return n == 3;
-    for (integer p = 5; p * p <= n; p += 4) {
-        if (n % p == 0)
-            return false;
-        p += 2;
-        if (n % p == 0)
-            return false;
+    if (n % 5 == 0)
+        return n == 5;
+    constexpr integer wheel[] = { 4,2,4,2,4,6,2,6 };
+    integer p = 7;
+    for (;;) {
+        for (integer w : wheel) {
+            if (p * p > n)
+                return true;
+            if (n % p == 0)
+                return false;
+            p += w;
+        }
     }
-    return true;
 }
 
 int main() {
-    const integer limit = 10000000;
-    integer n = 0, n1 = 0, n2 = 0, n3 = 0;
+    std::cout.imbue(std::locale(""));
+    const integer limit = 1000000000;
+    integer n = 0, max = 0;
     std::cout << "First 25 SPDS primes:\n";
     for (int i = 0; n < limit; ) {
         n = next_prime_digit_number(n);
@@ -44,20 +50,20 @@ int main() {
             continue;
         if (i < 25) {
             if (i > 0)
-                std::cout << ", ";
+                std::cout << ' ';
             std::cout << n;
         }
         else if (i == 25)
             std::cout << '\n';
         ++i;
         if (i == 100)
-            n1 = n;
+            std::cout << "Hundredth SPDS prime: " << n << '\n';
         else if (i == 1000)
-            n2 = n;
-        n3 = n;
+            std::cout << "Thousandth SPDS prime: " << n << '\n';
+        else if (i == 10000)
+            std::cout << "Ten thousandth SPDS prime: " << n << '\n';
+        max = n;
     }
-    std::cout << "Hundredth SPDS prime: " << n1 << '\n';
-    std::cout << "Thousandth SPDS prime: " << n2 << '\n';
-    std::cout << "Largest SPDS prime less than " << limit << ": " << n3 << '\n';
+    std::cout << "Largest SPDS prime less than " << limit << ": " << max << '\n';
     return 0;
 }

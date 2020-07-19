@@ -8,18 +8,22 @@ fn is_prime(n: u32) -> bool {
     if n % 3 == 0 {
         return n == 3;
     }
-    let mut p = 5;
-    while p * p <= n {
-        if n % p == 0 {
-            return false;
-        }
-        p += 2;
-        if n % p == 0 {
-            return false;
-        }
-        p += 4;
+    if n % 5 == 0 {
+        return n == 5;
     }
-    true
+    let mut p = 7;
+    const WHEEL: [u32; 8] = [4, 2, 4, 2, 4, 6, 2, 6];
+    loop {
+        for w in &WHEEL {
+            if p * p > n {
+                return true;
+            }
+            if n % p == 0 {
+                return false;
+            }
+            p += w;
+        }
+    }
 }
 
 fn next_prime_digit_number(n: u32) -> u32 {
@@ -47,7 +51,7 @@ fn smarandache_prime_digital_sequence() -> impl std::iter::Iterator<Item = u32> 
 }
 
 fn main() {
-    let limit = 10000000;
+    let limit = 1000000000;
     let mut seq = smarandache_prime_digital_sequence().take_while(|x| *x < limit);
     println!("First 25 SPDS primes:");
     for i in seq.by_ref().take(25) {
@@ -59,6 +63,9 @@ fn main() {
     }
     if let Some(p) = seq.by_ref().nth(999 - 100) {
         println!("1000th SPDS prime: {}", p);
+    }
+    if let Some(p) = seq.by_ref().nth(9999 - 1000) {
+        println!("10,000th SPDS prime: {}", p);
     }
     if let Some(p) = seq.last() {
         println!("Largest SPDS prime less than {}: {}", limit, p);
