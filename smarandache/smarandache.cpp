@@ -6,7 +6,7 @@ using integer = uint32_t;
 integer next_prime_digit_number(integer n) {
     if (n == 0)
         return 2;
-    switch (n  % 10) {
+    switch (n % 10) {
     case 2:
         return n + 1;
     case 3:

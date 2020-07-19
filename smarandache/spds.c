@@ -5,7 +5,7 @@
 uint32_t next_prime_digit_number(uint32_t n) {
     if (n == 0)
         return 2;
-    switch (n  % 10) {
+    switch (n % 10) {
     case 2:
         return n + 1;
     case 3:
