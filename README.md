@@ -264,3 +264,4 @@ See LICENSE for details.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |divcount|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_with_exactly_n_divisors|
+|divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
