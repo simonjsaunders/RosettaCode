@@ -2,21 +2,17 @@
 func divisorCount(number: Int) -> Int {
     var n = number
     var total = 1
-    var power = 2
     // Deal with powers of 2 first
     while n % 2 == 0 {
         total += 1
-        power *= 2
         n /= 2
     }
     // Odd prime factors up to the square root
     var p = 3
     while p * p <= n {
         var sum = 1
-        power = p
         while n % p == 0 {
             sum += 1
-            power *= p
             n /= p
         }
         total *= sum
