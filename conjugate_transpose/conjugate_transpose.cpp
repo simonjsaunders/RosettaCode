@@ -3,6 +3,7 @@
 #include <complex>
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 template <typename scalar_type> class complex_matrix {
@@ -82,13 +83,27 @@ conjugate_transpose(const complex_matrix<scalar_type>& a) {
 }
 
 template <typename scalar_type>
+std::string to_string(const std::complex<scalar_type>& c) {
+    std::ostringstream out;
+    out << c;
+    return out.str();
+}
+
+template <typename scalar_type>
 void print(std::ostream& out, const complex_matrix<scalar_type>& a) {
     size_t rows = a.rows(), columns = a.columns();
+    std::vector<size_t> max_width(columns, 3);
+    for (size_t column = 0; column < columns; ++column) {
+        for (size_t row = 0; row < rows; ++row) {
+            max_width[column] = std::max(max_width[column],
+                                         to_string(a(row, column)).size());
+        }
+    }
     for (size_t row = 0; row < rows; ++row) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
                 out << ' ';
-            out << std::setw(14) << a(row, column);
+            out << std::setw(max_width[column]) << a(row, column);
         }
         out << '\n';
     }
