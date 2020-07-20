@@ -36,18 +36,13 @@ public class Matrix {
         // Augment by identity matrix
         Matrix tmp = new Matrix(rows, columns * 2);
         for (int row = 0; row < rows; ++row) {
-            for (int column = 0; column < columns; ++column) {
-                tmp.elements[row][column] = elements[row][column];
-                if (row == column)
-                    tmp.elements[row][column + columns] = 1;
-            }
+            System.arraycopy(elements[row], 0, tmp.elements[row], 0, columns);
+            tmp.elements[row][row + columns] = 1;
         }
         tmp.toReducedRowEchelonForm();
         Matrix inv = new Matrix(rows, columns);
-        for (int row = 0; row < rows; ++row) {
-            for (int column = 0; column < columns; ++column)
-                inv.elements[row][column] = tmp.elements[row][column + columns];
-        }
+        for (int row = 0; row < rows; ++row)
+            System.arraycopy(tmp.elements[row], columns, inv.elements[row], 0, columns);
         return inv;
     }
 
