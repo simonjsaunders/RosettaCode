@@ -158,6 +158,7 @@ See LICENSE for details.
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
+|gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
 |nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
