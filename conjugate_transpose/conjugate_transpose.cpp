@@ -22,29 +22,22 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), row_data(i++));
+            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
         }
     }
 
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
 
-    element_type* row_data(size_t row) {
+    const element_type& operator()(size_t row, size_t column) const {
         assert(row < rows_);
-        return &elements_[row * columns_];
+        assert(column < columns_);
+        return elements_[row * columns_ + column];
     }
-    const element_type* row_data(size_t row) const {
+    element_type& operator()(size_t row, size_t column) {
         assert(row < rows_);
-        return &elements_[row * columns_];
-    }
-
-    const element_type& at(size_t row, size_t column) const {
         assert(column < columns_);
-        return row_data(row)[column];
-    }
-    element_type& at(size_t row, size_t column) {
-        assert(column < columns_);
-        return row_data(row)[column];
+        return elements_[row * columns_ + column];
     }
 
     friend bool operator==(const complex_matrix& a, const complex_matrix& b) {
@@ -67,12 +60,9 @@ complex_matrix<scalar_type> product(const complex_matrix<scalar_type>& a,
     size_t n = a.columns();
     complex_matrix<scalar_type> c(arows, bcolumns);
     for (size_t i = 0; i < arows; ++i) {
-        const auto* aptr = a.row_data(i);
-        auto* cptr = c.row_data(i);
         for (size_t j = 0; j < n; ++j) {
-            const auto* bptr = b.row_data(j);
             for (size_t k = 0; k < bcolumns; ++k)
-                cptr[k] += aptr[j] * bptr[k];
+                c(i, k) += a(i, j) * b(j, k);
         }
     }
     return c;
@@ -84,9 +74,8 @@ conjugate_transpose(const complex_matrix<scalar_type>& a) {
     size_t rows = a.rows(), columns = a.columns();
     complex_matrix<scalar_type> b(columns, rows);
     for (size_t i = 0; i < columns; i++) {
-        auto* bptr = b.row_data(i);
         for (size_t j = 0; j < rows; j++) {
-            *bptr++ = std::conj(a.at(j, i));
+            b(i, j) = std::conj(a(j, i));
         }
     }
     return b;
@@ -94,20 +83,15 @@ conjugate_transpose(const complex_matrix<scalar_type>& a) {
 
 template <typename scalar_type>
 void print(std::ostream& out, const complex_matrix<scalar_type>& a) {
-    out << '[';
     size_t rows = a.rows(), columns = a.columns();
     for (size_t row = 0; row < rows; ++row) {
-        if (row > 0)
-            out << ", ";
-        out << '[';
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
-                out << ", ";
-            out << a.at(row, column);
+                out << ' ';
+            out << std::setw(14) << a(row, column);
         }
-        out << ']';
+        out << '\n';
     }
-    out << "]\n";
 }
 
 template <typename scalar_type>
@@ -137,7 +121,7 @@ bool is_identity_matrix(const complex_matrix<scalar_type>& matrix) {
     size_t rows = matrix.rows();
     for (size_t i = 0; i < rows; ++i) {
         for (size_t j = 0; j < rows; ++j) {
-            if (!is_equal(matrix.at(i, j), scalar_type(i == j ? 1 : 0)))
+            if (!is_equal(matrix(i, j), scalar_type(i == j ? 1 : 0)))
                 return false;
         }
     }
@@ -155,9 +139,9 @@ bool is_unitary_matrix(const complex_matrix<scalar_type>& matrix) {
 
 template <typename scalar_type>
 void test(const complex_matrix<scalar_type>& matrix) {
-    std::cout << "Matrix: ";
+    std::cout << "Matrix:\n";
     print(std::cout, matrix);
-    std::cout << "Conjugate transpose: ";
+    std::cout << "Conjugate transpose:\n";
     print(std::cout, conjugate_transpose(matrix));
     std::cout << std::boolalpha;
     std::cout << "Hermitian: " << is_hermitian_matrix(matrix) << '\n';

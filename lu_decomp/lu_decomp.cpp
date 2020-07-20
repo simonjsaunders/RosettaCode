@@ -20,29 +20,22 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), row_data(i++));
+            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
         }
     }
 
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
 
-    scalar_type* row_data(size_t row) {
+    const scalar_type& operator()(size_t row, size_t column) const {
         assert(row < rows_);
-        return &elements_[row * columns_];
+        assert(column < columns_);
+        return elements_[row * columns_ + column];
     }
-    const scalar_type* row_data(size_t row) const {
+    scalar_type& operator()(size_t row, size_t column) {
         assert(row < rows_);
-        return &elements_[row * columns_];
-    }
-
-    const scalar_type& at(size_t row, size_t column) const {
         assert(column < columns_);
-        return row_data(row)[column];
-    }
-    scalar_type& at(size_t row, size_t column) {
-        assert(column < columns_);
-        return row_data(row)[column];
+        return elements_[row * columns_ + column];
     }
 private:
     size_t rows_;
@@ -59,12 +52,9 @@ matrix<scalar_type> product(const matrix<scalar_type>& a,
     size_t n = a.columns();
     matrix<scalar_type> c(arows, bcolumns);
     for (size_t i = 0; i < arows; ++i) {
-        const auto* aptr = a.row_data(i);
-        auto* cptr = c.row_data(i);
         for (size_t j = 0; j < n; ++j) {
-            const auto* bptr = b.row_data(j);
             for (size_t k = 0; k < bcolumns; ++k)
-                cptr[k] += aptr[j] * bptr[k];
+                c(i, k) += a(i, j) * b(j, k);
         }
     }
     return c;
@@ -78,7 +68,7 @@ void print(std::ostream& out, const matrix<scalar_type>& a) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
                 out << ' ';
-            out << std::setw(8) << a.at(row, column);
+            out << std::setw(8) << a(row, column);
         }
         out << '\n';
     }
@@ -93,7 +83,7 @@ matrix<scalar_type> find_pivot(const matrix<scalar_type>& m) {
     for (size_t column = 0; column < rows; ++column) {
         size_t max_index = column;
         for (size_t row = column; row < rows; ++row) {
-            if (m.at(row, column) > m.at(max_index, column))
+            if (m(row, column) > m(max_index, column))
                 max_index = row;
         }
         if (column != max_index)
@@ -101,7 +91,7 @@ matrix<scalar_type> find_pivot(const matrix<scalar_type>& m) {
     }
     matrix<scalar_type> pivot(rows, rows);
     for (size_t i = 0; i < rows; ++i)
-        pivot.at(i, perm[i]) = 1;
+        pivot(i, perm[i]) = 1;
     return pivot;
 }
 
@@ -114,19 +104,19 @@ void lu_decompose(const matrix<scalar_type>& input) {
     matrix<scalar_type> lower(n, n);
     matrix<scalar_type> upper(n, n);
     for (size_t j = 0; j < n; ++j) {
-        lower.at(j, j) = 1;
+        lower(j, j) = 1;
         for (size_t i = 0; i <= j; ++i) {
-            scalar_type value = input1.at(i, j);
+            scalar_type value = input1(i, j);
             for (size_t k = 0; k < i; ++k)
-                value -= upper.at(k, j) * lower.at(i, k);
-            upper.at(i, j) = value;
+                value -= upper(k, j) * lower(i, k);
+            upper(i, j) = value;
         }
         for (size_t i = j; i < n; ++i) {
-            scalar_type value = input1.at(i, j);
+            scalar_type value = input1(i, j);
             for (size_t k = 0; k < j; ++k)
-                value -= upper.at(k, j) * lower.at(i, k);
-            value /= upper.at(j, j);
-            lower.at(i, j) = value;
+                value -= upper(k, j) * lower(i, k);
+            value /= upper(j, j);
+            lower(i, j) = value;
         }
     }
     std::cout << "A\n";

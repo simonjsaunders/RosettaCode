@@ -14,26 +14,21 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), row_data(i++));
+            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
         }
     }
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
-    scalar_type* row_data(size_t row) {
+
+    const scalar_type& operator()(size_t row, size_t column) const {
         assert(row < rows_);
-        return &elements_[row * columns_];
+        assert(column < columns_);
+        return elements_[row * columns_ + column];
     }
-    const scalar_type* row_data(size_t row) const {
+    scalar_type& operator()(size_t row, size_t column) {
         assert(row < rows_);
-        return &elements_[row * columns_];
-    }
-    const scalar_type& at(size_t row, size_t column) const {
         assert(column < columns_);
-        return row_data(row)[column];
-    }
-    scalar_type& at(size_t row, size_t column) {
-        assert(column < columns_);
-        return row_data(row)[column];
+        return elements_[row * columns_ + column];
     }
 private:
     size_t rows_;
@@ -52,13 +47,9 @@ matrix<scalar_type> kronecker_product(const matrix<scalar_type>& a,
     size_t rows = arows * brows;
     size_t columns = acolumns * bcolumns;
     matrix<scalar_type> c(rows, columns);
-    for (size_t i = 0; i < rows; ++i) {
-        auto* crow = c.row_data(i);
-        auto* arow = a.row_data(i/brows);
-        auto* brow = b.row_data(i % brows);
+    for (size_t i = 0; i < rows; ++i)
         for (size_t j = 0; j < columns; ++j)
-            crow[j] = arow[j/bcolumns] * brow[j % bcolumns];
-    }
+            c(i, j) = a(i/brows, j/bcolumns) * b(i % brows, j % bcolumns);
     return c;
 }
 
@@ -73,7 +64,8 @@ bool kronecker_fractal(const char* fileName, const matrix<unsigned char>& m, int
     std::vector<uchar> imageData(bytesPerLine * height);
 
     for (size_t i = 0; i < height; ++i)
-        std::copy_n(result.row_data(i), width, &imageData[i * bytesPerLine]);
+        for (size_t j = 0; j < width; ++j)
+            imageData[i * bytesPerLine + j] = result(i, j);
 
     QImage image(&imageData[0], width, height, bytesPerLine, QImage::Format_Indexed8);
     QVector<QRgb> colours(2);

@@ -14,26 +14,21 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), row_data(i++));
+            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
         }
     }
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
-    scalar_type* row_data(size_t row) {
+
+    const scalar_type& operator()(size_t row, size_t column) const {
         assert(row < rows_);
-        return &elements_[row * columns_];
+        assert(column < columns_);
+        return elements_[row * columns_ + column];
     }
-    const scalar_type* row_data(size_t row) const {
+    scalar_type& operator()(size_t row, size_t column) {
         assert(row < rows_);
-        return &elements_[row * columns_];
-    }
-    const scalar_type& at(size_t row, size_t column) const {
         assert(column < columns_);
-        return row_data(row)[column];
-    }
-    scalar_type& at(size_t row, size_t column) {
-        assert(column < columns_);
-        return row_data(row)[column];
+        return elements_[row * columns_ + column];
     }
 private:
     size_t rows_;
@@ -52,13 +47,9 @@ matrix<scalar_type> kronecker_product(const matrix<scalar_type>& a,
     size_t rows = arows * brows;
     size_t columns = acolumns * bcolumns;
     matrix<scalar_type> c(rows, columns);
-    for (size_t i = 0; i < rows; ++i) {
-        auto* crow = c.row_data(i);
-        auto* arow = a.row_data(i/brows);
-        auto* brow = b.row_data(i % brows);
+    for (size_t i = 0; i < rows; ++i)
         for (size_t j = 0; j < columns; ++j)
-            crow[j] = arow[j/bcolumns] * brow[j % bcolumns];
-    }
+            c(i, j) = a(i/brows, j/bcolumns) * b(i % brows, j % bcolumns);
     return c;
 }
 
@@ -69,7 +60,7 @@ void print(std::ostream& out, const matrix<scalar_type>& a) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
                 out << ' ';
-            out << std::setw(3) << a.at(row, column);
+            out << std::setw(3) << a(row, column);
         }
         out << '\n';
     }

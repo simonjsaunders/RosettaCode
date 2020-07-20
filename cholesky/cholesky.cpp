@@ -19,29 +19,22 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), row_data(i++));
+            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
         }
     }
 
     size_t rows() const { return rows_; }
     size_t columns() const { return columns_; }
 
-    scalar_type* row_data(size_t row) {
+    const scalar_type& operator()(size_t row, size_t column) const {
         assert(row < rows_);
-        return &elements_[row * columns_];
+        assert(column < columns_);
+        return elements_[row * columns_ + column];
     }
-    const scalar_type* row_data(size_t row) const {
+    scalar_type& operator()(size_t row, size_t column) {
         assert(row < rows_);
-        return &elements_[row * columns_];
-    }
-
-    const scalar_type& at(size_t row, size_t column) const {
         assert(column < columns_);
-        return row_data(row)[column];
-    }
-    scalar_type& at(size_t row, size_t column) {
-        assert(column < columns_);
-        return row_data(row)[column];
+        return elements_[row * columns_ + column];
     }
 private:
     size_t rows_;
@@ -57,7 +50,7 @@ void print(std::ostream& out, const matrix<scalar_type>& a) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
                 out << ' ';
-            out << std::setw(9) << a.at(row, column);
+            out << std::setw(9) << a(row, column);
         }
         out << '\n';
     }
@@ -70,15 +63,15 @@ matrix<scalar_type> cholesky_factor(const matrix<scalar_type>& input) {
     matrix<scalar_type> result(n, n);
     for (size_t i = 0; i < n; ++i) {
         for (size_t k = 0; k < i; ++k) {
-            scalar_type value = input.at(i, k);
+            scalar_type value = input(i, k);
             for (size_t j = 0; j < k; ++j)
-                value -= result.at(i, j) * result.at(k, j);
-            result.at(i, k) = value/result.at(k, k);
+                value -= result(i, j) * result(k, j);
+            result(i, k) = value/result(k, k);
         }
-        scalar_type value = input.at(i, i);
+        scalar_type value = input(i, i);
         for (size_t j = 0; j < i; ++j)
-            value -= result.at(i, j) * result.at(i, j);
-        result.at(i, i) = std::sqrt(value);
+            value -= result(i, j) * result(i, j);
+        result(i, i) = std::sqrt(value);
     }
     return result;
 }
