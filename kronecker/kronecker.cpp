@@ -80,17 +80,15 @@ void print(std::wostream& out, const matrix<scalar_type>& a) {
 void test1() {
     matrix<int> matrix1(2, 2, {{1,2}, {3,4}});
     matrix<int> matrix2(2, 2, {{0,5}, {6,7}});
-    matrix<int> kp = kronecker_product(matrix1, matrix2);
     std::wcout << L"Test case 1:\n";
-    print(std::wcout, kp);
+    print(std::wcout, kronecker_product(matrix1, matrix2));
 }
 
 void test2() {
     matrix<int> matrix1(3, 3, {{0,1,0}, {1,1,1}, {0,1,0}});
     matrix<int> matrix2(3, 4, {{1,1,1,1}, {1,0,0,1}, {1,1,1,1}});
-    matrix<int> kp = kronecker_product(matrix1, matrix2);
     std::wcout << L"Test case 2:\n";
-    print(std::wcout, kp);
+    print(std::wcout, kronecker_product(matrix1, matrix2));
 }
 
 int main() {
