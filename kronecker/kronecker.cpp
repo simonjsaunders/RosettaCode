@@ -69,12 +69,9 @@ void print(std::wostream& out, const matrix<scalar_type>& a) {
     out << box_top_left << spaces << box_top_right << nl;
     for (size_t row = 0; row < rows; ++row) {
         out << box_vertical;
-        for (size_t column = 0; column < columns; ++column) {
-            if (column > 0)
-                out << space;
-            out << std::setw(width) << a(row, column);
-        }
-        out << space << box_vertical << nl;
+        for (size_t column = 0; column < columns; ++column)
+            out << std::setw(width) << a(row, column) << space;
+        out << box_vertical << nl;
     }
     out << box_bottom_left << spaces << box_bottom_right << nl;
 }
