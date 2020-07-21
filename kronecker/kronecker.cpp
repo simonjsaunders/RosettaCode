@@ -54,35 +54,49 @@ matrix<scalar_type> kronecker_product(const matrix<scalar_type>& a,
 }
 
 template <typename scalar_type>
-void print(std::ostream& out, const matrix<scalar_type>& a) {
+void print(std::wostream& out, const matrix<scalar_type>& a) {
+    const wchar_t* box_top_left = L"\x250c";
+    const wchar_t* box_top_right = L"\x2510";
+    const wchar_t* box_bottom_left = L"\x2514";
+    const wchar_t* box_bottom_right = L"\x2518";
+    const wchar_t* box_vertical = L"\x2502";
+    const wchar_t nl = L'\n';
+    const wchar_t space = L' ';
+    const int width = 2;
+
     size_t rows = a.rows(), columns = a.columns();
+    std::wstring spaces((width + 1) * columns, space);
+    out << box_top_left << spaces << box_top_right << nl;
     for (size_t row = 0; row < rows; ++row) {
+        out << box_vertical;
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
-                out << ' ';
-            out << std::setw(3) << a(row, column);
+                out << space;
+            out << std::setw(width) << a(row, column);
         }
-        out << '\n';
+        out << space << box_vertical << nl;
     }
+    out << box_bottom_left << spaces << box_bottom_right << nl;
 }
 
 void test1() {
     matrix<int> matrix1(2, 2, {{1,2}, {3,4}});
     matrix<int> matrix2(2, 2, {{0,5}, {6,7}});
     matrix<int> kp = kronecker_product(matrix1, matrix2);
-    std::cout << "Test case 1:\n";
-    print(std::cout, kp);
+    std::wcout << L"Test case 1:\n";
+    print(std::wcout, kp);
 }
 
 void test2() {
     matrix<int> matrix1(3, 3, {{0,1,0}, {1,1,1}, {0,1,0}});
     matrix<int> matrix2(3, 4, {{1,1,1,1}, {1,0,0,1}, {1,1,1,1}});
     matrix<int> kp = kronecker_product(matrix1, matrix2);
-    std::cout << "Test case 2:\n";
-    print(std::cout, kp);
+    std::wcout << L"Test case 2:\n";
+    print(std::wcout, kp);
 }
 
 int main() {
+    std::wcout.imbue(std::locale(""));
     test1();
     test2();
     return 0;
