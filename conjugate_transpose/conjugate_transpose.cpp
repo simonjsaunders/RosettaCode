@@ -23,7 +23,8 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
+            std::copy(begin(row), end(row), &elements_[i]);
+            i += columns_;
         }
     }
 
@@ -87,8 +88,13 @@ std::string to_string(const std::complex<scalar_type>& c) {
     std::ostringstream out;
     const int precision = 6;
     out << std::fixed << std::setprecision(precision);
-    out << '(' << std::setw(precision + 3) << c.real() << ','
-        << std::setw(precision + 3) << c.imag() << ')';
+    out << std::setw(precision + 3) << c.real();
+    if (c.imag() > 0)
+        out << " + " << std::setw(precision + 2) << c.imag() << 'i';
+    else if (c.imag() == 0)
+        out << " + " << std::setw(precision + 2) << 0.0 << 'i';
+    else
+        out << " - " << std::setw(precision + 2) << -c.imag() << 'i';
     return out.str();
 }
 
@@ -163,21 +169,18 @@ void test(const complex_matrix<scalar_type>& matrix) {
 int main() {
     using matrix = complex_matrix<double>;
 
-    matrix matrix1(3, 3,
-                   {{{2, 0}, {2, 1}, {4, 0}},
-                    {{2, -1}, {3, 0}, {0, 1}},
-                    {{4, 0}, {0, -1}, {1, 0}}});
+    matrix matrix1(3, 3, {{{2, 0}, {2, 1}, {4, 0}},
+                          {{2, -1}, {3, 0}, {0, 1}},
+                          {{4, 0}, {0, -1}, {1, 0}}});
 
     double n = std::sqrt(0.5);
-    matrix matrix2(3, 3,
-                   {{{n, 0}, {n, 0}, {0, 0}},
-                    {{0, -n}, {0, n}, {0, 0}},
-                    {{0, 0}, {0, 0}, {0, 1}}});
+    matrix matrix2(3, 3, {{{n, 0}, {n, 0}, {0, 0}},
+                          {{0, -n}, {0, n}, {0, 0}},
+                          {{0, 0}, {0, 0}, {0, 1}}});
 
-    matrix matrix3(3, 3,
-                   {{{2, 2}, {3, 1}, {-3, 5}},
-                    {{2, -1}, {4, 1}, {0, 0}},
-                    {{7, -5}, {1, -4}, {1, 0}}});
+    matrix matrix3(3, 3, {{{2, 2}, {3, 1}, {-3, 5}},
+                          {{2, -1}, {4, 1}, {0, 0}},
+                          {{7, -5}, {1, -4}, {1, 0}}});
 
     test(matrix1);
     std::cout << '\n';
