@@ -20,7 +20,8 @@ public:
         size_t i = 0;
         for (const auto& row : values) {
             assert(row.size() <= columns_);
-            std::copy(begin(row), end(row), &elements_[columns_ * i++]);
+            std::copy(begin(row), end(row), &elements_[i]);
+            i += columns_;
         }
     }
 
