@@ -81,7 +81,7 @@ void abelian_sandpile::stabilize() {
 }
 
 bool operator==(const abelian_sandpile& a, const abelian_sandpile& b) {
-    return std::equal(a.cells_.begin(), a.cells_.end(), b.cells_.begin());
+    return a.cells_ == b.cells_;
 }
 
 abelian_sandpile operator+(const abelian_sandpile& a, const abelian_sandpile& b) {
