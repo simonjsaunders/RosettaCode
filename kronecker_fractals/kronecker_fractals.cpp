@@ -44,12 +44,12 @@ matrix<scalar_type> kronecker_product(const matrix<scalar_type>& a,
     size_t acolumns = a.columns();
     size_t brows = b.rows();
     size_t bcolumns = b.columns();
-    size_t rows = arows * brows;
-    size_t columns = acolumns * bcolumns;
-    matrix<scalar_type> c(rows, columns);
-    for (size_t i = 0; i < rows; ++i)
-        for (size_t j = 0; j < columns; ++j)
-            c(i, j) = a(i/brows, j/bcolumns) * b(i % brows, j % bcolumns);
+    matrix<scalar_type> c(arows * brows, acolumns * bcolumns);
+    for (size_t i = 0; i < arows; ++i)
+        for (size_t j = 0; j < acolumns; ++j)
+            for (size_t k = 0; k < brows; ++k)
+                for (size_t l = 0; l < bcolumns; ++l)
+                    c(i*brows + k, j*bcolumns + l) = a(i, j) * b(k, l);
     return c;
 }
 
