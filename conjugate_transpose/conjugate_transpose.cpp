@@ -85,7 +85,7 @@ conjugate_transpose(const complex_matrix<scalar_type>& a) {
 template <typename scalar_type>
 std::string to_string(const std::complex<scalar_type>& c) {
     std::ostringstream out;
-    const int precision = 5;
+    const int precision = 6;
     out << std::fixed << std::setprecision(precision);
     out << '(' << std::setw(precision + 3) << c.real() << ','
         << std::setw(precision + 3) << c.imag() << ')';
@@ -95,18 +95,11 @@ std::string to_string(const std::complex<scalar_type>& c) {
 template <typename scalar_type>
 void print(std::ostream& out, const complex_matrix<scalar_type>& a) {
     size_t rows = a.rows(), columns = a.columns();
-    std::vector<size_t> max_width(columns, 3);
-    for (size_t column = 0; column < columns; ++column) {
-        for (size_t row = 0; row < rows; ++row) {
-            max_width[column] = std::max(max_width[column],
-                                         to_string(a(row, column)).size());
-        }
-    }
     for (size_t row = 0; row < rows; ++row) {
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
                 out << ' ';
-            out << std::setw(max_width[column]) << to_string(a(row, column));
+            out << to_string(a(row, column));
         }
         out << '\n';
     }
