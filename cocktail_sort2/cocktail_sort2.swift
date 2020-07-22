@@ -1,4 +1,4 @@
-func cocktail_shaker_sort<T: Comparable>(_ a: inout [T]) {
+func cocktailShakerSort<T: Comparable>(_ a: inout [T]) {
     var begin = 0
     var end = a.count
     if end == 0 {
@@ -31,10 +31,10 @@ func cocktail_shaker_sort<T: Comparable>(_ a: inout [T]) {
 
 var array = [5, 1, -6, 12, 3, 13, 2, 4, 0, 15]
 print("before: \(array)")
-cocktail_shaker_sort(&array)
+cocktailShakerSort(&array)
 print(" after: \(array)")
 
 var array2 = ["one", "two", "three", "four", "five", "six", "seven", "eight"]
 print("before: \(array2)")
-cocktail_shaker_sort(&array2)
+cocktailShakerSort(&array2)
 print(" after: \(array2)")
