@@ -265,6 +265,7 @@ See LICENSE for details.
 ## Swift Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|cocktail_sort2|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |divcount|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_with_exactly_n_divisors|
 |divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
