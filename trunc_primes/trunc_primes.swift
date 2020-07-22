@@ -46,7 +46,6 @@ func isRightTruncatable(_ p: Int) -> Bool {
     return true
 }
 
-
 let limit = 1000000
 var largestLeft = 0
 var largestRight = 0
