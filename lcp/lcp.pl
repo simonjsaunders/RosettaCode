@@ -14,9 +14,10 @@ common_prefix1([C|Chars1], [C|Chars2], [C|Chars]):-
     
 lcp([], ""):-!.
 lcp([String], String):-!.
-lcp([String1, String2|Strings], Prefix):-
-    common_prefix(String1, String2, Prefix1),
-    lcp([Prefix1|Strings], Prefix).
+lcp(List, Prefix):-
+    min_member(Min, List),
+    max_member(Max, List),
+    common_prefix(Min, Max, Prefix).
 
 test(Strings):-
     lcp(Strings, Prefix),
