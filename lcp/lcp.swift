@@ -3,14 +3,9 @@ func commonPrefix(string1: String, string2: String) -> String {
 }
 
 func longestCommonPrefix(_ strings: [String]) -> String {
-    if strings.count == 0 {
-        return ""
-    }
-    var result = strings[0]
-    for string in strings[1..<strings.count] {
-        result = commonPrefix(string1: result, string2: string)
-    }
-    return result
+    return strings.count == 0 ? ""
+        : strings[1..<strings.count].reduce(strings[0],
+            { commonPrefix(string1: $0, string2: $1) })
 }
 
 func printLongestCommonPrefix(_ strings: [String]) {
