@@ -1,9 +1,5 @@
 func commonPrefix(string1: String, string2: String) -> String {
-    var result = String()
-    for (ch, _) in zip(string1, string2).prefix(while: {$0 == $1}) {
-        result.append(ch)
-    }
-    return result
+    return String(zip(string1, string2).prefix(while: {$0 == $1}).map{$0.0})
 }
 
 func longestCommonPrefix(_ strings: [String]) -> String {
