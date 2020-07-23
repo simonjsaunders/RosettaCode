@@ -1,3 +1,5 @@
+import Foundation
+
 func isPrime(_ n: Int) -> Bool {
     if n < 2 {
         return false
@@ -33,20 +35,13 @@ func isMagnanimous(_ n: Int) -> Bool {
     return true
 }
 
-func pad(string: String, width: Int) -> String {
-    if string.count >= width {
-        return string
-    }
-    return String(repeating: " ", count: width - string.count) + string
-}
-
 let m = (0...).lazy.filter{isMagnanimous($0)}.prefix(400);
 print("First 45 magnanimous numbers:");
 for (i, n) in m.prefix(45).enumerated() {
     if i > 0 && i % 15 == 0 {
         print()
     }
-    print(pad(string: String(n), width: 3), terminator: " ")
+    print(String(format: "%3d", n), terminator: " ")
 }
 print("\n\n241st through 250th magnanimous numbers:");
 for n in m.dropFirst(240).prefix(10) {
