@@ -273,3 +273,4 @@ See LICENSE for details.
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
+|van_eck|2020-07-23|https://rosettacode.org/wiki/Van_Eck_sequence|
