@@ -272,6 +272,7 @@ See LICENSE for details.
 |divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
+|lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
