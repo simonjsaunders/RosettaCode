@@ -53,7 +53,8 @@ std::string join(iterator begin, iterator end, separator sep) {
 
 using dictionary = std::vector<std::pair<std::string, letterset>>;
 
-dictionary load_dictionary(const std::string& filename, int min_length) {
+dictionary load_dictionary(const std::string& filename, int min_length,
+                           int max_length) {
     std::ifstream in(filename);
     if (!in)
         throw std::runtime_error("Cannot open file " + filename);
@@ -61,6 +62,8 @@ dictionary load_dictionary(const std::string& filename, int min_length) {
     dictionary result;
     while (getline(in, word)) {
         if (word.size() < min_length)
+            continue;
+        if (word.size() > max_length)
             continue;
         letterset set(word);
         if (set.is_valid())
@@ -172,7 +175,7 @@ int main(int argc, char** argv) {
         if (vm.count(option_part2))
             do_part2 = true;
 
-        auto dict = load_dictionary(filename, min_length);
+        auto dict = load_dictionary(filename, min_length, word_length);
         // part 1
         word_wheel(dict, letters, central_letter);
         // part 2
