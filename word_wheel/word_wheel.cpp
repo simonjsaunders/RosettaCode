@@ -1,5 +1,4 @@
 #include <array>
-#include <cassert>
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -11,10 +10,13 @@
 // letters ('a' to 'z').
 class letterset {
 public:
+    letterset() {
+        count_.fill(0);
+    }
     explicit letterset(const std::string& str) {
         count_.fill(0);
         for (char c : str)
-            ++count_[index(c)];
+            add(c);
     }
     bool contains(const letterset& set) const {
         for (size_t i = 0; i < count_.size(); ++i) {
@@ -28,6 +30,9 @@ public:
     }
     bool is_valid() const {
         return count_[0] == 0;
+    }
+    void add(char c) {
+        ++count_[index(c)];
     }
 private:
     static bool is_letter(char c) { return c >= 'a' && c <= 'z'; }
@@ -109,13 +114,12 @@ void find_max_word_count(const dictionary& dict, int word_length) {
             if (set.contains(p.second))
                 subsets.push_back(p);
         }
-        std::array<bool, 26> done{false};
+        letterset done;
         for (size_t index = 0; index < word_length; ++index) {
             char central_letter = word[index];
-            assert(central_letter >= 'a' && central_letter <= 'z');
-            if (done[central_letter - 'a'])
+            if (done.count(central_letter) > 0)
                 continue;
-            done[central_letter - 'a'] = true;
+            done.add(central_letter);
             size_t count = 0;
             for (const auto& p : subsets) {
                 const auto& subset = p.second;
