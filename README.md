@@ -1,17 +1,11 @@
 # Rosetta Code Contributions
 
-This repository contains example code submitted to Rosetta Code by
-Simon J. Saunders (user name simonjsaunders). Here you will find example programs
-written in C, C++, Java, Prolog, Rust and Swift. There is a sub-directory
-containing the source code for each task. The library sub-directory contains
-code shared by two or more tasks.
+This repository contains example code in various languages that I have uploaded
+to Rosetta Code. There is a sub-directory containing the source code for each
+example. The library sub-directory contains code shared by two or more examples.
 
-The code presented here is not intended to be of production quality.
-It is meant for expository purposes only. My goal is to present clear, concise,
-efficient code. My usual approach is to have a go at solving a task myself
-before I look too closely at existing solutions. If my solution is as good as
-as any of the existing ones (in terms of efficiency or elegance) I'll keep it,
-otherwise I might submit a translation of someone else's solution instead.
+The code presented here is not intended to be of production quality. It is
+meant for expository purposes only.
 
 All code is released under the GNU Free Documentation License, version 1.2.
 See LICENSE for details.
