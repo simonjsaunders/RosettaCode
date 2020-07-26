@@ -4,11 +4,14 @@ This repository contains example code in various languages that I have uploaded
 to Rosetta Code. There is a sub-directory containing the source code for each
 example. The library sub-directory contains code shared by two or more examples.
 
-The code presented here is not intended to be of production quality. It is
-meant for expository purposes only.
-
+### License:
 All code is released under the GNU Free Documentation License, version 1.2.
-See LICENSE for details.
+See the file LICENSE for details.
+
+### Disclaimer of warranty:
+The code presented here is not intended to be of production quality. It is
+meant for expository purposes only. If you decide to use any of the source code
+in this repository for any purpose then it's entirely at your own risk.
 
 ## C Code Examples
 
