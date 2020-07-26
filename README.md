@@ -1,8 +1,9 @@
 # Rosetta Code Contributions
 
-This repository contains example code in various languages that I have uploaded
-to Rosetta Code. There is a sub-directory containing the source code for each
-example. The library sub-directory contains code shared by two or more examples.
+This repository contains example code in various programming languages that I
+have uploaded to Rosetta Code. There is a sub-directory containing the source
+code for each example. The library sub-directory contains code shared by two or
+more examples.
 
 ### License:
 All code is released under the GNU Free Documentation License, version 1.2.
