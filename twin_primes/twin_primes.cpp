@@ -3,9 +3,9 @@
 #include <string>
 #include <primesieve.hpp>
 
-void print_twin_prime_count(uint64_t limit) {
+void print_twin_prime_count(long long limit) {
     std::cout << "Number of twin prime pairs less than " << limit
-        << " is " << primesieve::count_twins(0, limit - 1) << '\n';
+        << " is " << (limit > 0 ? primesieve::count_twins(0, limit - 1) : 0) << '\n';
 }
 
 int main(int argc, char** argv) {
@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
         // on the command line
         for (int i = 1; i < argc; ++i) {
             try {
-                print_twin_prime_count(std::stoull(argv[i]));
+                print_twin_prime_count(std::stoll(argv[i]));
             } catch (const std::exception& ex) {
                 std::cerr << "Cannot parse limit from '" << argv[i] << "'\n";
             }
