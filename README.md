@@ -140,6 +140,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
+|twin_primes|2020-07-27|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
 |unique_chars|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprimeable|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
