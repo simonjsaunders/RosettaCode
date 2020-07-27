@@ -275,6 +275,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
+|nimber|2020-07-27|https://rosettacode.org/wiki/Nimber_arithmetic|
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
