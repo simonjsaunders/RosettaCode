@@ -284,3 +284,4 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-07-23|https://rosettacode.org/wiki/Van_Eck_sequence|
+|word_freq|2020-07-28|https://rosettacode.org/wiki/Word_frequency|
