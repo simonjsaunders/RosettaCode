@@ -226,6 +226,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
+|fibword_fractal|2020-07-28|https://www.rosettacode.org/wiki/Fibonacci_word/fractal|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |four_is|2020-06-25|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
 |fusc|2020-07-23|https://rosettacode.org/wiki/Fusc_sequence|
