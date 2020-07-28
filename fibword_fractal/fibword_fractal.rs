@@ -85,12 +85,12 @@ impl FibwordFractal {
             .set("height", "100%")
             .set("fill", "white");
         let mut ff = FibwordFractal::new(x, y, 1.0, 0);
-        let data = ff.execute(order);
+        let path = ff.execute(order);
         let document = svg::Document::new()
             .set("width", 5 + ff.max_x as usize)
             .set("height", 5 + ff.max_y as usize)
             .add(rect)
-            .add(data);
+            .add(path);
         svg::save(file, &document)
     }
 }
