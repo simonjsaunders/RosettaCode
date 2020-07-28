@@ -14,8 +14,7 @@ fn fibonacci_word(n: usize) -> Vec<u8> {
     }
     let mut i = 2;
     loop {
-        let mut f = Vec::new();
-        f.reserve(f1.len() + f0.len());
+        let mut f = Vec::with_capacity(f1.len() + f0.len());
         f.extend(&f1);
         f.extend(f0);
         if i == n {
