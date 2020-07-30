@@ -44,6 +44,10 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     std::string word(argv[2]);
+    if (word.empty()) {
+        std::cerr << "Word must not be empty\n";
+        return EXIT_FAILURE;
+    }
     constexpr size_t max_dist = 4;
     std::vector<std::string> matches[max_dist + 1];
     std::string match;
