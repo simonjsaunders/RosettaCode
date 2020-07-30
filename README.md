@@ -5,11 +5,11 @@ have uploaded to Rosetta Code. There is a sub-directory containing the source
 code for each example. The library sub-directory contains code shared by two or
 more examples.
 
-### License:
+### License
 All code is released under the GNU Free Documentation License, version 1.2.
 See the file LICENSE for details.
 
-### Disclaimer of warranty:
+### Disclaimer of warranty
 The code presented here is not intended to be of production quality. It is
 meant for expository purposes only. If you decide to use any of the source code
 in this repository for any purpose then it's entirely at your own risk.
@@ -138,6 +138,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
+|text_completion|2020-07-30|https://rosettacode.org/wiki/Text_Completion|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
 |twin_primes|2020-07-27|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
