@@ -236,6 +236,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |integer_roots|2020-07-16|https://rosettacode.org/wiki/Integer_roots|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
+|jaro_winkler|2020-07-31|https://rosettacode.org/wiki/Jaro-Winkler_Distance
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
 |leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |leonardo|2020-07-13|https://rosettacode.org/wiki/Leonardo_numbers|
