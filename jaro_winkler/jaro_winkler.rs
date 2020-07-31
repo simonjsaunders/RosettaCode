@@ -73,12 +73,10 @@ fn within_distance<'a>(
         use std::cmp::Ordering;
         if d1 < d2 {
             Ordering::Less
+        } else if d1 > d2 {
+            Ordering::Greater
         } else {
-            if d1 > d2 {
-                Ordering::Greater
-            } else {
-                Ordering::Equal
-            }
+             Ordering::Equal
         }
     };
     arr.sort_by(|x, y| compare_distance(x.1, y.1));
