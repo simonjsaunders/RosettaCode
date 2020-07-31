@@ -12,6 +12,7 @@ int main() {
 
     QImage image(size, size, QImage::Format_RGB32);
     QPainter painter(&image);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     QLinearGradient linearGradient(0, 0, 0, size);
     linearGradient.setColorAt(0, white);
