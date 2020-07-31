@@ -76,7 +76,7 @@ fn within_distance<'a>(
         } else if d1 > d2 {
             Ordering::Greater
         } else {
-             Ordering::Equal
+            Ordering::Equal
         }
     };
     arr.sort_by(|x, y| compare_distance(x.1, y.1));
