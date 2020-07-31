@@ -129,6 +129,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_curve|2020-06-11|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_square|2020-06-11|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
 |square_free|2020-04-03|https://rosettacode.org/wiki/Square-free_integers|
 |squeeze|2020-01-09|https://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
