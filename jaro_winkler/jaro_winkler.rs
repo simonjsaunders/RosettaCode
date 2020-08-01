@@ -21,7 +21,7 @@ fn jaro_winkler_distance(string1: &str, string2: &str) -> f64 {
     if len2 == 0 {
         return 0.0;
     }
-    let delta = std::cmp::max(0, len2 / 2 - 1);
+    let delta = std::cmp::max(1, len2 / 2) - 1;
     let mut flag = vec![false; len2];
     let mut ch1_match = vec![];
     for (idx1, ch1) in st1.chars().enumerate() {
