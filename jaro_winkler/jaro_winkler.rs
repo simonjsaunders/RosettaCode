@@ -13,15 +13,16 @@ fn load_dictionary(filename: &str) -> std::io::Result<Vec<String>> {
 fn jaro_winkler_distance(string1: &str, string2: &str) -> f64 {
     let mut st1 = string1;
     let mut st2 = string2;
-    if st1.len() < st2.len() {
+    let mut len1 = st1.chars().count();
+    let mut len2 = st2.chars().count();
+    if len1 < len2 {
         std::mem::swap(&mut st1, &mut st2);
+        std::mem::swap(&mut len1, &mut len2);
     }
-    let len1 = st1.len();
-    let len2 = st2.len();
     if len2 == 0 {
-        return 0.0;
+        return if len1 == 0 { 0.0 } else { 1.0 };
     }
-    let delta = std::cmp::max(1, len2 / 2) - 1;
+    let delta = std::cmp::max(1, len1 / 2) - 1;
     let mut flag = vec![false; len2];
     let mut ch1_match = vec![];
     for (idx1, ch1) in st1.chars().enumerate() {
