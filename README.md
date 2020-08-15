@@ -263,6 +263,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |sierpinski_triangle|2020-06-09|https://rosettacode.org/wiki/Sierpinski_triangle/Graphical|
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
+|super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
