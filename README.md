@@ -26,7 +26,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |douglas_peucker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
-|four_is|2020-06-04|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
+|four_is|2020-06-04|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
 |ip_address|2020-07-09|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
@@ -81,7 +81,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |file_extension|2020-06-04|https://rosettacode.org/wiki/File_extension_is_in_extensions_list|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
-|four_is|2020-06-03|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
+|four_is|2020-06-03|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-01-17|https://rosettacode.org/wiki/Four_is_magic|
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
@@ -231,7 +231,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
 |fibword_fractal|2020-07-28|https://www.rosettacode.org/wiki/Fibonacci_word/fractal|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
-|four_is|2020-06-25|https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...|
+|four_is|2020-06-25|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |fusc|2020-07-23|https://rosettacode.org/wiki/Fusc_sequence|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
