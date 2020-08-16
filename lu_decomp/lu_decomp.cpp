@@ -80,8 +80,9 @@ void print(std::wostream& out, const matrix<scalar_type>& a) {
     }
 }
 
+// Return value is a tuple with elements (lower, upper, pivot)
 template <typename scalar_type>
-void lu_decompose(const matrix<scalar_type>& input) {
+auto lu_decompose(const matrix<scalar_type>& input) {
     assert(input.rows() == input.columns());
     size_t n = input.rows();
     std::vector<size_t> perm(n);
@@ -122,14 +123,20 @@ void lu_decompose(const matrix<scalar_type>& input) {
     for (size_t i = 0; i < n; ++i)
         pivot(i, perm[i]) = 1;
 
+    return std::make_tuple(lower, upper, pivot);
+}
+
+template <typename scalar_type>
+void show_lu_decomposition(const matrix<scalar_type>& input) {
+    auto result(lu_decompose(input));
     std::wcout << L"A\n";
     print(std::wcout, input);
     std::wcout << L"\nL\n";
-    print(std::wcout, lower);
+    print(std::wcout, std::get<0>(result));
     std::wcout << L"\nU\n";
-    print(std::wcout, upper);
+    print(std::wcout, std::get<1>(result));
     std::wcout << L"\nP\n";
-    print(std::wcout, pivot);
+    print(std::wcout, std::get<2>(result));
 }
 
 int main() {
@@ -139,7 +146,7 @@ int main() {
        {{1, 3, 5},
         {2, 4, 7},
         {1, 1, 0}});
-    lu_decompose(matrix1);
+    show_lu_decomposition(matrix1);
     std::wcout << '\n';
 
     std::wcout << L"Example 2:\n";
@@ -148,7 +155,7 @@ int main() {
         {1, 5, 2, 6},
         {3, 17, 18, 1},
         {2, 5, 7, 1}});
-    lu_decompose(matrix2);
+    show_lu_decomposition(matrix2);
     std::wcout << '\n';
     
     std::wcout << L"Example 3:\n";
@@ -156,7 +163,7 @@ int main() {
       {{-5, -6, -3},
        {-1,  0, -2},
        {-3, -4, -7}});
-    lu_decompose(matrix3);
+    show_lu_decomposition(matrix3);
 
     return 0;
 }
