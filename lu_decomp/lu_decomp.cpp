@@ -45,23 +45,6 @@ private:
 };
 
 template <typename scalar_type>
-matrix<scalar_type> product(const matrix<scalar_type>& a,
-                            const matrix<scalar_type>& b) {
-    assert(a.columns() == b.rows());
-    size_t arows = a.rows();
-    size_t bcolumns = b.columns();
-    size_t n = a.columns();
-    matrix<scalar_type> c(arows, bcolumns);
-    for (size_t i = 0; i < arows; ++i) {
-        for (size_t j = 0; j < n; ++j) {
-            for (size_t k = 0; k < bcolumns; ++k)
-                c(i, k) += a(i, j) * b(j, k);
-        }
-    }
-    return c;
-}
-
-template <typename scalar_type>
 void print(std::ostream& out, const matrix<scalar_type>& a) {
     size_t rows = a.rows(), columns = a.columns();
     out << std::fixed << std::setprecision(5);
@@ -76,50 +59,47 @@ void print(std::ostream& out, const matrix<scalar_type>& a) {
 }
 
 template <typename scalar_type>
-matrix<scalar_type> find_pivot(const matrix<scalar_type>& m) {
-    assert(m.rows() == m.columns());
-    size_t rows = m.rows();
-    std::vector<size_t> perm(rows);
-    std::iota(perm.begin(), perm.end(), 0);
-    for (size_t column = 0; column < rows; ++column) {
-        size_t max_index = column;
-        for (size_t row = column; row < rows; ++row) {
-            if (m(row, column) > m(max_index, column))
-                max_index = row;
-        }
-        if (column != max_index)
-            std::swap(perm[column], perm[max_index]);
-    }
-    matrix<scalar_type> pivot(rows, rows);
-    for (size_t i = 0; i < rows; ++i)
-        pivot(i, perm[i]) = 1;
-    return pivot;
-}
-
-template <typename scalar_type>
 void lu_decompose(const matrix<scalar_type>& input) {
     assert(input.rows() == input.columns());
     size_t n = input.rows();
-    auto pivot = find_pivot(input);
-    auto input1 = product(pivot, input);
+    std::vector<size_t> perm(n);
+    std::iota(perm.begin(), perm.end(), 0);
     matrix<scalar_type> lower(n, n);
     matrix<scalar_type> upper(n, n);
+    matrix<scalar_type> input1(input);
     for (size_t j = 0; j < n; ++j) {
-        lower(j, j) = 1;
-        for (size_t i = 0; i <= j; ++i) {
-            scalar_type value = input1(i, j);
-            for (size_t k = 0; k < i; ++k)
-                value -= upper(k, j) * lower(i, k);
-            upper(i, j) = value;
-        }
+        size_t max_index = j;
+        scalar_type max_value = 0;
         for (size_t i = j; i < n; ++i) {
-            scalar_type value = input1(i, j);
-            for (size_t k = 0; k < j; ++k)
-                value -= upper(k, j) * lower(i, k);
-            value /= upper(j, j);
-            lower(i, j) = value;
+            scalar_type value = std::abs(input1(i, j));
+            if (value > max_value) {
+                max_index = i;
+                max_value = value;
+            }
+        }
+        if (j != max_index)
+            std::swap(perm[j], perm[max_index]);
+        size_t jj = perm[j];
+        for (size_t i = j + 1; i < n; ++i) {
+            size_t ii = perm[i];
+            input1(ii, j) /= input1(jj, j);
+            for (size_t k = j + 1; k < n; ++k)
+                input1(ii, k) -= input1(ii, j) * input1(jj, k);
         }
     }
+    
+    for (size_t j = 0; j < n; ++j) {
+        lower(j, j) = 1;
+        for (size_t i = j + 1; i < n; ++i)
+            lower(i, j) = input1(perm[i], j);
+        for (size_t i = 0; i <= j; ++i)
+            upper(i, j) = input1(perm[i], j);
+    }
+    
+    matrix<scalar_type> pivot(n, n);
+    for (size_t i = 0; i < n; ++i)
+        pivot(i, perm[i]) = 1;
+
     std::cout << "A\n";
     print(std::cout, input);
     std::cout << "\nL\n";
@@ -131,6 +111,7 @@ void lu_decompose(const matrix<scalar_type>& input) {
 }
 
 int main() {
+    std::cout << "Example 1:\n";
     matrix<double> matrix1(3, 3,
        {{1, 3, 5},
         {2, 4, 7},
@@ -138,12 +119,21 @@ int main() {
     lu_decompose(matrix1);
     std::cout << '\n';
 
+    std::cout << "Example 2:\n";
     matrix<double> matrix2(4, 4,
       {{11, 9, 24, 2},
         {1, 5, 2, 6},
         {3, 17, 18, 1},
         {2, 5, 7, 1}});
     lu_decompose(matrix2);
+    std::cout << '\n';
+    
+    std::cout << "Example 3:\n";
+    matrix<double> matrix3(3, 3,
+      {{-5, -6, -3},
+       {-1,  0, -2},
+       {-3, -4, -7}});
+    lu_decompose(matrix3);
 
     return 0;
 }
