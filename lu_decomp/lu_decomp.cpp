@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <iostream>
 #include <numeric>
+#include <sstream>
 #include <vector>
 
 template <typename scalar_type> class matrix {
@@ -45,16 +46,37 @@ private:
 };
 
 template <typename scalar_type>
-void print(std::ostream& out, const matrix<scalar_type>& a) {
+void print(std::wostream& out, const matrix<scalar_type>& a) {
+    const wchar_t* box_top_left = L"\x23a1";
+    const wchar_t* box_top_right = L"\x23a4";
+    const wchar_t* box_left = L"\x23a2";
+    const wchar_t* box_right = L"\x23a5";
+    const wchar_t* box_bottom_left = L"\x23a3";
+    const wchar_t* box_bottom_right = L"\x23a6";
+
+    const int precision = 5;
     size_t rows = a.rows(), columns = a.columns();
-    out << std::fixed << std::setprecision(5);
+    std::vector<size_t> width(columns);
+    for (size_t column = 0; column < columns; ++column) {
+        size_t max_width = 0;
+        for (size_t row = 0; row < rows; ++row) {
+            std::ostringstream str;
+            str << std::fixed << std::setprecision(precision) << a(row, column);
+            max_width = std::max(max_width, str.str().length());
+        }
+        width[column] = max_width;
+    }
+    out << std::fixed << std::setprecision(precision);
     for (size_t row = 0; row < rows; ++row) {
+        const bool top(row == 0), bottom(row + 1 == rows);
+        out << (top ? box_top_left : (bottom ? box_bottom_left : box_left));
         for (size_t column = 0; column < columns; ++column) {
             if (column > 0)
-                out << ' ';
-            out << std::setw(8) << a(row, column);
+                out << L' ';
+            out << std::setw(width[column]) << a(row, column);
         }
-        out << '\n';
+        out << (top ? box_top_right : (bottom ? box_bottom_right : box_right));
+        out << L'\n';
     }
 }
 
@@ -100,35 +122,36 @@ void lu_decompose(const matrix<scalar_type>& input) {
     for (size_t i = 0; i < n; ++i)
         pivot(i, perm[i]) = 1;
 
-    std::cout << "A\n";
-    print(std::cout, input);
-    std::cout << "\nL\n";
-    print(std::cout, lower);
-    std::cout << "\nU\n";
-    print(std::cout, upper);
-    std::cout << "\nP\n";
-    print(std::cout, pivot);
+    std::wcout << L"A\n";
+    print(std::wcout, input);
+    std::wcout << L"\nL\n";
+    print(std::wcout, lower);
+    std::wcout << L"\nU\n";
+    print(std::wcout, upper);
+    std::wcout << L"\nP\n";
+    print(std::wcout, pivot);
 }
 
 int main() {
-    std::cout << "Example 1:\n";
+    std::wcout.imbue(std::locale(""));
+    std::wcout << L"Example 1:\n";
     matrix<double> matrix1(3, 3,
        {{1, 3, 5},
         {2, 4, 7},
         {1, 1, 0}});
     lu_decompose(matrix1);
-    std::cout << '\n';
+    std::wcout << '\n';
 
-    std::cout << "Example 2:\n";
+    std::wcout << L"Example 2:\n";
     matrix<double> matrix2(4, 4,
       {{11, 9, 24, 2},
         {1, 5, 2, 6},
         {3, 17, 18, 1},
         {2, 5, 7, 1}});
     lu_decompose(matrix2);
-    std::cout << '\n';
+    std::wcout << '\n';
     
-    std::cout << "Example 3:\n";
+    std::wcout << L"Example 3:\n";
     matrix<double> matrix3(3, 3,
       {{-5, -6, -3},
        {-1,  0, -2},
