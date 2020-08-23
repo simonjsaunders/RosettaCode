@@ -90,6 +90,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |isqrt|2020-07-16|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
+|jaro_winkler|2020-08-23|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |kdtree|2019-12-07|https://rosettacode.org/wiki/K-d_tree|
 |koch_curve|2020-05-27|https://rosettacode.org/wiki/Koch_curve|
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
@@ -239,7 +240,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |integer_roots|2020-07-16|https://rosettacode.org/wiki/Integer_roots|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
-|jaro_winkler|2020-07-31|https://rosettacode.org/wiki/Jaro-Winkler_Distance
+|jaro_winkler|2020-07-31|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |koch_curve|2020-06-08|https://rosettacode.org/wiki/Koch_curve|
 |leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |leonardo|2020-07-13|https://rosettacode.org/wiki/Leonardo_numbers|
@@ -285,7 +286,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
-|jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance
+|jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
