@@ -230,6 +230,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
+|days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
