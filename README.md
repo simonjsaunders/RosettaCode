@@ -74,6 +74,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |collapse|2020-01-08|https://rosettacode.org/wiki/Determine_if_a_string_is_collapsible|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
+|days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
