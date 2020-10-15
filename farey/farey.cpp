@@ -1,40 +1,50 @@
 #include <iostream>
 
-void print_fraction(int a, int b) {
-    std::cout << a << '/' << b;
+struct fraction {
+    fraction(int n, int d) : numerator(n), denominator(d) {}
+    int numerator;
+    int denominator;
+};
+
+std::ostream& operator<<(std::ostream& out, const fraction& f) {
+    out << f.numerator << '/' << f.denominator;
+    return out;
 }
 
-//
-// See https://en.wikipedia.org/wiki/Farey_sequence#Next_term
-//
-void print_farey_sequence(int n, bool length_only) {
-    std::cout << n << ": ";
-    int a = 0, b = 1, c = 1, d = n;
-    if (!length_only)
-        print_fraction(a, b);
-    int count = 1;
-    for (; c <= n; ++count) {
-        int k = (n + b)/d;
-        int next_c = k * c - a;
-        int next_d = k * d - b;
-        a = c;
-        b = d;
-        c = next_c;
-        d = next_d;
-        if (!length_only) {
-            std::cout << ' ';
-            print_fraction(a, b);
-        }
+class farey_sequence {
+public:
+    explicit farey_sequence(int n) : n_(n), a_(0), b_(1), c_(1), d_(n) {}
+    fraction next() {
+        // See https://en.wikipedia.org/wiki/Farey_sequence#Next_term
+        fraction result(a_, b_);
+        int k = (n_ + b_)/d_;
+        int next_c = k * c_ - a_;
+        int next_d = k * d_ - b_;
+        a_ = c_;
+        b_ = d_;
+        c_ = next_c;
+        d_ = next_d;
+        return result;
     }
-    if (length_only)
-        std::cout << count << " items";
-    std::cout << '\n';
-}
+    bool has_next() const { return a_ <= n_; }
+private:
+    int n_, a_, b_, c_, d_;
+};
 
 int main() {
-    for (int i = 1; i <= 11; ++i)
-        print_farey_sequence(i, false);
-    for (int i = 100; i <= 1000; i += 100)
-        print_farey_sequence(i, true);
+    for (int n = 1; n <= 11; ++n) {
+        farey_sequence seq(n);
+        std::cout << n << ": " << seq.next();
+        while (seq.has_next())
+            std::cout << ' ' << seq.next();
+        std::cout << '\n';
+    }
+    for (int n = 100; n <= 1000; n += 100) {
+        farey_sequence seq(n);
+        int count = 0;
+        for (; seq.has_next(); seq.next())
+            ++count;
+        std::cout << n << ": " << count << '\n';
+    }
     return 0;
 }
