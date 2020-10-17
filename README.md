@@ -141,6 +141,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
+|system_output|2020-10-17|https://rosettacode.org/wiki/Get_system_command_output|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |text_completion|2020-07-30|https://rosettacode.org/wiki/Text_Completion|
