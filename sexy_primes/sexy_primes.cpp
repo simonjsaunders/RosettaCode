@@ -24,6 +24,7 @@ int main() {
     vector<group_buffer> groups(max_group_size, group_buffer(max_groups));
     int unsexy_count = 0;
     circular_buffer<int> unsexy_primes(max_unsexy);
+    vector<int> group;
 
     for (int p = 2; p < max; ++p) {
         if (!sieve.is_prime(p))
@@ -34,7 +35,7 @@ int main() {
             unsexy_primes.push_back(p);
         } else {
             // find the groups of sexy primes that begin with p
-            vector<int> group;
+            group.clear();
             group.push_back(p);
             for (int group_size = 1; group_size < max_group_size; group_size++) {
                 int next_p = p + group_size * diff;
