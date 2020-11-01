@@ -15,5 +15,5 @@ count_jewels([S|Stones], [J|Jewels], N, R):-
     J < S,
     !,
     count_jewels([S|Stones], Jewels, N, R).
-count_jewels([_|Stones], [J|Jewels], N, R):-
-    count_jewels(Stones, [J|Jewels], N, R).
+count_jewels([_|Stones], Jewels, N, R):-
+    count_jewels(Stones, Jewels, N, R).
