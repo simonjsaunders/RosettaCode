@@ -195,6 +195,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |egyptian_division|2020-05-15|https://rosettacode.org/wiki/Egyptian_division|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
+|jewels_and_stones|2020-11-01|https://rosettacode.org/wiki/Jewels_and_Stones|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
 |koch_curve|2020-05-30|https://rosettacode.org/wiki/Koch_curve|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
