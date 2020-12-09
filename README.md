@@ -40,6 +40,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |regex|2020-07-11|https://rosettacode.org/wiki/Regular_expressions|
+|sha256merkletree|2020-12-09|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
 |sierpinski_arrowhead|2020-06-11|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sort_oid|2020-01-26|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |smarandache|2020-05-06|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
