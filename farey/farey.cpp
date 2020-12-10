@@ -40,9 +40,8 @@ int main() {
         std::cout << '\n';
     }
     for (int n = 100; n <= 1000; n += 100) {
-        farey_sequence seq(n);
         int count = 0;
-        for (; seq.has_next(); seq.next())
+        for (farey_sequence seq(n); seq.has_next(); seq.next())
             ++count;
         std::cout << n << ": " << count << '\n';
     }
