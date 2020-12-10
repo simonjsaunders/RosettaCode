@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
         std::cerr << "usage: " << argv[0] << " filename\n";
         return EXIT_FAILURE;
     }
-    std::ifstream in(argv[1]);
+    std::ifstream in(argv[1], std::ios::binary);
     if (!in) {
         std::cerr << "Cannot open file " << argv[1] << ".\n";
         return EXIT_FAILURE;
