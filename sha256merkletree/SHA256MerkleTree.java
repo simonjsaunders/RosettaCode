@@ -22,7 +22,7 @@ public class SHA256MerkleTree {
     private static String digestToString(byte[] digest) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < digest.length; ++i)
-            result.append(String.format("%02x", (int)digest[i] & 0xFF));
+            result.append(String.format("%02x", digest[i]));
         return result.toString();
     }
 
