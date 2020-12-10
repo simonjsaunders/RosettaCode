@@ -5,28 +5,33 @@
 #include <vector>
 #include <openssl/sha.h>
 
+class sha256_exception : public std::exception {
+public:
+    const char* what() const noexcept override {
+        return "SHA-256 error";
+    }
+};
+
 class sha256 {
 public:
     sha256() { reset(); }
     sha256(const sha256&) = delete;
     sha256& operator=(const sha256&) = delete;
-    bool reset() {
-        return SHA256_Init(&context_) != 0;
+    void reset() {
+        if (SHA256_Init(&context_) == 0)
+            throw sha256_exception();
     }
-    bool update(const void* data, size_t length) {
-        return SHA256_Update(&context_, data, length) != 0;
+    void update(const void* data, size_t length) {
+        if (SHA256_Update(&context_, data, length) == 0)
+            throw sha256_exception();
     }
-    bool finalize() {
-        return SHA256_Final(digest_, &context_) != 0;
-    }
-    const unsigned char* digest() const {
-        return digest_;
-    }
-    size_t length() const {
-        return SHA256_DIGEST_LENGTH;
+    std::vector<unsigned char> digest() {
+        std::vector<unsigned char> digest(SHA256_DIGEST_LENGTH);
+        if (SHA256_Final(digest.data(), &context_) == 0)
+            throw sha256_exception();
+        return digest;
     }
 private:
-    unsigned char digest_[SHA256_DIGEST_LENGTH];
     SHA256_CTX context_;
 };
 
@@ -48,8 +53,7 @@ std::vector<unsigned char> sha256_merkle_tree(std::istream& in, size_t block_siz
             break;
         md.reset();
         md.update(buffer.data(), bytes);
-        md.finalize();
-        hashes.emplace_back(md.digest(), md.digest() + md.length());
+        hashes.push_back(md.digest());
     }
     if (hashes.empty())
         return {};
@@ -64,8 +68,7 @@ std::vector<unsigned char> sha256_merkle_tree(std::istream& in, size_t block_siz
                 md.reset();
                 md.update(digest1.data(), digest1.size());
                 md.update(digest2.data(), digest2.size());
-                md.finalize();
-                digest_out.assign(md.digest(), md.digest() + md.length());
+                digest_out = md.digest();
             } else {
                 digest_out = digest1;
             }
@@ -85,6 +88,11 @@ int main(int argc, char** argv) {
         std::cerr << "Cannot open file " << argv[1] << ".\n";
         return EXIT_FAILURE;
     }
-    print_digest(std::cout, sha256_merkle_tree(in, 1024));
+    try {
+        print_digest(std::cout, sha256_merkle_tree(in, 1024));
+    } catch (const std::exception& ex) {
+        std::cerr << ex.what() << "\n";
+        return EXIT_FAILURE;
+    }
     return EXIT_SUCCESS;
 }
