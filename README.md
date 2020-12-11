@@ -103,7 +103,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-04-05|https://rosettacode.org/wiki/Long_year%3F|
-|lu_decompose|2020-04-25|https://rosettacode.org/wiki/LU_decomposition|
+|lu_decomp|2020-04-25|https://rosettacode.org/wiki/LU_decomposition|
 |lychrel|2020-01-22|https://rosettacode.org/wiki/Lychrel_numbers|
 |mac_vendor_lookup|2020-04-19|https://rosettacode.org/wiki/MAC_Vendor_Lookup|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
@@ -119,6 +119,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
+|prime_conspiracy|2020-07-28|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
