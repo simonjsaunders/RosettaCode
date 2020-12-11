@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <openssl/sha.h>
 
@@ -35,11 +36,12 @@ private:
     SHA256_CTX context_;
 };
 
-void print_digest(std::ostream& out, const std::vector<unsigned char>& digest) {
+std::string digest_to_string(const std::vector<unsigned char>& digest) {
+    std::ostringstream out;
     out << std::hex << std::setfill('0');
     for (size_t i = 0; i < digest.size(); ++i)
         out << std::setw(2) << static_cast<int>(digest[i]);
-    out << '\n';
+    return out.str();
 }
 
 std::vector<unsigned char> sha256_merkle_tree(std::istream& in, size_t block_size) {
@@ -89,7 +91,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     try {
-        print_digest(std::cout, sha256_merkle_tree(in, 1024));
+        std::cout << digest_to_string(sha256_merkle_tree(in, 1024)) << '\n';
     } catch (const std::exception& ex) {
         std::cerr << ex.what() << "\n";
         return EXIT_FAILURE;
