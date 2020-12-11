@@ -223,6 +223,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_pentagon|2020-06-07|https://rosettacode.org/wiki/Sierpinski_pentagon|
 |sort_oid|2020-05-05|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
+|stirling2|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
