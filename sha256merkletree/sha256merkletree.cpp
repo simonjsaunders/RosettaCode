@@ -36,9 +36,9 @@ private:
 };
 
 void print_digest(std::ostream& out, const std::vector<unsigned char>& digest) {
-    out << std::hex;
+    out << std::hex << std::setfill('0');
     for (size_t i = 0; i < digest.size(); ++i)
-        out << std::setw(2) << std::setfill('0') << static_cast<int>(digest[i]);
+        out << std::setw(2) << static_cast<int>(digest[i]);
     out << '\n';
 }
 
