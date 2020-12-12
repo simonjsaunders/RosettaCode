@@ -98,6 +98,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
 |kronecker_fractals|2020-05-11|https://rosettacode.org/wiki/Kronecker_product_based_fractals|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
+|last_letter_first_letter|2020-12-12|https://rosettacode.org/wiki/Last_letter-first_letter|
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |least_squares|2020-06-01|https://rosettacode.org/wiki/Logistic_Curve_Fitting_in_Epidemiology|
 |leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
