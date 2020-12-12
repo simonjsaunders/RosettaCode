@@ -4,7 +4,38 @@
 #include <iostream>
 #include <string>
 
-std::string rewrite(const std::string& s) {
+class sierpinski_curve {
+public:
+    void write(std::ostream& out, int size, double x, double y,
+               int length, int order);
+private:
+    static std::string rewrite(const std::string& s);
+    void line(std::ostream& out);
+    void execute(std::ostream& out, const std::string& s);
+    double x_;
+    double y_;
+    int angle_;
+    int length_;
+};
+
+void sierpinski_curve::write(std::ostream& out, int size, double x, double y,
+                             int length, int order) {
+    length_ = length;
+    x_ = x;
+    y_ = y;
+    angle_ = 45;
+    out << "<svg xmlns='http://www.w3.org/2000/svg' width='"
+        << size << "' height='" << size << "'>\n";
+    out << "<rect width='100%' height='100%' fill='white'/>\n";
+    out << "<path stroke-width='1' stroke='black' fill='none' d='";
+    std::string s = "F--XF--F--XF";
+    for (int i = 0; i < order; ++i)
+        s = rewrite(s);
+    execute(out, s);
+    out << "'/>\n</svg>\n";
+}
+
+std::string sierpinski_curve::rewrite(const std::string& s) {
     std::string t;
     for (char c : s) {
         if (c == 'X')
@@ -15,44 +46,38 @@ std::string rewrite(const std::string& s) {
     return t;
 }
 
-void line(std::ostream& out, double& x, double& y, double length, int angle) {
-    constexpr double pi = 3.14159265359;
-    double theta = (pi * angle)/180.0;
-    x += length * std::cos(theta);
-    y -= length * std::sin(theta);
-    out << 'L' << x << ',' << y << '\n';
+void sierpinski_curve::line(std::ostream& out) {
+    double theta = (3.14159265359 * angle_)/180.0;
+    x_ += length_ * std::cos(theta);
+    y_ -= length_ * std::sin(theta);
+    out << " L" << x_ << ',' << y_;
 }
 
-void execute(std::ostream& out, const std::string& s, double x, double y,
-             double length, int angle) {
-    out << 'M' << x << ',' << y << '\n';
+void sierpinski_curve::execute(std::ostream& out, const std::string& s) {
+    out << 'M' << x_ << ',' << y_;
     for (char c : s) {
-        if (c == 'F' || c == 'G')
-            line(out, x, y, length, angle);
-        else if (c == '+')
-            angle = (angle + 45) % 360;
-        else if (c == '-')
-            angle = (angle - 45) % 360;
+        switch (c) {
+        case 'F':
+        case 'G':
+            line(out);
+            break;
+        case '+':
+            angle_ = (angle_ + 45) % 360;
+            break;
+        case '-':
+            angle_ = (angle_ - 45) % 360;
+            break;
+        }
     }
 }
 
 int main() {
-    const int size = 545;
-    const int order = 5;
-    const double x = 5, y = 10, length = 7;
     std::ofstream out("sierpinski_curve.svg");
     if (!out) {
         std::cerr << "Cannot open output file\n";
         return 1;
     }
-    out << "<svg xmlns='http://www.w3.org/2000/svg' width='"
-        << size << "' height='" << size << "'>\n";
-    out << "<rect width='100%' height='100%' fill='white'/>\n";
-    out << "<path stroke-width='1' stroke='black' fill='none' d='";
-    std::string s = "F--XF--F--XF";
-    for (int i = 0; i < order; ++i)
-        s = rewrite(s);
-    execute(out, s, x, y, length, 45);
-    out << "'/>\n</svg>\n";
+    sierpinski_curve s;
+    s.write(out, 545, 5, 10, 7, 5);
     return 0;
 }
