@@ -1,10 +1,9 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
-#include <boost/dynamic_bitset.hpp>
 #include <boost/rational.hpp>
 
 using rational = boost::rational<unsigned long>;
-using bitset = boost::dynamic_bitset<unsigned long>;
 
 unsigned long floor(const rational& r) {
     return r.numerator()/r.denominator();
@@ -34,14 +33,15 @@ std::vector<unsigned long> continued_fraction(const rational& r) {
 }
 
 unsigned long term_number(const rational& r) {
-    bitset b;
-    bool d = true;
+    unsigned long result = 0;
+    unsigned long d = 1;
+    unsigned long p = 0;
     for (unsigned long n : continued_fraction(r)) {
-        for (unsigned long i = 0; i < n; ++i)
-            b.push_back(d);
+        for (unsigned long i = 0; i < n; ++i, ++p)
+            result |= (d << p);
         d = !d;
     }
-    return b.to_ulong();
+    return result;
 }
 
 int main() {
