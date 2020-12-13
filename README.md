@@ -60,6 +60,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |---------|--------------|----------------|
 |abbrev_easy|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
+|abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model/Identity|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
