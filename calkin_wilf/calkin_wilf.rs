@@ -1,5 +1,5 @@
 // [dependencies]
-// num-rational = "0.3"
+// num = "0.3"
 
 use num::rational::Rational;
 
