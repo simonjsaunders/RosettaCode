@@ -3,27 +3,25 @@
 #include <iostream>
 
 bool is_abc_word(const std::string& word) {
-    size_t a = std::string::npos;
-    size_t b = std::string::npos;
-    for (size_t pos = 0, n = word.size(); pos < n; ++pos) {
-        switch (word[pos]) {
+    bool a = false;
+    bool b = false;
+    for (char ch : word) {
+        switch (ch) {
         case 'a':
-            // record position of first 'a'
-            if (a == std::string::npos)
-                a = pos;
+            if (!a)
+                a = true;
             break;
         case 'b':
-            if (b == std::string::npos) {
+            if (!b) {
                 // fail if we haven't seen 'a' yet
-                if (a == std::string::npos)
+                if (!a)
                     return false;
-                // record position of first 'b'
-                b = pos;
+                b = true;
             }
             break;
         case 'c':
             // succeed iff we've seen 'b' already
-            return b != std::string::npos;
+            return b;
         }
     }
     return false;
