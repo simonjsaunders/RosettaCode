@@ -16,14 +16,12 @@ std::vector<unsigned long> continued_fraction(const rational& r) {
     unsigned long a = r.numerator();
     unsigned long b = r.denominator();
     std::vector<unsigned long> result;
-    for (;;) {
+    do {
         result.push_back(a/b);
         unsigned long c = a;
         a = b;
         b = c % b;
-        if (a == 1)
-            break;
-    }
+    } while (a != 1);
     if (result.size() > 0 && result.size() % 2 == 0) {
         --result.back();
         result.push_back(1);
