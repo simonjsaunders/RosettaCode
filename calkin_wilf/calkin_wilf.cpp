@@ -10,16 +10,9 @@ unsigned long floor(const rational& r) {
     return r.numerator()/r.denominator();
 }
 
-class calkin_wilf {
-public:
-    rational next() {
-        rational term = term_;
-        term_ = 1UL/(2UL * floor(term) + 1UL - term);
-        return term;
-    }
-private:
-    rational term_ = 0;
-};
+rational calkin_wilf_next(const rational& term) {
+    return 1UL/(2UL * floor(term) + 1UL - term);
+}
 
 std::vector<unsigned long> continued_fraction(const rational& r) {
     unsigned long a = r.numerator();
@@ -52,11 +45,11 @@ unsigned long term_number(const rational& r) {
 }
 
 int main() {
-    calkin_wilf cf;
+    rational term = 0;
     std::cout << "First 21 terms of the Calkin-Wilf sequence are:\n";
     for (int i = 0; i <= 20; ++i) {
-        rational term = cf.next();
         std::cout << std::setw(2) << i << ": " << term << '\n';
+        term = calkin_wilf_next(term);
     }
     rational r(83116, 51639);
     std::cout << r << " is the " << term_number(r) << "th term of the sequence.\n";
