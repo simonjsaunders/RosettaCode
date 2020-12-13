@@ -4,7 +4,7 @@
 use num::rational::Rational;
 
 fn calkin_wilf_next(term: &Rational) -> Rational {
-    Rational::from_integer(1)/(Rational::from_integer(2) * term.floor() + 1 - term)
+    Rational::from_integer(1) / (Rational::from_integer(2) * term.floor() + 1 - term)
 }
 
 fn continued_fraction(r: &Rational) -> Vec<isize> {
@@ -12,10 +12,10 @@ fn continued_fraction(r: &Rational) -> Vec<isize> {
     let mut b = *r.denom();
     let mut result = Vec::new();
     loop {
-        result.push(a/b);
-        let c = a;
+        let (q, r) = num::integer::div_rem(a, b);
+        result.push(q);
         a = b;
-        b = c % b;
+        b = r;
         if a == 1 {
             break;
         }
