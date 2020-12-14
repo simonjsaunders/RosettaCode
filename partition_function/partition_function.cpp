@@ -9,24 +9,22 @@ big_int partitions(int n) {
     std::vector<big_int> p(n + 1);
     p[0] = 1;
     for (int i = 1; i <= n; ++i) {
-        big_int result = 0;
         for (int k = 1, sign = 1;; ++k, sign = -sign) {
             int m = (k * (3*k - 1))/2;
             if (m > i)
                 break;
             if (sign == 1)
-                result += p[i - m];
+                p[i] += p[i - m];
             else
-                result -= p[i - m];
+                p[i] -= p[i - m];
             m = (k * (3*k + 1))/2;
             if (m > i)
                 break;
             if (sign == 1)
-                result += p[i - m];
+                p[i] += p[i - m];
             else
-                result -= p[i - m];
+                p[i] -= p[i - m];
         }
-        p[i] = result;
     }
     return p[n];
 }
