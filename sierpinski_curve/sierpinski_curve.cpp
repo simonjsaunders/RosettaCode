@@ -6,8 +6,7 @@
 
 class sierpinski_curve {
 public:
-    void write(std::ostream& out, int size, double x, double y,
-               int length, int order);
+    void write(std::ostream& out, int size, int length, int order);
 private:
     static std::string rewrite(const std::string& s);
     void line(std::ostream& out);
@@ -18,11 +17,10 @@ private:
     int length_;
 };
 
-void sierpinski_curve::write(std::ostream& out, int size, double x, double y,
-                             int length, int order) {
+void sierpinski_curve::write(std::ostream& out, int size, int length, int order) {
     length_ = length;
-    x_ = x;
-    y_ = y;
+    x_ = length/std::sqrt(2.0);
+    y_ = 2 * x_;
     angle_ = 45;
     out << "<svg xmlns='http://www.w3.org/2000/svg' width='"
         << size << "' height='" << size << "'>\n";
@@ -78,6 +76,6 @@ int main() {
         return 1;
     }
     sierpinski_curve s;
-    s.write(out, 545, 5, 10, 7, 5);
+    s.write(out, 545, 7, 5);
     return 0;
 }
