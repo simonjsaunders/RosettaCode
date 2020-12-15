@@ -198,6 +198,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |---------|--------------|----------------|
 |abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Abbreviations,_automatic|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
+|alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Attractive_numbers|
 |bell|2020-05-13|https://rosettacode.org/wiki/Bell_numbers|
 |ddate|2020-05-17|https://rosettacode.org/wiki/Discordian_date|
