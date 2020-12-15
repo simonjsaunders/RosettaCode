@@ -31,13 +31,11 @@ print_alternade_words(_).
 
 odd_even_words(Word, Word1, Word2):-
     string_chars(Word, Chars),
-    odd_even_chars(Chars, Chars1, Chars2, 0),
+    odd_even_chars(Chars, Chars1, Chars2),
     string_chars(Word1, Chars1),
     string_chars(Word2, Chars2).
 
-odd_even_chars([], [], [], _):-!.
-odd_even_chars([Ch|Chars], [Ch|Chars1], Chars2, 0):-
-    !,
-    odd_even_chars(Chars, Chars1, Chars2, 1).
-odd_even_chars([Ch|Chars], Chars1, [Ch|Chars2], 1):-
-    odd_even_chars(Chars, Chars1, Chars2, 0).
+odd_even_chars([], [], []):-!.
+odd_even_chars([Ch], [Ch], []):-!.
+odd_even_chars([Ch1, Ch2|Chars], [Ch1|Chars1], [Ch2|Chars2]):-
+    odd_even_chars(Chars, Chars1, Chars2).
