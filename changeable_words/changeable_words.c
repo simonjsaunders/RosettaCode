@@ -78,7 +78,7 @@ int main(int argc, char** argv) {
         for (size_t j = 0; j < size; ++j) {
             const string_t* str2 = &dictionary[j];
             if (i != j && hamming_distance(str1, str2) == 1)
-                printf("%2d : %-14s -> %s\n", n++, str1->str, str2->str);
+                printf("%2d: %-14s -> %s\n", n++, str1->str, str2->str);
         }
     }
     free(dictionary);
