@@ -72,6 +72,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |calkin_wilf|2020-12-12|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
 |canonicalize_cidr|2020-07-12|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |carmichael|2020-06-03|https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes|
+|changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
 |cholesky|2020-04-25|https://rosettacode.org/wiki/Cholesky_decomposition|
 |circular_primes|2020-05-13|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort2|2020-06-26|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
