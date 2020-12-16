@@ -9,13 +9,12 @@ fn partitions(n: usize) -> Integer {
     for i in 1..=n {
         let mut num = Integer::from(0);
         let mut k = 1;
-        let mut sign = 1;
         loop {
-            let mut j = (k * (3 * k - 1))/2;
+            let mut j = (k * (3 * k - 1)) / 2;
             if j > i {
                 break;
             }
-            if sign == 1 {
+            if (k & 1) == 1 {
                 num += &p[i - j];
             } else {
                 num -= &p[i - j];
@@ -24,13 +23,12 @@ fn partitions(n: usize) -> Integer {
             if j > i {
                 break;
             }
-            if sign == 1 {
+            if (k & 1) == 1 {
                 num += &p[i - j];
             } else {
                 num -= &p[i - j];
             }
             k += 1;
-            sign = -sign;
         }
         p.push(num);
     }

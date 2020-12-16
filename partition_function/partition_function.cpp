@@ -9,18 +9,18 @@ big_int partitions(int n) {
     std::vector<big_int> p(n + 1);
     p[0] = 1;
     for (int i = 1; i <= n; ++i) {
-        for (int k = 1, sign = 1;; ++k, sign = -sign) {
+        for (int k = 1;; ++k) {
             int m = (k * (3*k - 1))/2;
             if (m > i)
                 break;
-            if (sign == 1)
+            if (k & 1)
                 p[i] += p[i - m];
             else
                 p[i] -= p[i - m];
             m = (k * (3*k + 1))/2;
             if (m > i)
                 break;
-            if (sign == 1)
+            if (k & 1)
                 p[i] += p[i - m];
             else
                 p[i] -= p[i - m];
