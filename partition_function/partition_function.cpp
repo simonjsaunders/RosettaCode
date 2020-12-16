@@ -10,20 +10,20 @@ big_int partitions(int n) {
     p[0] = 1;
     for (int i = 1; i <= n; ++i) {
         for (int k = 1;; ++k) {
-            int m = (k * (3*k - 1))/2;
-            if (m > i)
+            int j = (k * (3*k - 1))/2;
+            if (j > i)
                 break;
             if (k & 1)
-                p[i] += p[i - m];
+                p[i] += p[i - j];
             else
-                p[i] -= p[i - m];
-            m = (k * (3*k + 1))/2;
-            if (m > i)
+                p[i] -= p[i - j];
+            j = (k * (3*k + 1))/2;
+            if (j > i)
                 break;
             if (k & 1)
-                p[i] += p[i - m];
+                p[i] += p[i - j];
             else
-                p[i] -= p[i - m];
+                p[i] -= p[i - j];
         }
     }
     return p[n];
