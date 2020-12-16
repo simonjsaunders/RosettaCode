@@ -205,6 +205,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |attractive_numbers|2020-05-10|https://rosettacode.org/wiki/Attractive_numbers|
 |bell|2020-05-13|https://rosettacode.org/wiki/Bell_numbers|
+|changeable_words|2020-12-16|https://rosettacode.org/wiki/Changeable_words|
 |ddate|2020-05-17|https://rosettacode.org/wiki/Discordian_date|
 |digit_sum|2020-05-13|https://rosettacode.org/wiki/Sum_digits_of_an_integer|
 |digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
