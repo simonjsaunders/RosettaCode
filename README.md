@@ -174,6 +174,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |abbrev_simple|2020-02-29|https://rosettacode.org/wiki/Abbreviations,_simple|
+|abc_words|2020-12-19|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile2|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
