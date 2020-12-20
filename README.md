@@ -187,6 +187,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
+|odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
