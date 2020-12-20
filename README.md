@@ -119,6 +119,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |next_highest_int|2020-05-06|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-12-13|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
+|odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
