@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     word_list odd_words, even_words;
 
     for (const std::string& word : dictionary) {
-        if (word.size() < min_length + min_length/2)
+        if (word.size() < min_length + 2*(min_length/2))
             continue;
         std::string odd_word, even_word;
         for (auto w = word.begin(); w != word.end(); ++w) {
