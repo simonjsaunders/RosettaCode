@@ -16,12 +16,11 @@ fn next_prime_digit_number(n: u32) -> u32 {
     }
 }
 
-fn digit_sum(n: u32) -> u32 {
+fn digit_sum(mut n: u32) -> u32 {
     let mut sum = 0;
-    let mut m = n;
-    while m > 0 {
-        sum += m % 10;
-        m /= 10;
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
     }
     return sum;
 }
