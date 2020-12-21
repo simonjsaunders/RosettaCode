@@ -137,6 +137,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_conspiracy|2020-07-28|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
+|prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |ramanujan|2020-06-04|https://rosettacode.org/wiki/Ramanujan%27s_constant|
