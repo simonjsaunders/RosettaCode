@@ -333,6 +333,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-07-29|https://rosettacode.org/wiki/Textonyms|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
