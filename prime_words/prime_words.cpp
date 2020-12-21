@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     int n = 0;
     while (getline(in, line)) {
         if (std::all_of(line.begin(), line.end(),
-                        [&sieve](char c){ return sieve.is_prime(c); })) {
+                        [&sieve](unsigned char c){ return sieve.is_prime(c); })) {
             ++n;
             std::cout << std::right << std::setw(2) << n << ": "
                 << std::left << std::setw(10) << line;
