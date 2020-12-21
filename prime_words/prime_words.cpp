@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     std::string line;
-    prime_sieve sieve(CHAR_MAX);
+    prime_sieve sieve(UCHAR_MAX);
     int n = 0;
     while (getline(in, line)) {
         if (std::all_of(line.begin(), line.end(),
