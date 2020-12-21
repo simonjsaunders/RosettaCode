@@ -84,6 +84,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |divisor_count|2020-12-21|https://rosettacode.org/wiki/Tau_function|
+|divisor_product|2020-12-21|https://rosettacode.org/wiki/Product_of_divisors|
 |divisor_sum|2020-12-21|https://rosettacode.org/wiki/Sum_of_divisors|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
