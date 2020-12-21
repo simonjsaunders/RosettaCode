@@ -26,6 +26,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |douglas_peucker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |four_is|2020-06-04|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
@@ -84,6 +85,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
+|extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
 |file_extension|2020-06-04|https://rosettacode.org/wiki/File_extension_is_in_extensions_list|
