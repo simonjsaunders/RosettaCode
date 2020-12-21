@@ -15,10 +15,10 @@ int main(int argc, char** argv) {
     }
     std::string line;
     prime_sieve sieve(UCHAR_MAX);
+    auto is_prime = [&sieve](unsigned char c){ return sieve.is_prime(c); };
     int n = 0;
     while (getline(in, line)) {
-        if (std::all_of(line.begin(), line.end(),
-                        [&sieve](unsigned char c){ return sieve.is_prime(c); })) {
+        if (std::all_of(line.begin(), line.end(), is_prime)) {
             ++n;
             std::cout << std::right << std::setw(2) << n << ": "
                 << std::left << std::setw(10) << line;
