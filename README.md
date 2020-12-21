@@ -296,6 +296,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |peano_curve|2020-07-15|https://rosettacode.org/wiki/Peano_curve|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
+|prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
 |semordnilap|2020-06-28|https://rosettacode.org/wiki/Semordnilap|
 |sexy_primes|2020-06-28|https://rosettacode.org/wiki/Sexy_primes|
