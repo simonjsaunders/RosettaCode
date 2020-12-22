@@ -1,39 +1,10 @@
-let monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-let monthNames = ["January", "February", "March", "April", "May", "June", "July",
-    "August", "September", "October", "November", "December"]
+import Foundation
+
 let monthWidth = 20
 let monthGap = 2
 let dayNames = "Su Mo Tu We Th Fr Sa"
-
-// Gauss's algorithm for calculating the day of the week for 1 Jan
-func firstDayOfYear(year: Int) -> Int {
-    let c = year / 100
-    let y = year % 100 - 1
-    return (1 + 5 * (y % 4) + 3 * y + 5 * (c % 4)) % 7
-}
-
-func isLeapYear(year: Int) -> Bool {
-    return (year % 100 == 0) ? year % 400 == 0 : year % 4 == 0
-}
-
-func firstDayOfMonth(year: Int, month: Int) -> Int {
-    var day = firstDayOfYear(year: year)
-    for m in 1..<month {
-        day += monthDays[m - 1]
-        if m == 2 && isLeapYear(year: year) {
-            day += 1
-        }
-    }
-    return day % 7
-}
-
-func daysInMonth(year: Int, month: Int) -> Int {
-    var days = monthDays[month - 1]
-    if isLeapYear(year: year) && month == 2 {
-        days += 1
-    }
-    return days
-}
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "MMMM"
 
 func rpad(string: String, width: Int) -> String {
     return string.count >= width ? string
@@ -55,13 +26,21 @@ func centre(string: String, width: Int) -> String {
 }
 
 func formatMonth(year: Int, month: Int) -> [String] {
+    let calendar = Calendar.current
+    var dc = DateComponents()
+    dc.year = year
+    dc.month = month
+    dc.day = 1
+    let date = calendar.date(from: dc)!
+    let firstDay = calendar.component(.weekday, from: date) - 1
+    let range = calendar.range(of: .day, in: .month, for: date)!
+    let daysInMonth = range.count
     var lines: [String] = []
-    let firstDay = firstDayOfMonth(year: year, month: month)
-    lines.append(centre(string: monthNames[month - 1], width: monthWidth))
+    lines.append(centre(string: dateFormatter.string(from: date), width: monthWidth))
     lines.append(dayNames)
     var padWidth = 2
     var line = String(repeating: " ", count: 3 * firstDay)
-    for day in 1...daysInMonth(year: year, month: month) {
+    for day in 1...daysInMonth {
         line += rpad(string: String(day), width: padWidth)
         padWidth = 3
         if (firstDay + day) % 7 == 0 {
