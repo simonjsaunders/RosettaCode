@@ -27,10 +27,7 @@ func centre(string: String, width: Int) -> String {
 
 func formatMonth(year: Int, month: Int) -> [String] {
     let calendar = Calendar.current
-    var dc = DateComponents()
-    dc.year = year
-    dc.month = month
-    dc.day = 1
+    let dc = DateComponents(year: year, month: month, day: 1)
     let date = calendar.date(from: dc)!
     let firstDay = calendar.component(.weekday, from: date) - 1
     let range = calendar.range(of: .day, in: .month, for: date)!
