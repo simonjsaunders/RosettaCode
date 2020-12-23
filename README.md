@@ -341,6 +341,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nimber|2020-07-27|https://rosettacode.org/wiki/Nimber_arithmetic|
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
+|prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
