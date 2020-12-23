@@ -163,6 +163,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |system_output|2020-10-17|https://rosettacode.org/wiki/Get_system_command_output|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
+|tau_number|2020-12-23|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |text_completion|2020-07-30|https://rosettacode.org/wiki/Text_Completion|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
