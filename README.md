@@ -346,6 +346,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-07-29|https://rosettacode.org/wiki/Textonyms|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
+|unprimeable|2020-12-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-07-23|https://rosettacode.org/wiki/Van_Eck_sequence|
 |water|2020-08-23|https://rosettacode.org/wiki/Water_collected_between_towers|
 |word_freq|2020-07-28|https://rosettacode.org/wiki/Word_frequency|
