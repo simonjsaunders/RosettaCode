@@ -1,5 +1,6 @@
 #include <iomanip>
 #include <iostream>
+#include <list>
 #include <string>
 #include <vector>
 #include <utility>
@@ -22,7 +23,7 @@ public:
     const std::string& name() const {
         return name_;
     }
-    const std::vector<nest_tree>& children() const {
+    const std::list<nest_tree>& children() const {
         return children_;
     }
     bool equals(const nest_tree& n) const {
@@ -36,7 +37,7 @@ private:
             child.print(out, level + 1);
     }
     std::string name_;
-    std::vector<nest_tree> children_;
+    std::list<nest_tree> children_;
 };
 
 bool operator==(const nest_tree& a, const nest_tree& b) {
@@ -78,10 +79,10 @@ private:
 int main() {
     nest_tree n("RosettaCode");
     auto& child1 = n.add_child("rocks");
+    auto& child2 = n.add_child("mocks");
     child1.add_child("code");
     child1.add_child("comparison");
     child1.add_child("wiki");
-    auto& child2 = n.add_child("mocks");
     child2.add_child("trolling");
     
     std::cout << "Initial nest format:\n";
