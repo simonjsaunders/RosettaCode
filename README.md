@@ -327,6 +327,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ddate|2020-07-23|https://rosettacode.org/wiki/Discordian_date|
 |divcount|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_with_exactly_n_divisors|
 |divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
+|divisor_count|2020-12-23|https://rosettacode.org/wiki/Tau_function|
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
