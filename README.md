@@ -337,6 +337,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
+|leonardo|2020-12-26|https://rosettacode.org/wiki/Leonardo_numbers|
 |levenshtein|2020-12-24|https://rosettacode.org/wiki/Levenshtein_distance|
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
