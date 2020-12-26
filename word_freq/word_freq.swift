@@ -18,7 +18,7 @@ func printTopWords(path: String, count: Int) throws {
     let wordCounts = dict.sorted(by: {$0.1 > $1.1})
     // print the top count words
     print("Rank\tWord\tCount")
-    for (i, (word, n)) in wordCounts[0..<min(count, wordCounts.count)].enumerated() {
+    for (i, (word, n)) in wordCounts.prefix(count).enumerated() {
         print("\(i + 1)\t\(word)\t\(n)")
     }
 }
