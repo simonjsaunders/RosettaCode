@@ -1,3 +1,5 @@
+import Foundation
+
 class BitArray {
     var array: [UInt32]
 
@@ -119,5 +121,7 @@ while count < 600 || found < 10 {
     n += 1
 }
 for i in 0..<10 {
-    print("Least unprimeable number ending in \(i): \(lowest[i])")
+    let number = NSNumber(value: lowest[i])
+    let str = NumberFormatter.localizedString(from: number, number: .decimal)
+    print("Least unprimeable number ending in \(i): \(str)")
 }
