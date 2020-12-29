@@ -94,7 +94,7 @@ auto lu_decompose(const matrix<scalar_type>& input) {
         size_t max_index = j;
         scalar_type max_value = 0;
         for (size_t i = j; i < n; ++i) {
-            scalar_type value = std::abs(input1(i, j));
+            scalar_type value = std::abs(input1(perm[i], j));
             if (value > max_value) {
                 max_index = i;
                 max_value = value;
