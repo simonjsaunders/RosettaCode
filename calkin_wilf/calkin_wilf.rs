@@ -43,9 +43,9 @@ fn term_number(r: &Rational) -> usize {
 }
 
 fn main() {
-    println!("First 21 terms of the Calkin-Wilf sequence are:");
-    let mut term = Rational::from_integer(0);
-    for i in 0..=20 {
+    println!("First 20 terms of the Calkin-Wilf sequence are:");
+    let mut term = Rational::from_integer(1);
+    for i in 1..=20 {
         println!("{:2}: {}", i, term);
         term = calkin_wilf_next(&term);
     }

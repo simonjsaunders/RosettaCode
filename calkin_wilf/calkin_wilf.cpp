@@ -42,9 +42,9 @@ unsigned long term_number(const rational& r) {
 }
 
 int main() {
-    rational term = 0;
-    std::cout << "First 21 terms of the Calkin-Wilf sequence are:\n";
-    for (int i = 0; i <= 20; ++i) {
+    rational term = 1;
+    std::cout << "First 20 terms of the Calkin-Wilf sequence are:\n";
+    for (int i = 1; i <= 20; ++i) {
         std::cout << std::setw(2) << i << ": " << term << '\n';
         term = calkin_wilf_next(term);
     }
