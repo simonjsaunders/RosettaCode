@@ -135,6 +135,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |peano_curve|2020-12-12|https://rosettacode.org/wiki/Peano_curve|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
+|powerful|2020-12-30|https://rosettacode.org/wiki/Powerful_numbers|
 |prime_conspiracy|2020-07-28|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
