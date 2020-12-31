@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <numeric>
 #include <sstream>
 #include <vector>
@@ -100,6 +101,8 @@ auto lu_decompose(const matrix<scalar_type>& input) {
                 max_value = value;
             }
         }
+        if (max_value <= std::numeric_limits<scalar_type>::epsilon())
+            throw std::runtime_error("matrix is singular");
         if (j != max_index)
             std::swap(perm[j], perm[max_index]);
         size_t jj = perm[j];
@@ -128,15 +131,19 @@ auto lu_decompose(const matrix<scalar_type>& input) {
 
 template <typename scalar_type>
 void show_lu_decomposition(const matrix<scalar_type>& input) {
-    auto result(lu_decompose(input));
-    std::wcout << L"A\n";
-    print(std::wcout, input);
-    std::wcout << L"\nL\n";
-    print(std::wcout, std::get<0>(result));
-    std::wcout << L"\nU\n";
-    print(std::wcout, std::get<1>(result));
-    std::wcout << L"\nP\n";
-    print(std::wcout, std::get<2>(result));
+    try {
+        std::wcout << L"A\n";
+        print(std::wcout, input);
+        auto result(lu_decompose(input));
+        std::wcout << L"\nL\n";
+        print(std::wcout, std::get<0>(result));
+        std::wcout << L"\nU\n";
+        print(std::wcout, std::get<1>(result));
+        std::wcout << L"\nP\n";
+        print(std::wcout, std::get<2>(result));
+    } catch (const std::exception& ex) {
+        std::cerr << ex.what() << '\n';
+    }
 }
 
 int main() {
@@ -164,6 +171,14 @@ int main() {
        {-1,  0, -2},
        {-3, -4, -7}});
     show_lu_decomposition(matrix3);
+    std::wcout << '\n';
+    
+    std::wcout << L"Example 4:\n";
+    matrix<double> matrix4(3, 3,
+      {{1, 2, 3},
+       {4, 5, 6},
+       {7, 8, 9}});
+    show_lu_decomposition(matrix4);
 
     return 0;
 }
