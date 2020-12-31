@@ -68,12 +68,14 @@ std::vector<scalar_type> gauss_partial(const matrix<scalar_type>& a0,
         scalar_type max_value = 0;
         for (size_t i = k; i < n; ++i) {
             // compute scale factor = max abs in row
-            scalar_type scale_factor = -1;
+            scalar_type scale_factor = 0;
             for (size_t j = k; j < n; ++j) {
                 scalar_type value = std::abs(a(i, j));
                 if (value > scale_factor)
                     scale_factor = value;
             }
+            if (scale_factor == 0)
+                continue;
             // scale the abs used to pick the pivot
             scalar_type abs = std::abs(a(i, k))/scale_factor;
             if (abs > max_value) {
