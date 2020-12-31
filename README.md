@@ -97,6 +97,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |four_is|2020-06-03|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-01-17|https://rosettacode.org/wiki/Four_is_magic|
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
+|gaussian_elimination|2020-12-31|https://rosettacode.org/wiki/Gaussian_elimination|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
