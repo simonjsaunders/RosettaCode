@@ -35,6 +35,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
+|nonoblock|2021-01-01|https://rosettacode.org/wiki/Nonoblock|
 |nsmooth|2020-05-15|https://rosettacode.org/wiki/N-smooth_numbers|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
