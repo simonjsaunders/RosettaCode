@@ -4,20 +4,20 @@ class BitArray {
     var array: [UInt32]
 
     init(size: Int) {
-        self.array = Array(repeating: 0, count: (size + 31)/32)
+        array = Array(repeating: 0, count: (size + 31)/32)
     }
     
     func get(index: Int) -> Bool {
         let bit = UInt32(1) << (index & 31)
-        return (self.array[index >> 5] & bit) != 0
+        return (array[index >> 5] & bit) != 0
     }
     
     func set(index: Int, value: Bool) {
         let bit = UInt32(1) << (index & 31)
         if value {
-            self.array[index >> 5] |= bit
+            array[index >> 5] |= bit
         } else {
-            self.array[index >> 5] &= ~bit
+            array[index >> 5] &= ~bit
         }
     }
 }
@@ -26,14 +26,14 @@ class PrimeSieve {
     var composite: BitArray
     
     init(size: Int) {
-        self.composite = BitArray(size: size/2)
+        composite = BitArray(size: size/2)
         var p = 3
         while p * p <= size {
-            if !self.composite.get(index: p/2 - 1) {
+            if !composite.get(index: p/2 - 1) {
                 let inc = p * 2
                 var q = p * p
                 while q <= size {
-                    self.composite.set(index: q/2 - 1, value: true)
+                    composite.set(index: q/2 - 1, value: true)
                     q += inc
                 }
             }
@@ -48,7 +48,7 @@ class PrimeSieve {
         if (number & 1) == 0 {
             return number == 2
         }
-        return !self.composite.get(index: number/2 - 1)
+        return !composite.get(index: number/2 - 1)
     }
 }
 
