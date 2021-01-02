@@ -346,6 +346,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
 |nimber|2020-07-27|https://rosettacode.org/wiki/Nimber_arithmetic|
+|nonoblock|2021-01-02|https://rosettacode.org/wiki/Nonoblock|
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
