@@ -23,7 +23,7 @@ class BitArray {
 }
 
 class PrimeSieve {
-    var composite: BitArray
+    let composite: BitArray
     
     init(size: Int) {
         composite = BitArray(size: size/2)
