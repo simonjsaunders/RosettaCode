@@ -16,6 +16,8 @@ bool is_word_char(char ch) {
 // Performs in-place redaction of the target with the specified options.
 void redact(char* text, const char* target, redact_options options) {
     size_t target_length = strlen(target);
+    if (target_length == 0)
+        return;
     char* start = text;
     char* end = text + strlen(text);
     while (start < end) {
