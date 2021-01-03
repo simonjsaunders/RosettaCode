@@ -8,10 +8,10 @@ func nonoblock(cells: Int, blocks: [Int]) {
         return
     }
 
-    func solve(cells: Int, index: Int, totalBlockSize: Int) {
+    func solve(cells: Int, index: Int, totalBlockSize: Int, offset: Int) {
         if index == blocks.count {
             count += 1
-            printSolution()
+            print("\(String(format: "%2d", count))  \(String(output))")
             return
         }
         let blockSize = blocks[index]
@@ -19,36 +19,22 @@ func nonoblock(cells: Int, blocks: [Int]) {
         let t = totalBlockSize - blockSize
         var c = cells - (blockSize + 1)
         for pos in 0...maxPos {
-            positions[index] = pos
-            solve(cells: c, index: index + 1, totalBlockSize: t)
+            fill(value: ".", offset: offset, count: maxPos + blockSize)
+            fill(value: "#", offset: offset + pos, count: blockSize)
+            solve(cells: c, index: index + 1, totalBlockSize: t,
+                  offset: offset + blockSize + pos + 1)
             c -= 1
         }
     }
 
-    func printSolution() {
-        var str = String(format: "%2d  ", count)
-        var c = 0
-        for i in 0..<blocks.count {
-            var n = positions[i]
-            if i > 0 {
-                n += 1
-            }
-            if n > 0 {
-                str.append(String(repeating: ".", count: n))
-                c += n
-            }
-            str.append(String(repeating: "#", count: blocks[i]))
-            c += blocks[i]
-        }
-        if c < cells {
-            str.append(String(repeating: ".", count: cells - c))
-        }
-        print(str)
+    func fill(value: Character, offset: Int, count: Int) {
+        output.replaceSubrange(offset..<offset+count,
+                               with: repeatElement(value, count: count))
     }
     
-    var positions = Array(repeating: 0, count: blocks.count)
+    var output: [Character] = Array(repeating: ".", count: cells)
     var count = 0
-    solve(cells: cells, index: 0, totalBlockSize: totalBlockSize)
+    solve(cells: cells, index: 0, totalBlockSize: totalBlockSize, offset: 0)
 }
 
 nonoblock(cells: 5, blocks: [2, 1])
