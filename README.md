@@ -37,6 +37,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |nonoblock|2021-01-01|https://rosettacode.org/wiki/Nonoblock|
 |nsmooth|2020-05-15|https://rosettacode.org/wiki/N-smooth_numbers|
+|odd_even_words|2021-01-16|https://rosettacode.org/wiki/Find_words_which_odd_letters_are_consonants_and_even_letters_are_vowels_or_vice_versa|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-05-15|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
