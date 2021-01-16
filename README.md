@@ -339,6 +339,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_count|2020-12-23|https://rosettacode.org/wiki/Tau_function|
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+|hofstadter_q_seq|2021-01-16|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
