@@ -54,6 +54,6 @@ int main() {
         }
     }
     safe_primes.print(std::cout, "safe");
-    unsafe_primes.print(std::cout, "safe");
+    unsafe_primes.print(std::cout, "unsafe");
     return 0;
 }
