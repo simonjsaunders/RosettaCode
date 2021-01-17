@@ -10,29 +10,31 @@ const int limit2 = 10000000;
 class prime_info {
 public:
     explicit prime_info(int max) : max_print(max) {}
-
-    void add_prime(int prime) {
-        ++count2;
-        if (prime < limit1)
-            ++count1;
-        if (count2 <= max_print) {
-            if (count2 > 1)
-                out << ' ';
-            out << prime;
-        }
-    }
-    
-    void print(std::ostream& os, const char* name) const {
-        os << "First " << max_print << " " << name << " primes: " << out.str() << '\n';
-        os << "Number of " << name << " primes below " << limit1 << ": " << count1 << '\n';
-        os << "Number of " << name << " primes below " << limit2 << ": " << count2 << '\n';
-    }
+    void add_prime(int prime);
+    void print(std::ostream& os, const char* name) const;
 private:
     int max_print;
     int count1 = 0;
     int count2 = 0;
     std::ostringstream out;
 };
+
+void prime_info::add_prime(int prime) {
+    ++count2;
+    if (prime < limit1)
+        ++count1;
+    if (count2 <= max_print) {
+        if (count2 > 1)
+            out << ' ';
+        out << prime;
+    }
+}
+
+void prime_info::print(std::ostream& os, const char* name) const {
+    os << "First " << max_print << " " << name << " primes: " << out.str() << '\n';
+    os << "Number of " << name << " primes below " << limit1 << ": " << count1 << '\n';
+    os << "Number of " << name << " primes below " << limit2 << ": " << count2 << '\n';
+}
 
 int main() {
     // find the prime numbers up to limit2
