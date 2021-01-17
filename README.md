@@ -357,6 +357,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
 |safe_primes|2021-01-17|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|strongweak|2021-01-17|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-07-29|https://rosettacode.org/wiki/Textonyms|
