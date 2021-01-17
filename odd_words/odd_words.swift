@@ -14,7 +14,7 @@ func pad(string: String, width: Int) -> String {
 
 func printWords(words: [(String,String)]) {
     for (n, (word1, word2)) in words.enumerated() {
-        print("\(String(format: "%d", n + 1)): \(pad(string: word1, width: 14))\(word2)")
+        print("\(String(format: "%2d", n + 1)): \(pad(string: word1, width: 14))\(word2)")
     }
 }
 
