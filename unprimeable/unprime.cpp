@@ -43,7 +43,6 @@ int main() {
 
     // print numbers with commas
     std::cout.imbue(std::locale(""));
-    std::cout << std::fixed;
 
     std::cout << "First 35 unprimeable numbers:\n";
     integer n = 100;
