@@ -4,11 +4,37 @@
 #include <sstream>
 #include "prime_sieve.hpp"
 
-int main() {
-    const int limit1 = 1000000;
-    const int limit2 = 10000000;
-    const int max_print[2] = { 35, 40 };
+const int limit1 = 1000000;
+const int limit2 = 10000000;
 
+class prime_info {
+public:
+    explicit prime_info(int max) : max_print(max) {}
+
+    void add_prime(int prime) {
+        ++count2;
+        if (prime < limit1)
+            ++count1;
+        if (count2 <= max_print) {
+            if (count2 > 1)
+                out << ' ';
+            out << prime;
+        }
+    }
+    
+    void print(std::ostream& os, const char* name) const {
+        os << "First " << max_print << " " << name << " primes: " << out.str() << '\n';
+        os << "Number of " << name << " primes below " << limit1 << ": " << count1 << '\n';
+        os << "Number of " << name << " primes below " << limit2 << ": " << count2 << '\n';
+    }
+private:
+    int max_print;
+    int count1 = 0;
+    int count2 = 0;
+    std::ostringstream out;
+};
+
+int main() {
     // find the prime numbers up to limit2
     prime_sieve sieve(limit2);
 
@@ -17,27 +43,17 @@ int main() {
     std::cout << std::fixed;
 
     // count and print safe/unsafe prime numbers
-    int count1[2] = { 0 };
-    int count2[2] = { 0 };
-    std::ostringstream out[2];
-    const char* safety[2] = { "safe", "unsafe" };
+    prime_info safe_primes(35);
+    prime_info unsafe_primes(40);
     for (int p = 2; p < limit2; ++p) {
-        if (!sieve.is_prime(p))
-            continue;
-        int safe = sieve.is_prime((p - 1)/2) ? 0 : 1;
-        ++count2[safe];
-        if (p < limit1)
-            ++count1[safe];
-        if (count2[safe] <= max_print[safe]) {
-            if (count2[safe] > 1)
-                out[safe] << ' ';
-            out[safe] << p;
+        if (sieve.is_prime(p)) {
+            if (sieve.is_prime((p - 1)/2))
+                safe_primes.add_prime(p);
+            else
+                unsafe_primes.add_prime(p);
         }
     }
-    for (int i = 0; i < 2; ++i) {
-        std::cout << "First " << max_print[i] << " " << safety[i] << " primes: " << out[i].str() << '\n';
-        std::cout << "Number of " << safety[i] << " primes below " << limit1 << ": " << count1[i] << '\n';
-        std::cout << "Number of " << safety[i] << " primes below " << limit2 << ": " << count2[i] << '\n';
-    }
+    safe_primes.print(std::cout, "safe");
+    unsafe_primes.print(std::cout, "safe");
     return 0;
 }
