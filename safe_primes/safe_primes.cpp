@@ -40,7 +40,6 @@ int main() {
 
     // write numbers with groups of digits separated according to the system default locale
     std::cout.imbue(std::locale(""));
-    std::cout << std::fixed;
 
     // count and print safe/unsafe prime numbers
     prime_info safe_primes(35);
