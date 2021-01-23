@@ -9,26 +9,16 @@ func isVowel(_ char: Character) -> Bool {
     }
 }
 
+func alternatingVowelsAndConsonants(word: String) -> Bool {
+    return zip(word, word.dropFirst()).allSatisfy{isVowel($0.0) != isVowel($0.1)}
+}
+
 do {
     let words = try String(contentsOfFile: "unixdict.txt", encoding: String.Encoding.ascii)
-    var n = 1
-    for word in words.components(separatedBy: "\n") {
-        if word.count <= 9 {
-            continue
-        }
-        var isOddEvenWord = true
-        var prev: Character = "\n"
-        for ch in word {
-            if prev != "\n" && isVowel(ch) == isVowel(prev) {
-                isOddEvenWord = false
-                break
-            }
-            prev = ch
-        }
-        if isOddEvenWord {
-            print("\(String(format: "%2d", n)): \(word)")
-            n += 1
-        }
+    let lines = words.components(separatedBy: "\n")
+    for (n, word) in lines.filter(
+        {$0.count > 9 && alternatingVowelsAndConsonants(word: $0)}).enumerated() {
+        print("\(String(format: "%2d", n + 1)): \(word)")
     }
 } catch {
     print(error.localizedDescription)
