@@ -7,14 +7,22 @@
 
 bool is_vowel(char ch) {
     switch (ch) {
-        case 'a': case 'A':
-        case 'e': case 'E':
-        case 'i': case 'I':
-        case 'o': case 'O':
-        case 'u': case 'U':
-            return true;
+    case 'a': case 'A':
+    case 'e': case 'E':
+    case 'i': case 'I':
+    case 'o': case 'O':
+    case 'u': case 'U':
+        return true;
     }
     return false;
+}
+
+bool alternating_vowels_and_consonants(const char* str, size_t len) {
+    for (size_t i = 1; i < len; ++i) {
+        if (is_vowel(str[i]) == is_vowel(str[i - 1]))
+            return false;
+    }
+    return true;
 }
 
 int main(int argc, char** argv) {
@@ -28,16 +36,7 @@ int main(int argc, char** argv) {
     int n = 1;
     while (fgets(line, sizeof(line), fp)) {
         size_t len = strlen(line) - 1; // last character is \n
-        if (len <= 9)
-            continue;
-        bool is_odd_even_word = true;
-        for (size_t i = 1; i < len; ++i) {
-            if (is_vowel(line[i]) == is_vowel(line[i - 1])) {
-                is_odd_even_word = false;
-                break;
-            }
-        }
-        if (is_odd_even_word)
+        if (len > 9 && alternating_vowels_and_consonants(line, len))
             printf("%2d: %s", n++, line);
     }
     fclose(fp);

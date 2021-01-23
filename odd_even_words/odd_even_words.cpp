@@ -16,6 +16,14 @@ bool is_vowel(char ch) {
     return false;
 }
 
+bool alternating_vowels_and_consonants(const std::string& str) {
+    for (size_t i = 1, len = str.size(); i < len; ++i) {
+        if (is_vowel(str[i]) == is_vowel(str[i - 1]))
+            return false;
+    }
+    return true;
+}
+
 int main(int argc, char** argv) {
     const char* filename = argc < 2 ? "unixdict.txt" : argv[1];
     std::ifstream in(filename);
@@ -25,17 +33,7 @@ int main(int argc, char** argv) {
     }
     std::string line;
     for (int n = 1; getline(in, line); ) {
-        size_t len = line.size();
-        if (len <= 9)
-            continue;
-        bool is_odd_even_word = true;
-        for (size_t i = 1; i < len; ++i) {
-            if (is_vowel(line[i]) == is_vowel(line[i - 1])) {
-                is_odd_even_word = false;
-                break;
-            }
-        }
-        if (is_odd_even_word)
+        if (line.size() > 9 && alternating_vowels_and_consonants(line))
             std::cout << std::setw(2) << n++ << ": " << line << '\n';
     }
     return EXIT_SUCCESS;
