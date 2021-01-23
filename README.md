@@ -324,6 +324,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
 |twin_primes|2020-07-26|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
+|ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |unprimeable|2020-06-30|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
