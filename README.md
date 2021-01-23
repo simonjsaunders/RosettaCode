@@ -54,6 +54,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-06-06|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-24|https://rosettacode.org/wiki/Textonyms|
 |tree_sort|2020-07-06|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
+|ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |unprimeable|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
 |word_freq|2020-05-25|https://rosettacode.org/wiki/Word_frequency|
 |word_wheel|2020-07-05|https://rosettacode.org/wiki/Word_wheel|
