@@ -37,7 +37,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |nonoblock|2021-01-01|https://rosettacode.org/wiki/Nonoblock|
 |nsmooth|2020-05-15|https://rosettacode.org/wiki/N-smooth_numbers|
-|odd_even_words|2021-01-16|https://rosettacode.org/wiki/Find_words_which_odd_letters_are_consonants_and_even_letters_are_vowels_or_vice_versa|
+|odd_even_words|2021-01-16|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-05-15|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
@@ -129,7 +129,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |next_highest_int|2020-05-06|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-12-13|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
-|odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_which_odd_letters_are_consonants_and_even_letters_are_vowels_or_vice_versa|
+|odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
@@ -354,7 +354,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |maxsubseq|2021-01-10|https://rosettacode.org/wiki/Greatest_subsequential_sum|
 |nimber|2020-07-27|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nonoblock|2021-01-02|https://rosettacode.org/wiki/Nonoblock|
-|odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_which_odd_letters_are_consonants_and_even_letters_are_vowels_or_vice_versa|
+|odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |odd_words|2021-01-17|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
