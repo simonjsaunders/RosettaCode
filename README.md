@@ -245,6 +245,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |mertens|2020-04-13|https://rosettacode.org/wiki/Mertens_function|
 |mod_exp|2020-05-15|https://rosettacode.org/wiki/Modular_exponentiation|
 |nimber|2020-05-28|https://rosettacode.org/wiki/Nimber_arithmetic|
+|odd_even_words|2021-01-23|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |ordinal|2020-04-18|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindromic_gapful|2020-05-02|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
