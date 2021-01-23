@@ -5,7 +5,7 @@ public class UlamNumbers {
             System.out.println(String.format("Ulam(%d) = %d", n, ulam(n)));
         }
         long finish = System.currentTimeMillis();
-        System.out.println("Elapsed time: " + (finish - start)/1000.0);
+        System.out.println(String.format("Elapsed time: %.3f seconds", (finish - start)/1000.0));
     }
 
     private static int ulam(int n) {
