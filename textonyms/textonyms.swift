@@ -62,12 +62,7 @@ func findTextonyms(_ path: String) throws {
         }
         let word = line.lowercased()
         if let text = textString(word) {
-            if var words = dict[text] {
-                words.append(word)
-                dict[text] = words
-            } else {
-                dict[text] = [word]
-            }
+            dict[text, default: []].append(word)
             count += 1
         }
     }
