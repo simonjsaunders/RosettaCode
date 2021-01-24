@@ -14,15 +14,6 @@ fn fusc_sequence() -> impl std::iter::Iterator<Item = u32> {
     })
 }
 
-fn digit_count(mut n: u32) -> u32 {
-    let mut count = 1;
-    while n >= 10 {
-        count += 1;
-        n /= 10;
-    }
-    count
-}
-
 fn main() {
     println!("First 61 fusc numbers:");
     for n in fusc_sequence().take(61) {
@@ -30,22 +21,16 @@ fn main() {
     }
     println!();
 
-    let limit = 20000000;
+    let limit = 1000000000;
     println!(
         "Fusc numbers up to {} that are longer than any previous one:",
         limit
     );
-    let mut max_length = 0;
-    let mut max_fusc = 0;
+    let mut max = 0;
     for (index, n) in fusc_sequence().take(limit).enumerate() {
-        if n < max_fusc {
-            continue;
-        }
-        let length = digit_count(n);
-        if length > max_length {
-            max_length = length;
+        if n >= max {
+            max = std::cmp::max(10, max * 10);
             println!("index = {}, fusc number = {}", index, n);
         }
-        max_fusc = n;
     }
 }

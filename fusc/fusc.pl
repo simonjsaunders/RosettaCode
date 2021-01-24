@@ -33,10 +33,6 @@ print_fusc_sequence(N, M):-
     M1 is M + 1,
     print_fusc_sequence(N, M1).
 
-number_length(N, L):-
-    number_string(N, S),
-    string_length(S, L).
-
 print_max_fusc(N):-
     writef('Fusc numbers up to %w that are longer than any previous one:\n', [N]),
     print_max_fusc(N, 0, 0).
@@ -46,9 +42,8 @@ print_max_fusc(N, M, _):-
     !.
 print_max_fusc(N, M, Max):-
     fusc(M, F),
-    number_length(F, L),
-    (L > Max ->
-        writef('n = %w, fusc(n) = %w\n', [M, F]), Max1 = L
+    (F >= Max ->
+        writef('n = %w, fusc(n) = %w\n', [M, F]), Max1 = max(10, Max * 10)
         ;
         Max1 = Max
     ),
