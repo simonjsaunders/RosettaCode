@@ -345,6 +345,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
 |divisor_count|2020-12-23|https://rosettacode.org/wiki/Tau_function|
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|euler_method|2021-01-24|https://rosettacode.org/wiki/Euler_method|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hofstadter_q_seq|2021-01-16|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
