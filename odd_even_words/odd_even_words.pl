@@ -27,7 +27,6 @@ vowel('i').
 vowel('o').
 vowel('u').
 
-alternating_vowels_and_consonants([]):-!.
 alternating_vowels_and_consonants([_]):-!.
 alternating_vowels_and_consonants([Ch1, Ch2|Chars]):-
     (vowel(Ch1) -> \+vowel(Ch2) ; vowel(Ch2)),
