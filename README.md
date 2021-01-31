@@ -356,6 +356,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |magnanimous_numbers|2020-07-23|https://rosettacode.org/wiki/Magnanimous_numbers|
 |maxsubseq|2021-01-10|https://rosettacode.org/wiki/Greatest_subsequential_sum|
+|mertens|2021-01-31|https://rosettacode.org/wiki/Mertens_function|
 |nimber|2020-07-27|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nonoblock|2021-01-02|https://rosettacode.org/wiki/Nonoblock|
 |odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
