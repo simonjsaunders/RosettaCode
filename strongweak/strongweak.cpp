@@ -1,7 +1,8 @@
+#include <algorithm>
 #include <iostream>
-#include <iomanip>
+#include <iterator>
 #include <locale>
-#include <sstream>
+#include <vector>
 #include "prime_sieve.hpp"
 
 const int limit1 = 1000000;
@@ -16,22 +17,21 @@ private:
     int max_print;
     int count1 = 0;
     int count2 = 0;
-    std::ostringstream out;
+    std::vector<int> primes;
 };
 
 void prime_info::add_prime(int prime) {
     ++count2;
     if (prime < limit1)
         ++count1;
-    if (count2 <= max_print) {
-        if (count2 > 1)
-            out << ' ';
-        out << prime;
-    }
+    if (count2 <= max_print)
+        primes.push_back(prime);
 }
 
 void prime_info::print(std::ostream& os, const char* name) const {
-    os << "First " << max_print << " " << name << " primes: " << out.str() << '\n';
+    os << "First " << max_print << " " << name << " primes: ";
+    std::copy(primes.begin(), primes.end(), std::ostream_iterator<int>(os, " "));
+    os << '\n';
     os << "Number of " << name << " primes below " << limit1 << ": " << count1 << '\n';
     os << "Number of " << name << " primes below " << limit2 << ": " << count2 << '\n';
 }
