@@ -322,6 +322,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_triangle|2020-06-09|https://rosettacode.org/wiki/Sierpinski_triangle/Graphical|
 |smarandache|2020-07-08|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
+|square_cube|2021-02-05|https://rosettacode.org/wiki/Square_but_not_cube|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
@@ -368,6 +369,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |https://rosettacode.org/wiki/Remove_vowels_from_a_string|
 |remove_vowels|2021-01-31|safe_primes|2021-01-17|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|square_cube|2021-02-05|https://rosettacode.org/wiki/Square_but_not_cube|
 |strongweak|2021-01-17|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
