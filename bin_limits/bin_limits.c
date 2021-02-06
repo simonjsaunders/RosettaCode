@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int upper_bound(const int* array, size_t n, int value) {
+size_t upper_bound(const int* array, size_t n, int value) {
     size_t start = 0;
     while (n > 0) {
         size_t step = n / 2;
