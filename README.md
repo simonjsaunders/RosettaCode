@@ -32,6 +32,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
 |ip_address|2020-07-09|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
+|neighbour_words|2021-02-06|https://rosettacode.org/wiki/Words_from_neighbour_ones|
 |next_highest_int|2020-05-09|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-05-11|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
@@ -127,6 +128,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |mersenne_factors|2020-03-01|https://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |mertens|2020-03-08|https://rosettacode.org/wiki/Mertens_function|
 |mod_exp|2020-03-08|https://rosettacode.org/wiki/Modular_exponentiation|
+|neighbour_words|2021-02-06|https://rosettacode.org/wiki/Words_from_neighbour_ones|
 |next_highest_int|2020-05-06|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nimber|2020-12-13|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
