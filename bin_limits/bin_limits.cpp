@@ -16,11 +16,16 @@ std::vector<int> bins(const std::vector<int>& limits,
 
 void print_bins(const std::vector<int>& limits, const std::vector<int>& bins) {
     size_t n = limits.size();
+    if (n == 0)
+        return;
     assert(n + 1 == bins.size());
-    for (size_t i = 0; i < n; ++i)
-        std::cout << "number of items  < " << std::setw(3) << limits[i] << ": "
-                  << std::setw(2) << bins[i] << '\n';
-    std::cout << "number of items >= " << std::setw(3) << limits[n - 1] << ": "
+    std::cout << "           < " << std::setw(3) << limits[0] << ": "
+              << std::setw(2) << bins[0] << '\n';
+    for (size_t i = 1; i < n; ++i)
+        std::cout << ">= " << std::setw(3) << limits[i - 1] << " and < "
+                  << std::setw(3) << limits[i] << ": " << std::setw(2)
+                  << bins[i] << '\n';
+    std::cout << ">= " << std::setw(3) << limits[n - 1] << "          : "
               << std::setw(2) << bins[n] << '\n';
 }
 

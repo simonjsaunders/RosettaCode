@@ -26,9 +26,12 @@ int* bins(const int* limits, size_t nlimits, const int* data, size_t ndata) {
 }
 
 void print_bins(const int* limits, size_t n, const int* bins) {
-    for (size_t i = 0; i < n; ++i)
-        printf("number of items  < %3d: %2d\n", limits[i], bins[i]);
-    printf("number of items >= %3d: %2d\n", limits[n - 1], bins[n]);
+    if (n == 0)
+        return;
+    printf("           < %3d: %2d\n", limits[0], bins[0]);
+    for (size_t i = 1; i < n; ++i)
+        printf(">= %3d and < %3d: %2d\n", limits[i - 1], limits[i], bins[i]);
+    printf(">= %3d          : %2d\n", limits[n - 1], bins[n]);
 }
 
 int main() {
