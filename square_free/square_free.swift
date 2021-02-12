@@ -26,7 +26,7 @@ func printSquareFreeNumbers(from: UInt, to: UInt) {
             if line.count > 0 {
                 line += " "
             }
-            line += "\(i)";
+            line += "\(i)"
             if line.count >= 80 {
                 print(line)
                 line = ""
