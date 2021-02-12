@@ -14,12 +14,11 @@ func alternatingVowelsAndConsonants(word: String) -> Bool {
 }
 
 do {
-    let words = try String(contentsOfFile: "unixdict.txt", encoding: String.Encoding.ascii)
-    let lines = words.components(separatedBy: "\n")
-    for (n, word) in lines.filter(
-        {$0.count > 9 && alternatingVowelsAndConsonants(word: $0)}).enumerated() {
-        print("\(String(format: "%2d", n + 1)): \(word)")
-    }
+    try String(contentsOfFile: "unixdict.txt", encoding: String.Encoding.ascii)
+        .components(separatedBy: "\n")
+        .filter{$0.count > 9 && alternatingVowelsAndConsonants(word: $0)}
+        .enumerated()
+        .forEach{print(String(format: "%2d. %@", $0.0 + 1, $0.1))}
 } catch {
     print(error.localizedDescription)
 }
