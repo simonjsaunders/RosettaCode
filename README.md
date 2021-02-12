@@ -342,6 +342,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
+|all_vowels|2021-02-12|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
 |alternade_words|2020-12-23|https://rosettacode.org/wiki/Alternade_words|
 |calendar|2020-12-22|https://rosettacode.org/wiki/Calendar|
 |circle_sort|2020-07-25|https://rosettacode.org/wiki/Sorting_Algorithms/Circle_Sort|
