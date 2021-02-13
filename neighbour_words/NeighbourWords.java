@@ -13,6 +13,7 @@ public class NeighbourWords {
                         words.add(line);
                 }
             }
+            Collections.sort(words);
             String previousWord = null;
             int count = 0;
             for (int i = 0, n = words.size(); i + minLength <= n; ++i) {
