@@ -5,9 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <boost/circular_buffer.hpp>
 
-// The input file must consist of one word per line in alphabetical order.
 int main(int argc, char** argv) {
     const int min_length = 9;
     const char* filename(argc < 2 ? "unixdict.txt" : argv[1]);
@@ -17,23 +15,23 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     std::string line;
-    boost::circular_buffer<std::string> words(min_length);
+    std::vector<std::string> words;
+    while (getline(in, line)) {
+        if (line.size() >= min_length)
+            words.push_back(line);
+    }
+    std::sort(words.begin(), words.end());
     std::string previous_word;
     int count = 0;
-    while (getline(in, line)) {
-        if (line.size() < min_length)
-            continue;
-        words.push_back(line);
-        if (words.size() < min_length)
-            continue;
+    for (size_t i = 0, n = words.size(); i + min_length <= n; ++i) {
         std::string word;
         word.reserve(min_length);
-        for (size_t i = 0; i < min_length; ++i)
-            word += words[i][i];
+        for (size_t j = 0; j < min_length; ++j)
+            word += words[i + j][j];
         if (previous_word == word)
             continue;
-        auto it = std::find(words.begin(), words.end(), word);
-        if (it != words.end())
+        auto w = std::lower_bound(words.begin(), words.end(), word);
+        if (w != words.end() && *w == word)
             std::cout << std::setw(2) << ++count << ". " << word << '\n';
         previous_word = word;
     }
