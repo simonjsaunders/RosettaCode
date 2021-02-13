@@ -1,32 +1,32 @@
 import Foundation
 
 func containsAllVowelsOnce(_ word: String) -> Bool {
-    var seen = Array(repeating: false, count: 5)
+    var vowels = 0
     for ch in word {
-        var index = -1
+        var bit = 0
         switch (ch) {
         case "a", "A":
-            index = 0
+            bit = 1
         case "e", "E":
-            index = 1
+            bit = 2
         case "i", "I":
-            index = 2
+            bit = 4
         case "o", "O":
-            index = 3
+            bit = 8
         case "u", "U":
-            index = 4
+            bit = 16
         default:
             break
         }
-        if index < 0 {
+        if bit == 0 {
             continue
         }
-        if seen[index] {
+        if ((vowels & bit) != 0) {
             return false
         }
-        seen[index] = true
+        vowels |= bit
     }
-    return seen.allSatisfy{$0}
+    return vowels == 31
 }
 
 do {
