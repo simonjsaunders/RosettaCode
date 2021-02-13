@@ -10,7 +10,7 @@ public class NeighbourWords {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     if (line.length() >= minLength)
-                    words.add(line);
+                        words.add(line);
                 }
             }
             String previousWord = null;
@@ -22,9 +22,8 @@ public class NeighbourWords {
                 String word = sb.toString();
                 if (word.equals(previousWord))
                     continue;
-                if (Collections.binarySearch(words, word) >= 0) {
+                if (Collections.binarySearch(words, word) >= 0)
                     System.out.println(String.format("%2d. %s", ++count, word));
-                }
                 previousWord = word;
             }
         } catch (Exception e)  {
