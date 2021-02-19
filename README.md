@@ -191,6 +191,11 @@ in this repository for any purpose then it's entirely at your own risk.
 |word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
 |yellowstone|2020-06-23|https://rosettacode.org/wiki/Yellowstone_sequence|
 
+## Forth Code Examples
+|Directory|Date Submitted|Rosetta Code URL|
+|---------|--------------|----------------|
+|hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
+
 ## Java Code Examples
 
 |Directory|Date Submitted|Rosetta Code URL|
