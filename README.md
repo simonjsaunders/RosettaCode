@@ -362,6 +362,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_count|2020-12-23|https://rosettacode.org/wiki/Tau_function|
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |e3|2021-02-12|https://rosettacode.org/wiki/Find_words_which_contains_more_than_3_e_vowels|
+|etoi|2021-02-20|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |euler_method|2021-01-24|https://rosettacode.org/wiki/Euler_method|
 |first_last_three_equal|2021-02-12|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
