@@ -196,6 +196,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
+|smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 
 ## Java Code Examples
 
