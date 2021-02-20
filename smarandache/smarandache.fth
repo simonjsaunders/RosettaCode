@@ -18,8 +18,7 @@
   dup 10 mod
   dup 2 = if drop 1+ exit then
   dup 3 = if drop 2 + exit then
-  dup 5 = if drop 2 + exit then
-  drop
+  5 = if 2 + exit then
   10 / recurse 10 * 2 + ;
 
 : spds_print ( n -- )
