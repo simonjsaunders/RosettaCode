@@ -101,6 +101,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
 |file_extension|2020-06-04|https://rosettacode.org/wiki/File_extension_is_in_extensions_list|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
+|first_last_three_equal|2021-02-20|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |four_is|2020-06-03|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-01-17|https://rosettacode.org/wiki/Four_is_magic|
