@@ -42,14 +42,12 @@
   dup prime? invert if
     drop false exit
   then
-  10 /
   begin
-    dup 0 >
+    10 / dup 0 >
   while
     dup prime? invert if
       drop false exit
     then
-    10 /
   repeat
   drop true ;
 
