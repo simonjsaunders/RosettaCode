@@ -22,14 +22,14 @@
   10 / recurse 10 * 2 + ;
 
 : digit_sum ( n -- n )
-  0
+  0 >r
   begin
-    over 0 >
+    dup 0 >
   while
-    over 10 mod +
-    swap 10 / swap
+    dup 10 mod r> + >r
+    10 /
   repeat
-  swap drop ;
+  drop r> ;
 
 : extra_primes ( n -- )
   2

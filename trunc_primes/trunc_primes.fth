@@ -22,21 +22,22 @@
   dup prime? invert if
     drop false exit
   then
-  dup 10
+  dup >r
+  10
   begin
-    dup 3 pick <
+    2dup >
   while
-    2 pick over mod
-    dup 3 pick = if
-      2drop 2drop false exit
+    2dup mod
+    dup r> = if
+      2drop drop false exit
     then
     dup prime? invert if
-      2drop 2drop false exit
+      2drop drop false exit
     then
-    rot drop swap
+    >r
     10 *
   repeat
-  2drop drop true ;
+  2drop rdrop true ;
 
 : right_truncatable_prime? ( n -- flag )
   dup prime? invert if
