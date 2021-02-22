@@ -20,8 +20,8 @@
     2r> * >r
     2 +
   repeat
-  over 1 > if r> 2* >r then
-  2drop r> ;
+  drop 1 > if r> 2* >r then
+  r> ;
 
 : print_tau_numbers ( n -- )
   ." The first " dup . ." tau numbers are:" cr
