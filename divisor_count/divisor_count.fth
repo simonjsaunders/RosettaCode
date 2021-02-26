@@ -20,8 +20,7 @@
     2r> * >r
     2 +
   repeat
-  drop 1 > if r> 2* >r then
-  r> ;
+  drop 1 > if r> 2* else r> then ;
 
 : print_divisor_counts ( n -- )
   ." Count of divisors for the first " dup . ." positive integers:" cr
@@ -31,3 +30,4 @@
   loop ;
 
 100 print_divisor_counts
+bye
