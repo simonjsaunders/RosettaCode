@@ -199,6 +199,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|strange_plus_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_plus_numbers|
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
 
