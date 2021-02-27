@@ -326,6 +326,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|padovan|2021-02-27|https://rosettacode.org/wiki/Padovan_sequence|
 |palindrome_dates|2020-07-13|https://rosettacode.org/wiki/Palindrome_dates|
 |partition_function|2020-12-14|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-07-15|https://rosettacode.org/wiki/Peano_curve|
