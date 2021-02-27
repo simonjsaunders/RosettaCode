@@ -21,25 +21,21 @@
   5 = if 2 + exit then
   10 / recurse 10 * 2 + ;
 
-: spds_print ( n -- )
-  >r 0
+: spds_next ( n -- n )
   begin
-    r@ 0 >
-  while
     next_prime_digit_number
-    dup is_prime? if dup . r> 1- >r then
-  repeat
-  drop rdrop cr ;
+    dup is_prime?
+  until ;
+
+: spds_print ( n -- )
+  0 swap 0 do
+    spds_next
+    dup is_prime? if dup . then
+  loop
+  drop cr ;
 
 : spds_nth ( n -- n )
-  >r 0
-  begin
-    r@ 0 >
-  while
-    next_prime_digit_number
-    dup is_prime? if r> 1- >r then
-  repeat
-  rdrop ;
+  0 swap 0 do spds_next loop ;
 
 ." First 25 SPDS primes:" cr
 25 spds_print
