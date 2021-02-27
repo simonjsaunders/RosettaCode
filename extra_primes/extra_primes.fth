@@ -34,8 +34,8 @@
 : next_extra_prime ( n -- n )
   begin
     next_prime_digit_number
-    dup is_prime? if
-      dup digit_sum is_prime?
+    dup digit_sum is_prime? if
+      dup is_prime?
     else false then
   until ;
 

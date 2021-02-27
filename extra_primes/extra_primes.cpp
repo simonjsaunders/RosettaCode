@@ -52,9 +52,8 @@ int main() {
     unsigned int p = 0, n = 0;
     unsigned int extra_primes[last];
     std::cout << "Extra primes under " << limit1 << ":\n";
-    while (p < limit2) {
-        p = next_prime_digit_number(p);
-        if (is_prime(p) && is_prime(digit_sum(p))) {
+    while ((p = next_prime_digit_number(p)) < limit2) {
+        if (is_prime(digit_sum(p)) && is_prime(p)) {
             ++n;
             if (p < limit1)
                 std::cout << std::setw(2) << n << ": " << p << '\n';

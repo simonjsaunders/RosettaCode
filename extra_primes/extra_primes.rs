@@ -1,11 +1,11 @@
 // [dependencies]
 // primal = "0.3"
 
-fn is_prime(n: u32) -> bool {
-    primal::is_prime(n as u64)
+fn is_prime(n: u64) -> bool {
+    primal::is_prime(n)
 }
 
-fn next_prime_digit_number(n: u32) -> u32 {
+fn next_prime_digit_number(n: u64) -> u64 {
     if n == 0 {
         return 2;
     }
@@ -16,7 +16,7 @@ fn next_prime_digit_number(n: u32) -> u32 {
     }
 }
 
-fn digit_sum(mut n: u32) -> u32 {
+fn digit_sum(mut n: u64) -> u64 {
     let mut sum = 0;
     while n > 0 {
         sum += n % 10;
@@ -33,9 +33,12 @@ fn main() {
     let mut n = 0;
     let mut extra_primes = vec![0; last];
     println!("Extra primes under {}:", limit1);
-    while p < limit2 {
+    loop {
         p = next_prime_digit_number(p);
-        if is_prime(p) && is_prime(digit_sum(p)) {
+        if p >= limit2 {
+            break;
+        }
+        if is_prime(digit_sum(p)) && is_prime(p) {
             n += 1;
             if p < limit1 {
                 println!("{:2}: {}", n, p);
