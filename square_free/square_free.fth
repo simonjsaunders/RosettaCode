@@ -19,7 +19,7 @@
   repeat
   2drop true ;
   
-\ print square-free numbers from n2 to n3, n1 per line
+\ print square-free numbers from n3 to n2, n1 per line
 : print_square_free_numbers ( n1 n2 n3 -- )
   2dup
   ." Square-free integers between "
