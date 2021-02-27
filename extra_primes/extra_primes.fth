@@ -43,3 +43,4 @@
 
 ." Extra primes under 10000:" cr
 10000 extra_primes
+bye

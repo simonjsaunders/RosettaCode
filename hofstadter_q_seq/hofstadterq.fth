@@ -18,3 +18,4 @@ qinit
 10 qprint
 999 q @ . cr
 flips
+bye

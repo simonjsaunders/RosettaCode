@@ -77,3 +77,5 @@ limit max_left_truncatable_prime
 
 ." Largest right truncatable prime: "
 limit max_right_truncatable_prime
+
+bye

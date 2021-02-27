@@ -22,24 +22,24 @@
   10 / recurse 10 * 2 + ;
 
 : spds_print ( n -- )
-  0
+  >r 0
   begin
-    over 0 >
+    r@ 0 >
   while
     next_prime_digit_number
-    dup is_prime? if dup . swap 1- swap then
+    dup is_prime? if dup . r> 1- >r then
   repeat
-  2drop cr ;
+  drop rdrop cr ;
 
 : spds_nth ( n -- n )
-  0
+  >r 0
   begin
-    over 0 >
+    r@ 0 >
   while
     next_prime_digit_number
-    dup is_prime? if swap 1- swap then
+    dup is_prime? if r> 1- >r then
   repeat
-  swap drop ;
+  rdrop ;
 
 ." First 25 SPDS primes:" cr
 25 spds_print
@@ -49,3 +49,5 @@
 
 ." 1000th SPDS prime: "
 1000 spds_nth . cr
+
+bye
