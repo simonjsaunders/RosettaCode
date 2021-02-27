@@ -31,13 +31,20 @@
   repeat
   drop r> ;
 
-: extra_primes ( n -- )
-  2
+: next_extra_prime ( n -- n )
   begin
-    2dup >
-  while    
-    dup is_prime? if dup digit_sum is_prime? if dup . cr then then
     next_prime_digit_number
+    dup is_prime? if
+      dup digit_sum is_prime?
+    else false then
+  until ;
+
+: extra_primes ( n -- )
+  0
+  begin
+    next_extra_prime 2dup >
+  while
+    dup . cr
   repeat
   2drop ;
 
