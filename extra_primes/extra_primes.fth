@@ -39,7 +39,7 @@
     else false then
   until ;
 
-: extra_primes ( n -- )
+: print_extra_primes ( n -- )
   0
   begin
     next_extra_prime 2dup >
@@ -48,6 +48,19 @@
   repeat
   2drop ;
 
+: count_extra_primes ( n -- n )
+  0 0 >r
+  begin
+    next_extra_prime 2dup >
+  while
+    r> 1+ >r
+  repeat
+  2drop r> ;
+
 ." Extra primes under 10000:" cr
-10000 extra_primes
+10000 print_extra_primes
+
+100000000 count_extra_primes
+." Number of extra primes under 100000000: " . cr
+
 bye
