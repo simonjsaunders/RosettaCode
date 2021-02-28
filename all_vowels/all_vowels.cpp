@@ -1,36 +1,28 @@
+#include <bitset>
+#include <cctype>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 
 bool contains_all_vowels_once(const std::string& word) {
-    unsigned int vowels = 0;
+    std::bitset<5> vowels;
     for (char ch : word) {
-        unsigned int bit = 0;
+        ch = std::tolower(static_cast<unsigned char>(ch));
+        size_t bit = 0;
         switch (ch) {
-        case 'a':
-            bit = 1;
-            break;
-        case 'e':
-            bit = 2;
-            break;
-        case 'i':
-            bit = 4;
-            break;
-        case 'o':
-            bit = 8;
-            break;
-        case 'u':
-            bit = 16;
-            break;
+        case 'a': bit = 0; break;
+        case 'e': bit = 1; break;
+        case 'i': bit = 2; break;
+        case 'o': bit = 3; break;
+        case 'u': bit = 4; break;
+        default: continue;
         }
-        if (bit == 0)
-            continue;
-        if (vowels & bit)
+        if (vowels.test(bit))
             return false;
-        vowels |= bit;
+        vowels.set(bit);
     }
-    return vowels == 31;
+    return vowels.all();
 }
 
 int main(int argc, char** argv) {
