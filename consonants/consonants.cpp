@@ -1,5 +1,5 @@
+#include <bitset>
 #include <cctype>
-#include <cstdint>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
@@ -10,9 +10,9 @@
 
 // Returns number of consonants in the word if they are all unique,
 // otherwise zero.
-int consonants(const std::string& word) {
-    int total = 0;
-    uint32_t bits = 0, bit = 0;
+size_t consonants(const std::string& word) {
+    std::bitset<26> bits;
+    size_t bit = 0;
     for (char ch : word) {
         ch = std::tolower(static_cast<unsigned char>(ch));
         if (ch < 'a' || ch > 'z')
@@ -25,15 +25,14 @@ int consonants(const std::string& word) {
         case 'u':
             break;
         default:
-            bit = 1U << (ch - 'a');
-            if ((bits & bit) != 0)
+            bit = ch - 'a';
+            if (bits.test(bit))
                 return 0;
-            bits |= bit;
-            ++total;
+            bits.set(bit);
             break;
         }
     }
-    return total;
+    return bits.count();
 }
 
 int main(int argc, char** argv) {
@@ -44,12 +43,12 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     std::string word;
-    std::map<int, std::vector<std::string>, std::greater<int>> map;
+    std::map<size_t, std::vector<std::string>, std::greater<int>> map;
     while (getline(in, word)) {
         if (word.size() <= 10)
             continue;
-        int count = consonants(word);
-        if (count > 0)
+        size_t count = consonants(word);
+        if (count != 0)
             map[count].push_back(word);
     }
     const int columns = 4;
