@@ -391,6 +391,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |odd_words|2021-01-17|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-07-26|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|padovan|2021-02-28|https://rosettacode.org/wiki/Padovan_sequence|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
 |prime_partition|2021-01-02|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
