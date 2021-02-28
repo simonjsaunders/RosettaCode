@@ -1,4 +1,5 @@
 #include <cctype>
+#include <cstdint>
 #include <cstdlib>
 #include <fstream>
 #include <iomanip>
@@ -11,7 +12,7 @@
 // otherwise zero.
 int consonants(const std::string& word) {
     int total = 0;
-    int count[26] = {};
+    uint32_t bits = 0, bit = 0;
     for (char ch : word) {
         ch = std::tolower(static_cast<unsigned char>(ch));
         if (ch < 'a' || ch > 'z')
@@ -24,8 +25,10 @@ int consonants(const std::string& word) {
         case 'u':
             break;
         default:
-            if (count[ch - 'a']++ != 0)
+            bit = 1U << (ch - 'a');
+            if ((bits & bit) != 0)
                 return 0;
+            bits |= bit;
             ++total;
             break;
         }
