@@ -5,7 +5,11 @@
 : qinit
   1 0 q !
   1 1 q !
-  N 2 do i i 1- q @ - q @ i i 2 - q @ - q @ + i q ! loop ;
+  N 2 do
+    i i 1- q @ - q @
+    i i 2 - q @ - q @
+    + i q !
+  loop ;
 
 : flips
   ." flips: "
