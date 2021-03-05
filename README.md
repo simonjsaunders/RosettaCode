@@ -97,6 +97,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_sum|2020-12-21|https://rosettacode.org/wiki/Sum_of_divisors|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
+|etoi|2021-03-05|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
