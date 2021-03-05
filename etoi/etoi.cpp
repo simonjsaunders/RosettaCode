@@ -22,9 +22,11 @@ int main(int argc, char** argv) {
     }
     int count = 0;
     for (const std::string& word1 : dictionary) {
+        if (word1.find('e') == std::string::npos)
+            continue;
         std::string word2(word1);
         std::replace(word2.begin(), word2.end(), 'e', 'i');
-        if (word1 != word2 && dictionary.find(word2) != dictionary.end()) {
+        if (dictionary.find(word2) != dictionary.end()) {
             std::cout << std::right << std::setw(2) << ++count
                 << ". " << std::left << std::setw(10) << word1
                 << " -> " << word2 << '\n';
