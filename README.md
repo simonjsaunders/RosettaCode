@@ -196,6 +196,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
 |divisor_sum|2021-02-26|https://rosettacode.org/wiki/Sum_of_divisors|
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
