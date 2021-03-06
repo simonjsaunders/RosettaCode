@@ -256,6 +256,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |egyptian_division|2020-05-15|https://rosettacode.org/wiki/Egyptian_division|
+|etoi|2021-03-06|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
 |jewels_and_stones|2020-11-01|https://rosettacode.org/wiki/Jewels_and_Stones|
 |kernighans_earthquake|2020-05-02|https://rosettacode.org/wiki/Kernighans_large_earthquake_problem|
