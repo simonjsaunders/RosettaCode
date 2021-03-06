@@ -20,6 +20,8 @@ uint64_t modpow(uint64_t base, uint64_t exp, uint64_t mod) {
 }
 
 bool is_long_prime(const prime_sieve& sieve, uint64_t prime) {
+    if (!sieve.is_prime(prime))
+        return false;
     if (10 % prime == 0)
         return false;
     uint64_t n = prime - 1, m = n;
@@ -41,7 +43,7 @@ void long_primes(uint64_t limit1, uint64_t limit2) {
     uint64_t count = 0;
     uint64_t limit = limit1;
     for (uint64_t p = 3; p < limit2; p += 2) {
-        if (sieve.is_prime(p) && is_long_prime(sieve, p)) {
+        if (is_long_prime(sieve, p)) {
             if (p < limit1)
                 std::cout << p << ' ';
             if (p > limit) {

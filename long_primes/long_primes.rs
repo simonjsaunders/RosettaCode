@@ -24,6 +24,9 @@ fn modpow(mut base: usize, mut exp: usize, n: usize) -> usize {
 }
 
 fn is_long_prime(sieve: &PrimeSieve, prime: usize) -> bool {
+    if !sieve.is_prime(prime) {
+        return false;
+    }
     if 10 % prime == 0 {
         return false;
     }
@@ -53,7 +56,7 @@ fn long_primes(limit1: usize, limit2: usize) {
     let mut limit = limit1;
     let mut prime = 3;
     while prime < limit2 {
-        if sieve.is_prime(prime) && is_long_prime(&sieve, prime) {
+        if is_long_prime(&sieve, prime) {
             if prime < limit1 {
                 print!("{} ", prime);
             }
