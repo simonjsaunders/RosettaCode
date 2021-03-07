@@ -18,23 +18,19 @@
   repeat
   2drop ;
 
-: modpow ( n1 n2 n3 -- n )
-  dup 1 = if 2drop drop 0 exit then
-  1 >r
-  rot over mod -rot
+: modpow { c b a -- a^b mod c }
+  c 1 = if 0 exit then
+  1
+  a c mod to a
   begin
-    over 0>
+    b 0>
   while
-    over 1 and 1 = if
-      2 pick r> * over mod >r
+    b 1 and 1 = if
+      a * c mod
     then
-    rot dup * over mod -rot
-    swap 2/ swap
-  repeat
-  2drop drop r> ;
-
-: modpow10 ( n1 n2 -- n )
-  10 -rot modpow ;
+    a a * c mod to a
+    b 2/ to b
+  repeat ;
 
 : divide_out ( n1 n2 -- n )
   begin
@@ -53,7 +49,7 @@
   while
     r@ prime? if
       dup r@ mod 0= if
-        over dup 1- r@ / swap modpow10 1 = if
+        over dup 1- r@ / 10 modpow 1 = if
           2drop rdrop false exit
         then
         r@ divide_out
@@ -63,7 +59,7 @@
   repeat
   rdrop
   dup 1 = if 2drop true exit then
-  over 1- swap / swap modpow10 1 <> ;
+  over 1- swap / 10 modpow 1 <> ;
 
 : next_long_prime ( n -- n )
   begin 2 + dup long_prime? until ;
