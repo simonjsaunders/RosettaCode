@@ -328,6 +328,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
 |mersenne_factors|2020-06-17|https://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |next_highest_int|2020-07-28|https://rosettacode.org/wiki/Next_highest_int_from_digits|
+|nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |nimber|2020-05-26|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-07-26|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |nsmooth|2020-05-21|https://rosettacode.org/wiki/N-smooth_numbers|
