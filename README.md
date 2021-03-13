@@ -174,6 +174,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |squeeze|2020-01-09|https://rosettacode.org/wiki/Determine_if_a_string_is_squeezable|
 |stirling1|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
+|strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
