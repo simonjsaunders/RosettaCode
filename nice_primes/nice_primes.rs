@@ -10,9 +10,9 @@ fn digital_root(n: u64) -> u64 {
 }
 
 fn nice_primes(from: usize, to: usize) {
-    primal::Primes::all()
-        .skip_while(|x| x < &from)
-        .take_while(|x| x < &to)
+    primal::Sieve::new(to)
+        .primes_from(from)
+        .take_while(|x| *x < to)
         .filter(|x| primal::is_prime(digital_root(*x as u64)))
         .for_each(|x| println!("{}", x));
 }
