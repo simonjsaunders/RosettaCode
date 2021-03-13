@@ -353,6 +353,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
 |square_cube|2021-02-05|https://rosettacode.org/wiki/Square_but_not_cube|
 |square_free|2021-02-06|https://rosettacode.org/wiki/Square-free_integers|
+|strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
