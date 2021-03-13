@@ -404,6 +404,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |remove_vowels|2021-01-31|safe_primes|2021-01-17|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_cube|2021-02-05|https://rosettacode.org/wiki/Square_but_not_cube|
+|strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |strongweak|2021-01-17|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|

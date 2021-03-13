@@ -4,13 +4,17 @@
 
 std::vector<bool> prime_sieve(size_t limit) {
     std::vector<bool> sieve(limit, true);
-    sieve[1] = false;
+    if (limit > 0)
+        sieve[1] = false;
     for (size_t i = 0; i < limit; i += 2)
         sieve[i] = false;
-    for (size_t p = 3; p * p < limit; p += 2) {
+    for (size_t p = 3; ; p += 2) {
+        size_t q = p * p;
+        if (q >= limit)
+            break;
         if (sieve[p]) {
             size_t inc = 2 * p;
-            for (size_t q = p * p; q < limit; q += inc)
+            for (; q < limit; q += inc)
                 sieve[q] = false;
         }
     }
