@@ -208,6 +208,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
 |strange_plus_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_plus_numbers|
+|strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
 
