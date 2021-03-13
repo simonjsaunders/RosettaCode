@@ -3,8 +3,11 @@
 
 : prime_sieve ( n -- )
   here over erase
+  0 notprime!
   1 notprime!
-  dup 0 do i notprime! 2 +loop
+  dup 4 > if
+    dup 4 do i notprime! 2 +loop
+  then
   3
   begin
     2dup dup * >

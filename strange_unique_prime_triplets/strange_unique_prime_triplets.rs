@@ -1,9 +1,12 @@
 fn prime_sieve(limit: usize) -> Vec<bool> {
     let mut sieve = vec![true; limit];
     if limit > 0 {
+        sieve[0] = false;
+    }
+    if limit > 1 {
         sieve[1] = false;
     }
-    for i in (0..limit).step_by(2) {
+    for i in (4..limit).step_by(2) {
         sieve[i] = false;
     }
     let mut p = 3;
@@ -25,10 +28,10 @@ fn prime_sieve(limit: usize) -> Vec<bool> {
 }
 
 fn strange_unique_prime_triplets(limit: usize, verbose: bool) {
-    let mut primes = Vec::new();
-    if limit < 8 {
+    if limit < 6 {
         return;
     }
+    let mut primes = Vec::new();
     let sieve = prime_sieve(limit * 3);
     for p in (3..limit).step_by(2) {
         if sieve[p] {
