@@ -136,6 +136,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |mod_exp|2020-03-08|https://rosettacode.org/wiki/Modular_exponentiation|
 |neighbour_words|2021-02-06|https://rosettacode.org/wiki/Words_from_neighbour_ones|
 |next_highest_int|2020-05-06|https://rosettacode.org/wiki/Next_highest_int_from_digits|
+|nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |nimber|2020-12-13|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
 |odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
