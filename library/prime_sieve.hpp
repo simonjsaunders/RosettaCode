@@ -1,7 +1,6 @@
 #ifndef PRIME_SIEVE_HPP
 #define PRIME_SIEVE_HPP
 
-#include <algorithm>
 #include <vector>
 
 /**
@@ -22,7 +21,6 @@ private:
  * @param limit the maximum integer that can be tested for primality
  */
 inline prime_sieve::prime_sieve(size_t limit) {
-    limit = std::max(size_t(3), limit);
     is_prime_.resize(limit/2, true);
     for (size_t p = 3; p * p <= limit; p += 2) {
         if (is_prime_[p/2 - 1]) {
