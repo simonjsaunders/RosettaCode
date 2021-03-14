@@ -24,7 +24,7 @@ unsigned int digital_root(unsigned int n) {
 int main() {
     std::cout << "Nice primes between 500 and 1000:\n";
     for (unsigned int n = 501; n < 1000; n += 2) {
-        if (is_prime(n) && is_prime(digital_root(n)))
+        if (is_prime(digital_root(n)) && is_prime(n))
             std::cout << n << '\n';
     }
 }
