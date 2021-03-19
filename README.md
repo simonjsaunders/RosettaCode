@@ -70,6 +70,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model/Identity|
+|additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
 |all_vowels|2021-02-13|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
@@ -200,6 +201,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
 |divisor_sum|2021-02-26|https://rosettacode.org/wiki/Sum_of_divisors|
