@@ -350,6 +350,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |semordnilap|2020-06-28|https://rosettacode.org/wiki/Semordnilap|
 |sexy_primes|2020-06-28|https://rosettacode.org/wiki/Sexy_primes|
 |sha256merkletree|2020-12-11|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
+|shift_left|2021-03-20|https://rosettacode.org/wiki/Shift_list_elements_to_left_by_3|
 |sierpinski_arrowhead|2020-06-11|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sierpinski_curve|2020-06-16|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_pentagon|2020-06-08|https://rosettacode.org/wiki/Sierpinski_pentagon|
