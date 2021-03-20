@@ -26,8 +26,7 @@
   begin
     dup 0 >
   while
-    dup 10 mod r> + >r
-    10 /
+    10 /mod swap r> + >r
   repeat
   drop r> ;
 
