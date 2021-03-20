@@ -22,9 +22,14 @@ unsigned int digital_root(unsigned int n) {
 }
 
 int main() {
-    std::cout << "Nice primes between 500 and 1000:\n";
-    for (unsigned int n = 501; n < 1000; n += 2) {
-        if (is_prime(digital_root(n)) && is_prime(n))
-            std::cout << n << '\n';
+    const unsigned int from = 500, to = 1000;
+    std::cout << "Nice primes between " << from << " and " << to << ":\n";
+    unsigned int count = 0;
+    for (unsigned int n = from; n < to; ++n) {
+        if (is_prime(digital_root(n)) && is_prime(n)) {
+            ++count;
+            std::cout << n << (count % 10 == 0 ? '\n' : ' ');
+        }
     }
+    std::cout << '\n' << count << " nice primes found.\n";
 }

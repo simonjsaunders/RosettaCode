@@ -21,14 +21,18 @@
 : digital_root ( m -- n ) 1 - 9 mod 1 + ;
 
 : print_nice_primes ( m n -- )
+  ." Nice primes between " dup . ." and " over 1 .r ." :" cr
   over prime_sieve
+  0 -rot
   do
     i prime? if
       i digital_root prime? if
-        i . cr
+        i 3 .r
+        1+ dup 10 mod 0= if cr else space then
       then
     then
-  loop ;
+  loop
+  cr . ." nice primes found." cr ;
 
 1000 500 print_nice_primes
 bye
