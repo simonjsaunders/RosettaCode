@@ -210,6 +210,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
+|pernicious|2021-03-21|https://rosettacode.org/wiki/Pernicious_numbers|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
