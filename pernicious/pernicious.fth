@@ -1,26 +1,15 @@
 : popcount { n -- u }
   0
   begin
-    n 0 <>
+    n 0<>
   while
     n n 1- and to n
     1+
   repeat ;
 
-: prime? { n -- ? }
-  n 2 < if false exit then
-  n 2 mod 0= if n 2 = exit then
-  n 3 mod 0= if n 3 = exit then
-  5
-  begin
-    dup dup * n <=
-  while
-    n over mod 0= if drop false exit then
-    2 +
-    n over mod 0= if drop false exit then
-    4 +
-  repeat
-  drop true ;
+\ primality test for 0 <= n <= 63
+: prime? ( n -- ? )
+  1 swap lshift 0x28208a20a08a28ac and 0<> ;
 
 : pernicious? ( n -- ? )
   popcount prime? ;
