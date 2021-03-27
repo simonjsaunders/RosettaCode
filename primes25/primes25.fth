@@ -35,17 +35,14 @@
 : .prime25 { n -- }
   ." Primes < " n . ." whose digits sum to 25:" cr
   n prime_sieve
-  0 0
-  begin
-    dup n <
-  while
-    dup prime25? if
-      dup 5 .r
-      swap 1+ dup 10 mod 0= if cr then swap
+  0
+  n 0 do
+    i prime25? if
+      i 5 .r
+      1+ dup 10 mod 0= if cr then
     then
-    1+
-  repeat
-  drop cr ." Count: " . cr ;
+  loop
+  cr ." Count: " . cr ;
 
 5000 .prime25
 bye
