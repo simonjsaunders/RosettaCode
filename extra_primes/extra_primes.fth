@@ -21,14 +21,9 @@
   5 = if 2 + exit then
   10 / recurse 10 * 2 + ;
 
-: digit_sum ( n -- n )
-  0 >r
-  begin
-    dup 0 >
-  while
-    10 /mod swap r> + >r
-  repeat
-  drop r> ;
+: digit_sum ( u -- u )
+  dup 10 < if exit then
+  10 /mod recurse + ;
 
 : next_extra_prime ( n -- n )
   begin
