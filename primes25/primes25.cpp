@@ -49,7 +49,7 @@ void count_all(const std::string& str, int rem, int& count) {
         }
     } else {
         for (int i = 1; i <= std::min(9, rem); ++i)
-        count_all(str + std::to_string(i), rem - i, count);
+            count_all(str + std::to_string(i), rem - i, count);
     }
 }
 
