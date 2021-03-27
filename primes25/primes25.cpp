@@ -34,7 +34,8 @@ int digit_sum(int n) {
     return sum;
 }
 
-void count_all(const std::string& str, int rem, int& count) {
+int count_all(const std::string& str, int rem) {
+    int count = 0;
     if (rem == 0) {
         switch (str.back()) {
         case '1':
@@ -49,8 +50,9 @@ void count_all(const std::string& str, int rem, int& count) {
         }
     } else {
         for (int i = 1; i <= std::min(9, rem); ++i)
-            count_all(str + std::to_string(i), rem - i, count);
+            count += count_all(str + char('0' + i), rem - i);
     }
+    return count;
 }
 
 int main() {
@@ -66,9 +68,8 @@ int main() {
     }
     std::cout << '\n';
 
-    count = 0;
     auto start = std::chrono::steady_clock::now();
-    count_all("", 25, count);
+    count = count_all("", 25);
     auto end = std::chrono::steady_clock::now();
     std::cout << "\nThere are " << count
               << " primes whose digits sum to 25 and include no zeros.\n";
