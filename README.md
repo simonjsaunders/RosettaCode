@@ -316,6 +316,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-10-17|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-06-08|https://rosettacode.org/wiki/Fermat_numbers|
