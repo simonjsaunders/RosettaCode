@@ -39,17 +39,14 @@
 : print_erdos_primes { n -- }
   ." Erdos primes < " n 1 .r ." :" cr
   n prime_sieve
-  0 0
-  begin
-    dup n <
-  while
-    dup erdos_prime? if
-      dup 5 .r
-      swap 1+ dup 10 mod 0= if cr then swap
+  0
+  n 0 do
+    i erdos_prime? if
+      i 5 .r
+      1+ dup 10 mod 0= if cr then
     then
-    1+
-  repeat
-  2drop ;
+  loop
+  cr ." Count: " . cr ;
 
-2500 print_erdos_primes cr
+2500 print_erdos_primes
 bye
