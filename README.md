@@ -212,6 +212,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |pernicious|2021-03-21|https://rosettacode.org/wiki/Pernicious_numbers|
+|primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
