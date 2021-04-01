@@ -13,7 +13,9 @@
 
 : flips
   ." flips: "
-  0 N 1 do i q @ i 1- q @ < if 1+ then loop . cr ;
+  0 N 1 do
+    i q @ i 1- q @ < if 1+ then
+  loop . cr ;
 
 : qprint ( n -- )
   0 do i q @ . loop cr ;
