@@ -204,6 +204,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
+|all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
 |divisor_sum|2021-02-26|https://rosettacode.org/wiki/Sum_of_divisors|
