@@ -23,7 +23,7 @@ public class CircularPrimes {
             if (bignum.isProbablePrime(15)) {
                 if (count > 0)
                     System.out.print(", ");
-                System.out.print(String.format("R(%d)", digits));
+                System.out.printf("R(%d)", digits);
                 ++count;
             }
             ++digits;
@@ -78,9 +78,9 @@ public class CircularPrimes {
     private static void testRepunit(int digits) {
         BigInteger repunit = repunit(digits);
         if (repunit.isProbablePrime(15))
-            System.out.println(String.format("R(%d) is probably prime.", digits));
+            System.out.printf("R(%d) is probably prime.\n", digits);
         else
-            System.out.println(String.format("R(%d) is not prime.", digits));
+            System.out.printf("R(%d) is not prime.\n", digits);
     }
 
     private static BigInteger repunit(int digits) {

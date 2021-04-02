@@ -2,10 +2,10 @@ public class UlamNumbers {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         for (int n = 1; n <= 100000; n *= 10) {
-            System.out.println(String.format("Ulam(%d) = %d", n, ulam(n)));
+            System.out.printf("Ulam(%d) = %d\n", n, ulam(n));
         }
         long finish = System.currentTimeMillis();
-        System.out.println(String.format("Elapsed time: %.3f seconds", (finish - start)/1000.0));
+        System.out.printf("Elapsed time: %.3f seconds\n", (finish - start)/1000.0);
     }
 
     private static int ulam(int n) {

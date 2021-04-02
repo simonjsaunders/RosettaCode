@@ -51,8 +51,8 @@ public class OddWords {
     private static void printWords(List<StringPair> strings) {
         int n = 1;
         for (StringPair pair : strings) {
-            System.out.println(String.format("%2d: %-14s%s", n++,
-                                    pair.string1, pair.string2));
+            System.out.printf("%2d: %-14s%s\n", n++,
+                                    pair.string1, pair.string2);
         }
     }
 

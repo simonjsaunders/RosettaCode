@@ -13,12 +13,12 @@ public class ChangeableWords {
                         dictionary.add(line);
                 }
             }
-            System.out.println(String.format("Changeable words in %s:", fileName));
+            System.out.printf("Changeable words in %s:\n", fileName);
             int n = 1;
             for (String word1 : dictionary) {
                 for (String word2 : dictionary) {
                     if (word1 != word2 && hammingDistance(word1, word2) == 1)
-                        System.out.println(String.format("%2d: %-14s -> %s", n++, word1, word2));
+                        System.out.printf("%2d: %-14s -> %s\n", n++, word1, word2);
                 }
             }
         } catch (Exception e)  {

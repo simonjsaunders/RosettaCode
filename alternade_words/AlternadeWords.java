@@ -26,7 +26,7 @@ public class AlternadeWords {
                 String w1 = word1.toString();
                 String w2 = word2.toString();
                 if (dictionary.contains(w1) && dictionary.contains(w2))
-                    System.out.println(String.format("%-10s%-6s%s", word, w1, w2));
+                    System.out.printf("%-10s%-6s%s\n", word, w1, w2);
             }
         } catch (Exception e)  {
             e.printStackTrace();

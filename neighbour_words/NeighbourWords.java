@@ -24,7 +24,7 @@ public class NeighbourWords {
                 if (word.equals(previousWord))
                     continue;
                 if (Collections.binarySearch(words, word) >= 0)
-                    System.out.println(String.format("%2d. %s", ++count, word));
+                    System.out.printf("%2d. %s\n", ++count, word);
                 previousWord = word;
             }
         } catch (Exception e)  {

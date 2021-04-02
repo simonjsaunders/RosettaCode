@@ -20,7 +20,7 @@ public class StrangeUniquePrimeTriplets {
             primes[i] = primeList.get(i);
         int count = 0;
         if (verbose)
-            printf("Strange unique prime triplets < %d:", limit);
+            System.out.printf("Strange unique prime triplets < %d:\n", limit);
         for (int i = 0; i + 2 < n; ++i) {
             for (int j = i + 1; j + 1 < n; ++j) {
                 int s = primes[i] + primes[j];
@@ -29,12 +29,12 @@ public class StrangeUniquePrimeTriplets {
                     if (sieve[sum]) {
                         ++count;
                         if (verbose)
-                            printf("%2d + %2d + %2d = %2d", primes[i], primes[j], primes[k], sum);
+                            System.out.printf("%2d + %2d + %2d = %2d\n", primes[i], primes[j], primes[k], sum);
                     }
                 }
             }
         }
-        printf("\nCount of strange unique prime triplets < %d is %d.", limit, count);
+        System.out.printf("\nCount of strange unique prime triplets < %d is %d.\n", limit, count);
     }
 
     private static boolean[] primeSieve(int limit) {
@@ -57,9 +57,5 @@ public class StrangeUniquePrimeTriplets {
             }
         }
         return sieve;
-    }
-
-    private static void printf(String format, Object... args) {
-        System.out.println(String.format(format, args));
     }
 }
