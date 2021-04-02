@@ -66,7 +66,7 @@ public class SequenceMutation {
             if (i % 50 == 0) {
                 if (i != 0)
                     System.out.println();
-                System.out.print(String.format("%3d: ", i));
+                System.out.printf("%3d: ", i);
             }
             char ch = sequence.charAt(i);
             System.out.print(ch);

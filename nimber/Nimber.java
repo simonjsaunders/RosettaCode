@@ -49,15 +49,15 @@ public class Nimber {
     private static void printTable(int n, char op, IntBinaryOperator func) {
         System.out.print(" " + op + " |");
         for (int a = 0; a <= n; ++a)
-            System.out.print(String.format("%3d", a));
+            System.out.printf("%3d", a);
         System.out.print("\n--- -");
         for (int a = 0; a <= n; ++a)
             System.out.print("---");
         System.out.println();
         for (int b = 0; b <= n; ++b) {
-            System.out.print(String.format("%2d |", b));
+            System.out.printf("%2d |", b);
             for (int a = 0; a <= n; ++a)
-                System.out.print(String.format("%3d", func.applyAsInt(a, b)));
+                System.out.printf("%3d", func.applyAsInt(a, b));
             System.out.println();
         }
     }

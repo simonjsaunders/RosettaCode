@@ -24,7 +24,7 @@ public class Matrix {
             for (int column = 0; column < columns; ++column) {
                 if (column > 0)
                     System.out.print(' ');
-                System.out.print(String.format("%7.3f", elements[row][column]));
+                System.out.printf("%7.3f", elements[row][column]);
             }
             System.out.println();
         }

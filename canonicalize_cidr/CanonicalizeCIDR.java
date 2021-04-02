@@ -8,7 +8,7 @@ public class CanonicalizeCIDR {
                 CIDR cidr = new CIDR(test);
                 System.out.printf("%-18s -> %s\n", test, cidr.toString());
             } catch (Exception ex) {
-                System.err.println(String.format("Error parsing '%s': %s", test, ex.getLocalizedMessage()));
+                System.err.printf("Error parsing '%s': %s\n", test, ex.getLocalizedMessage());
             }
         }
     }

@@ -24,7 +24,7 @@ public class AbcWords {
                 while ((line = reader.readLine()) != null) {
                     if (match(line, chars)) {
                         ++n;
-                        System.out.print(String.format("%3d: %-20s", n, line));
+                        System.out.printf("%3d: %-20s", n, line);
                         if (n % 3 == 0)
                             System.out.println();
                     }
