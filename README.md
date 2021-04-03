@@ -155,6 +155,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |powerful|2020-12-30|https://rosettacode.org/wiki/Powerful_numbers|
 |prime_conspiracy|2020-07-28|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
+|prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
