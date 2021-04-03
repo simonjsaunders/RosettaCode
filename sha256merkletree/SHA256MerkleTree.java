@@ -4,16 +4,14 @@ import java.util.*;
 
 public class SHA256MerkleTree {
     public static void main(String[] args) {
-        try {
-            if (args.length != 1) {
-                System.err.println("missing file argument");
-                System.exit(1);
-            }
-            try (InputStream in = new BufferedInputStream(new FileInputStream(args[0]))) {
-                byte[] digest = sha256MerkleTree(in, 1024);
-                if (digest != null)
-                    System.out.println(digestToString(digest));
-            }
+        if (args.length != 1) {
+            System.err.println("missing file argument");
+            System.exit(1);
+        }
+        try (InputStream in = new BufferedInputStream(new FileInputStream(args[0]))) {
+            byte[] digest = sha256MerkleTree(in, 1024);
+            if (digest != null)
+                System.out.println(digestToString(digest));
         } catch (Exception e) {
             e.printStackTrace();
         }

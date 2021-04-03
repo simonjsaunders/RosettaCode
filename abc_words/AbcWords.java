@@ -17,21 +17,20 @@ public class AbcWords {
                 break;
             }
         }
-        try {
-            try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-                String line;
-                int n = 0;
-                while ((line = reader.readLine()) != null) {
-                    if (match(line, chars)) {
-                        ++n;
-                        System.out.printf("%3d: %-20s", n, line);
-                        if (n % 3 == 0)
-                            System.out.println();
-                    }
+        
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            int n = 0;
+            while ((line = reader.readLine()) != null) {
+                if (match(line, chars)) {
+                    ++n;
+                    System.out.printf("%3d: %-20s", n, line);
+                    if (n % 3 == 0)
+                        System.out.println();
                 }
-                if (n > 0 && n % 3 != 0)
-                    System.out.println();
             }
+            if (n > 0 && n % 3 != 0)
+                System.out.println();
         } catch (Exception e)  {
             e.printStackTrace();
         }
