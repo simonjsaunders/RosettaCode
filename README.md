@@ -328,6 +328,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |fibword_fractal|2020-07-28|https://www.rosettacode.org/wiki/Fibonacci_word/fractal|
 |fixed_length|2020-06-19|https://rosettacode.org/wiki/Fixed_length_records|
 |four_is|2020-06-25|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
+|frobenius|2021-04-03|https://rosettacode.org/wiki/Frobenius_numbers|
 |fusc|2020-07-23|https://rosettacode.org/wiki/Fusc_sequence|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
