@@ -354,6 +354,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |partition_function|2020-12-14|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-07-15|https://rosettacode.org/wiki/Peano_curve|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
+|prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
