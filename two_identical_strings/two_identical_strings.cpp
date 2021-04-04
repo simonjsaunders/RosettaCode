@@ -1,22 +1,26 @@
 #include <iostream>
 #include <string>
 
-std::string base2(unsigned int n) {
-    std::string s;
-    do {
-        s.insert(s.begin(), '0' + (n & 1));
-        n >>= 1;
-    } while (n != 0);
-    return s;
+void increment(std::string& s) {
+    size_t z = s.rfind('0');
+    if (z != std::string::npos) {
+        s[z] = '1';
+        size_t count = s.size() - (z + 1);
+        s.replace(z + 1, count, count, '0');
+    } else {
+        s.assign(s.size() + 1, '0');
+        s[0] = '1';
+    }
 }
 
 int main() {
     std::cout << "Decimal\tBinary\n";
+    std::string s("1");
     for (unsigned int n = 1; ; ++n) {
-        std::string s(base2(n));
         unsigned int i = n + (n << s.size());
         if (i >= 1000)
             break;
         std::cout << i << '\t' << s << s << '\n';
+        increment(s);
     }
 }
