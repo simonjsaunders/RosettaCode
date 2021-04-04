@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 
-void increment(std::string& s) {
+// Given the base 2 representation of a number n, transform it into the base 2
+// representation of n + 1.
+void base2_increment(std::string& s) {
     size_t z = s.rfind('0');
     if (z != std::string::npos) {
         s[z] = '1';
@@ -21,6 +23,6 @@ int main() {
         if (i >= 1000)
             break;
         std::cout << i << '\t' << s << s << '\n';
-        increment(s);
+        base2_increment(s);
     }
 }
