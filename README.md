@@ -307,6 +307,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
+|two_identical_strings|2021-04-05|https://rosettacode.org/wiki/Two_identical_strings|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
 |word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
 |word_wrap|2020-05-17|https://rosettacode.org/wiki/Word_wrap|
