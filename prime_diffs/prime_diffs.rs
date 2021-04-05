@@ -1,7 +1,7 @@
 // [dependencies]
 // primal = "0.3"
 
-fn print_diffs(vec: Vec<usize>) {
+fn print_diffs(vec: &[usize]) {
     for i in 0..vec.len() {
         if i > 0 {
             print!(" ({}) ", vec[i] - vec[i - 1]);
@@ -50,10 +50,10 @@ fn main() {
     }
     println!("Longest run(s) of ascending prime gaps up to {}:", limit);
     for v in max_asc {
-        print_diffs(v);
+        print_diffs(&v);
     }
     println!("\nLongest run(s) of descending prime gaps up to {}:", limit);
     for v in max_desc {
-        print_diffs(v);
+        print_diffs(&v);
     }
 }
