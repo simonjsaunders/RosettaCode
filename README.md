@@ -213,6 +213,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |e3|2021-04-03|https://rosettacode.org/wiki/Find_words_which_contains_more_than_3_e_vowels|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
+|first_last_three_equal|2021-04-05|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
