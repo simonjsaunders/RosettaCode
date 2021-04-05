@@ -217,6 +217,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
+|odd_even_words|2021-04-05|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |pernicious|2021-03-21|https://rosettacode.org/wiki/Pernicious_numbers|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
