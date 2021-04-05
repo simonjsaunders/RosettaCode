@@ -182,6 +182,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |stirling2|2020-04-04|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
+|substring_primes|2021-04-05|https://rosettacode.org/wiki/Substring_primes|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |system_output|2020-10-17|https://rosettacode.org/wiki/Get_system_command_output|
