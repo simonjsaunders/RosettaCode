@@ -434,6 +434,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |textonyms|2020-07-29|https://rosettacode.org/wiki/Textonyms|
 |tree_traversal|2021-01-30|https://rosettacode.org/wiki/Tree_traversal|
 |trunc_primes|2020-07-22|https://rosettacode.org/wiki/Truncatable_primes|
+|two_identical_strings|2021-04-05|https://rosettacode.org/wiki/Two_identical_strings|
 |unprimeable|2020-12-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-07-23|https://rosettacode.org/wiki/Van_Eck_sequence|
 |water|2020-08-23|https://rosettacode.org/wiki/Water_collected_between_towers|
