@@ -29,8 +29,7 @@
 
 : spds_print ( n -- )
   0 swap 0 do
-    spds_next
-    dup is_prime? if dup . then
+    spds_next dup .
   loop
   drop cr ;
 
