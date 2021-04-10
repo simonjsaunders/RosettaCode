@@ -252,6 +252,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
+|partition_function|2021-04-10|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
