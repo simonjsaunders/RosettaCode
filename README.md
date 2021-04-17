@@ -221,6 +221,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |odd_even_words|2021-04-05|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |pernicious|2021-03-21|https://rosettacode.org/wiki/Pernicious_numbers|
+|prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
