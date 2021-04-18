@@ -246,6 +246,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|frobenius|2021-04-18|https://rosettacode.org/wiki/Frobenius_numbers|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
