@@ -94,7 +94,8 @@ private:
         if (end <= begin)
             return nullptr;
         size_t n = begin + (end - begin)/2;
-        std::nth_element(&nodes_[begin], &nodes_[n], &nodes_[0] + end, node_cmp(index));
+        auto i = nodes_.begin();
+        std::nth_element(i + begin, i + n, i + end, node_cmp(index));
         index = (index + 1) % dimensions;
         nodes_[n].left_ = make_tree(begin, n, index);
         nodes_[n].right_ = make_tree(n + 1, end, index);
