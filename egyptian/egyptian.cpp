@@ -1,10 +1,17 @@
 #include <iostream>
+#include <optional>
 #include <vector>
 #include <string>
 #include <sstream>
 #include <boost/multiprecision/cpp_int.hpp>
 
 typedef boost::multiprecision::cpp_int integer;
+
+struct fraction {
+    fraction(const integer& n, const integer& d) : numerator(n), denominator(d) {}
+    integer numerator;
+    integer denominator;
+};
 
 integer mod(const integer& x, const integer& y) {
     return ((x % y) + y) % y;
@@ -16,7 +23,7 @@ size_t count_digits(const integer& i) {
     return os.str().length();
 }
 
-std::string integer_to_string(const integer& i) {
+std::string to_string(const integer& i) {
     const int max_digits = 20;
     std::ostringstream os;
     os << i;
@@ -27,78 +34,81 @@ std::string integer_to_string(const integer& i) {
     return s;
 }
 
-void egyptian(integer x, integer y, std::vector<integer>& result) {
+std::ostream& operator<<(std::ostream& out, const fraction& f) {
+    return out << to_string(f.numerator) << '/' << to_string(f.denominator);
+}
+
+void egyptian(const fraction& f, std::vector<fraction>& result) {
     result.clear();
+    integer x = f.numerator, y = f.denominator;
     while (x > 0) {
         integer z = (y + x - 1)/x;
-        result.push_back(z);
+        result.emplace_back(1, z);
         x = mod(-y, x);
         y = y * z;
     }
 }
 
-void print_egyptian(const std::vector<integer>& result) {
+void print_egyptian(const std::vector<fraction>& result) {
     if (result.empty())
         return;
     auto i = result.begin();
-    std::cout << "1/" << integer_to_string(*i++);
+    std::cout << *i++;
     for (; i != result.end(); ++i)
-        std::cout << " + 1/" << integer_to_string(*i);
-    std::cout << "\n\n";
+        std::cout << " + " << *i;
+    std::cout << '\n';
 }
 
-void print_egyptian(integer x, integer y) {
-    std::cout << "Egyptian fraction for " << x << "/" << y << ": ";
+void print_egyptian(const fraction& f) {
+    std::cout << "Egyptian fraction for " << f << ": ";
+    integer x = f.numerator, y = f.denominator;
     if (x > y) {
         std::cout << "[" << x/y << "] ";
         x = x % y;
     }
-    std::vector<integer> result;
-    egyptian(x, y, result);
+    std::vector<fraction> result;
+    egyptian(fraction(x, y), result);
     print_egyptian(result);
+    std::cout << '\n';
 }
 
 void show_max_terms_and_max_denominator(const integer& limit) {
     size_t max_terms = 0;
-    integer max_terms_numerator, max_terms_denominator;
-    integer max_denominator_numerator, max_denominator_denominator;
-    std::vector<integer> max_terms_result;
+    std::optional<fraction> max_terms_fraction, max_denominator_fraction;
+    std::vector<fraction> max_terms_result;
     integer max_denominator = 0;
-    std::vector<integer> max_denominator_result;
-    std::vector<integer> result;
+    std::vector<fraction> max_denominator_result;
+    std::vector<fraction> result;
     for (integer b = 2; b < limit; ++b) {
         for (integer a = 1; a < b; ++a) {
-            egyptian(a, b, result);
+            fraction f(a, b);
+            egyptian(f, result);
             if (result.size() > max_terms) {
                 max_terms = result.size();
                 max_terms_result = result;
-                max_terms_numerator = a;
-                max_terms_denominator = b;
+                max_terms_fraction = f;
             }
-            integer largest_denominator = result.back();
-            if (largest_denominator > max_denominator) {
-                max_denominator = largest_denominator;
+            const integer& denominator = result.back().denominator;
+            if (denominator > max_denominator) {
+                max_denominator = denominator;
                 max_denominator_result = result;
-                max_denominator_numerator = a;
-                max_denominator_denominator = b;
+                max_denominator_fraction = f;
             }
         }
     }
     std::cout << "Proper fractions with most terms and largest denominator, limit = " << limit << ":\n\n";
-    std::cout << "Most terms (" << max_terms << "): " << max_terms_numerator
-        << '/' << max_terms_denominator << " = ";
+    std::cout << "Most terms (" << max_terms << "): " << max_terms_fraction.value() << " = ";
     print_egyptian(max_terms_result);
-    std::cout << "Largest denominator (" << count_digits(max_denominator_result.back()) << " digits): "
-        << max_denominator_numerator << '/' << max_denominator_denominator << " = ";
+    std::cout << "\nLargest denominator (" << count_digits(max_denominator_result.back().denominator)
+        << " digits): " << max_denominator_fraction.value() << " = ";
     print_egyptian(max_denominator_result);
 }
 
 int main() {
-    print_egyptian(43, 48);
-    print_egyptian(5, 121);
-    print_egyptian(2014, 59);
+    print_egyptian(fraction(43, 48));
+    print_egyptian(fraction(5, 121));
+    print_egyptian(fraction(2014, 59));
     show_max_terms_and_max_denominator(100);
     show_max_terms_and_max_denominator(1000);
     return 0;
 }
-
