@@ -4,21 +4,22 @@
 #include <sstream>
 #include <vector>
 
-// Returns true if any subset of f sums to n.
-bool sum_of_any_subset(int n, const std::vector<int>& f) {
-    if (f.empty())
+// Returns true if any subset of [begin, end) sums to n.
+template <typename iterator>
+bool sum_of_any_subset(int n, iterator begin, iterator end) {
+    if (begin == end)
         return false;
-    if (std::find(f.begin(), f.end(), n) != f.end())
+    if (std::find(begin, end, n) != end)
         return true;
-    int total = std::accumulate(f.begin(), f.end(), 0);
+    int total = std::accumulate(begin, end, 0);
     if (n == total)
         return true;
     if (n > total)
         return false;
-    int d = n - f.back();
-    std::vector<int> g(f.begin(), f.end() - 1);
-    return std::find(g.begin(), g.end(), d) != g.end() ||
-           (d > 0 && sum_of_any_subset(d, g)) || sum_of_any_subset(n, g);
+    --end;
+    int d = n - *end;
+    return (d > 0 && sum_of_any_subset(d, begin, end)) ||
+           sum_of_any_subset(n, begin, end);
 }
 
 // Returns the proper divisors of n.
@@ -38,7 +39,7 @@ std::vector<int> factors(int n) {
 bool is_practical(int n) {
     std::vector<int> f = factors(n);
     for (int i = 1; i < n; ++i) {
-        if (!sum_of_any_subset(i, f))
+        if (!sum_of_any_subset(i, f.begin(), f.end()))
             return false;
     }
     return true;
@@ -68,8 +69,8 @@ int main() {
     }
     std::cout << "Found " << practical.size() << " practical numbers:\n"
               << shorten(practical, 10) << '\n';
-    std::cout << std::boolalpha;
-    for (int n : {666, 6666, 66666, 672, 720})
-        std::cout << "is_practical(" << n << "): " << is_practical(n) << '\n';
+    for (int n : {666, 6666, 66666, 672, 720, 222222})
+        std::cout << n << " is " << (is_practical(n) ? "" : "not ")
+                  << "a practical number.\n";
     return 0;
 }
