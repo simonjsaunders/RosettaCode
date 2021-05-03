@@ -147,7 +147,7 @@ public:
     kdtree(func&& f, size_t n) {
         nodes_.reserve(n);
         for (size_t i = 0; i < n; ++i)
-            nodes_.emplace_back(f());
+            nodes_.push_back(f());
         root_ = make_tree(0, nodes_.size(), 0);
     }
 
