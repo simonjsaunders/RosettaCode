@@ -153,6 +153,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
 |powerful|2020-12-30|https://rosettacode.org/wiki/Powerful_numbers|
+|practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_conspiracy|2020-07-28|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
