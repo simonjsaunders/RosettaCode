@@ -175,6 +175,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_arrowhead|2020-06-10|https://rosettacode.org/wiki/Sierpinski_arrowhead_curve|
 |sierpinski_curve|2020-06-11|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_square|2020-06-11|https://rosettacode.org/wiki/Sierpinski_square_curve|
+|sleeping_beauty|2021-05-09|https://rosettacode.org/wiki/Sleeping_Beauty_problem|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
