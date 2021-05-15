@@ -26,6 +26,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |circular_primes|2020-05-14|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort|
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
+|common_sorted_list|2021-05-15|https://rosettacode.org/wiki/Common_sorted_list#C.2B.2B|
 |douglas_peucker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
