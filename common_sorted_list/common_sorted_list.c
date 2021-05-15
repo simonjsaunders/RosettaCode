@@ -16,13 +16,6 @@ void* xmalloc(size_t n) {
     return ptr;
 }
 
-void* xrealloc(void* p, size_t n) {
-    void* ptr = realloc(p, n);
-    if (ptr == NULL)
-        fatal("Out of memory");
-    return ptr;
-}
-
 int icompare(const void* p1, const void* p2) {
     const int* ip1 = p1;
     const int* ip2 = p2;
@@ -54,7 +47,7 @@ int* common_sorted_list(const int** arrays, const size_t* lengths, size_t count,
     return array;
 }
 
-void print(int* array, size_t len) {
+void print(const int* array, size_t len) {
     printf("[");
     for (size_t i = 0; i < len; ++i) {
         if (i > 0)
