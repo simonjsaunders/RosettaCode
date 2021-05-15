@@ -200,6 +200,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |twin_primes|2020-07-27|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
 |two_identical_strings|2021-04-03|https://rosettacode.org/wiki/Two_identical_strings|
 |ulam|2021-01-22|https://rosettacode.org/wiki/Ulam_numbers|
+|unique_characters|2021-05-15|https://rosettacode.org/wiki/Unique_characters|
 |unique_chars|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprimeable|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
