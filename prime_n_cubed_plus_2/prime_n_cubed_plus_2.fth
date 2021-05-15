@@ -20,7 +20,7 @@
     else
       drop
     then
-  loop ;
+  2 +loop ;
 
 main
 bye
