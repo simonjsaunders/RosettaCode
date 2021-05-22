@@ -54,6 +54,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |smarandache|2020-05-06|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |stirling1|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-05-09|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
+|sum_cubes|2021-05-22|https://rosettacode.org/wiki/Sum_of_first_n_cubes|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |teacup|2020-06-06|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-24|https://rosettacode.org/wiki/Textonyms|
