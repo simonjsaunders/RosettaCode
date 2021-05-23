@@ -451,6 +451,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
 |remove_vowels|2021-01-31|https://rosettacode.org/wiki/Remove_vowels_from_a_string|
 |safe_primes|2021-01-17|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
+|sleeping_beauty|2021-05-23|https://rosettacode.org/wiki/Sleeping_Beauty_problem|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_cube|2021-02-05|https://rosettacode.org/wiki/Square_but_not_cube|
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
