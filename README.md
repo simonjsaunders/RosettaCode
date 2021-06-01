@@ -241,6 +241,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sum_cubes|2021-05-22|https://rosettacode.org/wiki/Sum_of_first_n_cubes|
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
+|wieferich_primes|2021-06-01|https://rosettacode.org/wiki/Weiferich_primes|
 
 ## Java Code Examples
 
