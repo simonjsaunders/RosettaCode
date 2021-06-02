@@ -414,6 +414,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |unprimeable|2020-06-30|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
+|wieferich_primes|2021-06-02|https://rosettacode.org/wiki/Wieferich_primes|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
 
 ## Swift Code Examples
