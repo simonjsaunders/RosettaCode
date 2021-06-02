@@ -201,6 +201,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |text_completion|2020-07-30|https://rosettacode.org/wiki/Text_Completion|
 |totient|2020-04-04|https://rosettacode.org/wiki/Totient_function|
+|tree_traversal|2021-06-02|https://rosettacode.org/wiki/Tree_traversal|
 |trees|2020-09-06|https://rosettacode.org/wiki/Tree_datastructures|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
 |twin_primes|2020-07-27|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
