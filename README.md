@@ -436,6 +436,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hofstadter_q_seq|2021-01-16|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
+|largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
 |leonardo|2020-12-26|https://rosettacode.org/wiki/Leonardo_numbers|
 |levenshtein|2020-12-24|https://rosettacode.org/wiki/Levenshtein_distance|
