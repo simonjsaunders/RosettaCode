@@ -349,6 +349,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
+|doomsday_rule|2021-06-02|https://rosettacode.org/wiki/Doomsday_rule|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |etoi|2021-05-22|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
