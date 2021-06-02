@@ -81,6 +81,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
 |barnsley_fern|2020-04-17|https://rosettacode.org/wiki/Barnsley_fern|
+|base16|2021-06-02|https://rosettacode.org/wiki/Base-16_representation|
 |bell|2020-01-13|https://rosettacode.org/wiki/Bell_numbers|
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
 |calkin_wilf|2020-12-12|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
