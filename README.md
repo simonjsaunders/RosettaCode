@@ -208,7 +208,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |unique_chars|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_unique_characters|
 |unprimeable|2020-01-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
-|wieferich_primes|2021-05-31|https://rosettacode.org/wiki/Weiferich_primes|
+|wieferich_primes|2021-05-31|https://rosettacode.org/wiki/Wieferich_primes|
 |word_break|2020-06-15|https://rosettacode.org/wiki/Word_break_problem|
 |word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
 |yellowstone|2020-06-23|https://rosettacode.org/wiki/Yellowstone_sequence|
@@ -243,7 +243,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sum_cubes|2021-05-22|https://rosettacode.org/wiki/Sum_of_first_n_cubes|
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
-|wieferich_primes|2021-06-01|https://rosettacode.org/wiki/Weiferich_primes|
+|wieferich_primes|2021-06-01|https://rosettacode.org/wiki/Wieferich_primes|
 
 ## Java Code Examples
 
