@@ -221,6 +221,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |---------|--------------|----------------|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
+|base16|2021-06-03|https://rosettacode.org/wiki/Base-16_representation|
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
 |divisible|2021-04-10|https://rosettacode.org/wiki/Numbers_divisible_by_their_individual_digits,_but_not_by_the_product_of_their_digits.|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
