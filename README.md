@@ -333,6 +333,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sort_oid|2020-05-05|https://rosettacode.org/wiki/Sort_a_list_of_object_identifiers|
 |stirling1|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
 |stirling2|2020-04-05|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
+|sylvesters_sequence|2021-06-03|https://rosettacode.org/wiki/Sylvester%27s_sequence|
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |two_identical_strings|2021-04-05|https://rosettacode.org/wiki/Two_identical_strings|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
