@@ -118,6 +118,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |gaussian_elimination|2020-12-31|https://rosettacode.org/wiki/Gaussian_elimination|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
+|harmonic_series|2021-06-03|https://rosettacode.org/wiki/Harmonic_series|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |isqrt|2020-07-16|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
