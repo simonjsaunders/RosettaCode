@@ -262,6 +262,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
+|equal_rises_and_falls|2021-06-03|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |frobenius|2021-04-18|https://rosettacode.org/wiki/Frobenius_numbers|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
