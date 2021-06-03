@@ -284,6 +284,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |tree_sort|2020-07-07|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
+|wieferich_primes|2021-06-03|https://rosettacode.org/wiki/Wieferich_primes|
 
 ## Prolog Code Examples
 
@@ -476,5 +477,6 @@ in this repository for any purpose then it's entirely at your own risk.
 |unprimeable|2020-12-23|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-07-23|https://rosettacode.org/wiki/Van_Eck_sequence|
 |water|2020-08-23|https://rosettacode.org/wiki/Water_collected_between_towers|
+|wieferich_primes|2021-06-03|https://rosettacode.org/wiki/Wieferich_primes|
 |word_freq|2020-07-28|https://rosettacode.org/wiki/Word_frequency|
 |xxxx_redacted|2020-12-26|https://rosettacode.org/wiki/XXXX_redacted|
