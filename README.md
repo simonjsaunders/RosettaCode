@@ -137,6 +137,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |levenshtein|2020-12-24|https://rosettacode.org/wiki/Levenshtein_distance|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-04-05|https://rosettacode.org/wiki/Long_year%3F|
+|longest_substrings_without_repeats|2021-06-04|https://rosettacode.org/wiki/Longest_substrings_without_repeating_characters|
 |lu_decomp|2020-04-25|https://rosettacode.org/wiki/LU_decomposition|
 |lychrel|2020-01-22|https://rosettacode.org/wiki/Lychrel_numbers|
 |mac_vendor_lookup|2020-04-19|https://rosettacode.org/wiki/MAC_Vendor_Lookup|
