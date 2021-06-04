@@ -7,7 +7,7 @@
 
 std::vector<std::string> longest_substrings_without_repeats(const std::string& str) {
     size_t max_length = 0;
-    std::vector<size_t> offsets;
+    std::vector<std::string> result;
     size_t length = str.size();
     for (size_t offset = 0; offset < length; ++offset) {
         std::set<char> characters;
@@ -18,15 +18,12 @@ std::vector<std::string> longest_substrings_without_repeats(const std::string& s
             characters.insert(str[offset + len]);
         }
         if (len > max_length) {
-            offsets.clear();
+            result.clear();
             max_length = len;
         }
         if (len == max_length)
-            offsets.push_back(offset);
+            result.push_back(str.substr(offset, max_length));
     }
-    std::vector<std::string> result;
-    for (size_t offset : offsets)
-        result.push_back(str.substr(offset, max_length));
     return result;
 }
 
