@@ -216,6 +216,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
 |wieferich_primes|2021-05-31|https://rosettacode.org/wiki/Wieferich_primes|
 |word_break|2020-06-15|https://rosettacode.org/wiki/Word_break_problem|
+|word_ladder|2021-06-06|https://rosettacode.org/wiki/Word_ladder|
 |word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
 |yellowstone|2020-06-23|https://rosettacode.org/wiki/Yellowstone_sequence|
 
