@@ -250,6 +250,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |sum_cubes|2021-05-22|https://rosettacode.org/wiki/Sum_of_first_n_cubes|
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
+|triplet_of_three_numbers|2021-06-12|https://rosettacode.org/wiki/Triplet_of_three_numbers|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
 |wieferich_primes|2021-06-01|https://rosettacode.org/wiki/Wieferich_primes|
 
