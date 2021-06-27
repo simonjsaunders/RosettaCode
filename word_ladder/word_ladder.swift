@@ -4,16 +4,16 @@ func oneAway(string1: String, string2: String) -> Bool {
     if string1.count != string2.count {
         return false
     }
-    var sum = 0
+    var result = false
     for (c1, c2) in zip(string1, string2) {
         if c1 != c2 {
-            sum += 1
-            if sum > 1 {
+            if result {
                 return false
             }
+            result = true
         }
     }
-    return sum == 1
+    return result
 }
 
 func wordLadder(words: [String], from: String, to: String) {

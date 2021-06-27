@@ -11,14 +11,15 @@ using word_map = std::map<size_t, std::vector<std::string>>;
 bool one_away(const std::string& s1, const std::string& s2) {
     if (s1.size() != s2.size())
         return false;
-    int sum = 0;
+    bool result = false;
     for (size_t i = 0, n = s1.size(); i != n; ++i) {
         if (s1[i] != s2[i]) {
-            if (++sum > 1)
+            if (result)
                 return false;
+            result = true;
         }
     }
-    return sum == 1;
+    return result;
 }
 
 // Join a sequence of strings into a single string using the given separator.
