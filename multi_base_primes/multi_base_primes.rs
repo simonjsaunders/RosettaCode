@@ -9,12 +9,10 @@ fn digits(mut n: u32, dig: &mut [u32]) {
 }
 
 fn evalpoly(x: u64, p: &[u32]) -> u64 {
-    let mut n = p.len();
     let mut result = 0;
-    while n > 0 {
-        n -= 1;
+    for y in p.iter().rev() {
         result *= x;
-        result += p[n] as u64;
+        result += *y as u64;
     }
     result
 }
