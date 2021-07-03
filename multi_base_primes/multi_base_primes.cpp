@@ -43,7 +43,7 @@ std::string to_string(const std::vector<unsigned int>& v) {
     for (auto i : v)
         str += digits[i];
     return str;
-};
+}
 
 class multi_base_primes {
 public:
@@ -84,11 +84,13 @@ void multi_base_primes::run() {
 }
 
 void multi_base_primes::process(const std::vector<unsigned int>& indices) {
-    std::vector<unsigned int> bases;
     auto max = std::max_element(indices.begin(), indices.end());
     unsigned int min_base = 2;
     if (max != indices.end())
         min_base = std::max(min_base, *max + 1);
+    if (most_bases > max_base - min_base)
+        return;
+    std::vector<unsigned int> bases;
     for (unsigned int b = min_base; b <= max_base; ++b) {
         uint64_t n = 0;
         for (auto i : indices)
