@@ -244,6 +244,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
+|revprimes|2021-07-04|https://rosettacode.org/wiki/Find_prime_n_for_that_reversed_n_is_also_prime|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
