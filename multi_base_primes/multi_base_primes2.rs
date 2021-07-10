@@ -16,8 +16,7 @@ fn to_string(digits: &[usize]) -> String {
 }
 
 fn increment(digits: &mut [usize], base: usize) -> bool {
-    let i = digits.iter_mut().rev();
-    for d in i {
+    for d in digits.iter_mut().rev() {
         if *d + 1 != base {
             *d += 1;
             return true;
