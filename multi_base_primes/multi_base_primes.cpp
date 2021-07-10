@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <primesieve.hpp>
 
 class prime_sieve {
 public:
@@ -18,18 +19,11 @@ private:
     std::vector<bool> sieve;
 };
 
-prime_sieve::prime_sieve(uint64_t limit) : sieve((limit + 1) / 2, true) {
-    if (limit > 0)
-        sieve[0] = false;
-    for (uint64_t p = 3;; p += 2) {
-        uint64_t q = p * p;
-        if (q >= limit)
-            break;
-        if (sieve[p >> 1]) {
-            uint64_t inc = 2 * p;
-            for (; q < limit; q += inc)
-                sieve[q >> 1] = false;
-        }
+prime_sieve::prime_sieve(uint64_t limit) : sieve((limit + 1) / 2, false) {
+    primesieve::iterator iter;
+    uint64_t prime = iter.next_prime(); // consume 2
+    while ((prime = iter.next_prime()) <= limit) {
+        sieve[prime >> 1] = true;
     }
 }
 
