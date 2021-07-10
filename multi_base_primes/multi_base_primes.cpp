@@ -80,6 +80,8 @@ void multi_base_primes(unsigned int max_base, unsigned int max_length) {
                 continue;
             bases.clear();
             for (unsigned int b = min_base; b <= max_base; ++b) {
+                if (max_base - b + 1 + bases.size() < most_bases)
+                    break;
                 uint64_t n = 0;
                 for (auto d : digits)
                     n = n * b + d;
