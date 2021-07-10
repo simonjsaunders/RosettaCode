@@ -16,16 +16,15 @@ fn to_string(digits: &[usize]) -> String {
 }
 
 fn increment(digits: &mut [usize], base: usize) -> bool {
-    let mut i = digits.len();
-    while i > 0 && digits[i - 1] + 1 == base {
-        digits[i - 1] = 0;
-        i -= 1;
+    let i = digits.iter_mut().rev();
+    for d in i {
+        if *d + 1 != base {
+            *d += 1;
+            return true;
+        }
+        *d = 0;
     }
-    if i == 0 {
-        return false;
-    }
-    digits[i - 1] += 1;
-    true
+    false
 }
 
 fn multi_base_primes(max_base: usize, max_length: usize) {
