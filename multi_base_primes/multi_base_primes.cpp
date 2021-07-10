@@ -48,13 +48,14 @@ std::string to_string(const std::vector<unsigned int>& v) {
 }
 
 bool increment(std::vector<unsigned int>& digits, unsigned int max_base) {
-    auto i = digits.rbegin();
-    for (; i != digits.rend() && *i + 1 == max_base; ++i)
+    for (auto i = digits.rbegin(); i != digits.rend(); ++i) {
+        if (*i + 1 != max_base) {
+            ++*i;
+            return true;
+        }
         *i = 0;
-    if (i == digits.rend())
-        return false;
-    ++*i;
-    return true;
+    }
+    return false;
 }
 
 void multi_base_primes(unsigned int max_base, unsigned int max_length) {
