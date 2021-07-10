@@ -6,27 +6,31 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <chrono>
 
-std::vector<bool> prime_sieve(uint64_t limit) {
-    std::vector<bool> sieve(limit, true);
+class prime_sieve {
+public:
+    explicit prime_sieve(uint64_t limit);
+    bool is_prime(uint64_t n) const {
+        return n == 2 || ((n & 1) == 1 && sieve[n >> 1]);
+    }
+
+private:
+    std::vector<bool> sieve;
+};
+
+prime_sieve::prime_sieve(uint64_t limit) : sieve((limit + 1) / 2, true) {
     if (limit > 0)
         sieve[0] = false;
-    if (limit > 1)
-        sieve[1] = false;
-    for (uint64_t i = 4; i < limit; i += 2)
-        sieve[i] = false;
     for (uint64_t p = 3;; p += 2) {
         uint64_t q = p * p;
         if (q >= limit)
             break;
-        if (sieve[p]) {
+        if (sieve[p >> 1]) {
             uint64_t inc = 2 * p;
             for (; q < limit; q += inc)
-                sieve[q] = false;
+                sieve[q >> 1] = false;
         }
     }
-    return sieve;
 }
 
 template <typename T> void print(std::ostream& out, const std::vector<T>& v) {
@@ -60,12 +64,7 @@ bool increment(std::vector<unsigned int>& digits, unsigned int max_base) {
 }
 
 void multi_base_primes(unsigned int max_base, unsigned int max_length) {
-    auto time1 = std::chrono::high_resolution_clock::now();
-    auto sieve =
-        prime_sieve(static_cast<uint64_t>(std::pow(max_base, max_length)));
-    auto time2 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> duration1(time2 - time1);
-    std::cout << "sieve time: " << duration1.count() << "ms\n";
+    prime_sieve sieve(static_cast<uint64_t>(std::pow(max_base, max_length)));
     for (unsigned int length = 1; length <= max_length; ++length) {
         std::cout << length
                   << "-character strings which are prime in most bases: ";
@@ -90,7 +89,7 @@ void multi_base_primes(unsigned int max_base, unsigned int max_length) {
                 uint64_t n = 0;
                 for (auto d : digits)
                     n = n * b + d;
-                if (sieve[n])
+                if (sieve.is_prime(n))
                     bases.push_back(b);
             }
             if (bases.size() > most_bases) {
@@ -108,9 +107,6 @@ void multi_base_primes(unsigned int max_base, unsigned int max_length) {
         }
         std::cout << '\n';
     }
-    auto time3 = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> duration2(time3 - time2);
-    std::cout << "remainder: " << duration2.count() << "ms\n";
 }
 
 int main(int argc, char** argv) {
