@@ -70,6 +70,7 @@ void multi_base_primes(unsigned int max_base, unsigned int max_length) {
             max_strings;
         std::vector<unsigned int> digits(length, 0);
         digits[0] = 1;
+        std::vector<unsigned int> bases;
         do {
             auto max = std::max_element(digits.begin(), digits.end());
             unsigned int min_base = 2;
@@ -77,7 +78,7 @@ void multi_base_primes(unsigned int max_base, unsigned int max_length) {
                 min_base = std::max(min_base, *max + 1);
             if (most_bases > max_base - min_base + 1)
                 continue;
-            std::vector<unsigned int> bases;
+            bases.clear();
             for (unsigned int b = min_base; b <= max_base; ++b) {
                 uint64_t n = 0;
                 for (auto d : digits)
