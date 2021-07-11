@@ -1,30 +1,21 @@
-: prime? ( n -- ? ) here + c@ 0= ;
-: notprime! ( n -- ) here + 1 swap c! ;
-
-: prime_sieve { n -- }
-  here n erase
-  0 notprime!
-  1 notprime!
-  n 4 > if
-    n 4 do i notprime! 2 +loop
-  then
-  3
+: prime? ( n -- flag )
+  dup 2 < if drop false exit then
+  dup 2 mod 0= if 2 = exit then
+  dup 3 mod 0= if 3 = exit then
+  5
   begin
-    dup dup * n <
+    2dup dup * >=
   while
-    dup prime? if
-      n over dup * do
-        i notprime!
-      dup 2* +loop
-    then
+    2dup mod 0= if 2drop false exit then
     2 +
+    2dup mod 0= if 2drop false exit then
+    4 +
   repeat
-  drop ;
+  2drop true ;
 
 : main
   0 0 { count sum }
   ." count  prime      sum" cr
-  100000 prime_sieve
   1000 2 do
     i prime? if
       count 1+ to count
