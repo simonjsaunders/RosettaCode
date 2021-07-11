@@ -53,7 +53,10 @@ int main(int argc, char** argv) {
     }
     int width = static_cast<int>(std::ceil(std::log10(limit)));
     int count = 0;
-    for (int n = 1; n < limit; ++n) {
+    for (int i = 1;; ++i) {
+        int n = i * i;
+        if (n >= limit)
+            break;
         int divisors = divisor_count(n);
         if (divisors != 2 && is_prime(divisors))
             std::cout << std::setw(width) << n << (++count % 10 == 0 ? '\n' : ' ');
