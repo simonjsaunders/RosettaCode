@@ -161,6 +161,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |partition_function|2020-12-14|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-12-12|https://rosettacode.org/wiki/Peano_curve|
+|penrose|2021-07-13|https://rosettacode.org/wiki/Penrose_tiling|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
 |powerful|2020-12-30|https://rosettacode.org/wiki/Powerful_numbers|
