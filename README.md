@@ -135,6 +135,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
 |least_squares|2020-06-01|https://rosettacode.org/wiki/Logistic_Curve_Fitting_in_Epidemiology|
 |leftfact|2020-07-13|https://rosettacode.org/wiki/Left_factorials|
+|legendre|2021-08-14|https://rosettacode.org/wiki/Legendre_prime_counting_function|
 |levenshtein|2020-12-24|https://rosettacode.org/wiki/Levenshtein_distance|
 |lex_sort|2020-03-07|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_year|2020-04-05|https://rosettacode.org/wiki/Long_year%3F|
