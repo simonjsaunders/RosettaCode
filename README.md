@@ -388,6 +388,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
 |mersenne_factors|2020-06-17|https://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
+|motzkin|2021-08-14|https://rosettacode.org/wiki/Motzkin_numbers|
 |multi_base_primes|2021-07-03|https://rosettacode.org/wiki/Multi-base_primes|
 |next_highest_int|2020-07-28|https://rosettacode.org/wiki/Next_highest_int_from_digits|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
