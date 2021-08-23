@@ -280,6 +280,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |frobenius|2021-04-18|https://rosettacode.org/wiki/Frobenius_numbers|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
+|jaro_winkler|2021-08-23|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |legendre|2021-08-22|https://rosettacode.org/wiki/Legendre_prime_counting_function|
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |neighbour_words|2021-02-13|https://rosettacode.org/wiki/Words_from_neighbour_ones|
