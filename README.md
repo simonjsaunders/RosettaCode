@@ -125,6 +125,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |isqrt|2020-07-16|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
 |jaro_winkler|2020-08-23|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
+|juggler_sequence|2021-08-23|https://rosettacode.org/wiki/Juggler_sequence|
 |kdtree|2019-12-07|https://rosettacode.org/wiki/K-d_tree|
 |koch_curve|2020-05-27|https://rosettacode.org/wiki/Koch_curve|
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
