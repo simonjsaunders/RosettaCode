@@ -62,6 +62,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |tree_sort|2020-07-06|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |unprimeable|2020-05-10|https://rosettacode.org/wiki/Unprimeable_numbers|
+|verhoeff|2021-08-26|https://rosettacode.org/wiki/Verhoeff_algorithm|
 |word_freq|2020-05-25|https://rosettacode.org/wiki/Word_frequency|
 |word_wheel|2020-07-05|https://rosettacode.org/wiki/Word_wheel|
 |xxxx_redacted|2021-01-03|https://rosettacode.org/wiki/XXXX_redacted|
