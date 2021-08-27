@@ -305,6 +305,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |tree_sort|2020-07-07|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |wieferich_primes|2021-06-03|https://rosettacode.org/wiki/Wieferich_primes|
+|wilson_primes|2021-08-27|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
 
 ## Prolog Code Examples
 
