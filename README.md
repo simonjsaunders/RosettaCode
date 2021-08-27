@@ -441,6 +441,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |unprimeable|2020-06-30|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |wieferich_primes|2021-06-02|https://rosettacode.org/wiki/Wieferich_primes|
+|wilson_primes|2021-08-27|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
 
 ## Swift Code Examples
