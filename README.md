@@ -292,6 +292,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |partition_function|2021-04-10|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
+|permuted_multiples|2021-08-27|https://rosettacode.org/wiki/Permuted_multiples|
 |practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
