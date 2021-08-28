@@ -1,8 +1,7 @@
 fn main() {
     (0..50)
-        .map(|x| x * x * x)
         .scan(0, |sum, x| {
-            *sum += x;
+            *sum += x * x * x;
             Some(*sum)
         })
         .enumerate()
