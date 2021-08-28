@@ -356,6 +356,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |trunc_primes|2020-04-12|https://rosettacode.org/wiki/Truncatable_primes|
 |two_identical_strings|2021-04-05|https://rosettacode.org/wiki/Two_identical_strings|
 |van_eck|2020-04-11|https://rosettacode.org/wiki/Van_Eck_sequence|
+|wilson_primes|2021-08-28|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
 |word_freq|2020-05-07|https://rosettacode.org/wiki/Word_frequency|
 |word_wrap|2020-05-17|https://rosettacode.org/wiki/Word_wrap|
 
