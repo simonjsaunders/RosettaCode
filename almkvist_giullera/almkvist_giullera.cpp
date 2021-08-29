@@ -28,16 +28,17 @@ int main() {
         std::cout << n << " | " << std::setw(44) << almkvist_giullera(n)
                   << '\n';
 
-    rational sum = 0, prev = 0;
-    rational prec(1, pow(big_int(10), 70));
+    big_float epsilon(pow(big_float(10), -70));
+    big_float prev = 0, pi = 0;
+    rational sum = 0;
     for (int n = 0;; ++n) {
         rational term(almkvist_giullera(n), pow(big_int(10), 6 * n + 3));
         sum += term;
-        if (abs(sum - prev) < prec)
+        pi = sqrt(big_float(1 / sum));
+        if (abs(pi - prev) < epsilon)
             break;
-        prev = sum;
+        prev = pi;
     }
-    big_float pi2(1 / sum);
-    std::cout << "\nPi to 70 decimal places is:\n";
-    std::cout << std::fixed << std::setprecision(70) << sqrt(pi2) << '\n';
+    std::cout << "\nPi to 70 decimal places is:\n"
+              << std::fixed << std::setprecision(70) << pi << '\n';
 }
