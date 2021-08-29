@@ -79,6 +79,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
 |all_vowels|2021-02-13|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
+|almkvist_giullera|2021-08-29|https://rosettacode.org/wiki/Almkvist-Giullera_formula_for_pi|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
