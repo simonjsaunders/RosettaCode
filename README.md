@@ -489,6 +489,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |padovan|2021-02-28|https://rosettacode.org/wiki/Padovan_sequence|
 |palindrome_dates|2020-07-26|https://rosettacode.org/wiki/Palindrome_dates|
 |permswap|2021-05-23|https://rosettacode.org/wiki/Permutations_by_swapping|
+|permuted_multiples|2021-08-29|https://rosettacode.org/wiki/Permuted_multiples|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_partition|2021-01-02|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
