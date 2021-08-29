@@ -493,6 +493,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_partition|2021-01-02|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
 |remove_vowels|2021-01-31|https://rosettacode.org/wiki/Remove_vowels_from_a_string|
+|random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
 |safe_primes|2021-01-17|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |sleeping_beauty|2021-05-23|https://rosettacode.org/wiki/Sleeping_Beauty_problem|
 |smarandache|2020-07-21|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
