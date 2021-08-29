@@ -296,6 +296,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
+|random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
 |sequence_mutation|2020-06-02|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
 |sha256merkletree|2020-12-10|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
 |sierpinski_curve|2020-06-12|https://rosettacode.org/wiki/Sierpinski_curve|
@@ -420,6 +421,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
+|random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
 |semordnilap|2020-06-28|https://rosettacode.org/wiki/Semordnilap|
 |sexy_primes|2020-06-28|https://rosettacode.org/wiki/Sexy_primes|
 |sha256merkletree|2020-12-11|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
