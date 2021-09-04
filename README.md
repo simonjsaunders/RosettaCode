@@ -182,6 +182,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
 |ramanujan|2020-06-04|https://rosettacode.org/wiki/Ramanujan%27s_constant|
+|ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |range_mod|2020-10-25|https://rosettacode.org/wiki/Range_modifications|
 |s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
