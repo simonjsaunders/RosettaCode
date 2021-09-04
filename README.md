@@ -298,6 +298,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
+|ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
 |sequence_mutation|2020-06-02|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
 |sha256merkletree|2020-12-10|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
