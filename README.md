@@ -175,7 +175,6 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
 |prime_div_count|2021-07-11|https://rosettacode.org/wiki/Numbers_which_count_of_divisors_is_prime|
-|prime_div_sum|2021-07-11|https://rosettacode.org/wiki/Numbers_which_count_of_divisors_is_prime|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
