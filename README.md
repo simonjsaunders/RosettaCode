@@ -473,6 +473,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |equal_rises_and_falls|2021-06-02|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |etoi|2021-02-20|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |euler_method|2021-01-24|https://rosettacode.org/wiki/Euler_method|
+|extra_primes|2021-09-05|https://rosettacode.org/wiki/Extra_primes|
 |first_last_three_equal|2021-02-12|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hofstadter_q_seq|2021-01-16|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
