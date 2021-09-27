@@ -80,7 +80,6 @@ private:
     std::unique_ptr<SDL_Renderer, RendererDeleter> renderer_;
     int width_;
     int height_;
-    int particles_;
     std::vector<PointInfo> point_info_;
     std::vector<SDL_Point> points_;
     int num_points_ = 0;
@@ -93,8 +92,8 @@ private:
 };
 
 ParticleFountain::ParticleFountain(int n, int width, int height)
-    : width_(width), height_(height), particles_(n), point_info_(n),
-      points_(n, {0, 0}), rng_(std::random_device{}()), dist_(0.0, 1.0) {
+    : width_(width), height_(height), point_info_(n), points_(n, {0, 0}),
+      rng_(std::random_device{}()), dist_(0.0, 1.0) {
     window_.reset(SDL_CreateWindow(
         "C++ Particle System!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         width, height, SDL_WINDOW_RESIZABLE));
