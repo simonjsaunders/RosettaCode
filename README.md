@@ -163,6 +163,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |parallel_brute_force|2020-02-29|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
+|particle_fountain|2021-09-27|https://rosettacode.org/wiki/Particle_fountain|
 |partition_function|2020-12-14|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-12-12|https://rosettacode.org/wiki/Peano_curve|
 |penrose|2021-07-13|https://rosettacode.org/wiki/Penrose_tiling|
