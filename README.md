@@ -237,6 +237,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|abc_words|2021-10-08|https://rosettacode.org/wiki/ABC_words|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
 |base16|2021-06-03|https://rosettacode.org/wiki/Base-16_representation|
