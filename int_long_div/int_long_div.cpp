@@ -15,11 +15,6 @@ std::pair<std::string, size_t> divide(const big_int& n, const big_int& d) {
     big_int c = 10 * (n % d);
     size_t digits = 0;
     std::map<big_int, size_t> seen;
-    while (c > 0 && c < d) {
-        seen[c] = digits++;
-        result += '0';
-        c *= 10;
-    }
     while (seen.count(c) == 0) {
         if (c == 0) {
             if (result.back() == '.')
@@ -27,8 +22,13 @@ std::pair<std::string, size_t> divide(const big_int& n, const big_int& d) {
             return {result, 0};
         }
         seen[c] = digits++;
-        result += big_int(c / d).get_str();
-        c = 10 * (c % d);
+        if (c < d) {
+            result += '0';
+            c *= 10;
+        } else {
+            result += big_int(c / d).get_str();
+            c = 10 * (c % d);
+        }
     }
     return {result, digits - seen[c]};
 }
