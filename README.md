@@ -248,6 +248,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_sum|2021-02-26|https://rosettacode.org/wiki/Sum_of_divisors|
 |e3|2021-04-03|https://rosettacode.org/wiki/Find_words_which_contains_more_than_3_e_vowels|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|esthetic_numbers|2021-10-09|https://rosettacode.org/wiki/Esthetic_numbers|
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
 |first_last_three_equal|2021-04-05|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
@@ -387,6 +388,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |doomsday_rule|2021-06-02|https://rosettacode.org/wiki/Doomsday_rule|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|esthetic_numbers|2021-10-09|https://rosettacode.org/wiki/Esthetic_numbers|
 |etoi|2021-05-22|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-10-17|https://rosettacode.org/wiki/Farey_sequence|
