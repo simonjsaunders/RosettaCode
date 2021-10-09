@@ -50,5 +50,5 @@
   drop
   cr ." count: " . cr ;
 
-  main
-  bye
+main
+bye
