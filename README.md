@@ -20,6 +20,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |---------|--------------|----------------|
 |abbrev_easy|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
+|air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
 |canonicalize_cidr|2020-07-09|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
@@ -279,6 +280,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |abbrev_simple|2020-02-29|https://rosettacode.org/wiki/Abbreviations,_simple|
 |abc_words|2020-12-19|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile2|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model|
+|air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |canonicalize_cidr|2020-12-31|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
