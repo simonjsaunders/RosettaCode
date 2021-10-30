@@ -35,9 +35,7 @@
     drop
     cr cr
   loop
-
-  1000 9999 16 print_esthetic_numbers
-  cr
+  1000 9999 16 print_esthetic_numbers cr
   100000000 130000000 8 print_esthetic_numbers ;
 
 main
