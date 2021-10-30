@@ -22,6 +22,7 @@ bool is_prime(uint64_t n) {
 class motzkin_generator {
 public:
     uint64_t next();
+
 private:
     uint64_t n = 0;
     uint64_t m0 = 1;
@@ -29,8 +30,7 @@ private:
 };
 
 uint64_t motzkin_generator::next() {
-    uint64_t m =
-        n > 1 ? m = (m1 * (2 * n + 1) + m0 * (3 * n - 3)) / (n + 2) : 1;
+    uint64_t m = n > 1 ? (m1 * (2 * n + 1) + m0 * (3 * n - 3)) / (n + 2) : 1;
     ++n;
     m0 = m1;
     m1 = m;
