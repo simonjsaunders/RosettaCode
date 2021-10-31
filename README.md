@@ -336,6 +336,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |digital_root|2020-05-13|https://rosettacode.org/wiki/Digital_root|
 |egyptian|2020-04-10|https://rosettacode.org/wiki/Egyptian_fractions|
 |egyptian_division|2020-05-15|https://rosettacode.org/wiki/Egyptian_division|
+|esthetic_numbers|2021-10-31|https://rosettacode.org/wiki/Esthetic_numbers|
 |etoi|2021-03-06|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |fusc|2020-05-13|https://rosettacode.org/wiki/Fusc_sequence|
 |harmonic_series|2021-07-04|https://rosettacode.org/wiki/Harmonic_series|
