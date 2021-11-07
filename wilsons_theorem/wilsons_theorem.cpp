@@ -2,8 +2,8 @@
 #include <iostream>
 
 int factorial_mod(int n, int p) {
-    unsigned int f = 1;
-    for (; n > 0 && f > 0; --n)
+    int f = 1;
+    for (; n > 0 && f != 0; --n)
         f = (f * n) % p;
     return f;
 }
