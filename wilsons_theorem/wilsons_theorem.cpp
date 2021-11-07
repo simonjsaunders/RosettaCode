@@ -3,11 +3,8 @@
 
 int factorial_mod(int n, int p) {
     unsigned int f = 1;
-    for (; n > 0; --n) {
+    for (; n > 0 && f > 0; --n)
         f = (f * n) % p;
-        if (f == 0)
-            break;
-    }
     return f;
 }
 
