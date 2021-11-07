@@ -232,6 +232,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |van_eck|2020-04-03|https://rosettacode.org/wiki/Van_Eck_sequence|
 |wieferich_primes|2021-05-31|https://rosettacode.org/wiki/Wieferich_primes|
 |wilson_primes|2021-08-14|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
+|wilsons_theorem|2021-11-07|https://rosettacode.org/wiki/Primality_by_Wilson%27s_theorem|
 |word_break|2020-06-15|https://rosettacode.org/wiki/Word_break_problem|
 |word_ladder|2021-06-06|https://rosettacode.org/wiki/Word_ladder|
 |word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
