@@ -465,6 +465,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |wieferich_primes|2021-06-02|https://rosettacode.org/wiki/Wieferich_primes|
 |wilson_primes|2021-08-27|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
+|wilsons_theorem|2021-11-07|https://rosettacode.org/wiki/Primality_by_Wilson%27s_theorem|
 |yellowstone|2020-06-22|https://rosettacode.org/wiki/Yellowstone_sequence|
 
 ## Swift Code Examples
