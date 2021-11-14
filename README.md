@@ -321,6 +321,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
 |wieferich_primes|2021-06-03|https://rosettacode.org/wiki/Wieferich_primes|
 |wilson_primes|2021-08-27|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
+|word_ladder|2021-11-14|https://rosettacode.org/wiki/Word_ladder|
 
 ## Prolog Code Examples
 
