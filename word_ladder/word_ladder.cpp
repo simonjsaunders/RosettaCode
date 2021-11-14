@@ -37,12 +37,6 @@ std::string join(iterator_type begin, iterator_type end,
     return result;
 }
 
-// Return true if v contains e.
-template <typename vector_type, typename element_type>
-bool contains(const vector_type& v, const element_type& e) {
-    return std::find(v.begin(), v.end(), e) != v.end();
-}
-
 // If possible, print the shortest chain of single-character modifications that
 // leads from "from" to "to", with each intermediate step being a valid word.
 // This is an application of breadth-first search.
@@ -55,25 +49,20 @@ bool word_ladder(const word_map& words, const std::string& from,
         while (!queue.empty()) {
             auto curr = queue.front();
             queue.erase(queue.begin());
-            std::vector<std::string> next;
-            for (const std::string& str : poss) {
-                if (one_away(str, curr.back()))
-                    next.push_back(str);
-            }
-            if (contains(next, to)) {
-                curr.push_back(to);
-                std::cout << join(curr.begin(), curr.end(), " -> ") << '\n';
-                return true;
-            }
-            poss.erase(std::remove_if(poss.begin(), poss.end(),
-                                      [&next](const std::string& str) {
-                                          return contains(next, str);
-                                      }),
-                       poss.end());
-            for (const auto& str : next) {
+            for (auto i = poss.begin(); i != poss.end();) {
+                if (!one_away(*i, curr.back())) {
+                    ++i;
+                    continue;
+                }
+                if (to == *i) {
+                    curr.push_back(to);
+                    std::cout << join(curr.begin(), curr.end(), " -> ") << '\n';
+                    return true;
+                }
                 std::vector<std::string> temp(curr);
-                temp.push_back(str);
+                temp.push_back(*i);
                 queue.push_back(std::move(temp));
+                i = poss.erase(i);
             }
         }
     }
