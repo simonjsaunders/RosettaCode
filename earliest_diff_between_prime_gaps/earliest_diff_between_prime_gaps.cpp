@@ -1,7 +1,6 @@
 #include <iostream>
 #include <locale>
 #include <unordered_map>
-#include <vector>
 
 #include <primesieve.hpp>
 
