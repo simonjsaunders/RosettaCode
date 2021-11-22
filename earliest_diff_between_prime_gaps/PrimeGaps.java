@@ -3,8 +3,9 @@ import java.util.Map;
 
 public class PrimeGaps {
     private Map<Integer, Integer> gapStarts = new HashMap<>();
-    int lastPrime;
-    PrimeGenerator primeGenerator = new PrimeGenerator(1000, 500000);
+    private int lastPrime;
+    private PrimeGenerator primeGenerator = new PrimeGenerator(1000, 500000);
+
     public static void main(String[] args) {
         final int limit = 100000000;
         PrimeGaps pg = new PrimeGaps();
