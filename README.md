@@ -106,6 +106,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_count|2020-12-21|https://rosettacode.org/wiki/Tau_function|
 |divisor_product|2020-12-21|https://rosettacode.org/wiki/Product_of_divisors|
 |divisor_sum|2020-12-21|https://rosettacode.org/wiki/Sum_of_divisors|
+|earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
 |equal_rises_and_falls|2021-06-02|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
@@ -291,6 +292,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
+|earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |equal_rises_and_falls|2021-06-03|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |frobenius|2021-04-18|https://rosettacode.org/wiki/Frobenius_numbers|
@@ -395,6 +397,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |dist0fact|2021-10-05|https://rosettacode.org/wiki/Distribution_of_0_Digits_in_factorial_series|
 |doomsday_rule|2021-06-02|https://rosettacode.org/wiki/Doomsday_rule|
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
+|earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |esthetic_numbers|2021-10-09|https://rosettacode.org/wiki/Esthetic_numbers|
 |etoi|2021-05-22|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
