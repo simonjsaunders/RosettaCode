@@ -1,21 +1,18 @@
-import java.text.NumberFormat;
 import java.util.Arrays;
 
 public class RamanujanPrimes {
     public static void main(String[] args) {
-        NumberFormat nf = NumberFormat.getInstance();
         long start = System.nanoTime();
         System.out.println("First 100 Ramanujan primes:");
         PrimeCounter pc = new PrimeCounter(1 + ramanujanMax(100000));
         for (int i = 1; i <= 100; ++i) {
             int p = ramanujanPrime(pc, i);
-            System.out.printf("%5s%c", nf.format(p), i % 10 == 0 ? '\n' : ' ');
+            System.out.printf("%,5d%c", p, i % 10 == 0 ? '\n' : ' ');
         }
         System.out.println();
         for (int i = 1000; i <= 100000; i *= 10) {
             int p = ramanujanPrime(pc, i);
-            System.out.printf("The %sth Ramanujan prime is %s.\n",
-                                nf.format(i), nf.format(p));
+            System.out.printf("The %,dth Ramanujan prime is %,d.\n", i, p);
         }
         long end = System.nanoTime();
         System.out.printf("\nElapsed time: %.1f milliseconds\n", (end - start) / 1e6);
