@@ -78,6 +78,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model/Identity|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
+|adjacent_prime_diff|2021-11-22|https://rosettacode.org/wiki/Largest_difference_between_adjacent_primes|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |all_same_char|2020-01-14|https://rosettacode.org/wiki/Determine_if_a_string_has_all_the_same_characters|
 |all_vowels|2021-02-13|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
