@@ -163,6 +163,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |nimber|2020-12-13|https://rosettacode.org/wiki/Nimber_arithmetic|
 |niven_gap|2020-03-08|https://rosettacode.org/wiki/Increasing_gaps_between_consecutive_Niven_numbers|
+|nth_prime|2021-11-27|https://rosettacode.org/wiki/10001th_prime|
 |odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
