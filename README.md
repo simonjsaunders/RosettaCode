@@ -305,6 +305,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |line_circle|2020-08-01|https://rosettacode.org/wiki/Line_circle_intersection|
 |neighbour_words|2021-02-13|https://rosettacode.org/wiki/Words_from_neighbour_ones|
 |nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
+|nth_prime|2021-11-27|https://rosettacode.org/wiki/10001th_prime|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |partition_function|2021-04-10|https://rosettacode.org/wiki/Partition_function_P|
