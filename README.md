@@ -269,6 +269,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |revprimes|2021-07-04|https://rosettacode.org/wiki/Find_prime_n_for_that_reversed_n_is_also_prime|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|special_divisors|2021-12-04|https://rosettacode.org/wiki/Special_Divisors|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
 |strange_plus_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_plus_numbers|
