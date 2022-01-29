@@ -73,6 +73,7 @@ in this repository for any purpose then it's entirely at your own risk.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
 |abbrev_easy|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
@@ -244,6 +245,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
 |abc_words|2021-10-08|https://rosettacode.org/wiki/ABC_words|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
@@ -333,6 +335,7 @@ in this repository for any purpose then it's entirely at your own risk.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
 |abbrev_auto|2020-04-26|https://rosettacode.org/wiki/Abbreviations,_automatic|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
@@ -480,6 +483,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Swift Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
 |additive_primes|2021-09-05|https://rosettacode.org/wiki/Additive_primes|
 |all_vowels|2021-02-12|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
