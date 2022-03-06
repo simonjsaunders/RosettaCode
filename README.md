@@ -113,6 +113,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
+|equal_prime_and_composite_sums|2022-03-06|https://rosettacode.org/wiki/Equal_prime_and_composite_sums|
 |equal_rises_and_falls|2021-06-02|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |erdos_primes|2021-03-20|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |etoi|2021-03-05|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
