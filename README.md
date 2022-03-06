@@ -78,6 +78,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |abbrev_simple|2020-01-13|https://rosettacode.org/wiki/Abbreviations,_simple|
 |abc_words|2020-12-13|https://rosettacode.org/wiki/ABC_words|
 |abelian_sandpile|2020-07-17|https://rosettacode.org/wiki/Abelian_sandpile_model/Identity|
+|achilles_numbers|2022-03-06|https://rosettacode.org/wiki/Achilles_numbers|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |adjacent_prime_diff|2021-11-22|https://rosettacode.org/wiki/Largest_difference_between_adjacent_primes|
 |aliquot|2020-05-03|https://rosettacode.org/wiki/Aliquot_sequence_classifications|
@@ -396,6 +397,7 @@ in this repository for any purpose then it's entirely at your own risk.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|achilles_numbers|2022-03-06|https://rosettacode.org/wiki/Achilles_numbers|
 |air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
 |alternade_words|2020-12-23|https://rosettacode.org/wiki/Alternade_words|
 |calkin_wilf|2020-12-13|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
