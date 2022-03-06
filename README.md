@@ -554,4 +554,5 @@ in this repository for any purpose then it's entirely at your own risk.
 |wieferich_primes|2021-06-03|https://rosettacode.org/wiki/Wieferich_primes|
 |word_freq|2020-07-28|https://rosettacode.org/wiki/Word_frequency|
 |word_ladder|2021-06-06|https://rosettacode.org/wiki/Word_ladder|
+|wordle|2022-03-06|https://rosettacode.org/wiki/Wordle_comparison|
 |xxxx_redacted|2020-12-26|https://rosettacode.org/wiki/XXXX_redacted|
