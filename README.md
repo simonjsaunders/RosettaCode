@@ -103,6 +103,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |conjugate_transpose|2020-04-24|https://rosettacode.org/wiki/Conjugate_transpose|
 |consonants|2021-02-28|https://rosettacode.org/wiki/Find_words_which_contains_most_consonants|
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
+|deceptive_numbers|2022-03-06|https://rosettacode.org/wiki/Deceptive_numbers|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |dist0fact|2021-10-05|https://rosettacode.org/wiki/Distribution_of_0_Digits_in_factorial_series|
 |divisor_count|2020-12-21|https://rosettacode.org/wiki/Tau_function|
@@ -400,6 +401,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
+|deceptive_numbers|2022-03-06|https://rosettacode.org/wiki/Deceptive_numbers|
 |dice_game|2020-06-09|https://rosettacode.org/wiki/Dice_game_probabilities|
 |dist0fact|2021-10-05|https://rosettacode.org/wiki/Distribution_of_0_Digits_in_factorial_series|
 |doomsday_rule|2021-06-02|https://rosettacode.org/wiki/Doomsday_rule|
