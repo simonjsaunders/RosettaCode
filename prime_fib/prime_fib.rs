@@ -1,3 +1,7 @@
+// [dependencies]
+// rug = "1.15.0"
+// primal = "0.3"
+
 use rug::{Assign, Integer};
 
 fn fibonacci() -> impl std::iter::Iterator<Item = Integer> {
