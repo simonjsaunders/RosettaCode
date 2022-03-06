@@ -218,6 +218,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |strongweak|2020-01-14|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |substring_primes|2021-04-05|https://rosettacode.org/wiki/Substring_primes|
+|sum35|2022-03-06|https://rosettacode.org/wiki/Sum_multiples_of_3_and_5|
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |sylvesters_sequence|2021-06-03|https://rosettacode.org/wiki/Sylvester%27s_sequence|
