@@ -186,6 +186,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_desc|2020-01-18|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
 |prime_div_count|2021-07-11|https://rosettacode.org/wiki/Numbers_which_count_of_divisors_is_prime|
+|prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
@@ -317,6 +318,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |permuted_multiples|2021-08-27|https://rosettacode.org/wiki/Permuted_multiples|
 |practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
+|prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
 |ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
@@ -449,6 +451,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |practical_numbers|2021-05-03|https://rosettacode.org/wiki/Practical_numbers|
 |prime_conspiracy|2020-05-20|https://rosettacode.org/wiki/Prime_conspiracy|
 |prime_diffs|2021-04-03|https://rosettacode.org/wiki/Consecutive_Primes_With_Ascending_Or_Descending_Differences|
+|prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
