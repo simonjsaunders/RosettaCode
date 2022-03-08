@@ -111,6 +111,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisor_count|2020-12-21|https://rosettacode.org/wiki/Tau_function|
 |divisor_product|2020-12-21|https://rosettacode.org/wiki/Product_of_divisors|
 |divisor_sum|2020-12-21|https://rosettacode.org/wiki/Sum_of_divisors|
+|duffinian_numbers|2022-03-08|https://rosettacode.org/wiki/Duffinian_numbers|
 |earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |egyptian|2020-01-11|https://rosettacode.org/wiki/Egyptian_fractions|
 |element_wise|2020-04-24|https://rosettacode.org/wiki/Element-wise_operations|
