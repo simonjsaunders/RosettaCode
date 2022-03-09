@@ -1,34 +1,34 @@
-#include <cstdint>
-#include <iostream>
-#include <sstream>
 #include <gmpxx.h>
-#include "prime_sieve.hpp"
+#include <primesieve.hpp>
 
-typedef mpz_class integer;
+#include <cstdint>
+#include <iomanip>
+#include <iostream>
 
-size_t count_digits(const integer& n) {
-    std::ostringstream out;
-    out << n;
-    return out.str().length();
+size_t digits(const mpz_class& n) { return n.get_str().length(); }
+
+mpz_class primorial(unsigned int n) {
+    mpz_class p;
+    mpz_primorial_ui(p.get_mpz_t(), n);
+    return p;
 }
 
 int main() {
-    const size_t max_prime = 20000000;
-    const size_t max_index = 1000000;
-    prime_sieve sieve(max_prime);
-    integer primorial = 1;
-    for (size_t p = 0, index = 0, power = 10; p < max_prime && index <= max_index; ++p) {
-        if (!sieve.is_prime(p))
-            continue;
-        if (index < 10)
-            std::cout << "primorial(" << index << ") = " << primorial << '\n';
-        else if (index == power) {
-            std::cout << "primorial(" << index << ") has length "
-                << count_digits(primorial) << '\n';
+    uint64_t index = 0;
+    primesieve::iterator pi;
+    std::cout << "First 10 primorial numbers:\n";
+    for (; index < 10; ++index) {
+        uint64_t prime = pi.next_prime();
+        std::cout << index << ": " << primorial(prime - 1) << '\n';
+    }
+    std::cout << "\nLength of primorial number whose index is:\n";
+    for (uint64_t power = 10; index <= 1000000; ++index) {
+        uint64_t prime = pi.next_prime();
+        if (index == power) {
+            std::cout << std::setw(7) << index << ": "
+                      << digits(primorial(prime - 1)) << '\n';
             power *= 10;
         }
-        ++index;
-        primorial *= p;
     }
     return 0;
 }
