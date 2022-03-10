@@ -17,18 +17,16 @@ int main() {
     uint64_t index = 0;
     primesieve::iterator pi;
     std::cout << "First 10 primorial numbers:\n";
-    for (; index < 10; ++index) {
-        uint64_t prime = pi.next_prime();
-        std::cout << index << ": " << primorial(prime - 1) << '\n';
+    for (mpz_class pn = 1; index < 10; ++index) {
+        unsigned int prime = pi.next_prime();
+        std::cout << index << ": " << pn << '\n';
+        pn *= prime;
     }
     std::cout << "\nLength of primorial number whose index is:\n";
-    for (uint64_t power = 10; index <= 1000000; ++index) {
-        uint64_t prime = pi.next_prime();
-        if (index == power) {
-            std::cout << std::setw(7) << index << ": "
-                      << digits(primorial(prime - 1)) << '\n';
-            power *= 10;
-        }
+    for (uint64_t power = 10; power <= 1000000; power *= 10) {
+        uint64_t prime = primesieve::nth_prime(power);
+        std::cout << std::setw(7) << index << ": "
+                  << digits(primorial(prime - 1)) << '\n';
     }
     return 0;
 }
