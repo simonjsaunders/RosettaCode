@@ -26,7 +26,7 @@ int main() {
     for (uint64_t power = 10; power <= 1000000; power *= 10) {
         uint64_t prime = primesieve::nth_prime(power);
         std::cout << std::setw(7) << index << ": "
-                  << digits(primorial(prime - 1)) << '\n';
+                  << digits(primorial(prime)) << '\n';
     }
     return 0;
 }
