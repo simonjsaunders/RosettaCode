@@ -25,7 +25,7 @@ int main() {
     std::cout << "\nLength of primorial number whose index is:\n";
     for (uint64_t power = 10; power <= 1000000; power *= 10) {
         uint64_t prime = primesieve::nth_prime(power);
-        std::cout << std::setw(7) << index << ": "
+        std::cout << std::setw(7) << power << ": "
                   << digits(primorial(prime)) << '\n';
     }
     return 0;
