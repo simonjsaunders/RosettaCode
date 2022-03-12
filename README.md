@@ -201,6 +201,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |range_mod|2020-10-25|https://rosettacode.org/wiki/Range_modifications|
+|repunit_primes|2022-03-12|https://rosettacode.org/wiki/Repunit_primes|
 |rhonda_numbers|2022-03-08|https://rosettacode.org/wiki/Rhonda_numbers|
 |ruth_aaron_numbers|2022-03-12|https://rosettacode.org/wiki/Ruth-Aaron_numbers|
 |s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
