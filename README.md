@@ -202,6 +202,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |range_mod|2020-10-25|https://rosettacode.org/wiki/Range_modifications|
 |rhonda_numbers|2022-03-08|https://rosettacode.org/wiki/Rhonda_numbers|
+|ruth_aaron_numbers|2022-03-12|https://rosettacode.org/wiki/Ruth-Aaron_numbers|
 |s-expressions|2020-05-16|https://rosettacode.org/wiki/S-Expressions|
 |safe_primes|2020-01-13|https://rosettacode.org/wiki/Safe_primes_and_unsafe_primes|
 |sequence_mutation|2020-06-01|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
