@@ -6,7 +6,7 @@
 #include <gmpxx.h>
 #include <primesieve.hpp>
 
-std::vector<uint64_t> repunit_primes(uint32_t base, uint64_t limit,
+std::vector<uint64_t> repunit_primes(uint32_t base,
                                      const std::vector<uint64_t>& primes) {
     std::vector<uint64_t> result;
     for (uint64_t prime : primes) {
@@ -24,7 +24,7 @@ int main() {
     std::vector<std::future<std::vector<uint64_t>>> futures;
     for (uint32_t base = 2; base <= 36; ++base) {
         futures.push_back(std::async(
-            [base, &primes] { return repunit_primes(base, limit, primes); }));
+            [base, &primes] { return repunit_primes(base, primes); }));
     }
     std::cout << "Repunit prime digits (up to " << limit << ") in:\n";
     for (uint32_t base = 2, i = 0; base <= 36; ++base, ++i) {
