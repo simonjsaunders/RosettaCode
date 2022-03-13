@@ -6,6 +6,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+
 #include <openssl/sha.h>
 
 struct sha256 {
@@ -14,7 +15,7 @@ struct sha256 {
         SHA256((const unsigned char*)str, len, digest);
     }
     bool parse(const std::string& hash) {
-        if (hash.length() != 2*SHA256_DIGEST_LENGTH) {
+        if (hash.length() != 2 * SHA256_DIGEST_LENGTH) {
             std::cerr << "Invalid SHA-256 hash\n";
             return false;
         }
@@ -52,6 +53,7 @@ class password_finder {
 public:
     password_finder(int);
     void find_passwords(const std::vector<std::string>&);
+
 private:
     int length;
     void find_passwords(char);
@@ -72,7 +74,8 @@ void password_finder::find_passwords(char ch) {
             if (digest == digests[m]) {
                 --count;
                 std::ostringstream out;
-                out << "password: " << passwd << ", hash: " << hashes[m] << '\n';
+                out << "password: " << passwd << ", hash: " << hashes[m]
+                    << '\n';
                 std::cout << out.str();
                 break;
             }
@@ -94,8 +97,8 @@ void password_finder::find_passwords(const std::vector<std::string>& h) {
     const int n = 26;
     for (int i = 0; i < n; ++i) {
         char c = 'a' + i;
-        futures.push_back(std::async(std::launch::async,
-                [&,c]() { find_passwords(c); }));
+        futures.push_back(
+            std::async(std::launch::async, [this, c]() { find_passwords(c); }));
     }
 }
 
