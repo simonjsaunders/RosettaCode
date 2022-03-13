@@ -23,8 +23,7 @@ int main() {
     primesieve::generate_primes(limit, &primes);
     std::vector<std::future<std::vector<uint64_t>>> futures;
     for (uint32_t base = 2; base <= 36; ++base) {
-        futures.push_back(std::async(
-            [base, &primes] { return repunit_primes(base, primes); }));
+        futures.push_back(std::async(repunit_primes, base, primes));
     }
     std::cout << "Repunit prime digits (up to " << limit << ") in:\n";
     for (uint32_t base = 2, i = 0; base <= 36; ++base, ++i) {
