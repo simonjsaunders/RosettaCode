@@ -175,6 +175,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
+|palindromic_primes|2022-03-19|https://rosettacode.org/wiki/Palindromic_primes|
 |parallel_brute_force|2020-02-29|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |particle_fountain|2021-09-27|https://rosettacode.org/wiki/Particle_fountain|
