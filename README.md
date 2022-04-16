@@ -118,6 +118,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |equal_prime_and_composite_sums|2022-03-06|https://rosettacode.org/wiki/Equal_prime_and_composite_sums|
 |equal_rises_and_falls|2021-06-02|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |erdos_primes|2021-03-20|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|erdos_selfridge|2022-04-16|https://rosettacode.org/wiki/Erd%C3%B6s-Selfridge_categorization_of_primes|
 |etoi|2021-03-05|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
