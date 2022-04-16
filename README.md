@@ -309,10 +309,12 @@ in this repository for any purpose then it's entirely at your own risk.
 |circular_primes|2020-06-16|https://rosettacode.org/wiki/Circular_primes|
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-06-30|https://rosettacode.org/wiki/Color_wheel|
+|colorful_numbers|2022-04-16|https://rosettacode.org/wiki/Colorful_numbers|
 |duplicate_files|2020-06-02|https://rosettacode.org/wiki/Find_duplicate_files|
 |earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |equal_rises_and_falls|2021-06-03|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|erdos_selfridge|2022-04-16|https://rosettacode.org/wiki/Erd%C3%B6s-Selfridge_categorization_of_primes|
 |frobenius|2021-04-18|https://rosettacode.org/wiki/Frobenius_numbers|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
 |kdtree|2020-04-26|https://rosettacode.org/wiki/K-d_tree|
