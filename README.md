@@ -196,6 +196,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_gen|2020-03-01|https://rosettacode.org/wiki/Extensible_prime_generator|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
+|prime_triangle|2022-04-18|https://rosettacode.org/wiki/Prime_triangle|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
