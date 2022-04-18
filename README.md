@@ -471,6 +471,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_partition|2020-06-16|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
+|prime_triangle|2022-04-18|https://rosettacode.org/wiki/Prime_triangle|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
