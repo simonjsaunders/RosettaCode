@@ -49,6 +49,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-05-15|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
+|prime_triangle|2022-04-18|https://rosettacode.org/wiki/Prime_triangle|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
 |regex|2020-07-11|https://rosettacode.org/wiki/Regular_expressions|
 |revprimes|2021-07-04|https://rosettacode.org/wiki/Find_prime_n_for_that_reversed_n_is_also_prime|
