@@ -18,13 +18,13 @@ void swap(unsigned int* a, size_t i, size_t j) {
     a[j] = tmp;
 }
 
-bool prime_triangle(unsigned int* a, size_t length) {
+bool prime_triangle_row(unsigned int* a, size_t length) {
     if (length == 2)
         return is_prime(a[0] + a[1]);
     for (size_t i = 1; i + 1 != length; ++i) {
         if (is_prime(a[0] + a[i])) {
             swap(a, i, 1);
-            if (prime_triangle(a + 1, length - 1))
+            if (prime_triangle_row(a + 1, length - 1))
                 return true;
             swap(a, i, 1);
         }
@@ -62,7 +62,7 @@ int main() {
         unsigned int a[n];
         for (unsigned int i = 0; i < n; ++i)
             a[i] = i + 1;
-        if (prime_triangle(a, n))
+        if (prime_triangle_row(a, n))
             print(a, n);
     }
     printf("\n");

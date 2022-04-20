@@ -11,13 +11,13 @@ bool is_prime(unsigned int n) {
 }
 
 template <typename Iterator>
-bool prime_triangle(Iterator begin, Iterator end) {
+bool prime_triangle_row(Iterator begin, Iterator end) {
     if (std::distance(begin, end) == 2)
         return is_prime(*begin + *(begin + 1));
     for (auto i = begin + 1; i + 1 != end; ++i) {
         if (is_prime(*begin + *i)) {
             std::iter_swap(i, begin + 1);
-            if (prime_triangle(begin + 1, end))
+            if (prime_triangle_row(begin + 1, end))
                 return true;
             std::iter_swap(i, begin + 1);
         }
@@ -57,7 +57,7 @@ int main() {
     for (unsigned int n = 2; n < 21; ++n) {
         std::vector<unsigned int> v(n);
         std::iota(v.begin(), v.end(), 1);
-        if (prime_triangle(v.begin(), v.end()))
+        if (prime_triangle_row(v.begin(), v.end()))
             print(v.begin(), v.end());
     }
     std::cout << '\n';

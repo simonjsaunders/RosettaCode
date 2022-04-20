@@ -3,14 +3,14 @@ fn is_prime(n: u32) -> bool {
     ((1u64 << n) & 0x28208a20a08a28ac) != 0
 }
 
-fn prime_triangle(a: &mut [u32]) -> bool {
+fn prime_triangle_row(a: &mut [u32]) -> bool {
     if a.len() == 2 {
         return is_prime(a[0] + a[1]);
     }
     for i in 1..a.len() - 1 {
         if is_prime(a[0] + a[i]) {
             a.swap(i, 1);
-            if prime_triangle(&mut a[1..]) {
+            if prime_triangle_row(&mut a[1..]) {
                 return true;
             }
             a.swap(i, 1);
@@ -51,7 +51,7 @@ fn main() {
     let start = Instant::now();
     for n in 2..21 {
         let mut a: Vec<u32> = (1..=n).collect();
-        if prime_triangle(&mut a) {
+        if prime_triangle_row(&mut a) {
             print(&a);
         }
     }
