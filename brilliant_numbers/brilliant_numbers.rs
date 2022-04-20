@@ -1,6 +1,5 @@
 // [dependencies]
 // primal = "0.3"
-// num-format = "0.4"
 // indexing = "0.4.1"
 
 fn get_primes_by_digits(limit: usize) -> Vec<Vec<usize>> {
