@@ -54,14 +54,15 @@ int main() {
         for (auto i = primes.begin(); i != primes.end(); ++i) {
             uint64_t p1 = *i;
             auto j = std::lower_bound(i, primes.end(), (power + p1 - 1) / p1);
-            uint64_t p2 = *j;
-            uint64_t product = p1 * p2;
-            if (min_product == 0 || product < min_product)
-                min_product = product;
-            auto n = std::distance(i, j);
-            position += n;
-            if (n == 0)
-                break;
+            if (j != primes.end()) {
+                uint64_t p2 = *j;
+                uint64_t product = p1 * p2;
+                if (min_product == 0 || product < min_product)
+                    min_product = product;
+                position += std::distance(i, j);
+                if (p1 >= p2)
+                    break;
+            }
         }
         std::cout << "First brilliant number >= 10^" << p << " is "
                   << min_product << " at position " << position << '\n';
