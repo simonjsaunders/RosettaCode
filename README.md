@@ -94,6 +94,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |base16|2021-06-02|https://rosettacode.org/wiki/Base-16_representation|
 |bell|2020-01-13|https://rosettacode.org/wiki/Bell_numbers|
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
+|brilliant_numbers|2022-04-20|https://rosettacode.org/wiki/Brilliant_numbers|
 |calkin_wilf|2020-12-12|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
 |canonicalize_cidr|2020-07-12|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |carmichael|2020-06-03|https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes|
