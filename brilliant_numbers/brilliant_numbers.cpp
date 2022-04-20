@@ -1,6 +1,5 @@
 #include <algorithm>
 #include <chrono>
-#include <cmath>
 #include <iomanip>
 #include <iostream>
 #include <locale>
@@ -51,19 +50,17 @@ int main() {
     for (size_t p = 1; p < 2 * primes_by_digits.size(); ++p) {
         const auto& primes = primes_by_digits[p / 2];
         size_t position = count + 1;
-        uint64_t sqrt = static_cast<uint64_t>(std::ceil(std::sqrt(power)));
         uint64_t min_product = 0;
         for (auto i = primes.begin(); i != primes.end(); ++i) {
             uint64_t p1 = *i;
             auto j = std::lower_bound(i, primes.end(), (power + p1 - 1) / p1);
-            if (j != primes.end()) {
-                uint64_t p2 = *j;
-                uint64_t product = p1 * p2;
-                if (min_product == 0 || product < min_product)
-                    min_product = product;
-                position += std::distance(i, j);
-            }
-            if (p1 >= sqrt)
+            uint64_t p2 = *j;
+            uint64_t product = p1 * p2;
+            if (min_product == 0 || product < min_product)
+                min_product = product;
+            auto n = std::distance(i, j);
+            position += n;
+            if (n == 0)
                 break;
         }
         std::cout << "First brilliant number >= 10^" << p << " is "
