@@ -35,7 +35,7 @@ public class PrimeTriangle {
     private static boolean findRow(int[] a, int start, int length) {
         if (length == 2)
             return isPrime(a[start] + a[start + 1]);
-        for (int i = 1; i + 1 < length; ++i) {
+        for (int i = 1; i + 1 < length; i += 2) {
             if (isPrime(a[start] + a[start + i])) {
                 swap(a, start + i, start + 1);
                 if (findRow(a, start + 1, length - 1))
@@ -52,7 +52,7 @@ public class PrimeTriangle {
             if (isPrime(a[start] + a[start + 1]))
                 ++count;
         } else {
-            for (int i = 1; i + 1 < length; ++i) {
+            for (int i = 1; i + 1 < length; i += 2) {
                 if (isPrime(a[start] + a[start + i])) {
                     swap(a, start + i, start + 1);
                     count += countRows(a, start + 1, length - 1);
