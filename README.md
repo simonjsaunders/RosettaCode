@@ -420,6 +420,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-27|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |color_wheel|2020-07-01|https://rosettacode.org/wiki/Color_wheel|
 |comb_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Comb_sort|
+|cullen_woodall|2022-04-21|https://rosettacode.org/wiki/Cullen_and_Woodall_numbers|
 |curzon_numbers|2022-03-06|https://rosettacode.org/wiki/Curzon_numbers|
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |deceptive_numbers|2022-03-06|https://rosettacode.org/wiki/Deceptive_numbers|
