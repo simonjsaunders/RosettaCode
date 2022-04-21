@@ -7,7 +7,7 @@ fn prime_triangle_row(a: &mut [u32]) -> bool {
     if a.len() == 2 {
         return is_prime(a[0] + a[1]);
     }
-    for i in 1..a.len() - 1 {
+    for i in (1..a.len() - 1).step_by(2) {
         if is_prime(a[0] + a[i]) {
             a.swap(i, 1);
             if prime_triangle_row(&mut a[1..]) {
@@ -26,7 +26,7 @@ fn prime_triangle_count(a: &mut [u32]) -> u32 {
             count += 1;
         }
     } else {
-        for i in 1..a.len() - 1 {
+        for i in (1..a.len() - 1).step_by(2) {
             if is_prime(a[0] + a[i]) {
                 a.swap(i, 1);
                 count += prime_triangle_count(&mut a[1..]);
