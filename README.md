@@ -553,6 +553,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |permuted_multiples|2021-08-29|https://rosettacode.org/wiki/Permuted_multiples|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_partition|2021-01-02|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
+|prime_triangle|2022-04-21|https://rosettacode.org/wiki/Prime_triangle|
 |prime_words|2020-12-23|https://rosettacode.org/wiki/Prime_words|
 |remove_vowels|2021-01-31|https://rosettacode.org/wiki/Remove_vowels_from_a_string|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
