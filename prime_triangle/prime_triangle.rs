@@ -19,20 +19,22 @@ fn prime_triangle_row(a: &mut [u32]) -> bool {
     false
 }
 
-fn prime_triangle_count(a: &mut [u32], count: &mut u32) {
+fn prime_triangle_count(a: &mut [u32]) -> u32 {
+    let mut count = 0;
     if a.len() == 2 {
         if is_prime(a[0] + a[1]) {
-            *count += 1;
+            count += 1;
         }
-        return;
-    }
-    for i in 1..a.len() - 1 {
-        if is_prime(a[0] + a[i]) {
-            a.swap(i, 1);
-            prime_triangle_count(&mut a[1..], count);
-            a.swap(i, 1);
+    } else {
+        for i in 1..a.len() - 1 {
+            if is_prime(a[0] + a[i]) {
+                a.swap(i, 1);
+                count += prime_triangle_count(&mut a[1..]);
+                a.swap(i, 1);
+            }
         }
     }
+    count
 }
 
 fn print(a: &[u32]) {
@@ -58,13 +60,10 @@ fn main() {
     println!();
     for n in 2..21 {
         let mut a: Vec<u32> = (1..=n).collect();
-        let mut count = 0;
-        prime_triangle_count(&mut a, &mut count);
-        if n == 2 {
-            print!("{count}");
-        } else {
-            print!(" {count}");
+        if n > 2 {
+            print!(" ");
         }
+        print!("{}", prime_triangle_count(&mut a));
     }
     println!();
     let time = start.elapsed();

@@ -32,19 +32,21 @@ bool prime_triangle_row(unsigned int* a, size_t length) {
     return false;
 }
 
-void prime_triangle_count(unsigned int* a, size_t length, int* count) {
+int prime_triangle_count(unsigned int* a, size_t length) {
+    int count = 0;
     if (length == 2) {
         if (is_prime(a[0] + a[1]))
-            ++*count;
-        return;
-    }
-    for (size_t i = 1; i + 1 != length; ++i) {
-        if (is_prime(a[0] + a[i])) {
-            swap(a, i, 1);
-            prime_triangle_count(a + 1, length - 1, count);
-            swap(a, i, 1);
+            ++count;
+    } else {
+        for (size_t i = 1; i + 1 != length; ++i) {
+            if (is_prime(a[0] + a[i])) {
+                swap(a, i, 1);
+                count += prime_triangle_count(a + 1, length - 1);
+                swap(a, i, 1);
+            }
         }
     }
+    return count;
 }
 
 void print(unsigned int* a, size_t length) {
@@ -70,11 +72,9 @@ int main() {
         unsigned int a[n];
         for (unsigned int i = 0; i < n; ++i)
             a[i] = i + 1;
-        int count = 0;
-        prime_triangle_count(a, n, &count);
         if (n > 2)
             printf(" ");
-        printf("%d", count);
+        printf("%d", prime_triangle_count(a, n));
     }
     printf("\n");
     clock_t end = clock();
