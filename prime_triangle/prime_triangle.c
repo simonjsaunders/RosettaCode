@@ -21,7 +21,7 @@ void swap(unsigned int* a, size_t i, size_t j) {
 bool prime_triangle_row(unsigned int* a, size_t length) {
     if (length == 2)
         return is_prime(a[0] + a[1]);
-    for (size_t i = 1; i + 1 != length; ++i) {
+    for (size_t i = 1; i + 1 < length; i += 2) {
         if (is_prime(a[0] + a[i])) {
             swap(a, i, 1);
             if (prime_triangle_row(a + 1, length - 1))
@@ -38,7 +38,7 @@ int prime_triangle_count(unsigned int* a, size_t length) {
         if (is_prime(a[0] + a[1]))
             ++count;
     } else {
-        for (size_t i = 1; i + 1 != length; ++i) {
+        for (size_t i = 1; i + 1 < length; i += 2) {
             if (is_prime(a[0] + a[i])) {
                 swap(a, i, 1);
                 count += prime_triangle_count(a + 1, length - 1);
