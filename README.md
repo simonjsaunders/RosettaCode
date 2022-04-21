@@ -336,6 +336,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_desc|2020-02-29|https://rosettacode.org/wiki/Primes_-_allocate_descendants_to_their_ancestors|
 |prime_fib|2022-03-06|https://rosettacode.org/wiki/First_9_prime_Fibonacci_number|
 |prime_gen|2020-05-09|https://rosettacode.org/wiki/Extensible_prime_generator|
+|prime_triangle|2022-04-21|https://rosettacode.org/wiki/Prime_triangle|
 |ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
 |sequence_mutation|2020-06-02|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
