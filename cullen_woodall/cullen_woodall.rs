@@ -16,15 +16,11 @@ fn woodall_number(n: u32) -> Integer {
 
 fn main() {
     println!("First 20 Cullen numbers:");
-    let cullen: Vec<String> = (1..21)
-        .map(|x| cullen_number(x).to_string_radix(10))
-        .collect();
+    let cullen: Vec<String> = (1..21).map(|x| cullen_number(x).to_string()).collect();
     println!("{}", cullen.join(" "));
 
     println!("\nFirst 20 Woodall numbers:");
-    let woodall: Vec<String> = (1..21)
-        .map(|x| woodall_number(x).to_string_radix(10))
-        .collect();
+    let woodall: Vec<String> = (1..21).map(|x| woodall_number(x).to_string()).collect();
     println!("{}", woodall.join(" "));
 
     println!("\nFirst 5 Cullen primes in terms of n:");
