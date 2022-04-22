@@ -480,6 +480,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
 |quickselect|2020-05-18|https://rosettacode.org/wiki/Quickselect_algorithm|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
+|rhonda_numbers|2022-04-22|https://rosettacode.org/wiki/Rhonda_numbers|
 |semordnilap|2020-06-28|https://rosettacode.org/wiki/Semordnilap|
 |sexy_primes|2020-06-28|https://rosettacode.org/wiki/Sexy_primes|
 |sha256merkletree|2020-12-11|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
