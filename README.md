@@ -432,6 +432,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |douglas_peucker|2020-07-09|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |earliest_diff_between_prime_gaps|2021-11-22|https://rosettacode.org/wiki/Earliest_difference_between_prime_gaps|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
+|erdos_selfridge|2022-04-22|https://rosettacode.org/wiki/Erd%C3%B6s-Selfridge_categorization_of_primes|
 |esthetic_numbers|2021-10-09|https://rosettacode.org/wiki/Esthetic_numbers|
 |etoi|2021-05-22|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
