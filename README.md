@@ -339,6 +339,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_triangle|2022-04-21|https://rosettacode.org/wiki/Prime_triangle|
 |ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |random_shuffle|2021-08-29|https://rosettacode.org/wiki/Generate_random_numbers_without_repeating_a_value|
+|rhonda_numbers|2022-04-22|https://rosettacode.org/wiki/Rhonda_numbers|
 |sequence_mutation|2020-06-02|https://rosettacode.org/wiki/Bioinformatics/Sequence_mutation|
 |sha256merkletree|2020-12-10|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
 |sierpinski_curve|2020-06-12|https://rosettacode.org/wiki/Sierpinski_curve|
