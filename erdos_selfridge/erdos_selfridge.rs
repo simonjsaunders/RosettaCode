@@ -11,12 +11,9 @@ struct ErdosSelfridge {
 impl ErdosSelfridge {
     fn new(limit: usize) -> ErdosSelfridge {
         let mut es = ErdosSelfridge {
-            primes: Vec::new(),
+            primes: primal::Primes::all().take(limit).collect(),
             category: Vec::new(),
         };
-        for prime in primal::Primes::all().take(limit) {
-            es.primes.push(prime);
-        }
         es.category.resize(es.primes.len(), 0);
         es
     }
