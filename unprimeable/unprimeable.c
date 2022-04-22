@@ -59,8 +59,7 @@ int main() {
             if (count == 600)
                 printf("\n600th unprimeable number: %'u\n", n);
             uint32_t last_digit = n % 10;
-            if (lowest[last_digit] == 0)
-            {
+            if (lowest[last_digit] == 0) {
                 lowest[last_digit] = n;
                 ++found;
             }
