@@ -142,6 +142,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |isqrt|2020-07-16|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
+|jacobsthal_numbers|2022-04-23|https://rosettacode.org/wiki/Jacobsthal_numbers|
 |jaro_winkler|2020-08-23|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |juggler_sequence|2021-08-23|https://rosettacode.org/wiki/Juggler_sequence|
 |kdtree|2019-12-07|https://rosettacode.org/wiki/K-d_tree|
