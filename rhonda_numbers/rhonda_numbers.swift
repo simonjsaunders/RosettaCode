@@ -64,13 +64,13 @@ for base in 2...36 {
     }
     print("First \(limit) Rhonda numbers to base \(base):")
     let numbers = Array((1...).lazy.filter{ isRhonda(base: base, num: $0) }.prefix(limit))
-    print("In base 10:", terminator: "");
+    print("In base 10:", terminator: "")
     for n in numbers {
-        print(" \(n)", terminator: "");
+        print(" \(n)", terminator: "")
     }
-    print("\nIn base \(base):", terminator: "");
+    print("\nIn base \(base):", terminator: "")
     for n in numbers {
-        print(" \(String(n, radix: base))", terminator: "");
+        print(" \(String(n, radix: base))", terminator: "")
     }
-    print("\n");
+    print("\n")
 }
