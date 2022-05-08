@@ -151,6 +151,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |kronecker|2020-05-11|https://rosettacode.org/wiki/Kronecker_product|
 |kronecker_fractals|2020-05-11|https://rosettacode.org/wiki/Kronecker_product_based_fractals|
 |lah_numbers|2020-04-05|https://rosettacode.org/wiki/Lah_numbers|
+|largest_left_truncatable_prime|2022-05-07|https://rosettacode.org/wiki/Find_largest_left_truncatable_prime_in_a_given_base|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |last_letter_first_letter|2020-12-12|https://rosettacode.org/wiki/Last_letter-first_letter|
 |law_of_cosines|2020-03-29|https://rosettacode.org/wiki/Law_of_cosines_-_triples|
