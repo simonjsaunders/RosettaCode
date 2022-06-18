@@ -419,6 +419,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |achilles_numbers|2022-03-06|https://rosettacode.org/wiki/Achilles_numbers|
 |air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
 |alternade_words|2020-12-23|https://rosettacode.org/wiki/Alternade_words|
+|arithmetic_numbers|2022-06-18|https://rosettacode.org/wiki/Arithmetic_numbers|
 |brilliant_numbers|2022-04-20|https://rosettacode.org/wiki/Brilliant_numbers|
 |calkin_wilf|2020-12-13|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
 |circle_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_Algorithms/Circle_Sort|
