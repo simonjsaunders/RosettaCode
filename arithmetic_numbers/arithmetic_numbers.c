@@ -44,8 +44,8 @@ int main() {
             if (arithmetic_count % 10 == 0)
                 printf("\n");
         }
-        if ((arithmetic_count == 1000) || (arithmetic_count == 10000) ||
-            (arithmetic_count == 100000) || (arithmetic_count == 1000000)) {
+        if (arithmetic_count == 1000 || arithmetic_count == 10000 ||
+            arithmetic_count == 100000 || arithmetic_count == 1000000) {
             printf("\n%uth arithmetic number is %u\n", arithmetic_count, n);
             printf("Number of composite arithmetic numbers <= %u: %u\n", n,
                    composite_count);
