@@ -2,7 +2,7 @@ import java.util.*;
 
 public class BrilliantNumbers {
     public static void main(String[] args) {
-        var primesByDigits = getPrimesByDigits(1000000000);
+        var primesByDigits = getPrimesByDigits(100000000);
         System.out.println("First 100 brilliant numbers:");
         List<Integer> brilliantNumbers = new ArrayList<>();
         for (var primes : primesByDigits) {
@@ -61,7 +61,7 @@ public class BrilliantNumbers {
         PrimeGenerator primeGen = new PrimeGenerator(100000, 100000);
         List<List<Integer>> primesByDigits = new ArrayList<>();
         List<Integer> primes = new ArrayList<>();
-        for (int p = 10; p < limit; ) {
+        for (int p = 10; p <= limit; ) {
             int prime = primeGen.nextPrime();
             if (prime > p) {
                 primesByDigits.add(primes);

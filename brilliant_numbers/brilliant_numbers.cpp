@@ -11,7 +11,7 @@ auto get_primes_by_digits(uint64_t limit) {
     primesieve::iterator pi;
     std::vector<std::vector<uint64_t>> primes_by_digits;
     std::vector<uint64_t> primes;
-    for (uint64_t p = 10; p < limit;) {
+    for (uint64_t p = 10; p <= limit;) {
         uint64_t prime = pi.next_prime();
         if (prime > p) {
             primes_by_digits.push_back(std::move(primes));

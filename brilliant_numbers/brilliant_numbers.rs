@@ -14,6 +14,7 @@ fn get_primes_by_digits(limit: usize) -> Vec<Vec<usize>> {
         }
         primes.push(prime);
     }
+    primes_by_digits.push(primes);
     primes_by_digits
 }
 
