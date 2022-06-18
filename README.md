@@ -21,6 +21,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |abbrev_easy|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_easy|
 |abbrev_simple|2020-05-26|https://rosettacode.org/wiki/Abbreviations,_simple|
 |air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
+|arithmetic_numbers|2022-06-18|https://rosettacode.org/wiki/Arithmetic_numbers|
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
 |canonicalize_cidr|2020-07-09|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
