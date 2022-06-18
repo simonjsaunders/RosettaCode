@@ -34,8 +34,7 @@ int main() {
         unsigned int divisor_count;
         unsigned int divisor_sum;
         divisor_count_and_sum(n, &divisor_count, &divisor_sum);
-        unsigned int mean = divisor_sum / divisor_count;
-        if (mean * divisor_count != divisor_sum)
+        if (divisor_sum % divisor_count != 0)
             continue;
         ++arithmetic_count;
         if (divisor_count > 2)
