@@ -138,6 +138,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |gapful|2020-01-25|https://rosettacode.org/wiki/Gapful_numbers|
 |gaussian_elimination|2020-12-31|https://rosettacode.org/wiki/Gaussian_elimination|
 |gauss_jordan|2020-07-20|https://rosettacode.org/wiki/Gauss-Jordan_matrix_inversion|
+|giuga_numbers|2022-07-06|https://rosettacode.org/wiki/Giuga_numbers|
 |harmonic_series|2021-06-03|https://rosettacode.org/wiki/Harmonic_series|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
 |int_long_div|2021-10-07|https://rosettacode.org/wiki/Integer_long_division|
