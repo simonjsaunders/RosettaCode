@@ -90,6 +90,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |almkvist_giullera|2021-08-29|https://rosettacode.org/wiki/Almkvist-Giullera_formula_for_pi|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
+|arithmetic_derivative|2022-07-06|https://rosettacode.org/wiki/Arithmetic_Derivative|
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
 |barnsley_fern|2020-04-17|https://rosettacode.org/wiki/Barnsley_fern|
 |base16|2021-06-02|https://rosettacode.org/wiki/Base-16_representation|
