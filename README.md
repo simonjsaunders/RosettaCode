@@ -453,6 +453,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |frobenius|2021-04-03|https://rosettacode.org/wiki/Frobenius_numbers|
 |fusc|2020-07-23|https://rosettacode.org/wiki/Fusc_sequence|
 |gnome_sort|2020-05-18|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
+|goldbach|2022-07-10|https://rosettacode.org/wiki/Goldbach%27s_comet|
 |hilbert_curve|2020-06-12|https://rosettacode.org/wiki/Hilbert_curve|
 |integer_roots|2020-07-16|https://rosettacode.org/wiki/Integer_roots|
 |jacobi|2020-07-14|https://rosettacode.org/wiki/Jacobi_symbol|
