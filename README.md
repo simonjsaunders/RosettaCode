@@ -49,6 +49,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |ordinal|2020-05-11|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
 |palindrome_dates|2020-05-11|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-05-15|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
+|pan_base_non_primes|2022-09-17|https://rosettacode.org/wiki/Pan_base_non-primes|
 |prime_partition|2020-05-06|https://rosettacode.org/wiki/Partition_an_integer_X_into_N_primes|
 |prime_triangle|2022-04-18|https://rosettacode.org/wiki/Prime_triangle|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
@@ -187,6 +188,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |palindromic_primes|2022-03-19|https://rosettacode.org/wiki/Palindromic_primes|
+|pan_base_non_primes|2022-09-17|https://rosettacode.org/wiki/Pan_base_non-primes|
 |parallel_brute_force|2020-02-29|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |particle_fountain|2021-09-27|https://rosettacode.org/wiki/Particle_fountain|
@@ -337,6 +339,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nimber|2020-07-04|https://rosettacode.org/wiki/Nimber_arithmetic|
 |nth_prime|2021-11-27|https://rosettacode.org/wiki/10001th_prime|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
+|pan_base_non_primes|2022-09-17|https://rosettacode.org/wiki/Pan_base_non-primes|
 |parallel_brute_force|2020-03-01|https://rosettacode.org/wiki/Parallel_Brute_Force|
 |partition_function|2021-04-10|https://rosettacode.org/wiki/Partition_function_P|
 |peano_curve|2020-07-17|https://rosettacode.org/wiki/Peano_curve|
