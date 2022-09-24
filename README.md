@@ -553,6 +553,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |first_last_three_equal|2021-02-12|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |gnome_sort|2020-07-22|https://rosettacode.org/wiki/Sorting_algorithms/Gnome_sort|
 |hofstadter_q_seq|2021-01-16|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
+|idoneal_numbers|2022-09-24|https://rosettacode.org/wiki/Idoneal_numbers|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
