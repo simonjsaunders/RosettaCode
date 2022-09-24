@@ -130,6 +130,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
+|fermat_pseudoprimes|2022-09-24|https://rosettacode.org/wiki/Fermat_pseudoprimes|
 |file_extension|2020-06-04|https://rosettacode.org/wiki/File_extension_is_in_extensions_list|
 |file_size|2022-04-24|https://rosettacode.org/wiki/File_size|
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
