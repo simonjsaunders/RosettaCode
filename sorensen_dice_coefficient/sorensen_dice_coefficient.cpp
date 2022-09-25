@@ -11,7 +11,7 @@
 
 using bigram = std::pair<char, char>;
 
-std::multiset<bigram> split(const std::string& phrase) {
+std::multiset<bigram> bigrams(const std::string& phrase) {
     std::multiset<bigram> result;
     std::istringstream is(phrase);
     std::string word;
@@ -32,8 +32,8 @@ std::multiset<bigram> split(const std::string& phrase) {
 }
 
 double sorensen(const std::string& s1, const std::string& s2) {
-    auto a = split(s1);
-    auto b = split(s2);
+    auto a = bigrams(s1);
+    auto b = bigrams(s2);
     std::multiset<bigram> c;
     std::set_intersection(a.begin(), a.end(), b.begin(), b.end(),
                           std::inserter(c, c.begin()));
