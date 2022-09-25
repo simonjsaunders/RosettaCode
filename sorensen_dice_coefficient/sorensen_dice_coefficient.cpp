@@ -9,8 +9,10 @@
 #include <string>
 #include <vector>
 
-std::multiset<std::string> split(const std::string& phrase) {
-    std::multiset<std::string> result;
+using bigram = std::pair<char, char>;
+
+std::multiset<bigram> split(const std::string& phrase) {
+    std::multiset<bigram> result;
     std::istringstream is(phrase);
     std::string word;
     while (is >> word) {
@@ -19,10 +21,10 @@ std::multiset<std::string> split(const std::string& phrase) {
         }
         size_t length = word.size();
         if (length == 1) {
-            result.emplace(1, word[0]);
+            result.emplace(word[0], '\0');
         } else {
             for (size_t i = 0; i + 1 < length; ++i) {
-                result.insert(std::string{word[i], word[i + 1]});
+                result.emplace(word[i], word[i + 1]);
             }
         }
     }
@@ -32,7 +34,7 @@ std::multiset<std::string> split(const std::string& phrase) {
 double sorensen(const std::string& s1, const std::string& s2) {
     auto a = split(s1);
     auto b = split(s2);
-    std::multiset<std::string> c;
+    std::multiset<bigram> c;
     std::set_intersection(a.begin(), a.end(), b.begin(), b.end(),
                           std::inserter(c, c.begin()));
     return (2.0 * c.size()) / (a.size() + b.size());
