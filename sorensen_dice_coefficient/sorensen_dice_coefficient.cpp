@@ -62,10 +62,10 @@ int main() {
             sdi[i] = std::make_pair(sorensen(tasks[i], test), i);
         }
         std::partial_sort(sdi.begin(), sdi.begin() + 5, sdi.end(),
-                  [](const std::pair<double, size_t>& a,
-                     const std::pair<double, size_t>& b) {
-                      return a.first > b.first;
-                  });
+                          [](const std::pair<double, size_t>& a,
+                             const std::pair<double, size_t>& b) {
+                              return a.first > b.first;
+                          });
         std::cout << test << " >\n";
         for (size_t i = 0; i < 5 && i < tc; ++i) {
             std::cout << "  " << sdi[i].first << ' ' << tasks[sdi[i].second]
