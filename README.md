@@ -272,6 +272,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |word_ladder|2021-06-06|https://rosettacode.org/wiki/Word_ladder|
 |word_wheel|2020-07-04|https://rosettacode.org/wiki/Word_wheel|
 |yellowstone|2020-06-23|https://rosettacode.org/wiki/Yellowstone_sequence|
+|zsigmondy_numbers|2022-09-26|https://rosettacode.org/wiki/Zsigmondy_numbers|
 
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
