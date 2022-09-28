@@ -113,6 +113,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |curzon_numbers|2022-03-06|https://rosettacode.org/wiki/Curzon_numbers|
 |days_between_dates|2020-09-06|https://rosettacode.org/wiki/Days_between_dates|
 |deceptive_numbers|2022-03-06|https://rosettacode.org/wiki/Deceptive_numbers|
+|depolignac_numbers|2022-09-28|https://rosettacode.org/wiki/De_Polignac_numbers|
 |dice_game|2020-06-04|https://rosettacode.org/wiki/Dice_game_probabilities|
 |dist0fact|2021-10-05|https://rosettacode.org/wiki/Distribution_of_0_Digits_in_factorial_series|
 |divisor_count|2020-12-21|https://rosettacode.org/wiki/Tau_function|
