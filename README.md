@@ -280,6 +280,7 @@ in this repository for any purpose then it's entirely at your own risk.
 ## Forth Code Examples
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a111398|2022-10-02|https://rosettacode.org/wiki/Numbers_which_are_the_cube_roots_of_the_product_of_their_proper_divisors|
 |a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
 |abc_words|2021-10-08|https://rosettacode.org/wiki/ABC_words|
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
