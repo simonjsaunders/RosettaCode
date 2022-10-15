@@ -1,9 +1,23 @@
-// [dependencies]
-// rug = "1.15.0"
+fn modpow(mut base: usize, mut exp: usize, n: usize) -> usize {
+    if n == 1 {
+        return 0;
+    }
+    let mut result = 1;
+    base %= n;
+    while exp > 0 {
+        if (exp & 1) == 1 {
+            result = (result * base) % n;
+        }
+        base = (base * base) % n;
+        exp >>= 1;
+    }
+    result
+}
 
-fn is_curzon(n: u32, k: u32) -> bool {
-    use rug::{Complete, Integer};
-    (Integer::u_pow_u(k, n).complete() + 1) % (k * n + 1) == 0
+fn is_curzon(n: usize, k: usize) -> bool {
+    let m = k * n + 1;
+    modpow(k, n, m) + 1 == m
+
 }
 
 fn main() {
