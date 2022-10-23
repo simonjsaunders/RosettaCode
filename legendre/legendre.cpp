@@ -1,6 +1,5 @@
 #include <cmath>
 #include <iostream>
-#include <unordered_map>
 #include <vector>
 
 std::vector<int> generate_primes(int limit) {
@@ -29,7 +28,6 @@ public:
 private:
     int phi(int x, int a);
     std::vector<int> primes;
-    std::unordered_map<int, std::unordered_map<int, int>> phi_cache;
 };
 
 legendre_prime_counter::legendre_prime_counter(int limit) :
@@ -45,13 +43,12 @@ int legendre_prime_counter::prime_count(int n) {
 int legendre_prime_counter::phi(int x, int a) {
     if (a == 0)
         return x;
-    auto& map = phi_cache[x];
-    auto i = map.find(a);
-    if (i != map.end())
-        return i->second;
-    int result = phi(x, a - 1) - phi(x / primes[a - 1], a - 1);
-    map[a] = result;
-    return result;
+    if (a == 1)
+        return x - (x >> 1);
+    int pa = primes[a - 1];
+    if (x <= pa)
+        return 1;
+    return phi(x, a - 1) - phi(x / primes[a - 1], a - 1);
 }
 
 int main() {

@@ -8,7 +8,6 @@ public class LegendrePrimeCounter {
     }
 
     private List<Integer> primes;
-    private Map<Integer, Map<Integer, Integer>> phiCache = new HashMap<>();
 
     public LegendrePrimeCounter(int limit) {
         primes = generatePrimes((int)Math.sqrt((double)limit));
@@ -24,13 +23,12 @@ public class LegendrePrimeCounter {
     private int phi(int x, int a) {
         if (a == 0)
             return x;
-        Map<Integer, Integer> map = phiCache.computeIfAbsent(x, k -> new HashMap<>());
-        Integer value = map.get(a);
-        if (value != null)
-            return value;
-        int result = phi(x, a - 1) - phi(x / primes.get(a - 1), a - 1);
-        map.put(a, result);
-        return result;
+        if (a == 1)
+            return x - (x >> 1);
+        int pa = primes.get(a - 1);
+        if (x <= pa)
+            return 1;
+        return phi(x, a - 1) - phi(x / primes.get(a - 1), a - 1);
     }
 
     private static List<Integer> generatePrimes(int limit) {
