@@ -28,7 +28,7 @@ public class LegendrePrimeCounter {
         int pa = primes.get(a - 1);
         if (x <= pa)
             return 1;
-        return phi(x, a - 1) - phi(x / primes.get(a - 1), a - 1);
+        return phi(x, a - 1) - phi(x / pa, a - 1);
     }
 
     private static List<Integer> generatePrimes(int limit) {
