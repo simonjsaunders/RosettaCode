@@ -202,6 +202,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |peano_curve|2020-12-12|https://rosettacode.org/wiki/Peano_curve|
 |penrose|2021-07-13|https://rosettacode.org/wiki/Penrose_tiling|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
+|permutations_with_duplicates|2022-11-04|https://rosettacode.org/wiki/Permutations_with_some_identical_elements|
 |permuted_multiples|2021-08-23|https://rosettacode.org/wiki/Permuted_multiples|
 |pierpont_primes|2020-04-13|https://rosettacode.org/wiki/Pierpont_primes|
 |powerful|2020-12-30|https://rosettacode.org/wiki/Powerful_numbers|
