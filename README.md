@@ -98,6 +98,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
 |barnsley_fern|2020-04-17|https://rosettacode.org/wiki/Barnsley_fern|
 |base16|2021-06-02|https://rosettacode.org/wiki/Base-16_representation|
+|bcd|2022-11-13|https://rosettacode.org/wiki/Binary_coded_decimal|
 |bell|2020-01-13|https://rosettacode.org/wiki/Bell_numbers|
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
 |brilliant_numbers|2022-04-20|https://rosettacode.org/wiki/Brilliant_numbers|
