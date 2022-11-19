@@ -77,6 +77,7 @@ in this repository for any purpose then it's entirely at your own risk.
 
 |Directory|Date Submitted|Rosetta Code URL|
 |---------|--------------|----------------|
+|a007534|2022-11-19|https://rosettacode.org/wiki/Even_numbers_which_cannot_be_expressed_as_the_sum_of_two_twin_primes|
 |a066048|2022-10-01|https://rosettacode.org/wiki/Product_of_min_and_max_prime_factors|
 |a111398|2022-09-30|https://rosettacode.org/wiki/Numbers_which_are_the_cube_roots_of_the_product_of_their_proper_divisors|
 |a131382|2022-01-29|https://rosettacode.org/wiki/Minimum_multiple_of_m_where_digital_sum_equals_m|
