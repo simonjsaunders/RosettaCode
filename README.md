@@ -134,6 +134,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |erdos_selfridge|2022-04-16|https://rosettacode.org/wiki/Erd%C3%B6s-Selfridge_categorization_of_primes|
 |etoi|2021-03-05|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
+|factorial_primes|2022-12-18|https://rosettacode.org/wiki/Factorial_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
 |fermat|2020-01-17|https://rosettacode.org/wiki/Fermat_numbers|
 |fermat_pseudoprimes|2022-09-24|https://rosettacode.org/wiki/Fermat_pseudoprimes|
