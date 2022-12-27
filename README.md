@@ -601,6 +601,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |strongweak|2021-01-17|https://rosettacode.org/wiki/Strong_and_weak_primes|
 |substring_filter|2021-10-31|https://rosettacode.org/wiki/Words_containing_%22the%22_substring|
+|super_poulet|2022-12-27|https://rosettacode.org/wiki/Super-Poulet_numbers|
 |tau_number|2020-12-21|https://rosettacode.org/wiki/Tau_number|
 |teacup|2020-07-27|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-07-29|https://rosettacode.org/wiki/Textonyms|
