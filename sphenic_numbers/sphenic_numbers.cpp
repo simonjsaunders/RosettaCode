@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cassert>
 #include <iomanip>
 #include <iostream>
@@ -42,19 +43,20 @@ std::vector<int> prime_factors(int n) {
 
 int main() {
     const int limit = 1000000;
-    std::vector<bool> sieve = prime_sieve(limit / 6);
+    const int imax = limit / 6;
+    std::vector<bool> sieve = prime_sieve(imax + 1);
     std::vector<bool> sphenic(limit + 1, false);
-    for (int i = 0; i < sieve.size(); ++i) {
+    for (int i = 0; i <= imax; ++i) {
         if (!sieve[i])
             continue;
-        int jmax = limit / (i * i);
+        int jmax = std::min(imax, limit / (i * i));
         if (jmax <= i)
             break;
         for (int j = i + 1; j <= jmax; ++j) {
             if (!sieve[j])
                 continue;
             int p = i * j;
-            int kmax = limit / p;
+            int kmax = std::min(imax, limit / p);
             if (kmax <= j)
                 break;
             for (int k = j + 1; k <= kmax; ++k) {

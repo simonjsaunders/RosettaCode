@@ -372,6 +372,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sha256merkletree|2020-12-10|https://rosettacode.org/wiki/SHA-256_Merkle_tree|
 |sierpinski_curve|2020-06-12|https://rosettacode.org/wiki/Sierpinski_curve|
 |sierpinski_square|2020-06-12|https://rosettacode.org/wiki/Sierpinski_square_curve|
+|sphenic_numbers|2023-01-28|https://rosettacode.org/wiki/Sphenic_numbers|
 |strange_unique_prime_triplets|2021-03-20|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |teacup|2020-06-05|https://rosettacode.org/wiki/Teacup_rim_text|
 |tree_sort|2020-07-07|https://rosettacode.org/wiki/Sorting_algorithms/Tree_sort_on_a_linked_list|
