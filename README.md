@@ -194,6 +194,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |odd_even_words|2021-01-17|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-04-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|ormiston_pairs|2023-01-30|https://rosettacode.org/wiki/Ormiston_pairs|
 |palindrome_dates|2020-05-10|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_gapful|2020-01-25|https://rosettacode.org/wiki/Palindromic_gapful_numbers|
 |palindromic_primes|2022-03-19|https://rosettacode.org/wiki/Palindromic_primes|
