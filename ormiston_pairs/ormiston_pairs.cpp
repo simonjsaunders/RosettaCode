@@ -1,30 +1,14 @@
 #include <algorithm>
-#include <cassert>
 #include <iomanip>
 #include <iostream>
-#include <vector>
+#include <utility>
 
-std::vector<bool> prime_sieve(int limit) {
-    std::vector<bool> sieve(limit, true);
-    if (limit > 0)
-        sieve[0] = false;
-    if (limit > 1)
-        sieve[1] = false;
-    for (int i = 4; i < limit; i += 2)
-        sieve[i] = false;
-    for (int p = 3, sq = 9; sq < limit; p += 2) {
-        if (sieve[p]) {
-            for (int q = sq; q < limit; q += p << 1)
-                sieve[q] = false;
-        }
-        sq += (p + 1) << 2;
-    }
-    return sieve;
-}
+#include <primesieve.hpp>
 
 class digit_set {
 public:
-    explicit digit_set(int n) {
+    digit_set() {}
+    explicit digit_set(uint64_t n) {
         for (; n > 0; n /= 10)
             ++count_[n % 10];
     }
@@ -37,27 +21,42 @@ private:
     int count_[10] = {};
 };
 
-int main() {
-    const int limit = 100000000;
-    std::vector<bool> sieve = prime_sieve(limit);
-    int count = 0, count1 = 0, count2 = 0;
-    std::cout << "First 30 Ormiston pairs:\n";
-    for (int p1 = 0, p2 = 0; p2 < limit; ++p2) {
-        if (!sieve[p2])
-            continue;
-        if (digit_set(p2) == digit_set(p1)) {
-            if (count1 == 0 && p2 > 1000000)
-                count1 = count;
-            if (count2 == 0 && p2 > 10000000)
-                count2 = count;
-            ++count;
-            if (count <= 30)
-                std::cout << '(' << std::setw(5) << p1 << ", " << std::setw(5)
-                          << p2 << ')' << (count % 3 == 0 ? '\n' : ' ');
+class ormiston_pair_generator {
+public:
+    ormiston_pair_generator() { prime_ = pi_.next_prime(); }
+    std::pair<uint64_t, uint64_t> next_pair() {
+        for (;;) {
+            uint64_t prime = prime_;
+            auto digits = digits_;
+            prime_ = pi_.next_prime();
+            digits_ = digit_set(prime_);
+            if (digits_ == digits)
+                return std::make_pair(prime, prime_);
         }
-        p1 = p2;
     }
-    std::cout << "\nNumber of Ormiston pairs < 1,000,000: " << count1 << '\n';
-    std::cout << "Number of Ormiston pairs < 10,000,000: " << count2 << '\n';
-    std::cout << "Number of Ormiston pairs < 100,000,000: " << count << '\n';
+
+private:
+    primesieve::iterator pi_;
+    uint64_t prime_;
+    digit_set digits_;
+};
+
+int main() {
+    ormiston_pair_generator generator;
+    int count = 0;
+    std::cout << "First 30 Ormiston pairs:\n";
+    for (; count < 30; ++count) {
+        auto [p1, p2] = generator.next_pair();
+        std::cout << '(' << std::setw(5) << p1 << ", " << std::setw(5) << p2
+                  << ')' << ((count + 1) % 3 == 0 ? '\n' : ' ');
+    }
+    std::cout << '\n';
+    for (uint64_t limit = 1000000; limit <= 1000000000; ++count) {
+        auto [p1, p2] = generator.next_pair();
+        if (p1 > limit) {
+            std::cout << "Number of Ormiston pairs < " << limit << ": " << count
+                      << '\n';
+            limit *= 10;
+        }
+    }
 }
