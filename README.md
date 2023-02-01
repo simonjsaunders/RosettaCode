@@ -94,6 +94,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |almkvist_giullera|2021-08-29|https://rosettacode.org/wiki/Almkvist-Giullera_formula_for_pi|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |anadromes|2022-07-09|https://rosettacode.org/wiki/Anadromes|
+|anaprimes|2023-02-01|https://rosettacode.org/wiki/Anaprimes|
 |animation|2020-04-17|https://rosettacode.org/wiki/Animation|
 |arithmetic_derivative|2022-07-06|https://rosettacode.org/wiki/Arithmetic_Derivative|
 |assoc_merge|2020-01-20|https://rosettacode.org/wiki/Associative_array/Merging|
