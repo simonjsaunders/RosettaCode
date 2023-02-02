@@ -1,34 +1,24 @@
-#include <algorithm>
-#include <iomanip>
+#include <array>
 #include <iostream>
 #include <map>
 #include <vector>
 
 #include <primesieve.hpp>
 
-class digit_set {
-public:
-    digit_set() {}
-    explicit digit_set(uint64_t n) {
-        for (; n > 0; n /= 10)
-            ++count_[n % 10];
-    }
-    bool operator==(const digit_set& other) const {
-        return std::equal(count_, count_ + 10, other.count_);
-    }
-    bool operator<(const digit_set& other) const {
-        return std::lexicographical_compare(other.count_, other.count_ + 10,
-                                            count_, count_ + 10);
-    }
+using digit_set = std::array<int, 10>;
 
-private:
-    int count_[10] = {};
-};
+digit_set get_digits(uint64_t n) {
+    digit_set result = {};
+    for (; n > 0; n /= 10)
+        ++result[n % 10];
+    return result;
+}
 
 int main() {
     std::cout.imbue(std::locale(""));
     primesieve::iterator pi;
-    using map_type = std::map<digit_set, std::vector<uint64_t>>;
+    using map_type =
+        std::map<digit_set, std::vector<uint64_t>, std::greater<digit_set>>;
     map_type anaprimes;
     for (uint64_t limit = 1000; limit <= 10000000000;) {
         uint64_t prime = pi.next_prime();
@@ -53,6 +43,6 @@ int main() {
             anaprimes.clear();
             limit *= 10;
         }
-        anaprimes[digit_set(prime)].push_back(prime);
+        anaprimes[get_digits(prime)].push_back(prime);
     }
 }
