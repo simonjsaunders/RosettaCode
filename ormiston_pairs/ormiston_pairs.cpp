@@ -1,25 +1,9 @@
-#include <algorithm>
+#include <array>
 #include <iomanip>
 #include <iostream>
 #include <utility>
 
 #include <primesieve.hpp>
-
-class digit_set {
-public:
-    digit_set() {}
-    explicit digit_set(uint64_t n) {
-        for (; n > 0; n /= 10)
-            ++count_[n % 10];
-    }
-
-    bool operator==(const digit_set& other) const {
-        return std::equal(count_, count_ + 10, other.count_);
-    }
-
-private:
-    int count_[10] = {};
-};
 
 class ormiston_pair_generator {
 public:
@@ -29,16 +13,22 @@ public:
             uint64_t prime = prime_;
             auto digits = digits_;
             prime_ = pi_.next_prime();
-            digits_ = digit_set(prime_);
+            digits_ = get_digits(prime_);
             if (digits_ == digits)
                 return std::make_pair(prime, prime_);
         }
     }
 
 private:
+    static std::array<int, 10> get_digits(uint64_t n) {
+        std::array<int, 10> result = {};
+        for (; n > 0; n /= 10)
+            ++result[n % 10];
+        return result;
+    }
     primesieve::iterator pi_;
     uint64_t prime_;
-    digit_set digits_;
+    std::array<int, 10> digits_;
 };
 
 int main() {
