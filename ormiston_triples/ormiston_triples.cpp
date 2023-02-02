@@ -1,6 +1,5 @@
 #include <array>
 #include <iostream>
-#include <utility>
 
 #include <primesieve.hpp>
 
