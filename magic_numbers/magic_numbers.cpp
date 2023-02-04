@@ -54,9 +54,8 @@ int main() {
     uint128_t magic = 0, p = 10;
     std::vector<int> digit_count;
 
-    std::array<int, 10> digits0 = {}, digits1 = {};
-    std::fill(digits0.begin(), digits0.end(), 1);
-    std::fill(digits1.begin() + 1, digits1.end(), 1);
+    std::array<int, 10> digits0 = {1,1,1,1,1,1,1,1,1,1};
+    std::array<int, 10> digits1 = {0,1,1,1,1,1,1,1,1,1};
     std::vector<uint128_t> pandigital0, pandigital1;
 
     for (magic_number_generator gen; gen.next(magic);) {
