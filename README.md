@@ -181,6 +181,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |lychrel|2020-01-22|https://rosettacode.org/wiki/Lychrel_numbers|
 |mac_vendor_lookup|2020-04-19|https://rosettacode.org/wiki/MAC_Vendor_Lookup|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
+|magic_numbers|2023-02-04|https://rosettacode.org/wiki/Magic_numbers|
 |mersenne_factors|2020-03-01|https://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |mertens|2020-03-08|https://rosettacode.org/wiki/Mertens_function|
 |mod_exp|2020-03-08|https://rosettacode.org/wiki/Modular_exponentiation|
