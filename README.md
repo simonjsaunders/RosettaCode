@@ -490,6 +490,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |leonardo|2020-07-13|https://rosettacode.org/wiki/Leonardo_numbers|
 |lex_sort|2020-06-18|https://rosettacode.org/wiki/Sort_numbers_lexicographically|
 |long_primes|2020-06-08|https://rosettacode.org/wiki/Long_primes|
+|magic_numbers|2023-02-05|https://rosettacode.org/wiki/Magic_numbers|
 |magnanimous_numbers|2020-06-10|https://rosettacode.org/wiki/Magnanimous_numbers|
 |mersenne_factors|2020-06-17|https://rosettacode.org/wiki/Factors_of_a_Mersenne_number|
 |motzkin|2021-08-14|https://rosettacode.org/wiki/Motzkin_numbers|
