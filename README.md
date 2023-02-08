@@ -503,6 +503,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |nth_prime|2021-11-27|https://rosettacode.org/wiki/10001th_prime|
 |odd_words|2020-12-20|https://rosettacode.org/wiki/Odd_words|
 |ordinal|2020-06-04|https://rosettacode.org/wiki/Spelling_of_ordinal_numbers|
+|ormiston_pairs|2023-02-05|https://rosettacode.org/wiki/Ormiston_pairs|
 |padovan|2021-02-27|https://rosettacode.org/wiki/Padovan_sequence|
 |palindrome_dates|2020-07-13|https://rosettacode.org/wiki/Palindrome_dates|
 |palindromic_primes|2021-07-18|https://rosettacode.org/wiki/Palindromic_primes|
@@ -564,6 +565,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divcount|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_with_exactly_n_divisors|
 |divcount2|2020-07-19|https://rosettacode.org/wiki/Sequence:_smallest_number_greater_than_previous_term_with_exactly_n_divisors|
 |divisor_count|2020-12-23|https://rosettacode.org/wiki/Tau_function|
+|dnf|2023-02-08|https://rosettacode.org/wiki/Dutch_national_flag_problem|
 |douglas_peucker|2020-07-27|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |e3|2021-02-12|https://rosettacode.org/wiki/Find_words_which_contains_more_than_3_e_vowels|
 |equal_rises_and_falls|2021-06-02|https://rosettacode.org/wiki/Numbers_with_equal_rises_and_falls|
