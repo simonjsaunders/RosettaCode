@@ -105,6 +105,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |bin_limits|2021-02-06|https://rosettacode.org/wiki/Bin_given_limits|
 |brilliant_numbers|2022-04-20|https://rosettacode.org/wiki/Brilliant_numbers|
 |calkin_wilf|2020-12-12|https://rosettacode.org/wiki/Calkin-Wilf_sequence|
+|calmosoft_primes|2023-04-10|https://rosettacode.org/wiki/CalmoSoft_primes|
 |canonicalize_cidr|2020-07-12|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |carmichael|2020-06-03|https://rosettacode.org/wiki/Carmichael_3_strong_pseudoprimes|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
