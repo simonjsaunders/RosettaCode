@@ -246,6 +246,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sierpinski_square|2020-06-11|https://rosettacode.org/wiki/Sierpinski_square_curve|
 |sleeping_beauty|2021-05-09|https://rosettacode.org/wiki/Sleeping_Beauty_problem|
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
+|smarandache_wellin|2023-04-10|https://rosettacode.org/wiki/Smarandache-Wellin_primes|
 |sorensen_dice_coefficient|2022-09-25|https://rosettacode.org/wiki/Sorensen%E2%80%93Dice_coefficient|
 |sphenic_numbers|2023-01-21|https://rosettacode.org/wiki/Sphenic_numbers|
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
