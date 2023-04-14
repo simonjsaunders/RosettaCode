@@ -340,6 +340,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |air_mass|2021-10-16|https://rosettacode.org/wiki/Air_mass|
 |alternade_words|2020-12-15|https://rosettacode.org/wiki/Alternade_words|
 |brilliant_numbers|2022-06-11|https://rosettacode.org/wiki/Brilliant_numbers|
+|calmosoft_primes|2023-04-14|https://rosettacode.org/wiki/CalmoSoft_primes|
 |canonicalize_cidr|2020-12-31|https://rosettacode.org/wiki/Canonicalize_CIDR|
 |changeable_words|2020-12-15|https://rosettacode.org/wiki/Changeable_words|
 |circular_primes|2020-06-16|https://rosettacode.org/wiki/Circular_primes|
