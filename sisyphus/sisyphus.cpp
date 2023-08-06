@@ -1,7 +1,6 @@
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
-#include <vector>
 
 #include <primesieve.hpp>
 
