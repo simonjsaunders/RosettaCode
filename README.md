@@ -227,6 +227,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
+|radical|2023-08-08|https://rosettacode.org/wiki/Radical_of_an_integer|
 |ramanujan|2020-06-04|https://rosettacode.org/wiki/Ramanujan%27s_constant|
 |ramanujan_primes|2021-09-04|https://rosettacode.org/wiki/Ramanujan_primes|
 |range_consolidation|2020-05-11|https://rosettacode.org/wiki/Range_consolidation|
