@@ -135,6 +135,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |erdos_primes|2021-03-20|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |erdos_selfridge|2022-04-16|https://rosettacode.org/wiki/Erd%C3%B6s-Selfridge_categorization_of_primes|
 |etoi|2021-03-05|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
+|exp_digit_sums|2023-08-11|https://rosettacode.org/wiki/Exponential_digital_sums|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
 |factorial_primes|2022-12-18|https://rosettacode.org/wiki/Factorial_primes|
 |farey|2020-01-13|https://rosettacode.org/wiki/Farey_sequence|
