@@ -265,6 +265,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |sunflower|2020-05-11|https://rosettacode.org/wiki/Sunflower_fractal|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |super_poulet|2022-12-27|https://rosettacode.org/wiki/Super-Poulet_numbers|
+|svd|2023-10-28|https://rosettacode.org/wiki/Singular_value_decomposition|
 |sylvesters_sequence|2021-06-03|https://rosettacode.org/wiki/Sylvester%27s_sequence|
 |system_output|2020-10-17|https://rosettacode.org/wiki/Get_system_command_output|
 |tarjan|2020-03-14|https://rosettacode.org/wiki/Tarjan|
