@@ -36,6 +36,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |file_sizes|2020-06-02|https://rosettacode.org/wiki/File_size_distribution|
 |four_is|2020-06-04|<https://rosettacode.org/wiki/Four_is_the_number_of_letters_in_the_...>|
 |four_is_magic|2020-06-29|https://rosettacode.org/wiki/Four_is_magic|
+|hex_dump|2023-10-31|https://rosettacode.org/wiki/Hex_dump|
 |ip_address|2020-07-09|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |mertens|2020-05-25|https://rosettacode.org/wiki/Mertens_function|
 |motzkin|2021-10-30|https://rosettacode.org/wiki/Motzkin_numbers|
