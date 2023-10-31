@@ -21,8 +21,7 @@ std::string to_string(const big_int& num, size_t max_digits) {
     std::string str = num.get_str();
     size_t len = str.size();
     if (len > max_digits) {
-        str = str.substr(0, max_digits / 2) + "..." +
-              str.substr(len - max_digits / 2);
+        str.replace(max_digits / 2, len - max_digits, "...");
         str += " (";
         str += std::to_string(len);
         str += " digits)";
