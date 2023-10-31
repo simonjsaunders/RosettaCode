@@ -56,7 +56,7 @@ std::string to_string(const big_int& n) {
         str.replace(20, len - 40, "...");
         str += " (";
         str += std::to_string(len);
-        str += ")";
+        str += " digits)";
     }
     return str;
 }
