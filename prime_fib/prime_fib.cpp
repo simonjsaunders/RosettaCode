@@ -1,6 +1,5 @@
 #include <chrono>
 #include <iostream>
-#include <sstream>
 #include <utility>
 #include <primesieve.hpp>
 #include <gmpxx.h>
@@ -52,11 +51,12 @@ big_int prime_fibonacci_generator::next_fibonacci() {
 
 std::string to_string(const big_int& n) {
     std::string str = n.get_str();
-    if (str.size() > 40) {
-        std::ostringstream os;
-        os << str.substr(0, 20) << "..." << str.substr(str.size() - 20) << " ("
-           << str.size() << " digits)";
-        return os.str();
+    size_t len = str.size();
+    if (len > 40) {
+        str.replace(20, len - 40, "...");
+        str += " (";
+        str += std::to_string(len);
+        str += ")";
     }
     return str;
 }
