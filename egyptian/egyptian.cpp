@@ -27,9 +27,8 @@ std::string to_string(const integer& i) {
     std::ostringstream os;
     os << i;
     std::string s = os.str();
-    if (s.length() > max_digits) {
-        s = s.replace(max_digits / 2, s.length() - max_digits, "...");
-    }
+    if (s.length() > max_digits)
+        s.replace(max_digits / 2, s.length() - max_digits, "...");
     return s;
 }
 
