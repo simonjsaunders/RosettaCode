@@ -158,6 +158,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |harmonic_series|2021-06-03|https://rosettacode.org/wiki/Harmonic_series|
 |honaker_primes|2022-09-21|https://rosettacode.org/wiki/Honaker_primes|
 |honeycombs|2020-03-15|https://rosettacode.org/wiki/Honeycombs|
+|iccanobif_primes|2023-10-31|https://rosettacode.org/wiki/Iccanobif_primes|
 |int_long_div|2021-10-07|https://rosettacode.org/wiki/Integer_long_division|
 |ip_address|2020-01-20|https://rosettacode.org/wiki/Parse_an_IP_Address|
 |isqrt|2020-07-16|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
