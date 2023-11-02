@@ -279,6 +279,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |tree_traversal|2021-06-02|https://rosettacode.org/wiki/Tree_traversal|
 |trees|2020-09-06|https://rosettacode.org/wiki/Tree_datastructures|
 |trunc_primes|2020-01-17|https://rosettacode.org/wiki/Truncatable_primes|
+|tupper|2023-11-02|https://rosettacode.org/wiki/Tupper%27s_self-referential_formula|
 |twin_primes|2020-07-27|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
 |two_identical_strings|2021-04-03|https://rosettacode.org/wiki/Two_identical_strings|
 |ulam|2021-01-22|https://rosettacode.org/wiki/Ulam_numbers|
