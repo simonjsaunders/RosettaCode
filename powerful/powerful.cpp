@@ -6,16 +6,14 @@
 #include <vector>
 
 bool is_square_free(uint64_t n) {
-    static constexpr uint64_t primes[] {
-        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
-        43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
-    }; // seems to be enough
-    for (auto p : primes) {
-        auto p2 = p * p;
-        if (p2 > n)
-            break;
-        if (n % p2 == 0)
-            return false;
+    if (n % 4 == 0)
+        return false;
+    for (uint64_t p = 3; p * p <= n; p += 2) {
+        uint64_t count = 0;
+        for (; n % p == 0; n /= p) {
+            if (++count > 1)
+                return false;
+        }
     }
     return true;
 }
