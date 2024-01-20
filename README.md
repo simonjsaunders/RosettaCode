@@ -319,6 +319,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
 |first_last_three_equal|2021-04-05|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
+|klarner_rado|2024-01-20|https://rosettacode.org/wiki/Klarner-Rado_sequence|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
