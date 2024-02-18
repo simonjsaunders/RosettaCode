@@ -592,6 +592,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |idoneal_numbers|2022-09-24|https://rosettacode.org/wiki/Idoneal_numbers|
 |isqrt|2020-07-22|https://rosettacode.org/wiki/Isqrt_(integer_square_root)_of_X|
 |jaro_winkler|2020-08-02|https://rosettacode.org/wiki/Jaro-Winkler_Distance|
+|klarner_rado|2024-02-18|https://rosettacode.org/wiki/Klarner-Rado_sequence|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |lcp|2020-07-23|https://rosettacode.org/wiki/Longest_common_prefix|
 |leonardo|2020-12-26|https://rosettacode.org/wiki/Leonardo_numbers|
