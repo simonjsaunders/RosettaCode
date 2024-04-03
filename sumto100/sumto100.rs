@@ -96,7 +96,7 @@ fn main() {
         let expressions = sums.entry(sum).or_insert(Vec::new());
         expressions.push(exp.clone());
         let count = expressions.len();
-        if max_count == 0 || count > max_count {
+        if count > max_count {
             max_count = count;
             max_sum = sum;
         }
