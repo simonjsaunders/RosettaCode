@@ -550,6 +550,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |square_free|2021-02-06|https://rosettacode.org/wiki/Square-free_integers|
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
 |sum_cubes|2021-05-22|https://rosettacode.org/wiki/Sum_of_first_n_cubes|
+|sumto100|2024-04-03|https://rosettacode.org/wiki/Sum_to_100|
 |super-d|2020-08-15|https://rosettacode.org/wiki/Super-d_numbers|
 |teacup|2020-06-18|https://rosettacode.org/wiki/Teacup_rim_text|
 |textonyms|2020-06-25|https://rosettacode.org/wiki/Textonyms|
