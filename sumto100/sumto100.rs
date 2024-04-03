@@ -84,32 +84,30 @@ impl fmt::Display for Expression {
 
 fn main() {
     let mut exp = Expression::new();
-    let mut sum100 = Vec::new();
     let mut sums: BTreeMap<i32, Vec<Expression>> = BTreeMap::new();
-    let mut max_sum = 0;
-    let mut max_count = 0;
     loop {
-        let sum = exp.sum();
-        if sum == 100 {
-            sum100.push(exp.clone());
-        }
-        let expressions = sums.entry(sum).or_insert(Vec::new());
-        expressions.push(exp.clone());
-        let count = expressions.len();
-        if count > max_count {
-            max_count = count;
-            max_sum = sum;
-        }
+        sums.entry(exp.sum()).or_insert(Vec::new()).push(exp.clone());
         if !exp.next() {
             break;
         }
     }
 
     println!("Solutions that sum to 100:");
-    for e in sum100 {
-        println!("100 = {}", e);
+    if let Some(expressions) = sums.get(&100) {
+        for e in expressions {
+            println!("100 = {}", e);
+        }
     }
 
+    let mut max_sum = 0;
+    let mut max_count = 0;
+    for (sum, expressions) in &sums {
+        let count = expressions.len();
+        if count > max_count {
+            max_count = count;
+            max_sum = *sum;
+        }
+    }
     println!(
         "\nThe sum with the greatest number of solutions is {} ({}).",
         max_sum, max_count
