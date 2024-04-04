@@ -557,6 +557,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |trunc_primes|2020-06-08|https://rosettacode.org/wiki/Truncatable_primes|
 |twin_primes|2020-07-26|https://rosettacode.org/wiki/Twin_Prime_Conjecture|
 |ulam|2021-01-23|https://rosettacode.org/wiki/Ulam_numbers|
+|undulating|2024-04-04|https://rosettacode.org/wiki/Undulating_numbers|
 |unprimeable|2020-06-30|https://rosettacode.org/wiki/Unprimeable_numbers|
 |van_eck|2020-06-12|https://rosettacode.org/wiki/Van_Eck_sequence|
 |wieferich_primes|2021-06-02|https://rosettacode.org/wiki/Wieferich_primes|
