@@ -1,5 +1,5 @@
 1000000 constant limit
-variable kr_sequence limit 1+ cells allot
+create kr_sequence limit 1+ cells allot
 
 : kr cells kr_sequence + ;
 
