@@ -1,19 +1,17 @@
-: prime? ( n -- ? ) here + c@ 0= ;
-: notprime! ( n -- ) here + 1 swap c! ;
+5000000 constant limit
+create sieve limit allot
 
-: prime_sieve { n -- }
-  here n erase
-  0 notprime!
-  1 notprime!
-  n 4 > if
-    n 4 do i notprime! 2 +loop
-  then
+: prime? ( n -- ? ) sieve + c@ 0= ;
+: notprime! ( n -- ) sieve + 1 swap c! ;
+
+: prime_sieve
+  sieve limit erase
   3
   begin
-    dup dup * n <
+    dup dup * limit <
   while
     dup prime? if
-      n over dup * do
+      limit over dup * do
         i notprime!
       dup 2* +loop
     then
@@ -25,14 +23,14 @@
   dup 10 < if exit then
   10 /mod recurse + ;
 
-: next_prime ( u -- u )
+: next_odd_prime ( u -- u )
   begin
-    1+ dup prime?
+    2 + dup prime?
   until ;
 
 : next_honaker_prime ( u u -- u u )
   begin
-    swap next_prime swap 1+
+    swap next_odd_prime swap 1+
     2dup digit_sum swap digit_sum =
   until ;
 
@@ -40,9 +38,9 @@
   ." (" 3 .r ." , " 4 .r ." )" ;
 
 : main
-  5000000 prime_sieve
+  prime_sieve
   ." First 50 Honaker primes (index, prime):" cr
-  0 0 0   \ prime prime-index honaker-index
+  3 2 0   \ prime prime-index honaker-index
   begin
     dup 50 <
   while
