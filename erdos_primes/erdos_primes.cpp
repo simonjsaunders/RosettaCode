@@ -34,6 +34,7 @@ bool erdos_prime_generator::erdos(uint64_t p) const {
 }
 
 int main() {
+    std::ios_base::sync_with_stdio(false);
     std::wcout.imbue(std::locale(""));
     erdos_prime_generator epgen;
     const int max_print = 2500;

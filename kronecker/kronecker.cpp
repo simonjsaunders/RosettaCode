@@ -92,6 +92,7 @@ void test2() {
 }
 
 int main() {
+    std::ios_base::sync_with_stdio(false);
     std::wcout.imbue(std::locale(""));
     test1();
     test2();

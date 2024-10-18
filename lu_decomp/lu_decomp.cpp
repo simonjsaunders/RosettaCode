@@ -147,6 +147,7 @@ void show_lu_decomposition(const matrix<scalar_type>& input) {
 }
 
 int main() {
+    std::ios_base::sync_with_stdio(false);
     std::wcout.imbue(std::locale(""));
     std::wcout << L"Example 1:\n";
     matrix<double> matrix1(3, 3,
