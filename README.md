@@ -309,6 +309,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
 |base16|2021-06-03|https://rosettacode.org/wiki/Base-16_representation|
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
+|consonants|2024-11-28|https://rosettacode.org/wiki/Find_words_which_contains_most_consonants|
 |cousin_primes|2021-09-05|https://rosettacode.org/wiki/Cousin_primes|
 |divisible|2021-04-10|https://rosettacode.org/wiki/Numbers_divisible_by_their_individual_digits,_but_not_by_the_product_of_their_digits.|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
