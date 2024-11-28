@@ -55,7 +55,7 @@ create word-list-tails max-consonant cells allot
 : word-list-append { addr length index -- }
   here { to-addr }
   addr to-addr length cmove
-  length allot
+  length allot align
   length here !
   to-addr here cell+ !
   0 here 2 cells + !
