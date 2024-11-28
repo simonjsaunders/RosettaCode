@@ -53,15 +53,13 @@ create word-list-tails max-consonant cells allot
   loop ;
 
 : word-list-append { addr length index -- }
-  here { to-addr }
-  addr to-addr length cmove
-  length allot align
-  length here !
-  to-addr here cell+ !
-  0 here 2 cells + !
+  0 here !
+  length here cell+ !
   here index word-list-tail @ !
-  here 2 cells + index word-list-tail !
-  3 cells allot ;
+  here index word-list-tail !
+  2 cells allot
+  addr here length cmove
+  length allot align ;
 
 : word-list-print ( index -- )
   dup word-list-head @
@@ -70,8 +68,10 @@ create word-list-tails max-consonant cells allot
   begin
     dup 0 <>
   while
-    dup cell+ @ over @ type cr
-    2 cells + @
+    dup 2 cells +
+    over cell+ @
+    type cr
+    @
   repeat
   drop cr ;
 
