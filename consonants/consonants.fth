@@ -77,7 +77,7 @@ create word-list-tails max-consonant cells allot
 
 : main
   word-list-init
-  0 0 { count fd-in }
+  0 { fd-in }
   s" unixdict.txt" r/o open-file throw to fd-in
   begin
     line-buffer max-line fd-in read-line throw
