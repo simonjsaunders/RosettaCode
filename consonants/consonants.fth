@@ -9,7 +9,7 @@
   endcase ;
 
 : consonant? ( c -- t/f )
-  dup 'a' 'z' within if
+  dup 'a' 'z' 1+ within if
     vowel? invert
   else
     drop false
@@ -39,6 +39,7 @@ create line-buffer max-line 2 + allot
 20 constant max-consonant
 create word-list-heads max-consonant cells allot
 create word-list-tails max-consonant cells allot
+create word-list-counts max-consonant cells allot
 
 : word-list-head ( n -- addr )
   word-list-heads swap cells + ;
@@ -46,8 +47,12 @@ create word-list-tails max-consonant cells allot
 : word-list-tail ( n -- addr )
   word-list-tails swap cells + ;
 
+: word-list-count ( n -- addr )
+  word-list-counts swap cells + ;
+
 : word-list-init
   word-list-heads max-consonant cells erase
+  word-list-counts max-consonant cells erase
   max-consonant 0 do
     i word-list-head i word-list-tail !
   loop ;
@@ -59,12 +64,14 @@ create word-list-tails max-consonant cells allot
   here index word-list-tail !
   2 cells allot
   addr here length cmove
-  length allot align ;
+  length allot align
+  1 index word-list-count +! ;
 
-: word-list-print ( index -- )
-  dup word-list-head @
-  dup 0= if 2drop exit then
-  swap . ." consonants:" cr
+: word-list-print { index -- }
+  index word-list-count @
+  dup 0= if drop exit then
+  index . ." consonants (" 1 .r ." ):" cr
+  index word-list-head @
   begin
     dup 0 <>
   while
@@ -96,7 +103,7 @@ create word-list-tails max-consonant cells allot
   drop
   fd-in close-file throw
   max-consonant 0 do
-    i word-list-print
+    max-consonant i - 1- word-list-print
   loop ;
 
 main
