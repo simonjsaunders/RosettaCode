@@ -320,6 +320,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |extra_primes|2021-02-20|https://rosettacode.org/wiki/Extra_primes|
 |fibonacci_word|2024-12-25|https://rosettacode.org/wiki/Fibonacci_word|
 |first_last_three_equal|2021-04-05|https://rosettacode.org/wiki/Find_words_which_first_and_last_three_letters_are_equals|
+|forbidden_numbers|2024-12-26|https://rosettacode.org/wiki/Forbidden_numbers|
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |honaker_primes|2024-04-07|https://rosettacode.org/wiki/Honaker_primes|
 |klarner_rado|2024-01-20|https://rosettacode.org/wiki/Klarner-Rado_sequence|
