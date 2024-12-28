@@ -1,13 +1,10 @@
 : forbidden? ( n -- f )
-  dup 0 swap
   begin
     dup 1 > if dup 3 and 0= else false then
   while
-    swap 1+ swap
     2 rshift
   repeat
-  drop
-  2* rshift 7 and 7 =
+  7 and 7 =
 ;
 
 : main
