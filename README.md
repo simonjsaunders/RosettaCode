@@ -30,6 +30,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |cocktail_sort2|2020-06-29|https://rosettacode.org/wiki/Sorting_algorithms/Cocktail_sort_with_shifting_bounds|
 |colorful_numbers|2022-04-16|https://rosettacode.org/wiki/Colorful_numbers|
 |common_sorted_list|2021-05-15|https://rosettacode.org/wiki/Common_sorted_list#C.2B.2B|
+|dft|2024-12-28|https://rosettacode.org/wiki/Discrete_Fourier_transform|
 |douglas_peucker|2020-05-24|https://rosettacode.org/wiki/Ramer-Douglas-Peucker_line_simplification|
 |etoi|2021-05-22|https://rosettacode.org/wiki/Change_e_letters_to_i_in_words|
 |extra_primes|2020-12-21|https://rosettacode.org/wiki/Extra_primes|
