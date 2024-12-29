@@ -256,6 +256,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |smarandache|2020-03-14|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |smarandache_wellin|2023-04-10|https://rosettacode.org/wiki/Smarandache-Wellin_primes|
 |sorensen_dice_coefficient|2022-09-25|https://rosettacode.org/wiki/Sorensen%E2%80%93Dice_coefficient|
+|special_odd_numbers|2021-04-02|https://rosettacode.org/wiki/Odd_squarefree_semiprimes|
 |sphenic_numbers|2023-01-21|https://rosettacode.org/wiki/Sphenic_numbers|
 |sphere|2020-07-31|https://rosettacode.org/wiki/Draw_a_sphere|
 |sprimediff|2020-03-14|https://rosettacode.org/wiki/Successive_prime_differences|
@@ -338,6 +339,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |revprimes|2021-07-04|https://rosettacode.org/wiki/Find_prime_n_for_that_reversed_n_is_also_prime|
 |smarandache|2021-02-20|https://rosettacode.org/wiki/Smarandache_prime-digital_sequence|
 |special_divisors|2021-12-04|https://rosettacode.org/wiki/Special_Divisors|
+|special_odd_numbers|2021-04-02|https://rosettacode.org/wiki/Odd_squarefree_semiprimes|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
 |strange_plus_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_plus_numbers|
