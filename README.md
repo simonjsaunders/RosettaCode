@@ -326,6 +326,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |honaker_primes|2024-04-07|https://rosettacode.org/wiki/Honaker_primes|
 |klarner_rado|2024-01-20|https://rosettacode.org/wiki/Klarner-Rado_sequence|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
+|leonardo|2024-12-29|https://rosettacode.org/wiki/Leonardo_numbers|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |odd_even_words|2021-04-05|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
