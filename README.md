@@ -317,6 +317,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |divisible|2021-04-10|https://rosettacode.org/wiki/Numbers_divisible_by_their_individual_digits,_but_not_by_the_product_of_their_digits.|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
 |divisor_sum|2021-02-26|https://rosettacode.org/wiki/Sum_of_divisors|
+|duffinian_numbers|2024-12-29|https://rosettacode.org/wiki/Duffinian_numbers|
 |e3|2021-04-03|https://rosettacode.org/wiki/Find_words_which_contains_more_than_3_e_vowels|
 |erdos_primes|2021-03-27|https://rosettacode.org/wiki/Erd%C5%91s-primes|
 |esthetic_numbers|2021-10-09|https://rosettacode.org/wiki/Esthetic_numbers|
