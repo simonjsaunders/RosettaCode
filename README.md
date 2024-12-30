@@ -411,6 +411,11 @@ in this repository for any purpose then it's entirely at your own risk.
 |wilson_primes|2021-08-27|https://rosettacode.org/wiki/Wilson_primes_of_order_n|
 |word_ladder|2021-11-14|https://rosettacode.org/wiki/Word_ladder|
 
+## Lua Code Examples
+|Directory|Date Submitted|Rosetta Code URL|
+|---------|--------------|----------------|
+|duffinian_numbers|2024-12-30|https://rosettacode.org/wiki/Duffinian_numbers|
+
 ## Prolog Code Examples
 
 |Directory|Date Submitted|Rosetta Code URL|
