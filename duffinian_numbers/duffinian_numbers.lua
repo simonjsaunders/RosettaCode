@@ -1,8 +1,6 @@
 function gcd(a, b)
-    local tmp
     while b ~= 0 do
-        tmp = a % b
-        a, b = b, tmp
+        a, b = b, a % b
     end
     return a
 end
