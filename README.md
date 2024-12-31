@@ -350,6 +350,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |tau_number|2021-02-22|https://rosettacode.org/wiki/Tau_number|
 |triplet_of_three_numbers|2021-06-12|https://rosettacode.org/wiki/Triplet_of_three_numbers|
 |trunc_primes|2021-02-21|https://rosettacode.org/wiki/Truncatable_primes|
+|twin_primes|2024-12-31|https://rosettacode.org/wiki/Twin_primes|
 |vowels_and_consonants|2024-12-28|https://rosettacode.org/wiki/Count_how_many_vowels_and_consonants_occur_in_a_string|
 |wieferich_primes|2021-06-01|https://rosettacode.org/wiki/Wieferich_primes|
 
