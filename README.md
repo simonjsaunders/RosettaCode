@@ -314,6 +314,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
 |consonants|2024-11-28|https://rosettacode.org/wiki/Find_words_which_contains_most_consonants|
 |cousin_primes|2021-09-05|https://rosettacode.org/wiki/Cousin_primes|
+|deceptive_numbers|2025-01-01|https://rosettacode.org/wiki/Deceptive_numbers|
 |digit_fifth_powers|2024-12-29|https://rosettacode.org/wiki/Digit_fifth_powers|
 |divisible|2021-04-10|https://rosettacode.org/wiki/Numbers_divisible_by_their_individual_digits,_but_not_by_the_product_of_their_digits.|
 |divisor_count|2021-02-22|https://rosettacode.org/wiki/Tau_function|
