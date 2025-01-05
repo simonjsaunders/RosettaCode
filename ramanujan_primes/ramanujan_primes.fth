@@ -54,7 +54,7 @@ variable prime-count
   2drop ;
 
 : ceil ( r -- r )
-  fdup floor fswap fover f> if 1e f+ then ;
+  fnegate floor fnegate ;
 
 : ramanujan-max ( n -- n )
   4 * s>f fdup fln f* ceil f>s ;
