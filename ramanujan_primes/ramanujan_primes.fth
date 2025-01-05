@@ -28,24 +28,17 @@ variable prime-count
     2 cells +
   repeat
   2drop
-  3 9
-  begin
-    dup n <
+  3 begin
+    dup dup * n <
   while
-    over get-prime-count 0<> if
-      over 2* over
-      begin
-        dup n <
-      while
-        0 over set-prime-count
-        over +
-      repeat
-      2drop
+    dup get-prime-count 0<> if
+      n over dup * do
+        0 i set-prime-count
+      dup 2* +loop
     then
-    over 1+ 4 * +
-    swap 2 + swap
+    2 +
   repeat
-  2drop
+  drop
   prime-count @ 0
   n 0 +do
     over @ + 2dup swap !
