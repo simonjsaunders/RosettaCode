@@ -230,6 +230,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_triangle|2022-04-18|https://rosettacode.org/wiki/Prime_triangle|
 |prime_words|2020-12-21|https://rosettacode.org/wiki/Prime_words|
+|primes_first_last_3|2025-01-05|https://rosettacode.org/wiki/Primes_whose_first_and_last_number_is_3|
 |primes25|2021-03-27|https://rosettacode.org/wiki/Primes_which_sum_of_digits_is_25|
 |primorial|2020-01-27|https://rosettacode.org/wiki/Primorial_numbers|
 |primorial_primes|2020-01-27|https://rosettacode.org/wiki/Sequence_of_primorial_primes|
