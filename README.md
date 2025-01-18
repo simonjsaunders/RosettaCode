@@ -336,6 +336,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |odd_even_words|2021-04-05|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
+|pancake_sort|2025-01-18|https://rosettacode.org/wiki/Sorting_algorithms/Pancake_sort|
 |pernicious|2021-03-21|https://rosettacode.org/wiki/Pernicious_numbers|
 |prime_n_cubed_plus_2|2021-05-15|https://rosettacode.org/wiki/Find_prime_numbers_of_the_form_n*n*n%2B2|
 |prime_sum|2021-04-17|https://rosettacode.org/wiki/Summarize_primes|
