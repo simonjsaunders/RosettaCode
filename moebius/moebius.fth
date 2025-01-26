@@ -8,19 +8,13 @@
   3 begin
     2dup dup * >=
   while
-    0 >r
-    begin
-      2dup mod 0=
-    while
-      r> dup 0 <> if
+    2dup mod 0= if
+      tuck / swap
+      2dup mod 0= if
         \ repeated prime factor so return 0
         2drop rdrop 0 exit
       then
-      1+ >r
-      tuck / swap
-    repeat
-    r> 0<> if
-      \ we have another prime factor
+       \ we have another prime factor
       r> 1+ >r
     then
     2 +
