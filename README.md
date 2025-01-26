@@ -335,6 +335,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |leonardo|2024-12-29|https://rosettacode.org/wiki/Leonardo_numbers|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
+|moebius|2025-01-26|https://rosettacode.org/wiki/M%C3%B6bius_function|
 |nice_primes|2021-03-13|https://rosettacode.org/wiki/Nice_primes|
 |odd_even_words|2021-04-05|https://rosettacode.org/wiki/Find_words_with_alternating_vowels_and_consonants|
 |pancake_sort|2025-01-18|https://rosettacode.org/wiki/Sorting_algorithms/Pancake_sort|
