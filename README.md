@@ -332,6 +332,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |hofstadter_q_seq|2021-02-19|https://rosettacode.org/wiki/Hofstadter_Q_sequence|
 |honaker_primes|2024-04-07|https://rosettacode.org/wiki/Honaker_primes|
 |klarner_rado|2024-01-20|https://rosettacode.org/wiki/Klarner-Rado_sequence|
+|lah_numbers|2025-01-29|https://rosettacode.org/wiki/Lah_numbers|
 |largest_proper_divisor|2021-06-02|https://rosettacode.org/wiki/Largest_proper_divisor_of_n|
 |leonardo|2024-12-29|https://rosettacode.org/wiki/Leonardo_numbers|
 |long_primes|2021-03-06|https://rosettacode.org/wiki/Long_primes|
@@ -349,6 +350,8 @@ in this repository for any purpose then it's entirely at your own risk.
 |special_divisors|2021-12-04|https://rosettacode.org/wiki/Special_Divisors|
 |special_odd_numbers|2021-04-02|https://rosettacode.org/wiki/Odd_squarefree_semiprimes|
 |square_free|2021-02-27|https://rosettacode.org/wiki/Square-free_integers|
+|stirling1|2025-01-29|https://rosettacode.org/wiki/Stirling_numbers_of_the_first_kind|
+|stirling2|2025-01-29|https://rosettacode.org/wiki/Stirling_numbers_of_the_second_kind|
 |strange_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_numbers|
 |strange_plus_numbers|2021-02-26|https://rosettacode.org/wiki/Strange_plus_numbers|
 |strange_unique_prime_triplets|2021-03-13|https://rosettacode.org/wiki/Strange_unique_prime_triplets|
