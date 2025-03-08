@@ -311,6 +311,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |additive_primes|2021-03-19|https://rosettacode.org/wiki/Additive_primes|
 |adjacent_prime_diff|2024-12-29|https://rosettacode.org/wiki/Largest_difference_between_adjacent_primes|
 |all_vowels|2021-04-01|https://rosettacode.org/wiki/Find_words_which_contains_all_the_vowels|
+|almost_prime|2025-03-08|https://rosettacode.org/wiki/Almost_prime|
 |base16|2021-06-03|https://rosettacode.org/wiki/Base-16_representation|
 |bell|2025-01-23|https://rosettacode.org/wiki/Bell_numbers|
 |brazilian|2021-03-05|https://rosettacode.org/wiki/Brazilian_numbers|
