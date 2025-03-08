@@ -11,11 +11,7 @@
 : k-prime? ( n k -- ? )
   >r 0 >r 2
   begin
-    2dup dup * >= if
-      2r@ >
-    else
-      false
-    then
+    2dup dup * >= if 2r@ > else false then
   while
     multiplicity r> + >r 1+
   repeat
