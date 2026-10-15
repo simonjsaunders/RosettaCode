@@ -213,6 +213,7 @@ in this repository for any purpose then it's entirely at your own risk.
 |param_sql|2020-05-27|https://rosettacode.org/wiki/Parametrized_SQL_statement|
 |particle_fountain|2021-09-27|https://rosettacode.org/wiki/Particle_fountain|
 |partition_function|2020-12-14|https://rosettacode.org/wiki/Partition_function_P|
+|passphrase_generator|2026-10-15|https://rosettacode.org/wiki/Passphrase_generator|
 |peano_curve|2020-12-12|https://rosettacode.org/wiki/Peano_curve|
 |penrose|2021-07-13|https://rosettacode.org/wiki/Penrose_tiling|
 |perfect_totient|2020-04-19|https://rosettacode.org/wiki/Perfect_totient_numbers|
